@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,300;0,8..30,400;0,8..30,600;1,8..30,300;1,8..30,400&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#17120F;color:#F1E6D6;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#F1E6D6;text-decoration:none}a:hover{color:#E0A23A}
+input,textarea,button{font-family:inherit}
+input::placeholder,textarea::placeholder{color:#7E7064}
+*{scrollbar-color:#3A302A transparent;scrollbar-width:thin}::-webkit-scrollbar{height:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#3A302A;border-radius:3px}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:.85}}
+</style>
+</helmet>
+
+<div style="font-family:'Golos Text',system-ui,sans-serif;font-size:16px;line-height:1.5;background:#17120F;position:relative;overflow:hidden">
+<div style="position:absolute;top:-20vw;right:-10vw;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(224,162,58,.35),transparent 60%);filter:blur(40px);pointer-events:none;animation:glow 9s ease-in-out infinite"></div>
+<div style="position:fixed;inset:0;pointer-events:none;opacity:.09;mix-blend-mode:screen;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence baseFrequency=%22.85%22/></filter><rect width=%22160%22 height=%22160%22 filter=%22url(%23n)%22/></svg>');z-index:5"></div>
+
+<nav style="position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,5vw,72px);background:rgba(23,18,15,.85);backdrop-filter:blur(10px);border-bottom:1px solid #2A221D">
+  <a href="#top" style="font-family:'Piazzolla',serif;font-size:22px;font-weight:600;letter-spacing:.02em">ИННА <span style="color:#E0A23A;font-style:italic;font-weight:300">— студия</span></a>
+  <div style="display:flex;gap:22px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#B9AA98;flex-wrap:wrap">
+    <a href="#about" style="color:inherit">Обо мне</a><a href="#works" style="color:inherit">Работы</a><a href="#reviews" style="color:inherit">Отзывы</a><a href="#prices" style="color:inherit">Цены</a><a href="#brief" style="color:#E0A23A">Бриф ↗</a>
+  </div>
+</nav>
+
+<section id="top" style="padding:clamp(40px,7vw,96px) clamp(20px,5vw,72px) 0;position:relative">
+  <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#B9AA98;display:flex;gap:16px;flex-wrap:wrap;animation:rise .7s ease both"><span>Иллюстрации</span><span style="color:#E0A23A">/</span><span>Сториборды</span><span style="color:#E0A23A">/</span><span>Сериалы 9:16 · 16:9</span><span style="color:#E0A23A">/</span><span>Аватары</span></div>
+  <h1 style="font-family:'Piazzolla',serif;font-weight:300;font-size:clamp(56px,11.5vw,200px);line-height:.88;letter-spacing:-.035em;margin:24px 0 0;animation:rise .9s .1s ease both;text-wrap:balance">Истории<br><em style="font-style:italic;color:#E0A23A;padding-left:clamp(20px,12vw,220px)">кадр за кадром</em></h1>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-top:clamp(32px,4vw,64px);align-items:end">
+    <p style="grid-column:1/span 5;font-size:clamp(17px,1.3vw,20px);color:#B9AA98;margin:0;max-width:44ch;text-wrap:pretty;animation:rise .9s .2s ease both">Я Инна. Рисую иллюстрации и сториборды, а потом превращаю их в короткие сериалы — вертикальные для лент и горизонтальные для экранов. Ещё делаю аватаров с характером.</p>
+    <div style="grid-column:7/span 6;display:flex;gap:14px;justify-content:end;flex-wrap:wrap;animation:rise .9s .3s ease both">
+      <a href="#brief" style="background:#E0A23A;color:#17120F;padding:16px 28px;border-radius:4px;font-weight:600" style-hover="background:#F1E6D6;color:#17120F">Заполнить бриф</a>
+      <a href="#works" style="border:1px solid #3A302A;padding:16px 28px;border-radius:4px;font-weight:500" style-hover="border-color:#F1E6D6">Работы ↓</a>
+    </div>
+  </div>
+</section>
+
+<div style="margin-top:clamp(48px,6vw,96px);padding:0 clamp(20px,5vw,72px);display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px">
+  <div style="flex:0 0 clamp(200px,22vw,300px);aspect-ratio:9/16;scroll-snap-align:start"><image-slot id="b-reel-1" shape="rounded" radius="6" placeholder="Кадр 9:16"></image-slot></div>
+  <div style="flex:0 0 clamp(320px,40vw,540px);aspect-ratio:16/9;scroll-snap-align:start;align-self:end"><image-slot id="b-reel-2" shape="rounded" radius="6" placeholder="Кадр 16:9"></image-slot></div>
+  <div style="flex:0 0 clamp(220px,26vw,340px);aspect-ratio:4/5;scroll-snap-align:start"><image-slot id="b-reel-3" shape="rounded" radius="6" placeholder="Иллюстрация"></image-slot></div>
+  <div style="flex:0 0 clamp(200px,22vw,300px);aspect-ratio:1;scroll-snap-align:start;align-self:center"><image-slot id="b-reel-4" shape="rounded" radius="6" placeholder="Аватар"></image-slot></div>
+  <div style="flex:0 0 clamp(320px,40vw,540px);aspect-ratio:16/9;scroll-snap-align:start"><image-slot id="b-reel-5" shape="rounded" radius="6" placeholder="Сториборд"></image-slot></div>
+</div>
+
+<section id="about" style="padding:clamp(72px,10vw,160px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;border-top:1px solid #2A221D">
+  <div style="grid-column:1/span 3;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#E0A23A">01<br>Обо мне</div>
+  <div style="grid-column:4/span 6">
+    <h2 style="font-family:'Piazzolla',serif;font-weight:300;font-size:clamp(32px,3.6vw,56px);line-height:1.08;letter-spacing:-.02em;margin:0 0 28px;text-wrap:balance">Художник с режиссёрским взглядом: сначала думаю, как это будет двигаться, потом рисую</h2>
+    <p style="font-size:18px;color:#B9AA98;margin:0 0 16px;text-wrap:pretty">Девять лет в иллюстрации, из них шесть — в раскадровке рекламы и анимации. Собираю сериалы целиком: сценарная сетка, сториборд, анимация, монтаж под площадку.</p>
+    <p style="font-size:18px;color:#B9AA98;margin:0 0 36px;text-wrap:pretty">Работаю с студиями, брендами, издательствами и людьми, которым нужен аватар, похожий на них больше, чем фотография.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:#2A221D;border:1px solid #2A221D">
+      <div style="background:#17120F;padding:20px"><div style="font-family:'Piazzolla',serif;font-size:40px;line-height:1;color:#E0A23A">9</div><div style="font-size:13px;color:#B9AA98;margin-top:6px">лет практики</div></div>
+      <div style="background:#17120F;padding:20px"><div style="font-family:'Piazzolla',serif;font-size:40px;line-height:1;color:#E0A23A">120+</div><div style="font-size:13px;color:#B9AA98;margin-top:6px">сторибордов</div></div>
+      <div style="background:#17120F;padding:20px"><div style="font-family:'Piazzolla',serif;font-size:40px;line-height:1;color:#E0A23A">14</div><div style="font-size:13px;color:#B9AA98;margin-top:6px">сериалов</div></div>
+      <div style="background:#17120F;padding:20px"><div style="font-family:'Piazzolla',serif;font-size:40px;line-height:1;color:#E0A23A">300+</div><div style="font-size:13px;color:#B9AA98;margin-top:6px">аватаров</div></div>
+    </div>
+  </div>
+  <div style="grid-column:10/span 3;aspect-ratio:3/4;align-self:start"><image-slot id="b-portrait" shape="rounded" radius="6" placeholder="Портрет Инны"></image-slot></div>
+</section>
+
+<section id="works" style="border-top:1px solid #2A221D">
+  <sc-for list="{{ rows }}" as="row" hint-placeholder-count="5">
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding:clamp(40px,5vw,72px) clamp(20px,5vw,72px);border-bottom:1px solid #2A221D;align-items:start">
+      <div style="grid-column:1/span 3;position:sticky;top:90px">
+        <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#E0A23A;margin-bottom:12px">{{ row.num }}</div>
+        <h3 style="font-family:'Piazzolla',serif;font-weight:300;font-size:clamp(28px,2.8vw,44px);line-height:1;letter-spacing:-.02em;margin:0 0 14px">{{ row.title }}</h3>
+        <p style="font-size:15px;color:#B9AA98;margin:0;max-width:26ch;text-wrap:pretty">{{ row.desc }}</p>
+      </div>
+      <div style="grid-column:4/span 9;display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory">
+        <sc-for list="{{ row.items }}" as="it" hint-placeholder-count="4">
+          <figure style="margin:0;flex:0 0 auto;width:{{ it.w }};scroll-snap-align:start">
+            <div style="aspect-ratio:{{ it.ratio }}"><image-slot id="{{ it.id }}" shape="rounded" radius="6" placeholder="{{ it.placeholder }}"></image-slot></div>
+            <figcaption style="font-size:13px;color:#B9AA98;margin-top:10px;display:flex;justify-content:space-between;gap:8px"><span>{{ it.title }}</span><span style="color:#6E6157">{{ it.meta }}</span></figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</section>
+
+<section id="reviews" style="padding:clamp(72px,10vw,160px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px">
+  <div style="grid-column:1/span 3;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#E0A23A">07<br>Отзывы</div>
+  <div style="grid-column:4/span 9;display:grid;gap:0">
+    <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+      <blockquote style="margin:0;padding:32px 0;border-top:1px solid #2A221D;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px;align-items:start">
+        <p style="font-family:'Piazzolla',serif;font-weight:300;font-style:italic;font-size:clamp(22px,2vw,30px);line-height:1.25;margin:0;text-wrap:pretty">{{ r.text }}</p>
+        <footer style="font-size:14px;color:#B9AA98"><b style="color:#F1E6D6;font-weight:500">{{ r.name }}</b><br>{{ r.role }}</footer>
+      </blockquote>
+    </sc-for>
+    <div style="border-top:1px solid #2A221D;padding-top:28px;display:flex;gap:12px 36px;flex-wrap:wrap;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#6E6157">
+      <span>Северный свет</span><span>МИФ</span><span>Kinopoisk Originals</span><span>Самокат</span><span>Yandex Go</span><span>Лаборатория сказок</span>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}">
+<section id="prices" style="padding:0 clamp(20px,5vw,72px) clamp(72px,10vw,160px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px">
+  <div style="grid-column:1/span 3;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#E0A23A">08<br>Цены</div>
+  <div style="grid-column:4/span 9">
+    <p style="color:#B9AA98;margin:0 0 24px;max-width:60ch;text-wrap:pretty">Ориентиры. Точную смету считаю после брифа — от объёма, сроков и прав использования.</p>
+    <sc-for list="{{ prices }}" as="p" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 24px;padding:22px 0;border-top:1px solid #2A221D;align-items:baseline">
+        <div><div style="font-family:'Piazzolla',serif;font-size:26px;line-height:1.1">{{ p.name }}</div><div style="font-size:14px;color:#B9AA98;margin-top:6px;max-width:52ch">{{ p.desc }}</div></div>
+        <div style="font-family:'Piazzolla',serif;font-size:clamp(22px,2vw,30px);color:#E0A23A;white-space:nowrap">{{ p.price }}</div>
+      </div>
+    </sc-for>
+    <div style="border-top:1px solid #2A221D"></div>
+  </div>
+</section>
+</sc-if>
+
+<section id="brief" style="background:#F1E6D6;color:#17120F;padding:clamp(64px,9vw,140px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;position:relative;z-index:6">
+  <div style="grid-column:1/span 5">
+    <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#B0651C;margin-bottom:16px">09 — Бриф</div>
+    <h2 style="font-family:'Piazzolla',serif;font-weight:300;font-size:clamp(38px,4.8vw,76px);line-height:.98;letter-spacing:-.03em;margin:0 0 24px;text-wrap:balance">Расскажите, что <em style="font-style:italic">нарисовать</em></h2>
+    <p style="font-size:17px;color:#5A4C40;max-width:40ch;margin:0 0 28px;text-wrap:pretty">Пары предложений достаточно. Отвечу в течение дня, дальше созвон и смета.</p>
+    <div style="display:grid;gap:6px;font-size:15px"><a href="mailto:hello@inna.art" style="color:#17120F">hello@inna.art</a><a href="https://t.me/inna_draws" style="color:#17120F">Telegram — @inna_draws</a></div>
+  </div>
+  <div style="grid-column:7/span 6">
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="border:1px solid #17120F;padding:40px;font-family:'Piazzolla',serif;font-size:30px;line-height:1.2;font-weight:300">Спасибо! Бриф получен — напишу вам в ближайшее время.</div>
+    </sc-if>
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+    <form onSubmit="{{ submit }}" style="display:grid;gap:0">
+      <input required name="name" placeholder="Как вас зовут" style="background:transparent;border:0;border-bottom:1px solid #17120F;color:#17120F;padding:16px 0;font-size:17px;outline:none;width:100%" style-focus="border-bottom-color:#B0651C">
+      <input required name="contact" placeholder="Telegram или email" style="background:transparent;border:0;border-bottom:1px solid #17120F;color:#17120F;padding:16px 0;font-size:17px;outline:none;width:100%" style-focus="border-bottom-color:#B0651C">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;padding:20px 0;border-bottom:1px solid #17120F">
+        <sc-for list="{{ types }}" as="t" hint-placeholder-count="5">
+          <button type="button" onClick="{{ t.onClick }}" style="border:1px solid #17120F;background:{{ t.bg }};color:{{ t.color }};padding:8px 14px;border-radius:4px;font-size:14px;cursor:pointer">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <textarea required name="about" rows="3" placeholder="О проекте: что нужно, площадка, сроки, есть ли сценарий или референсы" style="background:transparent;border:0;border-bottom:1px solid #17120F;color:#17120F;padding:16px 0;font-size:17px;outline:none;resize:vertical;width:100%" style-focus="border-bottom-color:#B0651C"></textarea>
+      <input name="budget" placeholder="Бюджет (примерно)" style="background:transparent;border:0;border-bottom:1px solid #17120F;color:#17120F;padding:16px 0;font-size:17px;outline:none;width:100%" style-focus="border-bottom-color:#B0651C">
+      <button type="submit" style="background:#17120F;color:#F1E6D6;border:0;padding:18px 28px;border-radius:4px;font-size:16px;font-weight:600;cursor:pointer;justify-self:start;margin-top:28px" style-hover="background:#B0651C;color:#F1E6D6">Отправить бриф →</button>
+    </form>
+    </sc-if>
+  </div>
+</section>
+
+<footer style="padding:32px clamp(20px,5vw,72px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#6E6157;letter-spacing:.06em;text-transform:uppercase">
+  <span>© 2026 Инна · Москва / удалённо</span>
+  <div style="display:flex;gap:24px"><a href="#" style="color:inherit">Behance</a><a href="#" style="color:inherit">Telegram</a><a href="#" style="color:inherit">Instagram</a></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Разделы&quot;}}">
+class Component extends DCLogic {
+  state = { type: null, sent: false };
+  renderVals() {
+    const p = this.props, s = this.state;
+    const mk = (pre, n, ratio, w, ph, titles, meta) => titles.map((t,i)=>({id:`b-${pre}-${i}`,ratio,w,placeholder:ph,title:t,meta}));
+    return {
+      showPrices: p.showPrices ?? true,
+      sent: s.sent, notSent: !s.sent,
+      submit: e => { e.preventDefault(); this.setState({sent:true}); },
+      types: ['Иллюстрация','Сториборд','Вертикальный сериал','Горизонтальный сериал','Аватар'].map(label=>{const a=s.type===label;return{label,onClick:()=>this.setState({type:a?null:label}),bg:a?'#17120F':'transparent',color:a?'#F1E6D6':'#17120F'}}),
+      rows: [
+        {num:'02',title:'Иллюстрации',desc:'Книги, обложки, редакционная и коммерческая графика. Ручная линия, тёплый свет.',items:mk('ill',4,'4/5','clamp(200px,22vw,300px)','Иллюстрация',['«Сад у реки»','Обложка для МИФ','Серия для журнала','«Ночной рынок»'],'2025')},
+        {num:'03',title:'Сториборды',desc:'Чистовая раскадровка с планами, движением камеры и звуком — можно снимать сразу.',items:mk('sb',4,'16/9','clamp(300px,36vw,480px)','Сториборд',['Ролик Yandex Go','Клип «Тише»','Анимационный пилот','Промо сериала'],'кадры')},
+        {num:'04',title:'Вертикальные сериалы',desc:'Эпизоды 9:16 для лент и шортсов, от 15 секунд до 3 минут.',items:mk('sv',4,'9/16','clamp(180px,18vw,240px)','Эпизод 9:16',['«Маленький свет» эп. 1','эп. 2','эп. 3','эп. 4'],'9:16')},
+        {num:'05',title:'Горизонтальные сериалы',desc:'16:9 для платформ, презентаций и фестивалей. Композиция пересобрана под широкий экран.',items:mk('sh',3,'16/9','clamp(300px,36vw,480px)','Эпизод 16:9',['«Шумный дом» трейлер','эп. 1','эп. 2'],'16:9')},
+        {num:'06',title:'Аватары',desc:'Портретные аватары в авторском стиле — для команд, стримов и личных профилей.',items:mk('av',5,'1/1','clamp(160px,16vw,220px)','Аватар',['Команда Самоката','Дарья','Артём','Стример N.','Пара'],'1:1')},
+      ],
+      reviews: [
+        {text:'Инна принесла раскадровку, которую можно было снимать без правок. Редкость.',name:'Марина К.',role:'продюсер, студия «Северный свет»'},
+        {text:'Вертикальный сериал по нашим сторибордам набрал больше, чем весь контент за прошлый год.',name:'Артём Л.',role:'руководитель SMM'},
+        {text:'Аватар получился — я. Тёплый, живой, с характером.',name:'Дарья В.',role:'частный заказ'},
+      ],
+      prices: [
+        {name:'Иллюстрация',price:'от 25 000 ₽',desc:'Одна работа: эскиз, два круга правок, файлы под печать и веб.'},
+        {name:'Сториборд',price:'от 3 500 ₽ / кадр',desc:'Чистовая раскадровка с описанием планов, движения и звука.'},
+        {name:'Сериал',price:'от 90 000 ₽ / эпизод',desc:'От сториборда до готовой серии в вертикали или горизонтали.'},
+        {name:'Аватар',price:'от 8 000 ₽',desc:'Портретный аватар в авторском стиле, 2 варианта позы.'},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
