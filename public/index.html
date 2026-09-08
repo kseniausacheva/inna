@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Инна — иллюстрации, сториборды, сериалы, аватары</title>
+<meta name="description" content="Иллюстратор Инна: иллюстрации, сториборды, вертикальные и горизонтальные сериалы, аватары. Заполните бриф — отвечу в течение дня.">
+<meta name="theme-color" content="#17120F">
+<meta property="og:title" content="Инна — студия. Истории кадр за кадром">
+<meta property="og:description" content="Иллюстрации, сториборды, сериалы 9:16 · 16:9, аватары. Заполните бриф.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2317120F'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23E0A23A'%3EИ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,300;0,8..30,400;0,8..30,600;1,8..30,300;1,8..30,400&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a href="#top" class="logo">ИННА <span>— студия</span></a>
+    <div class="nav-links">
+      <a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#prices" data-prices-link>Цены</a><a href="#brief" class="nav-brief">Бриф ↗</a>
+    </div>
+  </nav>
+
+  <section id="top" class="hero">
+    <div class="hero-cats rise"><span>Иллюстрации</span><span class="sep">/</span><span>Сториборды</span><span class="sep">/</span><span>Сериалы 9:16 · 16:9</span><span class="sep">/</span><span>Аватары</span></div>
+    <h1 class="hero-title rise rise-1">Истории<br><em>кадр за кадром</em></h1>
+    <div class="grid12 hero-grid">
+      <p class="hero-lead rise rise-2">Я Инна. Рисую иллюстрации и сториборды, а потом превращаю их в короткие сериалы — вертикальные для лент и горизонтальные для экранов. Ещё делаю аватаров с характером.</p>
+      <div class="hero-actions rise rise-3">
+        <a href="#brief" class="btn btn-primary">Заполнить бриф</a>
+        <a href="#works" class="btn btn-secondary">Работы ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="reel" id="reel" aria-label="Избранные работы"></div>
+
+  <section id="about" class="about grid12">
+    <div class="index">01<br>Обо мне</div>
+    <div class="about-body">
+      <h2 class="about-title">Художник с режиссёрским взглядом: сначала думаю, как это будет двигаться, потом рисую</h2>
+      <p class="about-p">Девять лет в иллюстрации, из них шесть — в раскадровке рекламы и анимации. Собираю сериалы целиком: сценарная сетка, сториборд, анимация, монтаж под площадку.</p>
+      <p class="about-p about-p-last">Работаю с студиями, брендами, издательствами и людьми, которым нужен аватар, похожий на них больше, чем фотография.</p>
+      <div class="facts">
+        <div class="fact"><div class="fact-num">9</div><div class="fact-label">лет практики</div></div>
+        <div class="fact"><div class="fact-num">120+</div><div class="fact-label">сторибордов</div></div>
+        <div class="fact"><div class="fact-num">14</div><div class="fact-label">сериалов</div></div>
+        <div class="fact"><div class="fact-num">300+</div><div class="fact-label">аватаров</div></div>
+      </div>
+    </div>
+    <div class="portrait" id="portrait"></div>
+  </section>
+
+  <section id="works" class="works"></section>
+
+  <section id="reviews" class="reviews grid12">
+    <div class="index">07<br>Отзывы</div>
+    <div class="reviews-body">
+      <div id="reviews-list"></div>
+      <div class="clients" id="clients"></div>
+    </div>
+  </section>
+
+  <section id="prices" class="prices grid12">
+    <div class="index">08<br>Цены</div>
+    <div class="prices-body">
+      <p class="prices-note">Ориентиры. Точную смету считаю после брифа — от объёма, сроков и прав использования.</p>
+      <div id="prices-list"></div>
+      <div class="rule"></div>
+    </div>
+  </section>
+
+  <section id="brief" class="brief grid12">
+    <div class="brief-intro">
+      <div class="index index-dark">09 — Бриф</div>
+      <h2 class="brief-title">Расскажите, что <em>нарисовать</em></h2>
+      <p class="brief-sub">Пары предложений достаточно. Отвечу в течение дня, дальше созвон и смета.</p>
+      <div class="brief-contacts" id="brief-contacts"></div>
+    </div>
+    <div class="brief-form-col">
+      <form id="brief-form" class="brief-form" novalidate>
+        <input required name="name" type="text" autocomplete="name" maxlength="120" placeholder="Как вас зовут" aria-label="Как вас зовут">
+        <input required name="contact" type="text" autocomplete="email" maxlength="200" placeholder="Telegram или email" aria-label="Telegram или email">
+        <div class="chips" id="type-chips" role="group" aria-label="Тип проекта"></div>
+        <input type="hidden" name="type" id="type-value">
+        <textarea required name="about" rows="3" maxlength="4000" placeholder="О проекте: что нужно, площадка, сроки, есть ли сценарий или референсы" aria-label="О проекте"></textarea>
+        <input name="budget" type="text" maxlength="120" placeholder="Бюджет (примерно)" aria-label="Бюджет">
+        <!-- ловушка для ботов: люди её не видят и не заполняют -->
+        <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="form-error" id="form-error" role="alert" hidden></div>
+        <button type="submit" class="submit" id="submit-btn"><span class="submit-label">Отправить бриф →</span><span class="submit-loading">Отправляю…</span></button>
+      </form>
+      <div class="thanks" id="thanks" hidden>Спасибо! Бриф получен — напишу вам в ближайшее время.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 Инна · Москва / удалённо</span>
+    <div class="footer-links" id="footer-links"></div>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

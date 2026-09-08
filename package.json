@@ -1,0 +1,13 @@
+{
+  "name": "inna-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт-портфолио иллюстратора Инны с формой брифа",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test/brief.test.js"
+  },
+  "engines": { "node": ">=18" }
+}
