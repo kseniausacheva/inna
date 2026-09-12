@@ -1,0 +1,231 @@
+<title>Четыре руки, одно письмо — La Royal Event</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --night:#120d1c; --night-2:#191225; --card:#1e1730;
+  --sand:#f3ece1; --sand-2:#cfc3b4; --dim:#9b8fa8; --rule:#2f2545;
+  --lilac:#c6a4f5; --lilac-deep:#8b5fd6; --lime:#cfe64f; --rose:#ff85b3;
+  --display:"Prata",Georgia,"Times New Roman",serif;
+  --sans:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--sand);font-family:var(--sans);
+     font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:22px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.005em}
+h1{font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:1}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.12}
+p{margin:0 0 1em}
+img{max-width:100%}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--rule);
+  background:radial-gradient(90% 70% at 80% 10%, rgba(139,95,214,.34) 0%, transparent 60%), var(--night)}
+.hero .wrap{padding-block:clamp(48px,8vw,96px) clamp(30px,5vw,54px)}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+.was{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--dim);margin-top:10px}
+.tagline{font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.6rem);color:var(--lime);
+  line-height:1.3;max-width:30ch;margin:.6em 0 0}
+
+section{padding-block:clamp(40px,6vw,72px);border-bottom:1px solid var(--rule)}
+.spread{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:start}
+.text p:first-of-type{font-size:1.1rem}
+.aside{border-left:1px solid var(--rule);padding-left:26px;font-size:.93rem}
+.aside .blk{margin-bottom:20px}
+.aside .blk:last-child{margin-bottom:0}
+.lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--lime);display:block;margin-bottom:6px}
+.aside ul{margin:0;padding-left:1.05em;color:var(--sand-2)}
+.aside li{margin-bottom:4px}
+.aside p{margin:0;color:var(--sand-2)}
+.scale{display:flex;align-items:center;gap:9px;margin-bottom:5px;font-size:.86rem;color:var(--sand-2)}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--rule);display:block}
+.dots i.on{background:var(--lilac)}
+.dots.warm i.on{background:var(--rose)}
+
+.doing{list-style:none;margin:1.2em 0 0;padding:0;border-top:1px solid var(--rule)}
+.doing li{position:relative;padding:11px 0 11px 26px;border-bottom:1px solid var(--rule);
+  color:var(--sand-2);font-size:.95rem}
+.doing li::before{content:"→";position:absolute;left:0;top:11px;color:var(--lilac-deep);
+  font-family:var(--mono);font-size:.85rem}
+
+.finale{margin-top:1.3em;padding:16px 20px;border-radius:11px;
+  background:linear-gradient(180deg, rgba(139,95,214,.18), rgba(139,95,214,.06));
+  border:1px solid rgba(198,164,245,.22)}
+.finale .lbl{color:var(--lilac)}
+.finale p{margin:0;font-size:.97rem}
+
+/* ход дня */
+.flow{display:grid;gap:1px;background:var(--rule);margin-top:28px;border-block:1px solid var(--rule)}
+.step{background:var(--night);display:grid;grid-template-columns:130px 1fr;gap:26px;padding:20px 0}
+.step .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--lilac);padding-top:.35em}
+.step h3{font-size:1.25rem;margin:0 0 .35em}
+.step p{margin:0;color:var(--sand-2);font-size:.95rem}
+
+.cta{background:radial-gradient(80% 100% at 20% 0%, rgba(139,95,214,.28) 0%, transparent 60%), var(--night-2);border-bottom:none}
+.cta .line{color:var(--sand-2);max-width:60ch}
+.contacts{display:flex;flex-wrap:wrap;gap:12px 36px;align-items:baseline;
+  padding-top:24px;margin-top:26px;border-top:1px solid var(--rule)}
+.contacts .name{font-family:var(--display);font-size:1.4rem}
+footer{padding-block:30px 50px;color:var(--dim);font-size:.86rem}
+
+@media (max-width:820px){
+  .spread{grid-template-columns:1fr;gap:28px}
+  .aside{border-left:none;border-top:1px solid var(--rule);padding-left:0;padding-top:22px}
+  .step{grid-template-columns:1fr;gap:8px;padding:18px 0}
+}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Каир · 4 часа · 20–100 гостей</div>
+    <h1>Четыре руки, одно письмо</h1>
+    <div class="was">было: «Город тайных посланий»</div>
+    <p class="tagline">Семьсот лет назад письмо не дошло. Один из четверых соврал.</p>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap spread">
+    <div class="text">
+      <p>Письмо шло к вашей команде семьсот лет и не дошло. Его несли четверо: каллиграф, чайханщик, медник и переписчик. Один подменил текст.</p>
+      <p>У ворот Баб-эль-Футух вам дают карту, кодовое слово и обрывок узора. Дальше — улица Аль-Муизз, где искать надо не табличку, а деталь: тот самый завиток, что у вас в руке, на резном камне в трёх метрах над головой. Улица гудит, пахнет кардамоном и горячим металлом. С этой минуты вы фасады читаете, а не фотографируете.</p>
+      <p>У каллиграфа вы берёте тростниковое перо. Тушь идёт тяжело, линия слушается не сразу — и всё-таки вы выводите одно слово арабской вязью. Своё. Позже оно встанет строкой в письмо.</p>
+      <p>В чайной к вашему столу подсаживается человек в костюме чужого века и рассказывает историю иначе, чем вы слышали час назад. Какую версию вы услышите, подлинную или подложную, решает ваше кодовое слово. Последний свидетель отвечает только на точно заданный вопрос.</p>
+
+      <ul class="doing">
+        <li>Находите на живом фасаде деталь по обрывку узора — раньше, чем гид успеет подсказать</li>
+        <li>Пишете тушью своё слово арабской вязью под рукой каллиграфа</li>
+        <li>Сравниваете две версии одной истории и формулируете вопрос, на который свидетель ответит</li>
+        <li>Складываете письмо из слов всех команд и называете того, кто его подменил</li>
+      </ul>
+
+      <div class="finale">
+        <span class="lbl">Финал</span>
+        <p>Во дворе у Хан-эль-Халили стоит рама с письмом, в котором стёрты шесть слов. Эти шесть слов сегодня написали вы. Порядок даёт число, добытое на фасаде, — значит, собирать строку командам придётся вместе. Последняя строка письма адресована вашей компании: вот ответ, почему оно ждало именно вас.</p>
+      </div>
+    </div>
+
+    <aside class="aside">
+      <div class="blk"><span class="lbl">Где и сколько</span>
+        <p>Исторический Каир, улица Аль-Муизз<br>4 часа на месте<br>20–100 гостей · три потока · команды по пять</p></div>
+
+      <div class="blk"><span class="lbl">Для кого</span>
+        <p>Тем, кто уже видел пирамиды и хочет Каир на своих ногах: через людей, ремесло и разговор, а не через стекло автобуса.</p></div>
+
+      <div class="blk"><span class="lbl">Нагрузка</span>
+        <div class="scale">Активность <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+        <div class="scale">Напряжение <span class="dots warm"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+      </div>
+
+      <div class="blk"><span class="lbl">Что входит</span>
+        <ul>
+          <li>Трансфер от отеля до ближайшей парковки и обратно</li>
+          <li>Три гида, ведущий, актёры и координаторы</li>
+          <li>Приглашённые каллиграф и медник, выделенные заходы у мастеров</li>
+          <li>Приёмники с наушниками на всю группу</li>
+          <li>Чайная остановка с напитком и лёгким угощением</li>
+          <li>Забронированный внутренний двор для финала</li>
+        </ul></div>
+
+      <div class="blk"><span class="lbl">Что останется</span>
+        <p>Карточка со своим словом, написанным тушью под рукой мастера, копия собранного письма с переводом и фрагмент солнечной печати.</p></div>
+
+      <div class="blk"><span class="lbl">Когда начинаем</span>
+        <p>С апреля по октябрь — в 8:00 или в 16:00. С ноября по март — в 10:00 или в 12:00. Вечерний заход даём как основной: к закату улица подсвечена, а во дворе финала прохладно.</p></div>
+
+      <div class="blk"><span class="lbl">Готовим за</span>
+        <p>5 недель</p></div>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Как идут четыре часа</div>
+    <h2>Улица работает на вас, а не вы на расписание</h2>
+
+    <div class="flow">
+      <article class="step">
+        <div class="t">00:00–00:20</div>
+        <div>
+          <h3>Письмо без адресата</h3>
+          <p>Сбор у Баб-эль-Футух. Хранитель архива читает письмо и называет четверых, через чьи руки оно прошло. Команды получают папки, роли и пропуск с кодовым словом. Слова у команд разные — почему, станет ясно к вечеру.</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="t">00:20–01:35</div>
+        <div>
+          <h3>Три мастера, три круга</h3>
+          <p>Группа делится на три потока и идёт по трём точкам: резной фасад, двор каллиграфа, мастерская медника. У каждого мастера — десять гостей, а не тридцать, и восемнадцать минут работы руками.</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="t">01:35–02:20</div>
+        <div>
+          <h3>Кто подсел к столу</h3>
+          <p>Чайная, забронированная целиком. К каждому столику подсаживается Дауд и рассказывает ту ночь. Двум командам он расскажет одно, двум другим — другое. Пока это заметит кто-то один, проходит минут десять.</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="t">02:30–03:02</div>
+        <div>
+          <h3>Правильный вопрос</h3>
+          <p>Последний свидетель отвечает три раза — и только на вопрос, на который есть ответ «да» или «нет». У команды три жетона. Вопрос придётся написать раньше, чем открыть рот.</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="t">03:10–03:55</div>
+        <div>
+          <h3>Адресат найден</h3>
+          <p>Двор у Хан-эль-Халили. Письмо собирается на панели из слов всех команд, группа называет имя, хранитель вскрывает конверт. Последняя строка звучит вслух — и она про вас.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Наши правила</div>
+    <h2>Что мы обещаем заранее</h2>
+    <div class="spread" style="margin-top:20px">
+      <div class="text">
+        <p>Всё, что гость держит в руках, — наш реквизит: на нём можно писать, его можно складывать и штемпелевать. Памятники и фасады мы смотрим с тротуара, тушью пишем за столом мастера.</p>
+        <p>Улица Аль-Муизз — живая и людная. Поэтому вся группа идёт в приёмниках с наушниками, вода стоит на каждой точке, а актёры работают только во дворах и в кафе: на улице персонажи в костюмах не появляются.</p>
+        <p>Говорить вслух перед всеми — по желанию. Команда может ответить карточкой и жетоном, и это засчитывается так же.</p>
+      </div>
+      <aside class="aside">
+        <div class="blk"><span class="lbl">Сколько гостей</span>
+          <p>30 — базовый формат: шесть команд, три потока. 50 — два каллиграфа и два медника, старт потоков с разницей в полчаса. 100 — два захода в один день. Больше ста эту программу мы не берём и говорим об этом сразу.</p></div>
+        <div class="blk"><span class="lbl">Языки</span>
+          <p>Русский и английский. Арабский — у мастеров, перевод ведёт гид.</p></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="eyebrow">Следующий шаг</div>
+    <h2>Напишите дату, число гостей и отель</h2>
+    <p class="line" style="margin-top:14px">Остальное спросим сами. Если хотите сначала попробовать — проведём для вашей команды принятия решения сорокапятиминутный прогон одной станции, без обязательств.</p>
+    <div class="contacts">
+      <span class="name">Ксения Усачёва</span>
+      <span>La&nbsp;Royal&nbsp;Event</span>
+      <span>baxgat@yandex.ru</span>
+      <span>WhatsApp +20 110 100 5061 · +20 122 835 3909</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="max-width:70ch">Истории, персонажи и находки вымышлены. Улица Аль-Муизз, её мечети, мастерские и мастера — настоящие, их историю рассказывают профессиональные гиды. Сценарий, задания и комплектация — авторская разработка La Royal Event.</p>
+  </div>
+</footer>
