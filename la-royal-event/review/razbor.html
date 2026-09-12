@@ -1,0 +1,1004 @@
+<title>Разбор каталога «Египет. Внутри истории»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#faf6f2;
+  --paper-2:#f3ecf1;
+  --card:#ffffff;
+  --ink:#241a2e;
+  --ink-2:#4b4056;
+  --muted:#756c80;
+  --rule:#ddd2de;
+  --rule-soft:#eae1ea;
+  --violet:#6b3fa0;
+  --violet-ink:#54307f;
+  --violet-soft:#f0e7fa;
+  --lime:#63730c;
+  --lime-bright:#b6d235;
+  --lime-soft:#eef4d6;
+  --rose:#b8275a;
+  --rose-soft:#fce7ee;
+  --shadow:0 1px 2px rgba(36,26,46,.06), 0 8px 24px -16px rgba(36,26,46,.28);
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#16101c;
+    --paper-2:#1e1726;
+    --card:#211a2a;
+    --ink:#ece5f1;
+    --ink-2:#c4b9cf;
+    --muted:#9a8fa6;
+    --rule:#372c44;
+    --rule-soft:#2b2237;
+    --violet:#b892ea;
+    --violet-ink:#c8abf0;
+    --violet-soft:#2c2140;
+    --lime:#c3dc56;
+    --lime-bright:#b6d235;
+    --lime-soft:#252d10;
+    --rose:#ff86ab;
+    --rose-soft:#3a1826;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#16101c;
+  --paper-2:#1e1726;
+  --card:#211a2a;
+  --ink:#ece5f1;
+  --ink-2:#c4b9cf;
+  --muted:#9a8fa6;
+  --rule:#372c44;
+  --rule-soft:#2b2237;
+  --violet:#b892ea;
+  --violet-ink:#c8abf0;
+  --violet-soft:#2c2140;
+  --lime:#c3dc56;
+  --lime-bright:#b6d235;
+  --lime-soft:#252d10;
+  --rose:#ff86ab;
+  --rose-soft:#3a1826;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  padding-block:0;
+  padding-inline:0;
+  margin:0;
+}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:22px}
+.col{max-width:690px}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.1rem,5.4vw,3.6rem);line-height:1.06;letter-spacing:-.015em}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.15;letter-spacing:-.01em}
+h3{font-size:1.2rem;line-height:1.25}
+h4{font-size:1.02rem;line-height:1.3;font-weight:700}
+p{margin:0 0 1em}
+a{color:var(--violet-ink)}
+
+.eyebrow{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  border-bottom:1px solid var(--rule);
+  background:
+    radial-gradient(120% 90% at 88% 0%, var(--violet-soft) 0%, transparent 58%),
+    var(--paper);
+}
+.hero-in{padding-block:clamp(38px,7vw,76px) clamp(26px,4vw,44px)}
+.hero h1{margin:.5rem 0 0}
+.hero .sub{
+  font-family:var(--serif);font-size:clamp(1.05rem,2.2vw,1.3rem);font-style:italic;
+  color:var(--ink-2);max-width:44ch;margin-top:.7rem;line-height:1.4;text-wrap:pretty;
+}
+.verdict{
+  margin-top:26px;max-width:62ch;border-left:3px solid var(--violet);
+  padding:2px 0 2px 18px;font-size:1.06rem;
+}
+.verdict strong{color:var(--violet-ink)}
+.meta-line{
+  margin-top:26px;font-family:var(--mono);font-size:.72rem;color:var(--muted);
+  letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:6px 18px;
+}
+
+/* ---------- numbers ---------- */
+.nums{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));
+  gap:1px;background:var(--rule);border-block:1px solid var(--rule);margin-top:34px;
+}
+.num{background:var(--paper);padding:16px 16px 18px}
+.num b{
+  display:block;font-family:var(--serif);font-size:1.85rem;line-height:1.05;
+  font-weight:700;color:var(--violet-ink);font-variant-numeric:tabular-nums;
+}
+.num span{display:block;font-size:.82rem;color:var(--muted);margin-top:5px;line-height:1.35}
+
+/* ---------- nav ---------- */
+nav.toc{
+  position:sticky;top:0;z-index:30;background:color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
+}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:9px;scrollbar-width:thin}
+nav.toc a{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;white-space:nowrap;padding:6px 10px;border-radius:4px;
+}
+nav.toc a:hover{color:var(--violet-ink);background:var(--violet-soft)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(40px,6vw,68px);border-bottom:1px solid var(--rule-soft)}
+.sec-head{display:flex;gap:14px;align-items:baseline;margin-bottom:22px;flex-wrap:wrap}
+.sec-head .n{
+  font-family:var(--mono);font-size:.74rem;color:var(--violet);font-weight:700;
+  letter-spacing:.1em;padding-top:.35em;
+}
+.lede{font-size:1.05rem;color:var(--ink-2);max-width:64ch;margin-bottom:28px}
+
+/* ---------- findings ---------- */
+.finding{
+  display:grid;grid-template-columns:96px 1fr;gap:22px;
+  padding:22px 0;border-top:1px solid var(--rule-soft);
+}
+.finding:first-of-type{border-top:none}
+.rail{font-family:var(--mono);font-size:.68rem;line-height:1.5;color:var(--muted);letter-spacing:.02em}
+.rail .sev{display:block;font-weight:700;margin-bottom:5px}
+.sev-crit{color:var(--rose)}
+.sev-imp{color:var(--violet)}
+.finding h4{margin-bottom:.45em}
+.finding p{margin-bottom:.6em}
+.finding p:last-child{margin-bottom:0}
+
+blockquote.cat{
+  margin:.7em 0;padding:10px 0 10px 15px;border-left:2px solid var(--rose);
+  font-family:var(--serif);font-size:.97rem;color:var(--ink-2);font-style:italic;
+}
+blockquote.cat cite{
+  display:block;font-family:var(--mono);font-size:.66rem;font-style:normal;
+  color:var(--muted);letter-spacing:.05em;margin-top:6px;
+}
+.fix{
+  background:var(--lime-soft);border-radius:6px;padding:11px 14px;font-size:.95rem;
+  margin-top:.7em;color:var(--ink);
+}
+.fix b{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:3px}
+
+/* ---------- score table ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.9rem}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--rule-soft)}
+thead th{
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;background:var(--paper-2);position:sticky;top:0;
+}
+tbody tr:last-child td{border-bottom:none}
+td.name{font-weight:600;white-space:nowrap}
+td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:.82rem;text-align:center;width:62px}
+td.avg{font-weight:700;color:var(--violet-ink)}
+.bar{display:block;width:40px;height:5px;border-radius:3px;background:var(--rule);margin:5px auto 0;position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--violet);border-radius:3px}
+.bar.good i{background:var(--lime-bright)}
+.bar.bad i{background:var(--rose)}
+
+/* ---------- program cards ---------- */
+.progs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.prog{
+  background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:20px 20px 22px;box-shadow:var(--shadow);
+}
+.prog header{border-bottom:1px solid var(--rule-soft);padding-bottom:12px;margin-bottom:14px}
+.prog .tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.prog h3{margin:5px 0 0}
+.prog .score{
+  float:right;font-family:var(--serif);font-size:1.5rem;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.prog .block{margin-bottom:13px}
+.prog .block:last-child{margin-bottom:0}
+.prog .lbl{
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;
+  display:block;margin-bottom:4px;font-weight:500;
+}
+.lbl-good{color:var(--lime)}
+.lbl-bad{color:var(--rose)}
+.lbl-fix{color:var(--violet)}
+.prog ul{margin:0;padding-left:1.05em;font-size:.92rem}
+.prog li{margin-bottom:5px}
+.prog li:last-child{margin-bottom:0}
+.prog li::marker{color:var(--muted)}
+
+/* ---------- before/after ---------- */
+.ba{display:grid;gap:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--card)}
+.ba-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule-soft)}
+.ba-row:last-child{border-bottom:none}
+.ba-row > div{padding:13px 16px}
+.ba-row .was{
+  border-right:1px solid var(--rule-soft);color:var(--muted);font-size:.92rem;
+  background:color-mix(in srgb, var(--rose-soft) 40%, transparent);
+}
+.ba-row .now{font-size:.94rem}
+.ba-row .pg{font-family:var(--mono);font-size:.63rem;color:var(--muted);display:block;margin-bottom:5px;letter-spacing:.05em}
+
+/* ---------- rules list ---------- */
+.rules{counter-reset:r;display:grid;gap:0;border-top:1px solid var(--rule-soft)}
+.rules li{
+  counter-increment:r;list-style:none;display:grid;grid-template-columns:40px 1fr;gap:14px;
+  padding:13px 0;border-bottom:1px solid var(--rule-soft);
+}
+.rules li::before{
+  content:counter(r,decimal-leading-zero);font-family:var(--mono);font-size:.78rem;
+  color:var(--violet);font-weight:700;padding-top:.15em;
+}
+.rules b{display:block;grid-column:2}
+.rules span{color:var(--ink-2);font-size:.95rem;grid-column:2}
+.rules ul{margin:0;padding:0}
+
+/* ---------- checklist ---------- */
+.check{display:grid;gap:9px;padding:0;margin:0;list-style:none}
+.check li{
+  display:grid;grid-template-columns:18px 1fr;gap:11px;font-size:.95rem;
+  padding:9px 13px;background:var(--paper-2);border-radius:6px;
+}
+.check li::before{content:"☐";font-family:var(--mono);color:var(--violet);font-size:.95rem;line-height:1.5}
+
+/* ---------- plan ---------- */
+.plan{display:grid;gap:14px}
+.step{
+  display:grid;grid-template-columns:150px 1fr;gap:20px;background:var(--card);
+  border:1px solid var(--rule);border-radius:9px;padding:17px 19px;
+}
+.step .when{font-family:var(--mono);font-size:.72rem;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.step .when em{display:block;font-style:normal;color:var(--muted);font-weight:400;margin-top:4px;text-transform:none;letter-spacing:0}
+.step ul{margin:0;padding-left:1.05em;font-size:.95rem}
+.step li{margin-bottom:5px}
+.step li:last-child{margin-bottom:0}
+
+/* ---------- teaser ---------- */
+.teaser{
+  background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:22px 24px 24px;
+  box-shadow:var(--shadow);
+}
+.teasers{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.teaser .old{font-family:var(--mono);font-size:.64rem;color:var(--muted);letter-spacing:.04em}
+.teaser h3{margin:6px 0 6px}
+.teaser .tagline{font-family:var(--serif);font-style:italic;color:var(--violet-ink);font-size:1.04rem;margin-bottom:11px}
+.teaser p{font-size:.95rem}
+.teaser .foot{border-top:1px solid var(--rule-soft);margin-top:13px;padding-top:11px;font-size:.86rem;color:var(--muted)}
+.teaser .foot b{color:var(--ink-2);font-weight:600}
+
+.callout{
+  background:var(--violet-soft);border-radius:9px;padding:18px 21px;margin:26px 0;
+  border:1px solid color-mix(in srgb, var(--violet) 22%, transparent);
+}
+.callout h4{margin-bottom:.4em;color:var(--violet-ink)}
+.callout p:last-child{margin-bottom:0}
+
+footer{padding-block:36px 54px;color:var(--muted);font-size:.87rem}
+footer .wrap{max-width:1120px}
+
+@media (max-width:760px){
+  .finding{grid-template-columns:1fr;gap:8px}
+  .rail{display:flex;gap:12px;align-items:baseline}
+  .rail .sev{margin-bottom:0}
+  .ba-row{grid-template-columns:1fr}
+  .ba-row .was{border-right:none;border-bottom:1px solid var(--rule-soft)}
+  .step{grid-template-columns:1fr;gap:10px}
+}
+</style>
+
+<header class="hero">
+  <div class="wrap hero-in">
+    <div class="eyebrow">Экспертный разбор · La Royal Event · сентябрь 2026</div>
+    <h1>Внутри истории,<br>снаружи договор</h1>
+    <p class="sub">Что не так с каталогом из десяти египетских квестов — и что сделать, чтобы люди захотели в них участвовать.</p>
+
+    <p class="verdict">Сценарии придуманы <strong>честно и профессионально</strong>: настоящие экспонаты, продуманные маршруты, соблюдённые ограничения музеев. Но продаются они <strong>языком договора</strong>, а играются как <strong>викторина с тремя вариантами ответа</strong>, где два варианта заведомо смешные. Всё это чинится редактурой и десятком сценарных решений — без смены площадок, без нового бюджета и почти без нового реквизита.</p>
+
+    <div class="meta-line">
+      <span>52 страницы · 10 программ · прочитано целиком, включая сценарные карты 41–52</span>
+    </div>
+
+    <div class="nums">
+      <div class="num"><b>4,5</b><span>средняя оценка привлекательности из 10 по десяти программам</span></div>
+      <div class="num"><b>7 из 10</b><span>сюжетов начинаются с того, что кто-то исчез</span></div>
+      <div class="num"><b>0 из 10</b><span>антагонистов с именем и мотивом в базовой версии</span></div>
+      <div class="num"><b>24</b><span>фразы вида «ползание не требуется» на 20 страницах</span></div>
+      <div class="num"><b>6 раз</b><span>один и тот же юридический абзац про комплектацию</span></div>
+      <div class="num"><b>3 из 10</b><span>программ имеют сценарную карту с ответами</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#glavnoe">Главное</a>
+    <a href="#ocenki">Оценки</a>
+    <a href="#problemy">Семь проблем</a>
+    <a href="#programmy">По программам</a>
+    <a href="#zagadki">Загадки</a>
+    <a href="#yazyk">Язык</a>
+    <a href="#fakty">Факты</a>
+    <a href="#gost">Опыт гостя</a>
+    <a href="#logistika">Логистика</a>
+    <a href="#teksty">Новые тексты</a>
+    <a href="#plan">План работ</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="glavnoe">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">01</span><h2>Главное за минуту</h2></div>
+    <div class="col">
+      <p class="lede">Восемь выводов, из которых складывается весь разбор. Каждый подтверждён цитатами ниже.</p>
+    </div>
+
+    <ul class="rules" style="max-width:820px">
+      <li><b>Материал сильный, упаковка слабая.</b><span>Настоящие экспонаты с инвентарными номерами, честные ограничения, посчитанный штат, продуманная инклюзивность. Такой добросовестности в event-каталогах почти не бывает — и её не видно за языком согласований.</span></li>
+      <li><b>Каталог оправдывается вместо того, чтобы обещать.</b><span>«Не подтверждено», «уточняется на дату», «проектная модель, а не…», «ползание не требуется». Заказчик читает: у них ничего не готово, они боятся, и где-то там надо ползать.</span></li>
+      <li><b>Десять программ рассказывают одну историю.</b><span>Пропал археолог, бумаги подменили, в финале письмо «мы в безопасности, спасибо за внимательность». Кто подменил — не отвечает ни одна из десяти программ.</span></li>
+      <li><b>Проиграть невозможно, а значит, и выиграть нечего.</b><span>Слова выдаются даже при ошибке, код складывается у всех одинаковый, правильный конверт открывает каждая команда. Инклюзивность сделана через отмену драматургии.</span></li>
+      <li><b>Загадок почти нет — есть выбор из трёх вариантов.</b><span>«Портрет современного археолога», «современные театральные костюмы», «макет строительного проекта». Взрослый отвечает за две секунды и перестаёт стараться.</span></li>
+      <li><b>Финальные коды раздаются, а не выводятся.</b><span>В Гизе цифры «придуманы для игры», в музее Шарма фраза складывается к третьей станции, в GEM карточки-понятия вручает гид. Кульминации нет ни в одной музейной программе.</span></li>
+      <li><b>Гость уходит без личного следа.</b><span>Жетон и открытка, одинаковые на тридцать человек. Личная цель и личный трофей есть только в трёх программах из десяти, фото-момент спроектирован дважды.</span></li>
+      <li><b>Разгадки лежат в том же файле, что и продажа.</b><span>HR-менеджер, который выбирает программу, чаще всего сам поедет играть — и по дороге прочитает код ларца на странице 44.</span></li>
+    </ul>
+
+    <div class="callout" style="max-width:820px">
+      <h4>Что радует и что нельзя ломать при переделке</h4>
+      <p>Тема коллекции сформулирована точно и по-взрослому: <em>красивая версия не равна правильной, проверяй</em>. Она уже живёт в тексте — «баллы даются за аргумент, а не за скорость», «не верьте убедительной версии, пока не нашли подтверждение», «исчезла связь между вещами и людьми — сегодня вы её восстановили». Это готовый манифест всего продукта, его место на обложке, а не в сносках.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ocenki">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">02</span><h2>Оценки по программам</h2></div>
+    <div class="col"><p class="lede">Шкала 1–10. Оценки ставились по единым критериям: насколько интересно гостю, держится ли сюжет, есть ли настоящие загадки, как написан текст, захочет ли заказчик купить и реально ли это провести.</p></div>
+    <div class="tablewrap" id="score-table"></div>
+    <p style="margin-top:14px;font-size:.88rem;color:var(--muted);max-width:64ch">Ни одна программа не провалена и ни одна не готова. Лучшие — «Сокровища Ра» и «Последний кадр»: там есть структура и формат, но нет сюжета. Слабее всех — музейные квесты: там есть сюжет и предметы, но нет игры.</p>
+  </div>
+</section>
+
+<section id="problemy">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">03</span><h2>Семь системных проблем</h2></div>
+    <div class="col"><p class="lede">Эти семь вещей повторяются во всех десяти программах. Починив их один раз в шаблоне, вы почините весь каталог.</p></div>
+    <div id="findings"></div>
+
+    <div class="callout" style="max-width:820px;margin-top:34px">
+      <h4>Одно решение, которое чинит сразу три проблемы</h4>
+      <p>Сквозная вселенная. Половина её уже написана и просто не признана: доктор Камаль ходит через три программы, «солнечная печать» и «хранитель» — через ещё три, а три конверта на странице 17 уже дают готовый цветовой код — синий лотос, красный сокол, золотой скарабей.</p>
+      <p>Достаточно свести это в один канон. Камаль — упрямый археолог, для которого подпись важнее золота. Его бывший ученик под знаком красного сокола торгует не экспонатами, а красивыми версиями: он переписывает страницы и продаёт коллекционерам «правильные легенды». Его аргумент опасен тем, что отчасти верен — красивая история собирает деньги на раскопки, а сухая правда не собирает. Проводник Салем — местный голос, который знает пустыню и море.</p>
+      <p>Тогда десять программ становятся десятью главами одной истории, у каждой свой вход и свой поворот. Артефакт — расколотый диск солнечной печати — переходит из главы в главу: однодневный гость уносит фрагмент, а группа, которая едет на три дня, складывает диск в последний день и получает финальную сцену, недоступную остальным. Это ровно то, что страница 38 уже обещает словами «несколько дней — одна история», но пока не даёт.</p>
+    </div>
+  </div>
+</section>
+
+<section id="programmy">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">04</span><h2>Разбор по программам</h2></div>
+    <div class="col"><p class="lede">По каждой программе: что работает и трогать не надо, что ломает впечатление, и три решения, которые дают наибольший эффект при наименьших затратах.</p></div>
+    <div class="progs" id="progs"></div>
+  </div>
+</section>
+
+<section id="zagadki">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">05</span><h2>Загадки: как из викторины сделать расследование</h2></div>
+    <div class="col">
+      <p class="lede">Мы пересчитали все 56 игровых заданий каталога. В трёх программах, ради которых и едут в Египет, картина такая: из 21 задания 15 устроены одинаково — посмотрели на предмет, выбрали одну подпись из трёх, услышали правильный ответ.</p>
+      <p>Заданий, где ответ не существует до наблюдения, в Гизе, GEM и музее Шарма нет ни одного. Наблюдение всегда обслуживает выбор из списка, а проверка сводится к чтению этикетки — то есть к поиску ключа ответов, а не доказательства. Из сорока неверных вариантов четырнадцать вычёркиваются, не взглянув на экспонат, а в шести случаях ответ напечатан прямо в названии станции.</p>
+      <p>Ни один из трёх финальных кодов не является загадкой. В Гизе цифры выдаёт помощник, а команды выкладывают их в порядке маршрута. В музее Шарма фраза читается уже после третьего слова, причём одна команда за двадцатиминутную станцию получает предлог «С». В GEM шесть выданных понятий дословно содержатся в правильном заголовке.</p>
+      <p>И главное: шесть команд играют шесть одинаковых партий в одном зале. Все получают одинаковые улики и одинаковый код, а потом «сверяют результаты» — то есть сравнивают одинаковое. Повода заговорить с соседним столом нет ни одного, хотя ради этого корпоративный заказчик командную игру и покупает.</p>
+    </div>
+
+    <h3 style="margin:32px 0 14px">Двенадцать принципов, по которым переписываются станции</h3>
+    <ul class="rules" style="max-width:820px" id="puzzrules"></ul>
+
+    <div class="callout" style="max-width:820px;margin-top:32px">
+      <h4>Как выглядит станция, переписанная по этим правилам</h4>
+      <p><strong>«Две работы» — северная грань Хуфу, 12 минут.</strong> Читатель вслух читает страницу дневника: «Проём в северной грани один, и прорубили его строители».</p>
+      <p>Наблюдатель через карточку-видоискатель считает, сколько отверстий видно на грани, и называет число, не объясняя. Команда описывает края каждого: один обрамлён ровной каменной кладкой, другой — рваный пролом. Дальше вывод: строитель тратит недели на ровный край, а тот, кто ищет чужое, не тратит. Значит, проёмов два, и работа строителя — не та, что грубее. Команда ставит жетоны на свою версию, и только потом проверяющий вскрывает справку.</p>
+      <p>В бланк идёт свидетельство «ВХОДОВ — 2». Гость уносит навык отличать древнюю работу от позднейшего вмешательства — тот самый навык, которым он весь день отличает подлинную страницу от поддельной. Решить эту задачу в автобусе невозможно, и ответа до наблюдения не существует.</p>
+    </div>
+
+    <div class="callout" style="max-width:820px">
+      <h4>Новый финал Гизы: «Замок помнит только то, что можно пересчитать»</h4>
+      <p>Кода никто не выдаёт. Команды приносят шесть свидетельств, из которых четыре содержат число, а два — нет. На ларце замок на четыре диска. Правило чтения кода разрезано на шесть полосок, по одной на команду, и собирается только сообща: «Замок помнит только то, что можно пересчитать. От меньшего к большему».</p>
+      <p>Теперь надо решить, какие свидетельства счётные. Счётные — входов два, спутниц три, звеньев четыре, существ два. Несчётные — «впечатление не измерение» и «проверить нельзя»: ровно те две станции, где команда училась не доверять. По возрастанию получается 2‑2‑3‑4. Два одинаковых числа обязательно вызовут спор «не ошиблись ли мы», и это запланированный момент.</p>
+      <p>Четыре представителя, выбранных жребием, крутят по одному диску. Если хоть одна команда принесла неверное число, замок не откроется: две минуты вся группа ищет, чьё число чужое. Это лучший командный момент дня, и он дешевле любых спецэффектов. Через две минуты ведущий открывает в любом случае — ошибиться можно, остаться без развязки нельзя.</p>
+      <p>Побочный выигрыш: раз код не зависит от порядка станций, три потока можно пустить по кругу с разных точек. Исчезает главный логистический затык маршрута — тридцать человек одновременно у одной обзорной точки под солнцем.</p>
+    </div>
+
+    <h3 style="margin:32px 0 14px">Шесть слоёв, которые связывают команды друг с другом</h3>
+    <p style="max-width:64ch;color:var(--ink-2);margin-bottom:18px">Механика работает и в Гизе, и в музее Шарма, и переносится на GEM и в пустыню без изменений. Под семейную группу берутся первые два слоя, под партнёрскую — первые три, под корпоративную — все шесть.</p>
+    <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))" id="birzha"></div>
+
+    <h3 style="margin:34px 0 14px">Если переделывать целиком некогда: пять правок на неделю работы</h3>
+    <p style="max-width:64ch;color:var(--ink-2);margin-bottom:16px">Ни одна из них не трогает маршрут, тайминг, состав команды и согласования с площадками. Но именно они превращают «выбери из трёх» в расследование.</p>
+    <ul class="check" style="max-width:820px" id="quickwins"></ul>
+  </div>
+</section>
+
+<section id="yazyk">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">06</span><h2>Русский язык: диагноз и правила</h2></div>
+    <div class="col">
+      <p class="lede">Хорошая новость: грубого канцелярита в каталоге почти нет. «Осуществляется» — ноль раз на 52 страницы, «в рамках» — ноль, «данный» — ноль. Автор сознательно их избегает, и это дисциплина, которой нет у большинства агентств.</p>
+      <p>Плохая новость в другом. Продающие страницы написаны лексикой отчёта: <strong>«проверять» — 63 раза, «точка» — 86, «карточка» — 87, «согласован-» — 36, «отдельно» — 32</strong>. Гость в этой картине не переживает историю, а сверяет карточку со справкой в согласованной точке.</p>
+      <p>И главная беда — двадцать четыре «успокаивающих» отрицания на двадцати страницах. Каждое заставляет представить то, чего нет: гостей, нюхающих канопы, ползущих по лазу, запертых в зале. Формально это честность, по действию — антиреклама.</p>
+    </div>
+
+    <h3 style="margin:30px 0 14px">Десять правил редактуры для всего каталога</h3>
+    <ul class="rules" style="max-width:820px" id="stylerules"></ul>
+
+    <h3 style="margin:34px 0 14px">Было → стало</h3>
+    <p style="max-width:64ch;color:var(--ink-2);margin-bottom:16px">Восемнадцать примеров из тридцати восьми. Слева — как сейчас, справа — как это звучит на нормальном русском.</p>
+    <div class="ba" id="ba"></div>
+  </div>
+</section>
+
+<section id="fakty">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">07</span><h2>Факты: что проверили и что поправить</h2></div>
+    <div class="col">
+      <p class="lede">Мы проверили 53 фактических утверждения каталога — об именах, экспонатах, инвентарных номерах, площадках и партнёрах. Сорок три подтвердились официальными источниками. Это очень хороший результат: фактическая основа у каталога крепкая, и её не надо переделывать.</p>
+      <p>Подтвердилось всё главное: Хуфу и Хеопс — одно имя, Хуфу действительно самая высокая из трёх пирамид, схема погребального комплекса верна, Сфинкс входит в комплекс Хафры, а между его лапами стоит стела Тутмоса IV. Четыре из пяти инвентарных номеров GEM сверены со страницами коллекции музея, кресло принадлежит матери Хуфу, трон деревянный с золотой отделкой, формула «золото — плоть богов» корректна. В Шарме подтвердились мумии животных, осирическая голова Хатшепсут, гробы и канопы Исетемхеб, танагрские статуэтки и открытый театр. Каирский пеший маршрут выстроен с севера на юг правильно.</p>
+      <p>Одиннадцать пунктов нужно поправить. Три из них критичны, потому что сценарные карты дают гиду единственный «правильный ответ» — а он неполон.</p>
+    </div>
+    <div id="facts"></div>
+  </div>
+</section>
+
+<section id="gost">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">08</span><h2>Глазами гостя</h2></div>
+    <div class="col">
+      <p class="lede">Мы прошли все десять программ глазами трёх человек: менеджера 35 лет, который пришёл потому что коллеги пошли; руководительницы 50 лет, которая любит историю и не любит соревнований; и сотрудника 26 лет, который хочет драйва и кадров.</p>
+      <p>Картина одинаковая почти везде. Любительница истории довольна там, где есть хороший гид и стул. Скептик выключается на первой же станции музейных программ — как только видит, что два из трёх вариантов ответа смешные. Молодой сотрудник получает «вау» только от места: пирамиды, море, закат, красная дорожка. От игры — ни разу.</p>
+    </div>
+
+    <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:26px" id="guest"></div>
+  </div>
+</section>
+
+<section id="logistika">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">09</span><h2>Логистика: где тайминг не выдержит</h2></div>
+    <div class="col"><p class="lede">Каталог логистически честнее большинства: почти везде написано, что площадки не забронированы. Проблема в другом — тайминги посчитаны на бумаге без резервов. Вот места, где они сломаются при первом же контакте с реальностью.</p></div>
+    <div id="logi"></div>
+
+    <h3 style="margin:34px 0 14px">Что проверить до того, как показывать каталог клиенту</h3>
+    <p style="max-width:64ch;color:var(--ink-2);margin-bottom:16px">Каждый пункт — один звонок или одно письмо. После них из каталога уходит половина оговорок, а вместо «не подтверждено» появляется факт.</p>
+    <ul class="check" style="max-width:820px" id="checklist"></ul>
+  </div>
+</section>
+
+<section id="teksty">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">10</span><h2>Новые тексты программ</h2></div>
+    <div class="col">
+      <p class="lede">Главный запрос был — «чтобы люди захотели участвовать». Вот как выглядят те же самые программы, написанные как приглашение, а не как опись.</p>
+      <p>Важная оговорка: эти тексты описывают программы <strong>после доработок</strong> из разделов выше. Они честны — ничего не обещают сверх того, что можно сделать на тех же площадках и с тем же бюджетом, — но замок на ларце, кейс с шестью замками, диск-ключ и антагонист пока существуют только в рекомендациях. Под каждым текстом указано, что именно нужно доделать, чтобы он стал правдой.</p>
+      <p>Четыре названия предложено сменить, шесть оставить. Каждая программа теперь начинается с интриги в первой строке, а не с перечня компонентов.</p>
+    </div>
+    <div class="teasers" id="teasers"></div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">11</span><h2>План работ по приоритетам</h2></div>
+    <div class="col"><p class="lede">Порядок выбран по соотношению «эффект к затратам». Первая неделя не требует ни бюджета, ни согласований — только редактора и решение.</p></div>
+    <div class="plan" id="plan"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="max-width:70ch">Разбор подготовлен по PDF-каталогу «Египет. Внутри истории» (52 страницы, редакция RU_1). Все цитаты приведены дословно с указанием страниц. Оценки и предложения — экспертное мнение; финальные решения по сценариям, площадкам и бюджету остаются за агентством.</p>
+  </div>
+</footer>
+
+<script>
+const P = {
+  crit:'критично', imp:'важно'
+};
+
+/* ================= scores ================= */
+const scores = [
+  ['Код пирамид','Гиза',5,4,3,5,5,6],
+  ['Дело о потерянной странице','GEM',4,3,2,5,4,7],
+  ['Последняя запись археолога','музей Шарма',4,3,3,5,4,6],
+  ['Музей оживает','продолжение',4,3,2,5,4,6],
+  ['Экспедиция Красное море','яхта',5,3,2,4,5,7],
+  ['Путь к звёздам','пустыня',5,3,3,4,5,7],
+  ['Город тайных посланий','Каир',5,3,3,5,5,5],
+  ['Последний кадр','ужин',6,4,3,5,6,7],
+  ['Сокровища Ра','декорации',6,4,5,5,5,6],
+  ['Фараон. Пропавшая экспедиция','декорации',6,4,4,5,5,6],
+];
+const cols = ['Интерес','Сюжет','Загадки','Язык','Продажи','Реализуемость'];
+(function(){
+  let h = '<table><thead><tr><th>Программа</th>';
+  cols.forEach(c=>h+=`<th style="text-align:center">${c}</th>`);
+  h += '<th style="text-align:center">Среднее</th></tr></thead><tbody>';
+  scores.forEach(r=>{
+    const v = r.slice(2);
+    const avg = (v.reduce((a,b)=>a+b,0)/v.length);
+    h += `<tr><td class="name">${r[0]}<div style="font-family:var(--mono);font-size:.62rem;color:var(--muted);font-weight:400;letter-spacing:.05em">${r[1]}</div></td>`;
+    v.forEach(x=>{
+      const cls = x>=6?'good':(x<=3?'bad':'');
+      h += `<td class="n">${x}<span class="bar ${cls}"><i style="width:${x*10}%"></i></span></td>`;
+    });
+    h += `<td class="n avg">${avg.toFixed(1)}</td></tr>`;
+  });
+  h += '</tbody></table>';
+  document.getElementById('score-table').innerHTML = h;
+})();
+
+/* ================= systemic findings ================= */
+const findings = [
+  {
+    sev:P.crit, pg:'стр. 2, 7, 22, 25, 27, 29, 34, 36',
+    title:'Каталог оправдывается на каждой продающей странице',
+    body:`<p>Один и тот же юридический абзац «Это предлагаемая комплектация без цен…» стоит слово в слово на пяти страницах плюс вариант на шестой. На четырёх из них упомянуты «суда», хотя речь о пустыне, Каире и ужине — видно, что текст вставлен механически. Ещё пять раз читателю сообщают, что перед ним «проектная модель, а не…», четырежды — что состав экспозиции «уточняется на дату».</p>
+    <p>Хуже всего, что оговорка стоит <em>последней строкой</em> страницы «Площадка и эффектный финал» — то есть ровно там, где покупатель принимает решение. А страница масштабирования моря <em>открывается</em> словами «не подтверждённый паспорт»: читатель ещё не увидел ни одной цифры, а ему уже сказали, что цифрам верить нельзя.</p>`,
+    quote:'Khufu’s: расположение на плато · Ubisoft: описание VR-игры. Бронирование площадки и разрешение на постановку не подтверждены.', qcite:'стр. 7, последняя строка',
+    fix:'Одна честная формула в начале: «Все места и экспонаты в каталоге настоящие — мы сверили их с официальными описаниями. Конкретный зал, дату и разрешение на игру согласовываем до договора: это наша работа, а не ваша забота». Полный список условий — одной страницей в конце. С программных страниц убрать всё.'
+  },
+  {
+    sev:P.crit, pg:'стр. 10–13, 15–19, 21, 27, 31–33, 36',
+    title:'Двадцать четыре отрицания, которые рисуют то, чего нет',
+    body:`<p>«Нюхать или открывать музейные сосуды не требуется». «Базовый маршрут проходится стоя; ползание не требуется». «Реальные выходы не запираются; сценические механизмы не управляют эвакуационными дверями». «Ничего не прячется на рифе и не сбрасывается в море». «Сто гостей в одну маленькую „гробницу“ не планируются».</p>
+    <p>Заказчик, который об этом не думал, начинает думать. Формально каждая фраза честна. Вместе они сообщают: будет тесно, страшно и скромно.</p>`,
+    quote:'Изображение скарабея находится на нашем конверте, а не спрятано в музейной витрине.', qcite:'стр. 16',
+    fix:'Правило «говорим, что есть, а не чего нет». «Всё действие — в полный рост, в зале обычной высоты». «Подсказки ждут на борту и в лодках, риф остаётся нетронутым». «Выход из зала свободен в любую минуту — „запертые“ двери есть только в декорациях». Обязательные запреты — одним списком в конце.'
+  },
+  {
+    sev:P.crit, pg:'стр. 4, 9, 14, 24, 26, 28, 35, 45',
+    title:'Один сюжет, размноженный по площадкам',
+    body:`<p>Четыре программы из десяти стартуют с одного события: пропал автор или археолог, оставил бумаги с подменой. Ещё три открываются тем, что «что-то исчезло». Слово «экспедиция» встречается 37 раз, «печать» — 32, «ларец» — 37.</p>
+    <p>Развязка тоже везде одна: закрытое письмо, в нём «все живы, спасибо за внимательность». Интонация совпадает вплоть до повтора «в безопасности» на двух разных страницах. Заказчик, читающий подряд, к третьей программе перестаёт различать сюжеты. Гость, побывавший на двух, во второй раз узнаёт схему с первой минуты.</p>`,
+    quote:'Экспедиция в безопасности: мы изменили маршрут и покинули лагерь до бури.',qcite:'стр. 17 — и почти дословно стр. 6, 44, 52',
+    fix:'Оставить «пропавшего» одной программе-флагману. Остальным дать другие типы завязки: соперничество двух экспедиций (Гиза), редакционный заговор (GEM), суд над подделкой (Шарм), гонка за координатами (море), письмо, идущее через четыре руки (Каир), спор о финале фильма (ужин). И запретить себе слово «благодарит» в развязках.'
+  },
+  {
+    sev:P.crit, pg:'стр. 7, 35, 44, 52',
+    title:'Антагониста нет ни в одной программе',
+    body:`<p>Во всей коллекции противник — это безликое «кто-то». «Охотники за сокровищами» упомянуты одним словом и на сцену не выходят. Единственный живой антагонист — актёр с ложным письмом в Гизе — вынесен в платную опцию. То есть базовая версия продаётся без конфликта.</p>
+    <p>Без противника нет ни угрозы, ни мотива подмены, ни удовольствия от разоблачения. Гость четыре часа ищет подделку, а в конце никто не отвечает, кто подделывал и зачем.</p>`,
+    quote:'Кто-то рассчитывал, что вы примете подменённые страницы за правду.', qcite:'стр. 52',
+    fix:'Один сквозной антагонист на всю коллекцию — торговец «правильными историями», бывший ученик доктора Камаля, под знаком красного сокола (цвета конвертов уже есть на стр. 17). В базовой комплектации ему достаточно голоса в записи, письма с печатью или курьера — актёр нужен не везде.'
+  },
+  {
+    sev:P.crit, pg:'стр. 32, 44, 49, 52',
+    title:'Ставок нет: проиграть невозможно по конструкции',
+    body:`<p>«Слова выдаются после общего разбора даже при первоначальной ошибке». «Штрафа и исключения нет. Правильный конверт открывает каждая команда». «За ошибки теряются игровые очки, проход к выходу остаётся свободным» — очки, которые ни на что не влияют.</p>
+    <p>Все команды получают одинаковые слова, одинаковый код 427153, все открывают один и тот же конверт. Фраза ведущего «Код совпал у всех команд» — тавтология: он не мог не совпасть. Инклюзивность правильная, но она реализована как отмена драматургии.</p>`,
+    quote:'Цифры придуманы для игры и не имеют исторического значения.', qcite:'стр. 41',
+    fix:'Заменить «нельзя проиграть» на «нельзя выпасть, но можно прийти к другому исходу». Ошибочный конверт содержит не записку «не тот знак», а другую версию событий — письмо антагониста, которое надо опровергнуть. В финале — развилка с двумя подготовленными развязками.'
+  },
+  {
+    sev:P.crit, pg:'стр. 10, 11, 43, 46, 48, 50, 51',
+    title:'Ложные варианты — шутки, а не дилеммы',
+    body:`<p>«Портрет современного археолога» рядом со Сфинксом. «Здесь только современные театральные костюмы» — про мумии. «Макет строительного проекта» — про одиннадцатиметровый колосс Рамсеса. «Тара для зерна» — про косметический сосуд. «Шесть военных трофеев» — про переносное кресло царицы.</p>
+    <p>Взрослый гость видит, что правильный ответ — самый длинный и умный из трёх, и перестаёт думать уже на второй станции. Семь минут обсуждения превращаются в ожидание. Для партнёров и руководителей это читается как детский формат.</p>`,
+    quote:'А: «просто дикое животное», Б: «царская сила, выраженная через соединённый образ», В: «портрет современного археолога»', qcite:'стр. 43',
+    fix:'Каждый ложный вариант — версия, в которую мог бы поверить умный человек. Для маски: «церемониальная маска для праздника при жизни царя» / «посмертная маска, снятая с лица» / «идеальный образ для вечности». Один из трёх — красивая и неверная версия антагониста; её опровержение и есть игра.'
+  },
+  {
+    sev:P.imp, pg:'стр. 3, 41, 42, 45, 49',
+    title:'Роли в команде объявлены, но ничем не обеспечены',
+    body:`<p>Наблюдатель, картограф, читатель дневника, проверяющий, представитель. На станции в руках у команды один лист: «Помощник выдаёт рисунки А, Б, В. За 6 минут гости сравнивают контур и две заметные детали». Сравнивают двое, представитель говорит, остальные стоят.</p>
+    <p>У наблюдателя нет своего инструмента, у картографа — своей карты, а читатель дневника не читает дневник: в комплектации Гизы дневника нет вообще, хотя на стр. 4 он обещан гостям. К тому же на стр. 3 роль называется «хранитель карты», а на стр. 41 — «картограф».</p>`,
+    quote:'Роли в команде: наблюдатель, картограф, читатель дневника, проверяющий и представитель.', qcite:'стр. 41',
+    fix:'Каждой роли — свой предмет и монополия на информацию: наблюдателю визирная рамка или бинокль, картографу единственный план, читателю единственный дневник, проверяющему запечатанную справку, которая вскрывается только после того, как команда записала версию. Без обмена станция не решается.'
+  },
+];
+(function(){
+  document.getElementById('findings').innerHTML = findings.map(f=>`
+    <article class="finding">
+      <div class="rail"><span class="sev ${f.sev===P.crit?'sev-crit':'sev-imp'}">${f.sev}</span>${f.pg}</div>
+      <div>
+        <h4>${f.title}</h4>
+        ${f.body}
+        ${f.quote?`<blockquote class="cat">«${f.quote}»<cite>${f.qcite}</cite></blockquote>`:''}
+        <div class="fix"><b>Что делать</b>${f.fix}</div>
+      </div>
+    </article>`).join('');
+})();
+
+/* ================= programs ================= */
+const progs = [
+  {t:'Код пирамид', tag:'Гиза · 4 часа · стр. 4–8, 41–44', s:4.7,
+   good:['Станция «Чужая страница»: гость смотрит на настоящую кладку Хуфу и ловит подделку глазами. Ради этого и едут в Гизу.','«Обман перспективы» — единственная в каталоге станция с настоящим ходом мысли: сначала поверил глазам, потом доказал обратное.','Правило «баллы за аргумент, а не за скорость» и «гостей не торопят на памятниках».','Финал в ресторане на плато с ларцом и видом на пирамиды — сильный продающий актив.'],
+   bad:['Пролог, стр. 6 и письмо в ларце дают три разные версии того, кто подменил дневник.','Код 427153 не заработан: карточку с цифрой получает каждая команда независимо от ответа.','Кульминация — выбор одного из трёх пакетов, где верный стоит первым. Награда за это — бумажка «отдайте ларец ведущему».','Финальный квиз повторяет станции 2, 3 и 5. Девять минут на проверку, слушали ли гида.','12 сотрудников на 30 гостей: у каждой пятёрки надзиратель.'],
+   fix:['Дать фальсификатору лицо: каждая ложная страница написана его рукой и несёт один незаметный признак. Финальная задача — не найти ошибку, а опознать автора.','Цифры выводить из наблюдения: подлинная и поддельная страницы расходятся в числе. На ларце — настоящий шестиразрядный замок, по диску на команду. Пакеты убрать.','Сократить помощников до трёх: ответ проверяет механика (замок, стыкующиеся фрагменты), а не кивок сотрудника.']},
+
+  {t:'Дело о потерянной странице', tag:'GEM · 4 часа · стр. 9–13, 45–48', s:4.2,
+   good:['Шесть предметов выбраны безупречно: от колосса Рамсеса до статуэтки отца с детьми — и вместе они действительно рассказывают одну мысль.','Карточка «СЕМЬЯ» — единственный настоящий поворот в каталоге: расследование меняет направление.','Финальная реплика «Исчезла связь между вещами и людьми. Сегодня вы её восстановили» — лучшая мысль всего документа.','Честно заложены очередь у Тутанхамона и перерыв.'],
+   bad:['«Потерянная» страница все четыре часа лежит в папке у каждой команды, и карман ничем не заперт.','Названия станций содержат ответ: «Золото скрывает дерево», «Семья, пережившая века».','Итоговый выбор заголовка решается за две секунды: карточки называются ВЛАСТЬ, СЕМЬЯ, ПАМЯТЬ, а заголовок — «Как сохраняли власть, отношения и память».','Все шесть станций устроены одинаково: выбрать из трёх, услышать, получить карточку от гида.','Слово «воображаемой» в первой фразе завязки убивает историю до того, как она началась.'],
+   fix:['Убрать страницу из папки: она в кейсе редакции с шестью замками, по одному на команду. Сейф открывается, только когда собрались все.','Дать противника лицо: спонсор продвигает каталог «Египет — страна одного золота». На каждой станции команда получает его разворот с правдоподобно ложной подписью.','Шесть станций — шесть разных действий: оценка масштаба, расстановка фигур, гипотеза с проверкой, поиск расхождений, разбор конструкции по слоям, дописывание подписи.']},
+
+  {t:'Последняя запись археолога', tag:'Музей Шарма · 2,5 часа · стр. 14–18, 49–52', s:4.2,
+   good:['Реальные экспонаты, честный тайминг, гид на десять человек, ни одна команда не остаётся без развязки.','Тема «не верь убедительной подписи — проверь» точна для корпоративной аудитории.','Финальная реплика про то, как убедительной бывает неверная подпись, — лучший текст блока.','Станция «Портрет без подписи» с двумя рисунками работает: людям нравится искать отличия, глядя на настоящий предмет.'],
+   bad:['Единственная ставка — «что случилось с экспедицией» — разрешается сообщением, что ничего не случилось.','Фраза «ОТКРОЙТЕ КОНВЕРТ С РИСУНКОМ ЗОЛОТОГО СКАРАБЕЯ» становится очевидной к третьей станции, а одна команда получает слово «С».','Способ решения на всех шести станциях один: прочитать этикетку в переводе гида.','Маршрут на продающей странице сам называет экспонат и тем самым ответ.','Два разных текста одного письма Камаля на стр. 17 и 52.'],
+   fix:['Заменить фразу-инструкцию на описание печати: каждая станция даёт признак (животное, число, направление, цвет, эпоха). Настоящий конверт узнаётся, только когда сходятся все шесть.','Ошибки в дневнике — ловушка самого Камаля, а не чья-то глупость: он подозревал перехват и написал ложные страницы как фильтр. У соперника появляется имя и следы в папке.','Правило «сначала версия, потом этикетка»: команда ставит фишку до того, как проверяющий получает перевод.']},
+
+  {t:'Музей оживает', tag:'Продолжение вечера · +1,5 часа · стр. 30', s:4.0,
+   good:['Формат правильный: своя зона, три актёра, мастер, фотограф — и всё это сразу после расследования.','Название обещает лучшую программу каталога.','Реалистичный тайминг и понятная комплектация.'],
+   bad:['Взрослые менеджеры двадцать пять минут раскрашивают открытку по трафарету. При этом открытку уже выдали пятнадцатью минутами раньше, в финале квеста.','Пропавший археолог буднично стоит в зале с водой: ни как попал в Шарм, ни почему молчал.','Сцены смотрят двадцать четыре человека, играют пять.','Финал — лекция-резюме ведущего.','Порядок перевёрнут: сначала ремесло, потом история.'],
+   fix:['Дать продолжению собственный вопрос, который первая часть оставила открытым: кто подменил письма. Камаль входит не благодарить, а искать — и фальсификатор сегодня в музее.','Заменить открытки на мастерскую печатей: команда собирает картуш и ставит оттиск на восстановленную страницу. Эта печать нужна в финале.','Героями сделать владельцев вещей из витрин — жрицу Исетемхеб и мастера, делавшего косметические сосуды. Тогда название станет правдой.']},
+
+  {t:'Экспедиция Красное море', tag:'Шарм · 8 часов · стр. 19–23', s:4.3,
+   good:['Заголовок «Выберите свою глубину участия» — лучшая строчка программы.','Тот, кто не заходит в воду, получает не утешительный приз, а роль архивиста с полноценным вкладом. Для корпоративной группы это решает реальную проблему.','Таблица флота и квот посчитана честно — видно, что человек считал, а не рисовал.','Безопасность и правовая рамка проработаны лучше всех в каталоге.'],
+   bad:['Ни одной конкретной загадки на пяти страницах: ни первого шифра, ни «шифра журнала», ни «ошибки в записи».','Две линии с половинками ключа отменяются тремя фразами на следующей странице: максимальный результат достижим, не заходя в воду.','Код за разговор: «выдаётся при обсуждении опыта на борту». Капсулу на лодке получают все.','У гостя вне воды набирается от 1 ч 15 мин до 2 ч 15 мин «отдыха».','Кавычки у слова «золотые» сообщают покупателю: сокровище — бутафория.'],
+   fix:['Заземлить легенду в реальной истории этого моря: древнейшая гавань мира и старейший бортовой журнал на Земле найдены на его берегу. Вопрос «почему солнечная ладья в Шарме» снимается одним абзацем.','Объявить правило «пока не твой слот — ты архивист»: штаб принимает радиограммы с лодок в реальном времени. Три часа ожидания превращаются во вторую половину игры.','Финал руками: шесть капсул дают шесть секторов диска, собранный диск — механический ключ ларца. Вместо жетонов — именные печати.']},
+
+  {t:'Путь к звёздам', tag:'Пустыня · 6 часов · стр. 24–25', s:4.5,
+   good:['Формат сам по себе даёт эмоцию: день переходит в закат и ночь, чай у бедуинов, астроном, лагерь в темноте.','Чайная встреча с местными хозяевами — самые сильные 35 минут по атмосфере.','Логистика и сезонность в целом продуманы.'],
+   bad:['Герой безымянный, ставок нет, три станции ни во что не складываются.','«Экспедиционный совет» — задание без правильного ответа и критерия успеха. Это упражнение с HR-тренинга.','Ларец открывается «появлением хранителя», то есть по расписанию, а не по решению команд.','Игра заканчивается на закате: дальше 2 часа 40 минут без действия.','«Путь к звёздам», где звёзды — единственный элемент под условием и с запасным вариантом.'],
+   fix:['Одна загадка на весь день: картограф ушёл в горы и не вернулся, на его карте вместо вершины нарисовано созвездие, которого нет на небе. Днём опознаём вершины, ночью звёзды, сходится только на закате.','Закат как механика: команды определяют, за какой вершиной село солнце, и только за это получают печать. Эту подсказку невозможно купить, и она есть в любой день.','Созвездие из фонарей на склоне — главный кадр вечера, который не зависит от облачности. Плюс именная карточка «своя звезда» с подписью астронома.']},
+
+  {t:'Город тайных посланий', tag:'Каир · 4 часа · стр. 26–27', s:4.3,
+   good:['Единственная программа, где Каир показан через людей, а не через стекло.','«Правильный вопрос» — настоящая механика: не выбрать вариант, а самому сформулировать вопрос, сопоставив две версии.','Каллиграфия своими руками: осязаемо, фотогенично, увозится домой.','Названия эпизодов живые: «Письмо без адресата», «Адресат найден».'],
+   bad:['Нет автора письма, нет адресата, нет причины исчезновения, нет того, кто мешает.','Каллиграф «раскрывает часть послания» — гость ничего не разгадывает.','Кодовое слово выдают в первые 20 минут и больше не вспоминают.','Шесть комплектов «улики и версии» есть в смете, но ни один эпизод их не выдаёт.','Один каллиграф на 30 человек за 40 минут — это полторы минуты на гостя и до 50 минут скрытого ожидания.'],
+   fix:['Письмо шло через четыре руки — каллиграфа, чайханщика, медника и переписчика. Одна из рук его подменила. Каждая встреча становится свидетельством с мотивом.','Слово, которое гость пишет тушью у каллиграфа, — строка финального письма. В финале шесть карточек встают в панель, и письмо появляется целиком.','Карусель вместо очереди: три потока одновременно проходят три станции по 25 минут. Ожидание исчезает, освобождается 25 минут.']},
+
+  {t:'Последний кадр', tag:'Каир или Шарм · 3 часа · стр. 28–29', s:5.2,
+   good:['Рамка — кинопремьера без финала, три подачи как три акта — одна из самых продаваемых идей каталога.','Титры с именами гостей — единственная настоящая персонализация во всём документе.','Вариант с полным фрахтом судна на Ниле.','Честно снят страх HR: никого не вытащат на сцену.'],
+   bad:['Пропажа кадра заявлена, но не расследуется: ни вопроса «кто и зачем», ни виновного, ни ставки.','Текст сам сообщает заказчику, что «сложного детективного теста» не будет — и убивает то единственное, что отличает иммерсивный ужин от банкета с шоу.','Столам обещан выбор развязки, а в комплектации заложен один финальный видеоряд.','Фрагменты афиши раздают и больше не вспоминают.','Ни эпохи, ни названия фильма, ни героя.'],
+   fix:['Дать вечеру время и вкус: Каир конца пятидесятых, золотой век египетского кино. Чёрно-белые афиши, оркестр, платья эпохи, фильм с названием и сюжетом, о котором спорят персонажи.','Сделать пропажу преступлением с четырьмя подозреваемыми и мотивами. Виновный назначен, улики лежат на столах, выбор финала становится нравственным.','Снять три версии последней сцены по 60–90 секунд и пустить живую песню поверх выбранной. Плюс общий кадр с хлопушкой, напечатанный в рамке-плёнке к выходу.']},
+
+  {t:'Сокровища Ра', tag:'Декорации · 90 минут · стр. 31–34', s:5.2,
+   good:['Лучшая структура в каталоге: две параллельные линии внутри пятёрки с обязательным обменом — «без находок друг друга финал не открыть».','Разнообразие задач: пазл, настольное поле, поворотные диски, шифр, сопоставление, весы. Руки плюс голова, а не викторина.','«Вес истины» — задача с настоящей дедукцией: два свидетельства, одно подделано.','Честная таблица масштабирования и прямое «сто гостей в одну маленькую гробницу не планируются».'],
+   bad:['Две несовместимые мотивации: «вернуть солнцу путь» и «вернуться с его золотом».','Три хозяина у одной гробницы: название про бога, заголовок про фараона, текст про хранителя.','Шифр с полной таблицей — это переписывание, а не разгадывание.','Финал: диски вкладываются в раму, ларец открывает ведущий по сигналу. «Общий ответ» нигде не определён.','Два актёра появляются один раз, на 70-й минуте. Иммерсивный квест без живого человека в роли.'],
+   fix:['Ввести писца, который три тысячи лет назад подменил записи. Его голос перебивает хранителя на 35-й минуте и предлагает сделку. «Ложная версия» получает автора, второй актёр — работу на все 90 минут.','Дать таймеру видимую цену: каждые десять минут в зале гаснет одна панель-луч. Ошибка — минутная блокировка с красным светом, а не невидимые очки.','Сделать ладью физическим объектом в центре зала: каждая загадка возвращает ей деталь. Команда видит, как ладья оживает.']},
+
+  {t:'Фараон. Пропавшая экспедиция', tag:'Декорации · 100 минут · стр. 35–36', s:5.0,
+   good:['Лучший пролог каталога: «Лампа ещё горит, на столе лежит раскрытый дневник, из рации слышны помехи. Людей нет». Четыре предложения, которые должны открывать каждую программу.','Три зоны с нарастанием напряжения и компактные сто минут.','«Ошибка проводника» — единственная сцена, где надо поймать живого человека на лжи.','Эффекты подобраны умно и дёшево: помехи, шаги за стеной, силуэт за панелью.'],
+   bad:['Антагонист существует тремя словами в последние пять минут и ни разу не выходит на сцену. Чьи тогда шаги за стеной?','Пролог рисует внезапное бегство, развязка — что Камаль всё спокойно спрятал и зашифровал. Человек, который успел всё это, лампу бы погасил.','«Мы нашли его» — кого? Программа называется «Фараон», но фараона в тексте нет.','Пропала экспедиция, возвращается один Камаль. Где остальные — ни слова.','Финальный выбор из двух ларцов при шести одинаковых наборах — монетка.','«Это проект для расчёта, а не уже работающая квест-комната» — последняя строка продающей страницы.'],
+   fix:['Сделать проводника человеком охотников за сокровищами, а шаги за стеной — самим Камалем, который прячется и наблюдает. Одним решением закрываются четыре дыры сразу.','Назвать фараона и объяснить «Мы нашли его»: это его печать, которую Камаль искал двадцать лет. Название программы начинает работать.','Разные наборы у команд и шестисимвольный замок на крышке саркофага: каждая команда приносит один символ. Плюс позывной из рации как ключ финала — первая и последняя станции замыкаются в кольцо.']},
+];
+(function(){
+  document.getElementById('progs').innerHTML = progs.map(p=>`
+    <article class="prog">
+      <header>
+        <span class="score" style="color:${p.s>=5?'var(--lime)':'var(--rose)'}">${p.s.toFixed(1)}</span>
+        <span class="tag">${p.tag}</span>
+        <h3>${p.t}</h3>
+      </header>
+      <div class="block"><span class="lbl lbl-good">Работает — не трогать</span><ul>${p.good.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="block"><span class="lbl lbl-bad">Ломает впечатление</span><ul>${p.bad.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="block"><span class="lbl lbl-fix">Три решения</span><ul>${p.fix.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    </article>`).join('');
+})();
+
+/* ================= style rules ================= */
+const rules = [
+  ['Сначала сцена, потом механика','Первый абзац программы — то, что гость видит, слышит и держит в руках, в настоящем времени и во втором лице. Кто, сколько, в каких потоках — вторым абзацем.'],
+  ['Говорим, что есть, а не чего нет','Любое «не требуется / не нужно / не запирается / не прячется» переписываем через положительный факт. Обязательные запреты — одним списком в конце.'],
+  ['Один дисклеймер — одно место','Условия про цены, согласования, перелёт и отель живут на второй странице кратко и на последней полно. На странице программы — максимум одна строка, и только если она меняет впечатление гостя.'],
+  ['Подлежащее — «мы» или «вы»','Вместо «включается в договор», «рассчитывается отдельно», «подтверждается до бронирования» — «мы включаем», «считаем отдельно», «подтверждаем до брони».'],
+  ['Вещи называем вещами','Багги, туалеты, перелёты, официанты, маска и трубка — вместо «транспортного модуля», «санитарной инфраструктуры», «авиационной логистики» и «обслуживания». Слово «профильный» под запрет.'],
+  ['Один термин — одно написание','Хуфу и Хеопс поясняем один раз. Ресторан на плато — один раз латиницей с транскрипцией. GEM расшифровываем при первом появлении, а не на девятой странице. Транслитерации имён — только в сценарные карты.'],
+  ['Реплика должна произноситься','Каждую реплику ведущего читаем вслух в темпе игры. «Найдите основание согласиться», «числовые данные», «хранилище напитков», «облик сообщает» — маркеры того, что фраза написана для бумаги.'],
+  ['Название не спойлерит','Станция называется вопросом, а не ответом: «Из чего сделан трон?», а не «Золото скрывает дерево». Образцы есть в самом каталоге — «Кто спрятан в пеленах?» и «Обман перспективы».'],
+  ['Кухня отдельно от витрины','«Утверждается после осмотра», «до продажи пакета», «в исходном запросе», «принадлежит организатору» — это рабочие пометки. Им место в приложении для организаторов.'],
+  ['Типографика премиального уровня','В файле 167 дефисов в роли тире и ни одного длинного. Точка внутри кавычек на шести страницах спорит с остальными. Для каталога премиального агентства это часть впечатления.'],
+];
+document.getElementById('stylerules').innerHTML = rules.map(r=>`<li><b>${r[0]}</b><span>${r[1]}</span></li>`).join('');
+
+/* ================= before/after ================= */
+const ba = [
+  ['стр. 1','Подробные маршруты, игровые задания, состав пакетов, экипировка и материалы.','Десять историй, в которые команда входит целиком: пирамиды, музеи, море и пустыня.'],
+  ['стр. 2','Площадки и музейные предметы существуют; проведение именно нашей игры и доступ к выбранным зонам согласуются перед бронированием.','Все места и экспонаты в каталоге настоящие — мы сверили их с официальными описаниями. О самой игре и зонах для неё договариваемся с площадкой до вашего бронирования.'],
+  ['стр. 4','Перед отъездом археолог оставил коллеге запечатанный ларец и дневник с тревожной пометкой…','Экспедиция ушла на плато и замолчала. От неё остались запечатанный ларец и дневник, а на первой странице — торопливая пометка: «В моих записях появились чужие страницы. Проверяйте всё, что видите».'],
+  ['стр. 5','Игровые находки находятся в папках команды. Все наблюдения делаются с разрешённых посетительских дорожек.','Все «находки» команда достаёт из своей папки, а смотрит на пирамиды с тех же дорожек, что и остальные посетители — только внимательнее.'],
+  ['стр. 7','Напитки и зона для рассадки включаются в индивидуальную смету.','Напитки и аренду зоны считаем в вашей смете.'],
+  ['стр. 8','Собственные закрытая удобная обувь, головной убор и защита от солнца.','С собой: закрытая удобная обувь, головной убор, крем от солнца.'],
+  ['стр. 9','Накануне открытия воображаемой выставки из авторского каталога исчезла последняя страница.','Каталог выставки уходит в печать завтра утром. Последней страницы в нём нет.'],
+  ['стр. 12','Дополнение увеличивает программу GEM до 4 ч 45 мин — 5 ч либо заменяет заранее выбранный блок. Оно не включается незаметно в четыре часа.','Это ещё 45–60 минут к программе — или замена одного из блоков, если вы так решите.'],
+  ['стр. 13','Ручки, маркеры, громкие аудиозаписи и предметы для размещения на витринах не используются.','По правилам музея пишем карандашом и говорим негромко.'],
+  ['стр. 16','По одной форме нельзя достоверно определить состав содержимого… Нюхать или открывать музейные сосуды не требуется.','Что именно хранили в сосуде, подскажут его форма и музейная этикетка — этого достаточно, чтобы поймать ошибку в дневнике.'],
+  ['стр. 20','Подводная часть завершена.','Все уже на борту: вода позади, впереди разгадка.'],
+  ['стр. 21','Ничего не прячется на рифе и не сбрасывается в море.','Подсказки ждут вас на борту и в лодках; риф остаётся нетронутым.'],
+  ['стр. 25','Багги — замена транспортного модуля по отдельной комплектации.','Хотите драйва — меняем внедорожники на багги.'],
+  ['стр. 28','В основе вовлечения — живой разговор и выбор версии, а не сложный детективный тест.','Никто не будет проверять вашу дедукцию: главное здесь — разговор за столом и выбор, какой финал увидит зал.'],
+  ['стр. 31','Базовый маршрут проходится стоя; ползание не требуется.','Всё действие — в полный рост, в зале обычной высоты.'],
+  ['стр. 33','Реальные выходы не запираются; сценические механизмы не управляют эвакуационными дверями.','Выход из зала свободен в любую минуту — «запертые» двери есть только в декорациях.'],
+  ['стр. 43 · реплика','«Этот свидетель молчит тысячи лет. Но его облик уже сообщает нам, кого он представляет.»','«Этот свидетель молчит четыре с половиной тысячи лет. Но посмотрите внимательно: голова — одна, тело — другое. Он и без слов говорит, кого изображает. Кого?»'],
+  ['стр. 51 · реплика','«Кто-то перепутал хранилище напитков с личными вещами. Как проверить назначение?»','«В дневнике этот сосуд назван кувшином для питья. Но стоял бы кувшин на туалетном столике? Давайте проверим.»'],
+];
+document.getElementById('ba').innerHTML = ba.map(r=>`
+  <div class="ba-row">
+    <div class="was"><span class="pg">${r[0]} · было</span>${r[1]}</div>
+    <div class="now"><span class="pg">стало</span>${r[2]}</div>
+  </div>`).join('');
+
+/* ================= guest experience ================= */
+const guest = [
+  ['Дыры внимания','В Гизе почти сорок минут между последней уликой и первым вопросом финала: пик напряжения приходится на автобус. В GEM — двадцатиминутный переход плюс очередь к маске. В Каире два потока из трёх ждут у мастеров до пятидесяти минут. На яхте у гостя вне воды набирается от часа с четвертью до двух с четвертью «отдыха с закусками».','Каждому простою длиннее пятнадцати минут — своё занятие: штаб в автобусе, радиопьеса в машинах, «ваша минута с маской» в очереди, три сессии центра расшифровки на борту. Это не новые станции, а перенос уже написанного.'],
+  ['Личный трофей','Жетон, открытка, мини-страница — одинаковые на тридцать человек, без имени и без вклада гостя. Личная цель, которая зависит только от одного человека, не заложена нигде. Там, где личное всё-таки есть — каллиграфия в Каире, имя в титрах на ужине, — именно оно и становится историей для вечернего чата.','Экспедиционный паспорт на всю поездку: печать за каждую станцию, поле для личного наблюдения, штамп «моя звезда» из пустыни, вклейка каллиграфии из Каира. Плюс в каждой программе одна личная цель.'],
+  ['Кадр, ради которого достают телефон','Спроектирован дважды за весь каталог: панорама трёх пирамид и красная дорожка на ужине. В остальных программах «фотографии» — строка в конце таймлайна без места, реквизита и того, кто снимает. А у маски Тутанхамона гостю прямо написано, что фотографировать «не нужно».','В каждой программе назвать один кадр: место, минуту, реквизит в руках и кто снимает. Одновременное вскрытие конвертов в Шарме, шесть команд против заката в пустыне, силуэты с фонарями за панелью в «Фараоне», стоп-кадр у ларца в «Сокровищах Ра».'],
+  ['Принуждение к публичности','«Один представитель объясняет связь выбора с найденными словами» — то есть объясняет вслух, почему фраза «откройте конверт с золотым скарабеем» привела его к конверту с золотым скарабеем. При этом роли принудительно вращаются, так что рано или поздно представителем станет человек, который этого не хотел.','Представителя команда назначает сама на весь день, ротация ролей добровольная. Вместо «рассказать за минуту» — «выложить и показать»: команда кладёт карточку, гид озвучивает.'],
+];
+document.getElementById('guest').innerHTML = guest.map(g=>`
+  <div class="prog">
+    <h4 style="margin-bottom:.6em">${g[0]}</h4>
+    <p style="font-size:.93rem;color:var(--ink-2)">${g[1]}</p>
+    <div class="fix"><b>Что делать</b>${g[2]}</div>
+  </div>`).join('');
+
+/* ================= logistics ================= */
+const logi = [
+  {sev:P.crit,pg:'стр. 41',t:'Гиза: восемь минут на контроль',b:'Восемь минут на досмотр тридцати гостей и двенадцати сотрудников с папками, планшетами и ларцом — так не бывает даже в низкий сезон.',f:'Заложить 15–20 минут резерва плюс туалетный стоп. Пролог и раздачу папок делать в автобусе по дороге из отеля, а не после контроля.'},
+  {sev:P.crit,pg:'стр. 42',t:'Гиза: 35 минут у основания Хуфу',b:'Самое жаркое, людное и «атакуемое» место плато: тени нет вообще, с мая по сентябрь к десяти утра там 35–40 градусов, а торговцы работают именно с теми, кто стоит на месте.',f:'Сократить остановку до двадцати минут, оставив только «Чужую страницу» — её нельзя сделать без пирамиды перед глазами. «Имя на печати» перенести на панораму. Летом стартовать к открытию плато.'},
+  {sev:P.crit,pg:'стр. 47',t:'GEM: час на две остановки у Тутанхамона',b:'Маска и трон — самые охраняемые точки музея. Три потока по десять человек с папками и обсуждением по тридцать минут у каждой витрины — именно то, что охрана прервёт первой.',f:'Правило «у витрины смотрим, в стороне решаем»: 5–7 минут наблюдения у экспоната и 12–15 минут работы с папкой в зоне отдыха. Потоки запускать с интервалом пятнадцать минут и в разном порядке.'},
+  {sev:P.crit,pg:'стр. 22',t:'Море: модель дайвинга не закрывает квоту',b:'Пробное погружение с лодки для новичка реально занимает 60–75 минут. Четыре слота по 45 — это ровно три часа окна без единой минуты запаса.',f:'Перевести на двух новичков на инструктора и два слота по семьдесят минут: двенадцать мест с запасом времени. Точное соотношение подтверждает дайв-центр.'},
+  {sev:P.imp,pg:'стр. 23, 38',t:'Море не может быть последним днём поездки',b:'После погружения — не меньше двенадцати часов до полёта, после нескольких — до суток. Значит, дайверы на следующий день не поедут и в горы Синая.',f:'Одной строкой: «Морской день ставим не позже чем за сутки до вылета; после погружения не поднимаемся в горы. Поэтому порядок дней: море → пустыня → музей». Это звучит как забота, а не как оговорка.'},
+  {sev:P.imp,pg:'стр. 24',t:'Пустыня привязана к закату, но не к сезону',b:'Закат в Шарме — от 17:00 в декабре до 19:00 в июне. Летом три станции попадают на 17:30 в открытой долине при сорока градусах. Тентов в комплектации нет.',f:'Две сезонные сетки. Летом: старт за два часа до заката, одна станция по пути, две — уже на площадке под навесом. Зимой: обогреватели и пледы в пакете.'},
+  {sev:P.crit,pg:'стр. 26, 27',t:'Каир: тайминг противоречит собственной ротации',b:'В комплектации сказано «мастерские проходят небольшими группами по ротации», а сетка линейная: сначала все тридцать у каллиграфа, потом все тридцать у ремесленника.',f:'Три параллельных блока по сорок минут для трёх потоков: фасад с гидом, каллиграф, ремесленник. Мастеров посадить во дворах, а не на улице.'},
+  {sev:P.imp,pg:'стр. 8, 13, 18',t:'Двенадцать сотрудников на тридцать гостей',b:'Один сотрудник на два с половиной гостя. Это двенадцать ставок, девять входных билетов, двенадцать мест в автобусе и двенадцать обедов. По ощущению — конвой вокруг группы.',f:'Базовый штат для музейных программ: три гида, три помощника по потокам, ведущий-старший координатор и координатор по транспорту. Восемь человек делают ту же работу и снижают стоимость примерно на треть.'},
+  {sev:P.crit,pg:'стр. 33, 36',t:'Декорации под разовое мероприятие не окупаются',b:'Портал, панели, саркофаг, шесть зон, свет, звук, техдиректор, два техника и монтажная бригада — ради шестидесяти минут игры для тридцати человек.',f:'Один многоразовый комплект в кофрах на обе программы: складной портал, лёгкие панели со сменными символами, мягкий саркофаг, два ларца, шесть настольных механик. Амортизация на восемь-десять показов.'},
+  {sev:P.imp,pg:'стр. 37',t:'Нет ни слова о сезоне, жаре и Рамадане',b:'Все дневные программы на открытом воздухе с мая по сентябрь возможны только ранним утром или вечером. В Рамадан меняются часы музеев и ресторанов, а даты сдвигаются каждый год.',f:'Блок «Когда ехать»: таблица сезон × программа, строка про Рамадан и честный «полный день гостя с дорогой» для каждой программы. Это уберёт половину оговорок «уточняется на дату».'},
+];
+document.getElementById('logi').innerHTML = logi.map(f=>`
+  <article class="finding">
+    <div class="rail"><span class="sev ${f.sev===P.crit?'sev-crit':'sev-imp'}">${f.sev}</span>${f.pg}</div>
+    <div><h4>${f.t}</h4><p>${f.b}</p><div class="fix"><b>Что делать</b>${f.f}</div></div>
+  </article>`).join('');
+
+const checklist = [
+  'Ресторан на плато Гиза: минимальный чек за отдельную зону, допустимое время без обеда, можно ли ведущего с микрофоном, можно ли завезти реквизит заранее.',
+  'Управляющая компания плато: правила въезда своего автобуса, точки остановок, работает ли шатловая схема. От этого зависит вся сетка Гизы.',
+  'Отдел мероприятий GEM: письменное согласие на групповой игровой формат — тридцать человек, три потока, карандаши и бумага, без звука у витрин.',
+  'Образовательный центр или событийная комната GEM: вместимость, стоимость, доступность на дату, либо бронь столов в кафе музея на тридцать минут.',
+  'Музей Шарм-эль-Шейха: часы работы по сезонам, вечерняя смена до 21:00, стоимость и вместимость VIP-зала и открытого театра, можно ли ставить столы для мастерской.',
+  'Дайв-центр: реальная длительность пробного погружения, допустимое соотношение инструктор — новички по правилам Палаты дайвинга, интервалы до перелёта.',
+  'Морской оператор: подходящая четырёхпалубная яхта под дату, разрешённая вместимость со всеми специалистами, что именно означает «береговая версия» при закрытии порта.',
+  'Актёры: есть ли в Каире и Шарме русскоязычный состав, или труппу нужно везти. Одна труппа на всю поездку дешевле, чем актёры под каждую программу.',
+  'Декоратор: срок монтажа трёх зон, стоимость многоразового комплекта в кофрах, пожарные сертификаты на материалы.',
+  'Провести пробное прохождение каждой цепочки загадок на пяти живых людях до того, как программа попадёт в коммерческое предложение.',
+];
+document.getElementById('checklist').innerHTML = checklist.map(c=>`<li><span>${c}</span></li>`).join('');
+
+/* ================= plan ================= */
+const plan = [
+  {when:'Неделя 1', sub:'Редактура. Без бюджета и согласований',items:[
+    'Собрать все оговорки в два места: короткий честный абзац в начале и одну страницу условий в конце. С программных страниц снять повторяющийся юридический подвал.',
+    'Переписать двадцать четыре отрицания через то, что есть. Это самая дешёвая правка с самым заметным эффектом.',
+    'Удалить раздел про чужую VR-игру со страницы 7 и ссылку на неё из источников.',
+    'Переписать вводные абзацы десяти программ как сцены. Образец есть в самом каталоге — пролог «Фараона».',
+    'Прочитать вслух все реплики ведущего из сценарных карт и переписать те, что запинаются.',
+    'Типографская чистка: длинное тире, точки за кавычками, единый формат длительности.',
+  ]},
+  {when:'Недели 2–3', sub:'Разделить документ',items:[
+    'Брошюра для заказчика: обложка, разворот с обещанием и тремя причинами, матрица «цель → программа», по одному развороту на программу, готовые поездки, страница «как это устроено», призыв к действию.',
+    'Производственное приложение с пометкой «не для участников»: комплектации, таблицы масштаба, сценарные карты с ответами, источники, условия.',
+    'Добавить на каждый разворот поля, которых сейчас нет: «для кого», «что останется», «готовим за N недель».',
+    'Свернуть шесть повторов формулы масштабирования в одну сводную таблицу приложения.',
+  ]},
+  {when:'Недели 3–5', sub:'Сценарная работа',items:[
+    'Ввести сквозного антагониста и дать ему присутствие в базовой комплектации каждой программы: голос, письмо, курьер.',
+    'Переписать все тройки вариантов ответа: два правдоподобных вместо трёх с двумя шутками. Это восемнадцать станций.',
+    'Переделать финальные коды Гизы и музея Шарма так, чтобы их надо было вывести, а не получить.',
+    'Дать каждой роли в пятёрке свой предмет и монополию на информацию.',
+    'Дописать сюжеты четырёх программ, у которых сейчас только оболочка: пустыня, Каир, море, ужин.',
+  ]},
+  {when:'Недели 4–8', sub:'Производство и проверки',items:[
+    'Пройти чек-лист площадок и заменить оговорки фактами.',
+    'Написать сценарные карты для семи программ, у которых их нет.',
+    'Провести пробное прохождение каждой цепочки загадок на живых людях.',
+    'Снять или собрать визуальные доказательства: фото с осмотра площадок, макет папки и ларца, портреты гидов. Сейчас текст занимает сто процентов площади страниц, фото просто негде поставить.',
+    'Провести пилотный прогон одной программы для команды, принимающей решение. Это лучший инструмент продажи из всех возможных.',
+  ]},
+];
+document.getElementById('plan').innerHTML = plan.map(p=>`
+  <div class="step">
+    <div class="when">${p.when}<em>${p.sub}</em></div>
+    <ul>${p.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+  </div>`).join('');
+
+
+
+/* ================= puzzles ================= */
+const puzzrules = [
+ ['Наблюдение → вывод → проверка, и проверка идёт последней','Сейчас порядок обратный: справка приходит раньше вывода и делает его ненужным. Перестановка не стоит ни рубля и не меняет тайминг.'],
+ ['Ответ не должен существовать до наблюдения','Тест простой: можно ли решить эту задачу в автобусе, не выходя? Если да — это не задача.'],
+ ['Загадывать открытое','Мы ничего не прячем в витрине и ничего не трогаем. Но загадывать можно всё, что музей и так показывает: количество предметов в комплекте, ширину плеч двух гробов, число проёмов на грани пирамиды, порядок дат на этикетках.'],
+ ['Честный дистрактор','Каждый неверный вариант должен быть выбран хотя бы одной командой из шести на тестовом прогоне. Все варианты — одной длины и одного регистра речи. Не получается три правдоподобных — вариантов не должно быть вообще.'],
+ ['Название станции не содержит ответа','Гостю — образ или вопрос: «Складки», «Узкое горло», «Плечи шире, плечи уже». Объясняющий заголовок остаётся в сценарной карте организатора.'],
+ ['Улику надо заработать, а не получить','Помощник не выдаёт карточку, а заверяет печатью то, что команда установила сама. Ошибочное число заверяется тоже — и доезжает до финала.'],
+ ['У ответа есть последствие, у развязки — гарантия','Неверная улика ломает финал заметно, но не фатально. Формулировка для карточки правил: «Ошибиться можно. Остаться без развязки — нельзя».'],
+ ['Каждая станция даёт улику одного веса','Число, направление, точка на линии времени — но не предлог «С» на одной станции и «СКАРАБЕЯ» на другой. Неравный вес читается как «ваша станция была неважной».'],
+ ['Асимметрия внутри команды','У каждой роли — свой единственный экземпляр материала. Это единственный способ включить тихих: им не нужно перекрикивать, у них в руках то, без чего не решить.'],
+ ['Асимметрия между командами','У каждой команды есть ровно один документ, которого нет ни у кого. Тогда разговор между столами возникает сам, без призывов ведущего «а теперь пообщайтесь».'],
+ ['Правило кода приходит последним и отсеивает часть улик','Иначе финал сводится к раскладыванию по порядку. И правило не должно зависеть от порядка обхода — только тогда команды можно пускать по кругу.'],
+ ['Одна станция — одна применимая мысль','После станции гость должен уметь сформулировать что-то, работающее и вне Египта: «впечатление — не измерение», «отсюда проверить нельзя, и это честный ответ». Именно это заказчик потом пересказывает.'],
+];
+document.getElementById('puzzrules').innerHTML = puzzrules.map(r=>`<li><b>${r[0]}</b><span>${r[1]}</span></li>`).join('');
+
+const birzha = [
+ ['Ставка','У команды шесть жетонов «печать доверия». На каждой станции до вскрытия проверки команда ставит один-три жетона на свою версию: верно — возвращаются удвоенными, неверно — уходят в архив к гиду. Ставка делается одним движением всей командой, и это заставляет высказаться тихих до того, как заговорит самый громкий.'],
+ ['Монополия','У каждой команды ровно один документ, которого нет ни у кого. В Гизе это полоска правила чтения кода, в Шарме — датировочный сертификат её предмета. Ни одна команда не откроет финал в одиночку, и каждая обязательно выходит со своим вкладом. У ведущего есть дубль на случай потери.'],
+ ['Торг','Семь минут перед финалом: столы по кругу, представители ходят между ними. Показать свой документ соседу бесплатно, получить копию к себе — за жетон, и жетон получает тот, кто отдал. Побеждает не самый быстрый, а тот, с кем охотнее делятся. Это и есть нетворкинг, только он возникает сам.'],
+ ['Провокация','За пять минут до финала координатор в роли покупателя древностей обходит столы и предлагает пять жетонов за уникальный документ. Если команда продаёт, финал всё равно соберётся, но в номинациях появляется «Команда, которая продала правило». Смех без унижения и самый пересказываемый эпизод вечера.'],
+ ['Два зачёта','«Точность» — по оставшимся жетонам. «Вклад» — сколько команд воспользовалось твоим документом. Победа в финале общая: ларец открывает вся группа. Это снимает главный страх заказчика — что его люди публично проиграют друг другу.'],
+ ['«Один раз мы вас проверим»','На старте объявляется: один раз за маршрут кто-то из организаторов уверенно скажет неправду. Поймавшая противоречие команда получает жетон. Это механика «Ошибки проводника» из «Фараона», перенесённая на памятники без единого рубля, и она держит внимание всю программу: гостей наконец начинает интересовать, что говорит гид.'],
+];
+document.getElementById('birzha').innerHTML = birzha.map(b=>`<div class="prog"><h4 style="margin-bottom:.5em">${b[0]}</h4><p style="font-size:.93rem;color:var(--ink-2);margin:0">${b[1]}</p></div>`).join('');
+
+const quickwins = [
+ 'Переставить порядок на всех станциях: справка и этикетка вскрываются после версии команды, а не до. Ноль затрат.',
+ 'Выбросить четырнадцать абсурдных вариантов и переписать их в правдоподобные, выровняв длину всех трёх. День редактуры.',
+ 'Переписать шесть названий станций так, чтобы они не содержали ответа. Полдня.',
+ 'Ввести жетоны и ставку до проверки: сто восемьдесят жетонов на группу из тридцати и карточка правил.',
+ 'В Гизе заменить выдачу цифр на счёт, а три пакета — на четырёхдисковый замок. Один замок и шесть полосок бумаги.',
+];
+document.getElementById('quickwins').innerHTML = quickwins.map(c=>`<li><span>${c}</span></li>`).join('');
+
+/* ================= facts ================= */
+const facts = [
+ {sev:P.crit, pg:'стр. 5, 42', t:'«Обман перспективы»: правильный ответ неполон и развалится от первого вопроса',
+  b:'Сценарная карта объясняет иллюзию тем, что «визуальное впечатление зависит от точки наблюдения». Это не главная причина. Пирамида Хафры кажется выше потому, что её основание лежит на скале примерно на десять метров выше основания Хуфу, грани сложены круче, а на вершине сохранилась «шапка» облицовки. Поэтому она кажется больше почти с любой точки плато, а её вершина действительно выше над уровнем моря.',
+  f:'Переписать ответ: «Хуфу выше как сооружение — 146,6 метра против 143,5, — но пирамида Хафры поставлена на скале примерно на десять метров выше, сложена круче и сохранила облицовку на вершине». Подсказку про «расстояние от наблюдателя» заменить на «посмотрите, на какой высоте начинается каждая пирамида». Это, кстати, делает станцию лучше: иллюзия перестаёт быть обманом зрения и становится настоящим фактом о плато.'},
+ {sev:P.crit, pg:'стр. 11, 40', t:'Инвентарный номер маски подтвердить не удалось',
+  b:'Пять из шести номеров GEM сверены со страницами коллекции музея. Номер «GEM 8» для золотой погребальной маски в официальных источниках не находится.',
+  f:'До печати запросить номер у музея или убрать цифру. Остальные пять номеров оставить: они помогают гиду найти нужный предмет и выглядят убедительно.'},
+ {sev:P.crit, pg:'стр. 17', t:'«Название подтверждено» про VIP-зал музея Шарма',
+  b:'В официальных описаниях музея значатся девять залов, конференц-зал, открытый театр, лавки и рестораны. «VIP-зала» в перечнях нет.',
+  f:'Убрать слово «подтверждено». Первым запросом делать конференц-зал или открытый театр — они точно существуют.'},
+ {sev:P.crit, pg:'стр. 14', t:'Музей Шарма закрыт с 13:00 до 17:00',
+  b:'Смены — с 10:00 до 13:00 и с 17:00 до 23:00. Утренний слот вмещает двухчасовую с половиной программу только при старте ровно в десять, а четырёхчасовая версия с продолжением в утреннюю смену не помещается вовсе.',
+  f:'Вписать режим работы как факт и планировать оба формата на вечернюю смену. Это же снимает оговорку «после подтверждения режима работы» со страницы 14.'},
+ {sev:P.imp, pg:'стр. 23, 38', t:'Нет числового интервала между дайвингом и перелётом',
+  b:'Каталог пишет, что интервал «определяет дайв-центр». Формально верно, но общепринятые ориентиры существуют: минимум двенадцать часов после одного погружения и минимум восемнадцать после нескольких.',
+  f:'Вписать цифры прямо в каталог и вывести из них порядок дней: море ставим не позже чем за сутки до вылета, после погружения не поднимаемся в горы. Заказчик, который планирует морской день накануне перелёта, сейчас не получает предупреждения.'},
+ {sev:P.imp, pg:'стр. 11, 47', t:'После «золото скрывает дерево» гость ошибётся на маске',
+  b:'Станция 5 учит, что золотой предмет внутри деревянный. Станция 6 сразу за ней идёт к маске — а маска выкована из двух листов золота высокой пробы и весит больше десяти килограммов.',
+  f:'Добавить в реплику один такт: «здесь золото не покрытие, а сам материал». Тогда контраст между троном и маской работает на обучение, а не против него.'},
+ {sev:P.imp, pg:'стр. 10, 46', t:'Кресло Хетепхерес — сборка 1930-х годов',
+  b:'Древнее дерево истлело; сохранилась в основном золотая обшивка, которую в тридцатых годах закрепили на новом основании. Каталог этого не упоминает, и вывод «версия о переноске подтверждается формой» повисает.',
+  f:'Вставить факт в справку гида — и он сам зарифмуется с темой каталога: на троне золото поверх дерева, а здесь дерево исчезло и осталось одно золото. Лучшей иллюстрации к мысли «за золотом увидеть людей» не придумать.'},
+ {sev:P.imp, pg:'стр. 10, 46', t:'Команда может сопоставить карточки не с той группой',
+  b:'На Большой лестнице рядом с триадой стоят отдельная сидящая Сехмет и две отдельные статуи Птаха из Мемфиса. Команда с карточками «бог мастеров, царь, богиня с головой львицы» уверенно разложит их на соседние памятники и получит формально верный набор не у того объекта.',
+  f:'Прописать в сценарной карте, что помощник физически указывает на конкретную группу из трёх фигур в одном блоке, а не на зону лестницы.'},
+ {sev:P.imp, pg:'стр. 11, 47', t:'Царицу и солнечный диск на троне стоит назвать',
+  b:'Сейчас в тексте только «лучи солнечного диска». Для взрослой аудитории это потеря главного смысла предмета: на спинке изображена Анхесенамон, а диск — Атон.',
+  f:'Назвать обоих. Это одна фраза, а предмет из «дорогого металла» превращается в личную сцену царской жизни — ровно то, чего программа и добивается.'},
+ {sev:P.imp, pg:'стр. 4, 6, 43', t:'Каталог занижает то, что и так входит в билет',
+  b:'Стандартный маршрут к Сфинксу идёт через храм в долине Хафры и выводит на террасу, откуда стела между лапами видна. А каталог пишет «к лапам группа не спускается» и «стелу обсуждают по иллюстрации».',
+  f:'Перепроверить у принимающего оператора, докуда доходит обычный билет. Если терраса открыта, писать «стелу показываем издалека и разбираем по иллюстрации». Заодно станцию «Путь фараона» логично перенести к храму в долине: тогда карточки лягут не на учебный план, а на настоящие камни.'},
+ {sev:P.imp, pg:'стр. 16, 51', t:'Не объяснено, почему греческие статуэтки стоят в египетском музее',
+  b:'Танагры названы по беотийскому городу, но производились во многих центрах, включая Александрию. То есть это не привозная экзотика, а в том числе продукция египетских мастерских эллинистического времени.',
+  f:'Одна фраза в справку: «танагры делали и в Александрии — это Египет эпохи Птолемеев». Иначе первый же вопрос гостя останется без ответа, а вывод станции прозвучит как отговорка.'},
+];
+document.getElementById('facts').innerHTML = facts.map(f=>`
+  <article class="finding">
+    <div class="rail"><span class="sev ${f.sev===P.crit?'sev-crit':'sev-imp'}">${f.sev}</span>${f.pg}</div>
+    <div><h4>${f.t}</h4><p>${f.b}</p><div class="fix"><b>Что делать</b>${f.f}</div></div>
+  </article>`).join('');
+
+/* ================= teasers ================= */
+const teasers = [
+{old:'', title:'Код пирамид', tagline:'Дневнику верить нельзя. Пирамидам — можно. Проверьте сами.',
+ teaser:`<p>Дневник археолога подменили: половина того, что в нём написано, — ложь. Сверить его можно только с самими пирамидами.</p>
+ <p>Вы выходите на плато рано, пока известняк ещё не раскалился, с папкой, планом и шестью пустыми карточками свидетельств. У Хуфу вы поднимаете глаза от рисунка на настоящую кладку и находите место, где художник соврал. На панораме вы сначала поверите глазам — средняя пирамида явно выше остальных, — а через десять минут сами докажете, почему это неправда. У Хафры соберёте путь фараона от храма в долине до вершины. У Сфинкса поймаете отчёт, который врёт трижды.</p>
+ <p>В каждой подлинной странице спрятана цифра. Шесть страниц — шесть цифр, и они нужны не для баллов. На террасе с видом на Хуфу шесть человек от шести команд подходят к ларцу и крутят по одному диску замка. Ошиблась одна команда — дужка не отходит, и вся группа две минуты ищет, чья цифра чужая.</p>
+ <p>А чуть раньше в зал войдёт человек, который был рядом с вами весь день, и принесёт второе письмо с другим кодом. Вот тогда и выяснится, кто всё это время подкладывал чужие страницы.</p>`,
+ who:'Командам от 20 человек, которые уже фотографировались на фоне пирамид и хотят провести на плато день, где надо думать, а не кивать.',
+ dur:'4 часа на плато · 20–100 гостей · команды по пять · финал с видом на Хуфу',
+ need:'Нужен настоящий кодовый замок вместо трёх пакетов, цифры, выведенные из наблюдения, и антагонист в базовой версии.'},
+
+{old:'Дело о потерянной странице', title:'Последняя страница', tagline:'Каталог уходит в печать завтра. Последнюю страницу напишете вы.',
+ teaser:`<p>Завтра каталог выставки уходит в печать, и на его последней странице стоит чужая фраза: «Египет — это цари, боги и золото, остальное — мелочи». Автор каталога исчез. Страница с его объяснением — вместе с ним.</p>
+ <p>Вы — редакция, и у вас четыре часа в Большом Египетском музее. У каждого из шести предметов вам вручают разворот «золотой» версии: уверенная подпись, красивая вёрстка, рисунок человека, который в зале не был. Ваше дело — поймать, где подпись врёт, глядя на оригинал. Одиннадцатиметровый Рамсес, ради которого построили зал. Львиная голова Сехмет за плечом царя. Кресло царицы, у которого нет колёс, зато есть шесты. Трон, который только кажется золотым. Маска, о которой все всё знают.</p>
+ <p>Потом вы доходите до маленькой каменной группы, где мальчик стоит рядом с отцом, а девочка держится за его ногу, — и версия про золото рассыпается сама, без вашей помощи.</p>
+ <p>Финал начинается за 27 минут до закрытия типографии. Кейс редакции заперт шестью замками, и крышка не поднимется, пока к нему не подойдёт шестая команда.</p>`,
+ who:'Компаниям и партнёрским группам от 20 человек, которые музеи уже видели и хотят не слушать про экспонаты, а спорить о них.',
+ dur:'4 часа в GEM · 20–100 гостей · команды по пять · плюс час на первую лодку Хуфу, если захотите',
+ need:'Нужен кейс с шестью замками вместо кармана в папке, «золотая» версия каталога как противник и правило «версия до справки».'},
+
+{old:'', title:'Последняя запись археолога', tagline:'Три письма. Два лгут. Дневник — все шесть раз.',
+ teaser:`<p>Из трёх писем в папке археолога лгут два. Дневник в той же папке лжёт шесть раз — и каждый раз убедительно.</p>
+ <p>Вечер, залы уже без дневной толпы, стекло витрин холодное, свет над экспонатами приглушён. Доктор Камаль испортил свои записи сам: он знал, что папку перехватят, и оставил ловушку для того, кто клюнет на красивую версию. Ловушка достаётся вам.</p>
+ <p>На каждой из шести витрин команда сначала ставит жетоны на свою версию и только потом получает перевод музейной этикетки. Кто спрятан в пеленах. Женское лицо под бородой фараона. Два гроба, вложенных один в другой, как оболочки. Четыре хранителя, каждый смотрит в свою сторону света, и в дневнике все стороны перепутаны. Флакон для сурьмы, который так легко записать в посуду для напитков. Гостья из греческой эпохи среди египтян.</p>
+ <p>Шесть ответов складываются не во фразу, а в оттиск печати. Три конверта на столе запечатаны почти одинаково: у двух совпадает пять признаков из шести. Выбирать придётся по шестому — и вскрывают все одновременно, по счёту «три».</p>`,
+ who:'Группам от 20 человек, которым нужен вечер между морем и ужином — короткий, умный и без беготни.',
+ dur:'2,5 часа в музее · вечерний слот · 20–100 гостей · команды по пять',
+ need:'Нужна печать вместо фразы-инструкции, жетоны-ставки до этикетки и конверты-приманки, отличающиеся одним признаком.'},
+
+{old:'', title:'Музей оживает', tagline:'Он вернулся из пустыни. Тот, кто его подставил, — в зале.',
+ teaser:`<p>Последнее письмо доктора Камаля вы прочли полчаса назад. Сейчас в колонке зашипят помехи, чужой голос скажет что-то про бурю — и Камаль войдёт в зал сам: пыльная куртка, рюкзак, живой.</p>
+ <p>Он приехал не благодарить. Кто-то читал его архив и подменил письма, и этот человек сегодня в музее — из тех, кто встречал вас у входа со стаканом воды.</p>
+ <p>Дальше вечер идёт как три разговора со свидетелями. Приходит жрица Исетемхеб — та самая, чьи гробы и канопы вы разглядывали два часа назад, — и выкладывает восемь вещей: три из них не из её времени, найдите какие. Приходит мастер, делавший косметические сосуды, ставит на стол четыре вещи и говорит: три мои, а четвёртую подбросила та же рука, что переписала дневник. Вы берёте лупу, переворачиваете сосуд — и видите на дне знак, отзеркаленный тем, кто копировал не читая.</p>
+ <p>За верстаком под лампой вы собираете из знаков собственный картуш и режете печать — ту, которой в финале запечатаете архив. А почерк подделки вы уже видели сегодня. Он лежит у вас на столе, на карточке «Добро пожаловать».</p>`,
+ who:'Тем, кто берёт музейное расследование целым вечером и хочет, чтобы вторая половина была не мастер-классом, а второй серией.',
+ dur:'4 часа целиком: 2,5 часа расследования и 1,5 часа вечера с героями · 20–100 гостей',
+ need:'Нужен детективный стержень вместо «представьте, как жили», печати вместо второй за вечер открытки и герои — владельцы вещей из витрин.'},
+
+{old:'Экспедиция Красное море', title:'Ладья идёт за солнцем', tagline:'Половина команды под водой, половина над шифром. Ларец откроется вместе.',
+ teaser:`<p>На борт поднимают запечатанный ларец, и первое, что вы слышите: «Солнечная ладья вернёт сокровище тем, кто соединит семь печатей». Дальше — восемь часов, четыре палубы и два мира.</p>
+ <p>Первый мир — вода. Вы уходите с гидом на риф, делаете с инструктором первый в жизни вдох под водой или учитесь держать тишину на задержке дыхания. Игрового реквизита под водой нет — там живые рыбы тех же пород, что вырезаны на стенах храма Хатшепсут три с половиной тысячи лет назад. Считайте полосы. Это и есть код.</p>
+ <p>Второй мир — штаб на главной палубе: большая карта, старый бортовой журнал и вторая его копия, где кто-то переписал одну строку. Архивисты видят нестыковку, но доказать её без наблюдений с воды не могут. И наоборот.</p>
+ <p>Между двумя мирами ходит малая лодка. Пятеро, шкипер, компас в руках: два пеленга на береговые вершины, пересечение линий на карте — и запечатанная капсула переходит из рук в руки. К вечеру шесть секторов сходятся в солнечный диск. Диск и есть ключ: он входит в крышку ларца и поворачивается на нужный угол. Щелчок — ровно тогда, когда яхта ложится на обратный курс, прямо в закат.</p>`,
+ who:'Командам, где есть и сертифицированные дайверы, и те, кто в воду не пойдёт: без воды разгадку тоже не собрать.',
+ dur:'8 часов от посадки · 20–100 гостей · команды по пять · четыре палубы и флотилия',
+ need:'Нужна сценарная карта моря, жёсткое разделение половинок ключа и диск-ключ вместо сборки карты на экране.'},
+
+{old:'', title:'Путь к звёздам', tagline:'Последнюю подсказку приносит солнце — в минуту, когда садится за хребет.',
+ teaser:`<p>Картограф ушёл в эти горы и не вернулся. На его карте вместо одной из вершин нарисовано созвездие, которого нет на небе.</p>
+ <p>Днём вы читаете горы. Хребет напротив стоит ровно так, как на выцветшем рисунке из дневника: шесть вершин, у каждой своя буква. Вы спорите, какая из них та самая, пока ветер тащит песок по капоту.</p>
+ <p>Потом сидите на ковре, держите обеими руками стакан обжигающего чая и слушаете человека, который вырос здесь и находит север без карты и телефона. Вечером это пригодится.</p>
+ <p>Солнце садится за одну из шести вершин. За какую — не скажет никто: это видно только глазами, и это последняя печать дня. Её не выдают, её приносит закат.</p>
+ <p>Колонна подходит к площадке в темноте. Гаснут фары. Минута тишины и неба над головой — а потом один удар барабана зажигает лагерь целиком. За ужином астроном показывает ваше созвездие живьём, калька ложится на силуэт хребта, буквы встают в порядок ночлегов, слово открывает ларец. И на тёмном склоне напротив загорается та самая звезда, которой не хватало на карте.</p>`,
+ who:'Тем, кто уже катался по пустыне на джипах и хочет вечер, который держится не на скорости, а на небе.',
+ dur:'6 часов с трансферами · 20–100 гостей · команды по пять · старт по закату',
+ need:'Нужен сюжет с героем, три станции, связанные в один код, закат как механика и созвездие из фонарей на склоне.'},
+
+{old:'Город тайных посланий', title:'Четыре руки, одно письмо', tagline:'Семьсот лет назад письмо не дошло. Один из четверых соврал.',
+ teaser:`<p>Письмо шло к вашей команде семьсот лет и не дошло. Его несли четверо: каллиграф, чайханщик, медник и переписчик. Один подменил текст.</p>
+ <p>У ворот Баб-эль-Футух вам дают карту, кодовое слово и обрывок узора. Дальше — улица Аль-Муизз, где искать надо не табличку, а деталь: тот самый завиток, что у вас в руке, на резном камне в трёх метрах над головой. Улица гудит, пахнет кардамоном и горячим металлом. С этой минуты вы фасады читаете, а не фотографируете.</p>
+ <p>У каллиграфа вы берёте тростниковое перо. Тушь идёт тяжело, линия слушается не сразу — и всё-таки вы выводите одно слово арабской вязью. Своё. Позже оно встанет строкой в письмо.</p>
+ <p>В чайной к вашему столу подсаживается человек в костюме чужого века и рассказывает историю иначе, чем вы слышали час назад. Какую версию вы услышите, подлинную или подложную, решает ваше кодовое слово. Последний свидетель отвечает только на точно заданный вопрос. Финал — в тихом дворе, куда не доходит шум базара: шесть карточек становятся шестью строками, вы называете того, кто соврал, и слышите последнюю строку. В ней — имя вашей компании.</p>`,
+ who:'Тем, кто уже видел пирамиды и хочет Каир на своих ногах: через людей, ремесло и разговор, а не через стекло автобуса.',
+ dur:'4 часа по старому Каиру · 20–100 гостей · три потока, команды по пять',
+ need:'Нужны четыре свидетеля с мотивами, слово команды как строка письма и карусель вместо очереди у мастеров.'},
+
+{old:'', title:'Последний кадр', tagline:'Фильм снят. Финала нет. Его выбираете вы — за ужином.',
+ teaser:`<p>Каир, 1959 год. Через три часа — премьера, а последнего кадра у фильма нет: кто-то вырезал его из бобины между полуночью и часом ночи. Вы идёте по красной дорожке, вспышки бьют в глаза, в бокале звенит лёд, и продюсер студии уже направляется к вашему столу с плохими новостями.</p>
+ <p>Подозреваемых четверо, и все ужинают в этом зале. Продюсеру нужен кассовый финал. Певица хочет, чтобы фильм кончался её песней. Журналист чует сенсацию. Сценарист писал совсем другую развязку. На вашем столе — монтажный лист с зачёркнутым двенадцатым планом, ночной журнал студийного вахтёра и четыре письма, в которых каждое слово стоит проверить на прочность.</p>
+ <p>Актёры подсаживаются к столам, оправдываются, уходят к соседям и возвращаются — уже на тот вопрос-ловушку, который вы приготовили между подачами. К основному блюду вы знаете, кто вынес плёнку и что на ней было. И тогда начинается настоящий спор: показать зрителям правду или подарить им счастливый конец. Столы голосуют, ведущий вскрывает карточки, и на экране идёт тот финал, за который проголосовал зал.</p>`,
+ who:'Компаниям, которым нужен вечер с едой, музыкой и разговором, а не турнир на скорость: здесь есть занятие и для тех, кто любит распутывать, и для тех, кто пришёл поужинать в вечернем платье.',
+ dur:'3 часа · Каир или Шарм · 20–100 гостей · столы по пять',
+ need:'Нужны эпоха и фильм с названием, виновный с уликами на столе и три снятых варианта финала.'},
+
+{old:'', title:'Сокровища Ра', tagline:'Шестьдесят минут. Семь загадок. Половина ключей — у коллег.',
+ teaser:`<p>На стене вспыхивает строка: «Сокровище получат те, кто вернёт солнцу его путь». Каменная дверь открыта ровно на час — потом она встанет на место, и загадки хранителя солнечной печати останутся нерешёнными ещё на три тысячи лет.</p>
+ <p>Команда сразу делится надвое, и дальше вы работаете параллельно. Зодчие собирают солнечный диск по теневому силуэту, ведут ладью Ра через ночное поле по трём условиям из журнала и выставляют поворотные диски у врат мастера. Хранители читают имя по шифру, раскладывают богов по предметам и поступкам, сличают два свидетельства и находят подменённое условие — учебные весы встают в равновесие с отчётливым щелчком.</p>
+ <p>Ни одна находка не работает в одиночку: ключ от седьмой печати собирается из обеих половин, и момент, когда ваши знаки совпадают со знаками соседней подгруппы, стоит всего часа.</p>
+ <p>А на середине отсчёта свет мигает, и голос хранителя перебивает другой — писец, который когда-то подменил записи и теперь ходит между зонами, предлагая подсказку в обмен на вашу печать. К финалу придётся решить всем залом, чьей надписи верить.</p>`,
+ who:'Командам, которые предпочитают думать руками и получать результат за вечер, а не за выездной день: 90 минут, шесть параллельных зон и финал, где виден вклад каждой пятёрки.',
+ dur:'90 минут программы · 60 минут игры · 20–100 гостей · команды по пять',
+ need:'Нужен антагонист-писец, таймер с последствиями и финал, где решение принимают гости, а не ведущий по сигналу.'},
+
+{old:'', title:'Фараон. Пропавшая экспедиция', tagline:'Лампа горит, дневник раскрыт, людей нет. Вы — следующие.',
+ teaser:`<p>Лампа в лагере ещё горит. На столе раскрытый дневник, из рации ползут помехи, вещи лежат так, будто за ними вот-вот вернутся. Людей нет. Последнее, что успела передать экспедиция доктора Камаля: «Мы нашли его».</p>
+ <p>Двадцать лет он искал печать фараона, чьё имя стёрли со всех памятников. У вас сто минут, чтобы понять, куда он ушёл. Вы складываете разорванный план раскопок, отматываете запись рации назад и вытаскиваете из шума три слова — позывной экспедиции, который позже ещё пригодится. Потом начинается спуск: знаки у входа читаются по алфавиту из дневника, поворотные элементы открывают нишу с вырванными страницами, и воздух за декорацией становится заметно холоднее.</p>
+ <p>В коридоре к вам выходит проводник. Он знает дорогу, он торопит, он рассказывает, что случилось той ночью, — и его рассказ в двух местах расходится с записями Камаля. За стеной слышны шаги. Свет меняется. За полупрозрачной панелью на секунду встаёт силуэт, и он точно не ваш. Впереди — два почти одинаковых амулета и два запертых ларца, а открыть вы успеете только один.</p>`,
+ who:'Командам, которые любят тайны, темноту и живых актёров: уровень напряжения вы выбираете заранее — от сумерек со звуком до полной гробницы с внезапными появлениями.',
+ dur:'100 минут · Каир или Шарм · 20–100 гостей · команды по пять',
+ need:'Нужны имя фараона, проводник с собственным интересом и финал, где действуют гости, а не выходит актёр с объяснением.'},
+];
+(function(){
+  document.getElementById('teasers').innerHTML = teasers.map(t=>`
+    <article class="teaser">
+      <div class="old">${t.old?`было: «${t.old}»`:'название сохраняем'}</div>
+      <h3>${t.title}</h3>
+      <div class="tagline">${t.tagline}</div>
+      ${t.teaser}
+      <div class="foot"><b>Для кого.</b> ${t.who}<br><b>Формат.</b> ${t.dur}<br><b>Что для этого доделать.</b> ${t.need}</div>
+    </article>`).join('');
+})();
+</script>
