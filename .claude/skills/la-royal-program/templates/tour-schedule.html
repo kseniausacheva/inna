@@ -1,0 +1,123 @@
+<!-- Шаблон расписания поездки La Royal Event — ночной режим.
+     Замените всё в {{двойных скобках}}. Комментарии перед публикацией удалите. -->
+<title>{{Название поездки}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --night:#120d1c; --night-2:#191225; --sand:#f3ece1; --sand-2:#cfc3b4;
+  --dim:#9b8fa8; --rule:#2f2545; --lilac:#c6a4f5; --lilac-deep:#8b5fd6; --lime:#cfe64f;
+  --display:"Prata",Georgia,serif; --sans:"Golos Text",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--sand);font-family:var(--sans);
+     font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:22px}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.02}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.12}
+p{margin:0 0 1em}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+.hero{border-bottom:1px solid var(--rule);
+  background:radial-gradient(88% 70% at 82% 8%, rgba(139,95,214,.32) 0%, transparent 60%), var(--night)}
+.hero .wrap{padding-block:clamp(46px,8vw,92px) clamp(28px,5vw,50px)}
+.promise{font-family:var(--display);font-size:clamp(1.1rem,2.5vw,1.55rem);color:var(--lime);
+  max-width:28ch;margin-top:.7em;line-height:1.3}
+section{padding-block:clamp(40px,6vw,72px);border-bottom:1px solid var(--rule)}
+
+/* дни поездки */
+.days{display:grid;gap:1px;background:var(--rule);margin-top:30px;border-block:1px solid var(--rule)}
+.day{background:var(--night);display:grid;grid-template-columns:120px 1fr;gap:26px;padding:24px 0}
+.day .n{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lilac);padding-top:.3em}
+.day .n em{display:block;font-style:normal;color:var(--dim);margin-top:5px;letter-spacing:0;text-transform:none}
+.day h3{font-family:var(--display);font-weight:400;font-size:1.4rem;margin:0 0 .4em;line-height:1.15}
+.day p{margin:0;color:var(--sand-2);font-size:.97rem}
+.day .tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--dim);margin-top:8px;display:block}
+
+.end{margin-top:28px;padding:18px 22px;border-radius:11px;
+  background:linear-gradient(180deg, rgba(139,95,214,.18), rgba(139,95,214,.06));
+  border:1px solid rgba(198,164,245,.22)}
+.end .lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lilac);display:block;margin-bottom:6px}
+.end p{margin:0}
+
+.notes{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:26px}
+.notes h4{font-family:var(--sans);font-size:1rem;font-weight:700;margin:0 0 .5em}
+.notes p, .notes li{color:var(--sand-2);font-size:.95rem}
+.notes ul{margin:0;padding-left:1.05em}
+footer{padding-block:30px 50px;color:var(--dim);font-size:.86rem}
+
+@media (max-width:700px){
+  .day{grid-template-columns:1fr;gap:10px;padding:20px 0}
+}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">{{Город}} · {{N}} дня · {{20–100 гостей}}</div>
+    <h1>{{Название поездки}}</h1>
+    <p class="promise">{{Обещание одной строкой: что группа проживёт за эти дни.}}</p>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Как идут дни</div>
+    <h2>{{Подзаголовок: почему дни стоят именно в этом порядке}}</h2>
+
+    <div class="days">
+      <article class="day">
+        <div class="n">День 1<em>{{дата или день недели}}</em></div>
+        <div>
+          <h3>{{Название программы}}</h3>
+          <p>{{Что происходит: два-три предложения сценой, а не расписанием трансферов.}}</p>
+          <span class="tag">{{длительность}} · {{город}} · {{что гость уносит}}</span>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="n">День 2<em>{{дата}}</em></div>
+        <div>
+          <h3>{{Название программы}}</h3>
+          <p>{{Что происходит.}}</p>
+          <span class="tag">{{длительность}} · {{город}} · {{что гость уносит}}</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="end">
+      <span class="lbl">Чем заканчивается</span>
+      <p>{{Что группа уносит за всю поездку: собранный артефакт, сцена, доступная только тем, кто прошёл все дни.}}</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Что важно знать</div>
+    <h2>Почему дни стоят в таком порядке</h2>
+    <div class="notes">
+      <div>
+        <h4>Море и перелёт</h4>
+        <p>Морской день не ставим накануне вылета: после погружения до перелёта нужно не меньше двенадцати часов, а после нескольких — восемнадцать. В горы после дайвинга не поднимаемся сутки.</p>
+      </div>
+      <div>
+        <h4>Пустыня и луна</h4>
+        <p>Лучшие даты — в пределах пяти дней от новолуния: в полнолуние небо засвечено и звёзд в разы меньше.</p>
+      </div>
+      <div>
+        <h4>{{Третье ограничение, если есть}}</h4>
+        <p>{{Например: музей закрыт с 13:00 до 17:00, поэтому вечерняя смена.}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="max-width:70ch">Истории, персонажи и находки вымышлены. Памятники, музеи и экспонаты — настоящие. Сценарии и комплектация — авторская разработка La Royal Event. Ксения Усачёва · baxgat@yandex.ru · WhatsApp +20 110 100 5061</p>
+  </div>
+</footer>
