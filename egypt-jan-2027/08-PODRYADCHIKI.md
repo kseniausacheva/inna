@@ -206,3 +206,55 @@ early access: первыми у турникета или доступ на за
 
 **Не берите подрядчика по скорости ответа.** Берите по тому, кто прислал документы,
 а не обещания.
+
+---
+
+## 7. ИТОГОВЫЙ СПИСОК АДРЕСОВ
+
+**Почему часть адресов это формы, а не почта.** Сетевой фильтр нашей среды блокирует
+большинство сайтов поставщиков, поэтому проверить их страницы Contact напрямую
+невозможно. Там, где адрес не подтверждён, я даю точный URL страницы контактов,
+а не угаданный адрес.
+
+### Готово к отправке прямо сейчас
+
+| Кому | Адрес | Письмо |
+|---|---|---|
+| Oberoi, борта Philae и Zahra | `reservations@oberoigroup.com` | 01 |
+| **Emeco Travel** | `management@emeco.com`, +202 2577 8768, +202 2576 4101 | 02 |
+| Marriott Mena House, номера | `mhrs.caimn.reservations@marriott.com`, копия `mhrs.caimn.guestrelations@marriott.com` | 06 |
+| Marriott Mena House, ужин | `mhrs.caimn.ebc@marriott.com`, `events.menahouse@marriott.com`, WhatsApp +20 103 303 0825 | 06 |
+| Mövenpick Resort Aswan | `resort.aswan@movenpick.com`, +20 97 245 4455 | 08 |
+| **Mara House Luxor**, трек спецдоступов | `maraegypt@gmail.com` | 03 |
+| EgyptAir, группы | форма egyptair.com/en/Book/Pages/Group-Reservation.aspx | 10 |
+
+### Сначала звонок, адрес получаем в разговоре
+
+| Кому | Телефон | Письмо |
+|---|---|---|
+| Abercrombie & Kent Egypt, Sun Boat III | +20 2 2394 7701, +20 2 2394 7777 | 01 и 02 |
+| Mandarin Oriental, Old Cataract | +20 102 222 9071, коммутатор +20 97 231 6000 | 05 |
+| Hilton Luxor | +20 95 239 9999 | 07 |
+
+### Только через форму на сайте
+
+| Кому | Страница | Письмо |
+|---|---|---|
+| Discovery Tours Egypt | dmcegypt.com | 02 |
+| Nour El Nil, дахабии | nourelnil.com/contact/ | 01 |
+| Kemet Dahabiya | kemetale.com, либо kemet.travel | 01 |
+| Hod Hod Soliman, шары | hodhodsolimanballoons.com/contact/ | 09 |
+| Magic Horizon, шары | visitluxorinhotairballoon.com/contact/ | 09 |
+
+### Две поправки к подбору
+
+**Ovation Egypt это Emeco Travel.** Ovation Global DMC представлена в Египте
+стратегическим партнёром Emeco Travel, и адрес каирского офиса у них тот же:
+2 Talaat Harb Street, Downtown. **[П]**
+То есть писать и туда, и туда означает писать одной компании дважды. Шорт-лист
+принимающих компаний сокращается до трёх: **Emeco, A&K Egypt, Discovery Tours.**
+
+**Kemet Dahabiya берёт до 19 гостей** и предлагается в полный чартер. **[П]**
+Это попадает в нужный диапазон по вместимости, в отличие от большинства дахабий.
+Но ограничение остаётся: дахабия, как правило, не идёт в темноте, значит риск
+шлюза не спрятать в ночь, и нужен вариант с посадкой в Эсне.
