@@ -1,0 +1,245 @@
+<title>Плато и музей</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --night:#120d1c; --night-2:#191225; --card:#1e1730;
+  --sand:#f3ece1; --sand-2:#cfc3b4; --dim:#9b8fa8; --rule:#2f2545;
+  --lilac:#c6a4f5; --lilac-deep:#8b5fd6; --lime:#cfe64f; --rose:#ff85b3;
+  --display:"Prata",Georgia,"Times New Roman",serif;
+  --sans:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--sand);font-family:var(--sans);
+     font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:22px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.005em}
+h1{font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:1}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.12}
+p{margin:0 0 1em}
+img{max-width:100%}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--rule);
+  background:radial-gradient(90% 70% at 80% 10%, rgba(139,95,214,.34) 0%, transparent 60%), var(--night)}
+.hero .wrap{padding-block:clamp(48px,8vw,96px) clamp(30px,5vw,54px)}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+.was{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--dim);margin-top:10px}
+.tagline{font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.6rem);color:var(--lime);
+  line-height:1.3;max-width:30ch;margin:.6em 0 0}
+
+section{padding-block:clamp(40px,6vw,72px);border-bottom:1px solid var(--rule)}
+.spread{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:start}
+.text p:first-of-type{font-size:1.1rem}
+.aside{border-left:1px solid var(--rule);padding-left:26px;font-size:.93rem}
+.aside .blk{margin-bottom:20px}
+.aside .blk:last-child{margin-bottom:0}
+.lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--lime);display:block;margin-bottom:6px}
+.aside ul{margin:0;padding-left:1.05em;color:var(--sand-2)}
+.aside li{margin-bottom:4px}
+.aside p{margin:0;color:var(--sand-2)}
+.scale{display:flex;align-items:center;gap:9px;margin-bottom:5px;font-size:.86rem;color:var(--sand-2)}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--rule);display:block}
+.dots i.on{background:var(--lilac)}
+.dots.warm i.on{background:var(--rose)}
+
+.doing{list-style:none;margin:1.2em 0 0;padding:0;border-top:1px solid var(--rule)}
+.doing li{position:relative;padding:11px 0 11px 26px;border-bottom:1px solid var(--rule);
+  color:var(--sand-2);font-size:.95rem}
+.doing li::before{content:"→";position:absolute;left:0;top:11px;color:var(--lilac-deep);
+  font-family:var(--mono);font-size:.85rem}
+
+.finale{margin-top:1.3em;padding:16px 20px;border-radius:11px;
+  background:linear-gradient(180deg, rgba(139,95,214,.18), rgba(139,95,214,.06));
+  border:1px solid rgba(198,164,245,.22)}
+.finale .lbl{color:var(--lilac)}
+.finale p{margin:0;font-size:.97rem}
+
+/* ход дня */
+.flow{display:grid;gap:1px;background:var(--rule);margin-top:28px;border-block:1px solid var(--rule)}
+.step{background:var(--night);display:grid;grid-template-columns:130px 1fr;gap:26px;padding:20px 0}
+.step .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--lilac);padding-top:.35em}
+.step h3{font-size:1.25rem;margin:0 0 .35em}
+.step p{margin:0;color:var(--sand-2);font-size:.95rem}
+
+.cta{background:radial-gradient(80% 100% at 20% 0%, rgba(139,95,214,.28) 0%, transparent 60%), var(--night-2);border-bottom:none}
+.cta .line{color:var(--sand-2);max-width:60ch}
+.contacts{display:flex;flex-wrap:wrap;gap:12px 36px;align-items:baseline;
+  padding-top:24px;margin-top:26px;border-top:1px solid var(--rule)}
+.contacts .name{font-family:var(--display);font-size:1.4rem}
+footer{padding-block:30px 50px;color:var(--dim);font-size:.86rem}
+
+@media (max-width:820px){
+  .spread{grid-template-columns:1fr;gap:28px}
+  .aside{border-left:none;border-top:1px solid var(--rule);padding-left:0;padding-top:22px}
+  .step{grid-template-columns:1fr;gap:8px;padding:18px 0}
+}
+</style><style>
+.prog{border-bottom:1px solid var(--rule)}
+.prog h2{font-size:clamp(2rem,4.6vw,3rem);line-height:1.04;margin-bottom:.15em}
+.num{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px}
+.pill{background:var(--card);border:1px solid var(--rule);border-radius:13px;padding:20px 22px}
+.pill h4{font-family:var(--sans);font-size:.98rem;font-weight:700;margin:0 0 .5em}
+.pill p,.pill li{color:var(--sand-2);font-size:.94rem;margin:0}
+.pill ul{margin:0;padding-left:1.05em}
+.pill li{margin-bottom:4px}
+@media (max-width:760px){.two{grid-template-columns:1fr;gap:16px}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Гиза · один день · 20–100 гостей</div>
+    <h1>Плато и музей</h1>
+    <p class="tagline">Утром вы спорите с пирамидами. После обеда — с каталогом музея.</p>
+  </div>
+</header>
+
+<main>
+<section class="prog">
+  <div class="wrap spread">
+    <div class="text">
+      <div class="num">Глава 1 · плато Гиза · 4 часа</div>
+      <h2>Код пирамид</h2>
+      <p class="tagline" style="margin-bottom:1.1em">Дневнику верить нельзя. Пирамидам — можно. Проверьте сами.</p>
+
+      <p>Дневник археолога подменили: половина того, что в нём написано, — ложь. Сверить его можно только с самими пирамидами.</p>
+      <p>Вы выходите на плато рано, пока известняк ещё прохладный, с папкой, планом и шестью пустыми карточками свидетельств. У Хуфу вы поднимаете глаза от рисунка на настоящую кладку и находите место, где художник соврал. На панораме вы сначала поверите глазам — средняя пирамида явно выше остальных, — а через десять минут сами докажете, почему это неправда. У Сфинкса поймаете отчёт, который врёт трижды.</p>
+      <p>В каждой подлинной странице спрятана цифра. Шесть страниц — шесть цифр, и они нужны не для баллов. На террасе с видом на Хуфу шесть человек от шести команд подходят к ларцу и крутят по одному диску замка. Ошиблась одна команда — дужка стоит на месте, и вся группа две минуты ищет, чья цифра чужая.</p>
+      <p>А чуть раньше к вам подойдёт человек, который был рядом весь день, и принесёт второе письмо с другим кодом. Вот тогда и выяснится, кто подкладывал чужие страницы.</p>
+
+      <ul class="doing">
+        <li>Сравниваете три рисунка одного участка Хуфу с настоящей кладкой и приносите гиду два доказательства подделки</li>
+        <li>Считаете через визирную рамку, какая пирамида кажется выше, и объясняете, почему глазу верить нельзя</li>
+        <li>Восстанавливаете погребальный комплекс Хафры и находите три ошибки в чужом отчёте у Сфинкса</li>
+        <li>Набираете на замке ларца шесть цифр, добытых шестью командами</li>
+      </ul>
+
+      <div class="finale">
+        <span class="lbl">Финал</span>
+        <p>Ларец открывается кодом, который вы заработали сами. Внутри — письмо экспедиции и лист «Восстановленный маршрут» из шести ваших командных снимков, отпечатанный, пока вы ехали к финалу.</p>
+      </div>
+    </div>
+
+    <aside class="aside">
+      <div class="blk"><span class="lbl">Где и сколько</span>
+        <p>Плато Гиза<br>4 часа на плато<br>20–100 гостей · команды по пять</p></div>
+      <div class="blk"><span class="lbl">Для кого</span>
+        <p>Командам от 20 человек, которые уже фотографировались на фоне пирамид и хотят провести на плато день, где надо думать, а не кивать.</p></div>
+      <div class="blk"><span class="lbl">Нагрузка</span>
+        <div class="scale">Активность <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+        <div class="scale">Напряжение <span class="dots warm"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+      </div>
+      <div class="blk"><span class="lbl">Что входит</span>
+        <ul>
+          <li>Входные билеты на плато и транспорт по маршруту</li>
+          <li>Три гида-историка, ведущий и игровые помощники</li>
+          <li>Тень и вода на каждой остановке, ранний старт летом</li>
+          <li>Зона финала с видом на пирамиды на 50 минут</li>
+        </ul></div>
+      <div class="blk"><span class="lbl">Что останется</span>
+        <p>Восстановленный маршрут с фотографиями всех команд, письмо экспедиции и фрагмент солнечной печати каждому гостю.</p></div>
+      <div class="blk"><span class="lbl">Готовим за</span><p>6 недель</p></div>
+    </aside>
+  </div>
+</section>
+
+<section class="prog">
+  <div class="wrap spread">
+    <div class="text">
+      <div class="num">Глава 2 · Большой Египетский музей · 4 часа</div>
+      <h2>Последняя страница</h2>
+      <p class="tagline" style="margin-bottom:1.1em">Каталог уходит в печать завтра. Последнюю страницу напишете вы.</p>
+
+      <p>Завтра каталог выставки уходит в печать, и на его последней странице стоит чужая фраза: «Египет — это цари, боги и золото, остальное — мелочи». Автор каталога исчез. Страница с его объяснением — вместе с ним.</p>
+      <p>Вы — редакция, и у вас четыре часа в Большом Египетском музее. У каждого из шести предметов вам вручают разворот «золотой» версии: уверенная подпись, красивая вёрстка, рисунок человека, который в зале не был. Ваше дело — поймать, где подпись врёт, глядя на оригинал. Одиннадцатиметровый Рамсес, ради которого построили зал. Львиная голова Сехмет за плечом царя. Кресло царицы, у которого нет колёс, зато есть шесты. Трон, который только кажется золотым.</p>
+      <p>Потом вы доходите до маленькой каменной группы, где мальчик стоит рядом с отцом, а девочка держится за его ногу, — и версия про золото рассыпается сама, без вашей помощи.</p>
+      <p>Финал начинается за 27 минут до закрытия типографии. Кейс редакции заперт шестью замками, и крышка поднимется, только когда к нему подойдёт шестая команда.</p>
+
+      <ul class="doing">
+        <li>Ловите ложь в шести разворотах «золотого» каталога, сверяя каждую подпись с предметом в витрине</li>
+        <li>Записываете версию команды раньше, чем откроете справку, — и смотрите, кто был прав</li>
+        <li>Снимаете свой замок с кейса редакции и складываете шесть обрывков страницы в одну фразу автора</li>
+        <li>Пишете подпись к своему предмету: что увидели глазами и что это говорит о человеке за вещью</li>
+      </ul>
+
+      <div class="finale">
+        <span class="lbl">Финал</span>
+        <p>Из кейса выходит письмо автора, и оно объясняет, зачем он забрал страницу. Через пару дней вы получаете вёрстку собранной страницы с подписями всех шести команд и именем вашей компании в выходных данных.</p>
+      </div>
+    </div>
+
+    <aside class="aside">
+      <div class="blk"><span class="lbl">Где и сколько</span>
+        <p>Большой Египетский музей<br>4 часа в музее<br>20–100 гостей · три потока по десять</p></div>
+      <div class="blk"><span class="lbl">Для кого</span>
+        <p>Компаниям и партнёрским группам от 20 человек, которые музеи уже видели и хотят не слушать про экспонаты, а спорить о них.</p></div>
+      <div class="blk"><span class="lbl">Нагрузка</span>
+        <div class="scale">Активность <span class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="scale">Напряжение <span class="dots warm"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+      </div>
+      <div class="blk"><span class="lbl">Что входит</span>
+        <ul>
+          <li>Билеты с доступом к нужным разделам музея</li>
+          <li>Три гида, ведущий и помощники по потокам</li>
+          <li>Кофе-пауза с перекусом на третьем часу</li>
+          <li>Зона финала с рассадкой на 30 минут</li>
+          <li>Дополнительно: первая лодка Хуфу, ещё 45–60 минут</li>
+        </ul></div>
+      <div class="blk"><span class="lbl">Что останется</span>
+        <p>Вёрстка собранной последней страницы каталога с подписями всех команд и именем вашей компании в выходных данных.</p></div>
+      <div class="blk"><span class="lbl">Готовим за</span><p>6–8 недель</p></div>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Оба в один день</div>
+    <h2>Плато утром, музей после обеда</h2>
+    <p style="max-width:62ch;margin-top:14px;color:var(--sand-2)">Музей стоит в двадцати минутах от плато, поэтому две главы помещаются в один день без переездов через Каир. Солнце работает на вас: на плато группа выходит, пока камень ещё прохладный, а в музее прохладно и есть где сесть. К вечеру у каждого гостя два фрагмента солнечной печати из девяти — остальные семь ждут в других городах.</p>
+    <div class="two">
+      <div class="pill">
+        <h4>Как идёт день</h4>
+        <ul>
+          <li>Ранний выезд, четыре часа на плато</li>
+          <li>Обед в тени, двадцать минут переезда</li>
+          <li>Четыре часа в музее, финал с рассадкой</li>
+          <li>Возвращение в отель к ужину</li>
+        </ul>
+      </div>
+      <div class="pill">
+        <h4>Что уезжает с гостями</h4>
+        <ul>
+          <li>Лист «Восстановленный маршрут» с фотографиями всех команд</li>
+          <li>Вёрстка последней страницы каталога с именем компании</li>
+          <li>Два письма и два фрагмента солнечной печати каждому</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="eyebrow">Следующий шаг</div>
+    <h2>Напишите дату, число гостей и отель</h2>
+    <p class="line" style="margin-top:14px">Остальное спросим сами. Смету присылаем в тот же день. Если хотите сначала попробовать — проведём для вашей команды принятия решения сорокапятиминутный прогон одной станции, без обязательств.</p>
+    <div class="contacts">
+      <span class="name">Ксения Усачёва</span>
+      <span>La&nbsp;Royal&nbsp;Event</span>
+      <span>baxgat@yandex.ru</span>
+      <span>WhatsApp +20 110 100 5061 · +20 122 835 3909</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="max-width:70ch">Истории, персонажи и находки вымышлены. Пирамиды, музей и экспонаты — настоящие, их историю рассказывают профессиональные гиды. Сценарий, задания и комплектация — авторская разработка La Royal Event.</p>
+  </div>
+</footer>
