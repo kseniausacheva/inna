@@ -51,12 +51,11 @@ tr.total td.sum{color:var(--lilac)}
 .steps .t{font-family:var(--mono);font-size:8pt;color:var(--lilac);font-variant-numeric:tabular-nums;padding-top:.4mm}
 .steps .w{color:var(--ink2)}
 .steps .w b{color:var(--ink);font-weight:600}
-.foot{position:fixed;bottom:-12mm;left:0;right:0;font-family:var(--mono);font-size:6.8pt;color:var(--dim);display:flex;justify-content:space-between}
+.foot{margin-top:6mm;padding-top:3mm;border-top:1px solid var(--rule);font-family:var(--mono);font-size:6.8pt;color:var(--dim);display:flex;justify-content:space-between}
 </style>
 </head>
 <body>
 
-<div class="foot"><span>La Royal Event · Каир, 14–18 октября 2026 · смета и расписание</span><span>подготовлено 16.09.2026</span></div>
 
 <header class="cover">
   <div>
@@ -77,10 +76,10 @@ tr.total td.sum{color:var(--lilac)}
   <p style="color:var(--ink2);font-size:9.3pt">Все суммы в долларах США. Строки со статусом «ваша цена» подтверждены, «оценка» посчитаны по открытым источникам и подтверждаются у поставщиков, «уточнить» ждут меню от площадки.</p>
   <table>
     <tr><th>#</th><th>Позиция</th><th>Расчёт</th><th style="text-align:right">Сумма</th><th>Статус</th></tr>
-    <tr><td class="n">1</td><td class="name">Экскурсия на пирамиды Гизы, 15 октября</td><td>25 $ на гостя × 30: билет на плато (700 EGP ≈ 14 $), доля двух египтологов, двух ассистентов, приёмников с наушниками, вода</td><td class="sum">750</td><td><span class="tag est">оценка</span></td></tr>
-    <tr><td class="n">2</td><td class="name">Большой Египетский музей, 15 октября, 2 часа</td><td>40 $ на гостя × 30: билет (≈ 1 450–1 590 EGP ≈ 30 $), доля египтологов, ассистентов, приёмников</td><td class="sum">1 200</td><td><span class="tag est">оценка</span></td></tr>
+    <tr><td class="n">1</td><td class="name">Пирамиды Гизы, 15 октября</td><td>180 $ на гостя × 30: индивидуальный маршрут для двух групп по 15, два египтолога и два ассистента, билет на плато, дополнительные объекты по 30 $ за каждый, приёмники с наушниками, вода</td><td class="sum">5 400</td><td><span class="tag est">оценка</span></td></tr>
+    <tr><td class="n">2</td><td class="name">Большой Египетский музей, 15 октября</td><td>120 $ на гостя × 30: индивидуальная программа для двух групп по 15, два египтолога и два ассистента, билет (≈ 1 450–1 590 EGP ≈ 30 $), дополнительные залы по 30 $, приёмники</td><td class="sum">3 600</td><td><span class="tag est">оценка</span></td></tr>
     <tr><td class="n">3</td><td class="name">Обед в Khufu’s, 15 октября</td><td>на группу, с видом на Хуфу</td><td class="sum">2 880</td><td><span class="tag yours">ваша цена</span></td></tr>
-    <tr><td class="n">4</td><td class="name">Ужин в Lucida, 15 октября</td><td>меню и два бокала вина</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
+    <tr><td class="n">4</td><td class="name">Ужин в Lucida, 15 октября</td><td>меню и два бокала вина, площадка уточняет цену</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
     <tr><td class="n">5</td><td class="name">Фаюм, 16 октября</td><td>320 $ на гостя × 30: автобус Mercedes MCV 600, восемь внедорожников по четыре гостя, водопады, гора Медавара, Долина китов и музей ископаемых, Волшебное озеро и сэндбординг, обед в Tunis Pyramids, все входные</td><td class="sum">9 600</td><td><span class="tag yours">ваша цена</span></td></tr>
     <tr><td class="n">6</td><td class="name">Ужин в Новом Каире, 16 октября</td><td>по меню</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
     <tr><td class="n">7</td><td class="name">«Четыре руки, одно письмо», 17 октября</td><td>на группу: трансфер, ведущий, гиды, актёры, мастера, площадки, реквизит. Хан-эль-Халили или Баб-Зувейла</td><td class="sum">5 550</td><td><span class="tag yours">ваша цена</span></td></tr>
@@ -89,46 +88,55 @@ tr.total td.sum{color:var(--lilac)}
     <tr><td class="n">10</td><td class="name">Ужин на яхте</td><td>110 $ на гостя × 30</td><td class="sum">3 300</td><td><span class="tag yours">ваша цена</span></td></tr>
     <tr><td class="n">11</td><td class="name">Техника и караоке на яхте</td><td>экран, звук, микрофоны, караоке, техник на борту</td><td class="sum">2 500</td><td><span class="tag yours">ваша цена</span></td></tr>
     <tr><td class="n">12</td><td class="name">Диджей</td><td>обычный 450 $, с шоу-программой 850 $</td><td class="sum">450–850</td><td><span class="tag yours">ваша цена</span></td></tr>
-    <tr><td class="n">13</td><td class="name">Трансферы по всем переездам</td><td>расчёт по движениям на следующей странице</td><td class="sum">1 300</td><td><span class="tag est">оценка</span></td></tr>
-    <tr class="total"><td></td><td colspan="2">Итого по известным и оценённым строкам, без пунктов 4, 6 и 8</td><td class="sum">32 030–32 430</td><td></td></tr>
+    <tr><td class="n">13</td><td class="name">Трансферы по всем переездам</td><td>большие комфортабельные автобусы, расчёт по движениям на следующей странице</td><td class="sum">2 300</td><td><span class="tag est">оценка</span></td></tr>
+    <tr class="total"><td></td><td colspan="2">Итого по известным и оценённым строкам, без пунктов 4, 6 и 8</td><td class="sum">40 080–40 480</td><td></td></tr>
   </table>
   <div class="note">Считаем отдельно: отель, перелёт, визы (по прилёту 30 $ на человека, на группу 900 $), алкогольный пакет на яхте, ужин и фуршет в отеле 14 октября, обед в отеле 18 октября.</div>
 </section>
 
 <section class="brk">
   <h2>Трансферы по движениям</h2>
-  <p style="color:var(--ink2);font-size:9.3pt">Оценка по открытой цене на Mercedes MCV 600: трансфер из аэропорта от 5 500 EGP, около 110 $. Полный день по городу считаем 200 $, вечерний выезд с ожиданием 120 $.</p>
+  <p style="color:var(--ink2);font-size:9.3pt">Считаем большие комфортабельные автобусы класса Mercedes MCV 600. Плановые ставки: трансфер из аэропорта или в аэропорт 200 $ за автобус, полный день по городу 400 $, вечерний выезд с ожиданием 200 $. Ставки подтверждает перевозчик.</p>
   <table>
     <tr><th>Дата</th><th>Переезд</th><th style="text-align:right">Сумма</th></tr>
-    <tr><td class="n" style="width:14mm">14.10</td><td>Аэропорт → отель, два рейса, два автобуса</td><td class="sum">220</td></tr>
-    <tr><td class="n">15.10</td><td>Отель → Гиза → Khufu’s → музей → отель, полный день</td><td class="sum">200</td></tr>
-    <tr><td class="n">15.10</td><td>Отель → Lucida → отель, вечер с ожиданием</td><td class="sum">120</td></tr>
-    <tr><td class="n">16.10</td><td>Автобус до Туниса и обратно входит в 320 $ на гостя. Крюк через Новый Каир и ожидание на ужине</td><td class="sum">100</td></tr>
-    <tr><td class="n">17.10</td><td>Автобус на программу входит в 5 550 $. Второй автобус: Коптский Каир для желающих и отель для остальных</td><td class="sum">150</td></tr>
-    <tr><td class="n">17.10</td><td>Отель → причал → отель, вечер с ожиданием</td><td class="sum">120</td></tr>
-    <tr><td class="n">18.10</td><td>Отель → аэропорт, два рейса, два автобуса</td><td class="sum">220</td></tr>
-    <tr><td class="n"></td><td>Запас на пробки, парковки, переработку водителей</td><td class="sum">170</td></tr>
-    <tr class="total"><td></td><td>Итого</td><td class="sum">1 300</td></tr>
+    <tr><td class="n" style="width:14mm">14.10</td><td>Аэропорт → отель, два рейса, два автобуса</td><td class="sum">400</td></tr>
+    <tr><td class="n">15.10</td><td>Отель → Гиза → Khufu’s → музей → отель, полный день</td><td class="sum">400</td></tr>
+    <tr><td class="n">15.10</td><td>Отель → Lucida → отель, вечер с ожиданием</td><td class="sum">200</td></tr>
+    <tr><td class="n">16.10</td><td>Автобус до Туниса и обратно входит в 320 $ на гостя. Крюк через Новый Каир и ожидание на ужине</td><td class="sum">200</td></tr>
+    <tr><td class="n">17.10</td><td>Автобус на программу входит в 5 550 $. Второй автобус: Коптский Каир для желающих и отель для остальных</td><td class="sum">250</td></tr>
+    <tr><td class="n">17.10</td><td>Отель → причал → отель, вечер с ожиданием</td><td class="sum">200</td></tr>
+    <tr><td class="n">18.10</td><td>Отель → аэропорт, два рейса, два автобуса</td><td class="sum">400</td></tr>
+    <tr><td class="n"></td><td>Запас на пробки, парковки, переработку водителей</td><td class="sum">250</td></tr>
+    <tr class="total"><td></td><td>Итого</td><td class="sum">2 300</td></tr>
   </table>
 
-  <h2 style="margin-top:8mm">Пирамиды и музей: что внутри 65 $ на человека</h2>
+  <h2 style="margin-top:8mm">Пирамиды и музей: расчёт на человека</h2>
   <div class="grid2">
     <table>
-      <tr><th>Статья</th><th style="text-align:right">На группу</th></tr>
-      <tr><td>Билеты на плато Гизы, 30 × 14 $</td><td class="sum">420</td></tr>
-      <tr><td>Билеты в Большой Египетский музей, 30 × 30 $</td><td class="sum">900</td></tr>
-      <tr><td>Два египтолога на весь день, 150–200 $ каждый</td><td class="sum">300–400</td></tr>
-      <tr><td>Два ассистента, 50–60 $ каждый</td><td class="sum">100–120</td></tr>
-      <tr><td>Приёмники с наушниками, 34 комплекта</td><td class="sum">130</td></tr>
-      <tr><td>Вода на день</td><td class="sum">30</td></tr>
-      <tr class="total"><td>Итого на группу</td><td class="sum">1 880–2 000</td></tr>
-      <tr class="total"><td>На человека</td><td class="sum">63–67</td></tr>
+      <tr><th>Пирамиды Гизы</th><th style="text-align:right">На человека</th></tr>
+      <tr><td>Билет на плато</td><td class="sum">14</td></tr>
+      <tr><td>Два египтолога, 450 $ в день каждый, на 30 гостей</td><td class="sum">30</td></tr>
+      <tr><td>Два ассистента, 110 $ в день каждый, на 30 гостей</td><td class="sum">8</td></tr>
+      <tr><td>Дополнительные объекты маршрута, по 30 $ за каждый: Великая пирамида внутри, храм в долине, панорама</td><td class="sum">90</td></tr>
+      <tr><td>Приёмники с наушниками, вода</td><td class="sum">6</td></tr>
+      <tr><td>Резерв на индивидуальный маршрут и согласования</td><td class="sum">32</td></tr>
+      <tr class="total"><td>Итого на человека</td><td class="sum">180</td></tr>
+      <tr class="total"><td>На группу 30 гостей</td><td class="sum">5 400</td></tr>
     </table>
-    <div>
-      <div class="note">Из 65 $ на человека пирамиды дают около 25 $, музей около 40 $. Ставки египтологов взяты по верхней границе открытых источников: для кастинга это верный ориентир.</div>
-      <div class="note rose" style="margin-top:3mm">Билет в музей в источниках гуляет от 1 200 до 1 700 EGP, взята середина. Точную сумму покажет официальный сайт при бронировании: продажа только онлайн, заходы по часам.</div>
-    </div>
+    <table>
+      <tr><th>Большой Египетский музей</th><th style="text-align:right">На человека</th></tr>
+      <tr><td>Билет</td><td class="sum">30</td></tr>
+      <tr><td>Два египтолога на индивидуальную программу, половина дня, на 30 гостей</td><td class="sum">15</td></tr>
+      <tr><td>Два ассистента, половина дня, на 30 гостей</td><td class="sum">4</td></tr>
+      <tr><td>Дополнительные залы по программе, по 30 $ за каждый: галереи Тутанхамона, Большая лестница</td><td class="sum">60</td></tr>
+      <tr><td>Приёмники с наушниками</td><td class="sum">5</td></tr>
+      <tr><td>Резерв на согласование программы с музеем</td><td class="sum">6</td></tr>
+      <tr class="total"><td>Итого на человека</td><td class="sum">120</td></tr>
+      <tr class="total"><td>На группу 30 гостей</td><td class="sum">3 600</td></tr>
+    </table>
   </div>
+  <div class="note">День 15 октября целиком: 300 $ на человека, 9 000 $ на группу, без обеда в Khufu’s и ужина. Группа делится на две по пятнадцать, у каждой свой египтолог и свой ассистент на весь день.</div>
+  <div class="note rose" style="margin-top:3mm">Билет в музей в источниках гуляет от 1 200 до 1 700 EGP, взята середина. Точную сумму покажет официальный сайт при бронировании: продажа только онлайн, заходы по часам.</div>
 </section>
 
 <section class="brk">
@@ -199,6 +207,7 @@ tr.total td.sum{color:var(--lilac)}
   </div>
 
   <p style="font-size:8.3pt;color:var(--dim);margin-top:4mm">Истории, персонажи и находки вымышлены. Памятники, музеи и экспонаты настоящие, их историю рассказывают профессиональные гиды. Сценарии и комплектация — авторская разработка La Royal Event.</p>
+  <div class="foot"><span>La Royal Event · Каир, 14–18 октября 2026 · смета и расписание</span><span>подготовлено 16.09.2026</span></div>
 </section>
 
 </body>
