@@ -1,0 +1,457 @@
+<title>Каир: код, страница, письмо</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --night:#120d1c; --night-2:#191225; --card:#1e1730;
+  --sand:#f3ece1; --sand-2:#cfc3b4; --dim:#9b8fa8; --rule:#2f2545;
+  --lilac:#c6a4f5; --lilac-deep:#8b5fd6; --lime:#cfe64f; --rose:#ff85b3;
+  --display:"Prata",Georgia,"Times New Roman",serif;
+  --sans:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--sand);font-family:var(--sans);
+     font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:22px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.02}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.12}
+p{margin:0 0 1em}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+.hero{border-bottom:1px solid var(--rule);
+  background:radial-gradient(88% 70% at 82% 8%, rgba(139,95,214,.32) 0%, transparent 60%), var(--night)}
+.hero .wrap{padding-block:clamp(46px,8vw,92px) clamp(28px,5vw,50px)}
+.promise{font-family:var(--display);font-size:clamp(1.1rem,2.5vw,1.55rem);color:var(--lime);
+  max-width:28ch;margin-top:.7em;line-height:1.3}
+.lead{color:var(--sand-2);max-width:62ch;margin-top:1.2em}
+section{padding-block:clamp(40px,6vw,72px);border-bottom:1px solid var(--rule)}
+
+/* дни */
+.days{display:grid;gap:1px;background:var(--rule);margin-top:30px;border-block:1px solid var(--rule)}
+.day{background:var(--night);display:grid;grid-template-columns:150px 1fr;gap:26px;padding:26px 0}
+.day .n{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lilac);padding-top:.3em}
+.day .n em{display:block;font-style:normal;color:var(--dim);margin-top:5px;letter-spacing:0;text-transform:none}
+.day h3{font-size:1.4rem;margin:0 0 .4em;line-height:1.15}
+.day > div > p{margin:0 0 .6em;color:var(--sand-2);font-size:.97rem;max-width:62ch}
+.day .tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--dim);margin-top:10px;display:block}
+
+/* ход дня внутри карточки */
+.flow{display:grid;gap:0;margin-top:14px;border-top:1px solid var(--rule)}
+.step{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.step .t{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--lilac);padding-top:.25em;font-variant-numeric:tabular-nums}
+.step p{margin:0;color:var(--sand-2);font-size:.93rem;max-width:60ch}
+.step b{color:var(--sand);font-weight:600}
+.variant{margin-top:18px;padding:14px 16px;border-radius:10px;background:var(--night-2);border:1px solid var(--rule)}
+.variant .lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:4px}
+.variant h4{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:0 0 .2em}
+.variant .flow{margin-top:8px}
+
+.end{margin-top:28px;padding:18px 22px;border-radius:11px;
+  background:linear-gradient(180deg, rgba(139,95,214,.18), rgba(139,95,214,.06));
+  border:1px solid rgba(198,164,245,.22)}
+.end .lbl,.finale .lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lilac);display:block;margin-bottom:6px}
+.end p{margin:0;max-width:66ch}
+
+/* программы */
+.prog{padding-block:clamp(34px,5vw,56px);border-bottom:1px solid var(--rule)}
+.prog:last-of-type{border-bottom:none}
+.prog .was{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--dim);margin-top:8px}
+.tagline{font-family:var(--display);font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--lime);line-height:1.3;max-width:30ch;margin:.5em 0 0}
+.spread{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:start;margin-top:22px}
+.text p{color:var(--sand-2);max-width:62ch}
+.text p:first-of-type{color:var(--sand);font-size:1.05rem}
+.aside{border-left:1px solid var(--rule);padding-left:26px;font-size:.93rem}
+.aside .blk{margin-bottom:18px}
+.aside .blk:last-child{margin-bottom:0}
+.aside .lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:6px}
+.aside ul{margin:0;padding-left:1.05em;color:var(--sand-2)}
+.aside li{margin-bottom:4px}
+.aside p{margin:0;color:var(--sand-2)}
+.scale{display:flex;align-items:center;gap:9px;margin-bottom:5px;font-size:.86rem;color:var(--sand-2)}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--rule);display:block}
+.dots i.on{background:var(--lilac)}
+.dots.warm i.on{background:var(--rose)}
+.doing{list-style:none;margin:1.1em 0 0;padding:0;border-top:1px solid var(--rule)}
+.doing li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--rule);color:var(--sand-2);font-size:.95rem}
+.doing li::before{content:"→";position:absolute;left:0;top:10px;color:var(--lilac-deep);font-family:var(--mono);font-size:.85rem}
+.finale{margin-top:1.2em;padding:16px 20px;border-radius:11px;
+  background:linear-gradient(180deg, rgba(139,95,214,.18), rgba(139,95,214,.06));
+  border:1px solid rgba(198,164,245,.22)}
+.finale p{margin:0;font-size:.97rem}
+.price{margin-top:18px;padding:12px 16px;border-radius:6px;border:1px dashed rgba(207,230,79,.45);font-family:var(--mono);font-size:.78rem;color:var(--sand-2)}
+.price b{color:var(--lime);font-weight:500}
+
+.notes{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:26px}
+.notes h4{font-family:var(--sans);font-size:1rem;font-weight:700;margin:0 0 .5em}
+.notes p,.notes li{color:var(--sand-2);font-size:.95rem}
+.notes ul{margin:0;padding-left:1.05em}
+.notes p{margin:0}
+footer{padding-block:30px 50px;color:var(--dim);font-size:.86rem}
+
+@media (max-width:820px){
+  .spread{grid-template-columns:1fr;gap:28px}
+  .aside{border-left:none;border-top:1px solid var(--rule);padding-left:0;padding-top:22px}
+}
+@media (max-width:700px){
+  .day{grid-template-columns:1fr;gap:10px;padding:20px 0}
+  .step{grid-template-columns:1fr;gap:4px}
+}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Каир · 14–18 октября 2026 · 30 гостей</div>
+    <h1>Каир: код, страница, письмо</h1>
+    <p class="promise">Три дня в городе, и каждый из них — глава, которую дописываете вы.</p>
+    <p class="lead">Пирамиды, Большой Египетский музей, пустыня Фаюма, старый Каир и Нил. Два дня из трёх группа проводит внутри программ из коллекции «Архив Камаля»: это не экскурсии с загадками, а истории, у которых без вас нет развязки.</p>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Как идут дни</div>
+    <h2>Тяжёлый день стоит в середине, старый Каир — утром, Нил — на прощание</h2>
+
+    <div class="days">
+
+      <article class="day">
+        <div class="n">14 октября<em>среда · прилёт</em></div>
+        <div>
+          <h3>Два рейса, два стола</h3>
+          <p>Группа прилетает двумя рейсами по пятнадцать человек. Каждую половину встречаем отдельно: табличка в зале прилёта, свой трансфер, заселение по заранее заполненным картам.</p>
+          <div class="flow">
+            <div class="step"><div class="t">по прилёту</div><p><b>Первая группа.</b> Встреча, трансфер, заселение. Ужин в отеле на 15 гостей, два бокала вина.</p></div>
+            <div class="step"><div class="t">по прилёту</div><p><b>Вторая группа.</b> Встреча, трансфер, заселение. Фуршет в отеле на 15 гостей, два бокала вина.</p></div>
+          </div>
+          <span class="tag">2 трансфера · отель · спокойный вечер перед ранним стартом</span>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="n">15 октября<em>четверг · Гиза</em></div>
+        <div>
+          <h3>Плато, Хуфу и музей, ради которого построили зал</h3>
+          <p>День на стороне Гизы: пирамиды и Сфинкс, обед в Khufu’s с видом на Хуфу, Большой Египетский музей. Одно из двух мест сегодня становится программой из «Архива Камаля» — выбираете вы. Русскоязычный гид проходит кастинг, у всей группы приёмники с наушниками, в автобусе вода.</p>
+
+          <div class="variant">
+            <span class="lbl">Вариант А</span>
+            <h4>«Код пирамид» на плато, музей после обеда</h4>
+            <div class="flow">
+              <div class="step"><div class="t">06:15–06:45</div><p>Ранний завтрак. Выезд, пока плато ещё пустое и прохладное.</p></div>
+              <div class="step"><div class="t">07:30–11:30</div><p><b>«Код пирамид».</b> Четыре часа на плато: северная грань Хуфу, панорама трёх пирамид, обзорная точка Хафры, храм в долине и терраса перед Сфинксом, финал с ларцом на террасе с видом на Хуфу.</p></div>
+              <div class="step"><div class="t">11:30–12:00</div><p>По желанию — прогулка на верблюдах в отведённой зоне у панорамы.</p></div>
+              <div class="step"><div class="t">12:15–13:45</div><p>Обед в Khufu’s.</p></div>
+              <div class="step"><div class="t">14:30–17:00</div><p><b>Большой Египетский музей</b> с гидом: Большая лестница, колосс Рамсеса, галереи Тутанхамона.</p></div>
+              <div class="step"><div class="t">17:30</div><p>Отель, отдых.</p></div>
+              <div class="step"><div class="t">20:00–22:30</div><p>Ужин в ресторане в городе, меню и два бокала вина.</p></div>
+            </div>
+          </div>
+
+          <div class="variant">
+            <span class="lbl">Вариант Б</span>
+            <h4>«Последняя страница» в музее, плато после обеда</h4>
+            <div class="flow">
+              <div class="step"><div class="t">07:30–08:30</div><p>Завтрак, выезд.</p></div>
+              <div class="step"><div class="t">09:00–13:00</div><p><b>«Последняя страница».</b> Четыре часа в Большом Египетском музее: шесть предметов, кофе-пауза на третьем часу, общий финал в зале с кейсом редакции.</p></div>
+              <div class="step"><div class="t">13:30–15:00</div><p>Обед в Khufu’s.</p></div>
+              <div class="step"><div class="t">15:15–17:00</div><p><b>Пирамиды и Сфинкс</b> с гидом: панорама, Хафра, Сфинкс, свет уже мягкий. По желанию — прогулка на верблюдах в отведённой зоне.</p></div>
+              <div class="step"><div class="t">17:30</div><p>Отель, отдых.</p></div>
+              <div class="step"><div class="t">20:00–22:30</div><p>Ужин в ресторане в городе, меню и два бокала вина.</p></div>
+            </div>
+          </div>
+          <span class="tag">4 часа программы · Гиза · первый или второй фрагмент солнечной печати</span>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="n">16 октября<em>пятница · Фаюм</em></div>
+        <div>
+          <h3>Долина китов, дюны и большой вечер</h3>
+          <p>Пятничное утро — единственное в неделе, когда Каир выпускает быстро. Дальше 150 километров до заповедника, пересадка на внедорожники и день, в котором пустыня сначала показывает океан, а потом — дюны. Вечером — гала-ужин на большой сцене.</p>
+          <div class="flow">
+            <div class="step"><div class="t">07:00–08:00</div><p>Завтрак. Выезд в 08:00.</p></div>
+            <div class="step"><div class="t">10:30</div><p>Ворота заповедника Вади-эль-Райян, пересадка на внедорожники с водителями.</p></div>
+            <div class="step"><div class="t">10:45–11:30</div><p>Лёгкий трекинг у озёр и водопадов.</p></div>
+            <div class="step"><div class="t">12:15–13:45</div><p><b>«След Океана».</b> Вади-эль-Хитан, Долина китов: тропа среди скелетов, которым сорок миллионов лет, и музей ископаемых прямо в пустыне.</p></div>
+            <div class="step"><div class="t">14:30–15:30</div><p>Обед-барбекю в пустынном лагере.</p></div>
+            <div class="step"><div class="t">15:30–16:45</div><p><b>Гора Медавара и Волшебное озеро.</b> Сафари по дюнам и сэндбординг; кто хочет тише — смотровая, фотографии, чай.</p></div>
+            <div class="step"><div class="t">16:45</div><p>Выезд из заповедника.</p></div>
+            <div class="step"><div class="t">19:30</div><p>Отель. Час на душ и переодевание.</p></div>
+            <div class="step"><div class="t">20:30</div><p>Трансфер в Новый Каир.</p></div>
+            <div class="step"><div class="t">21:30–00:00</div><p><b>Гала-ужин в The Grand Theatre</b>: сцена, живая программа, вино и игристое по три бокала на гостя.</p></div>
+            <div class="step"><div class="t">после</div><p>Клуб при отеле для тех, кому мало.</p></div>
+          </div>
+          <span class="tag">16 часов · Фаюм и Новый Каир · песок в обуви и фотографии с китами</span>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="n">17 октября<em>суббота · старый Каир и Нил</em></div>
+        <div>
+          <h3>Улица, которая гудит семьсот лет</h3>
+          <p>Утро отдаём Аль-Муизз, пока улица в тени: это третья глава «Архива Камаля», и она заменяет музей цивилизации. После обеда — тихий двор Ибн-Тулуна вместо музейных залов. Вечером — яхта на Ниле, ваш квиз и караоке.</p>
+          <div class="flow">
+            <div class="step"><div class="t">07:00–07:30</div><p>Завтрак, выезд.</p></div>
+            <div class="step"><div class="t">08:00–12:00</div><p><b>«Четыре руки, одно письмо».</b> От ворот Баб-эль-Футух по Аль-Муизз: резной фасад, двор каллиграфа, мастерская медника, чайная, двор у Хан-эль-Халили с финалом.</p></div>
+            <div class="step"><div class="t">12:15–13:30</div><p>Обед у Аль-Азхара, египетская кухня.</p></div>
+            <div class="step"><div class="t">14:00–15:30</div><p><b>Мечеть Ибн-Тулуна и дом Гайер-Андерсона.</b> Огромный пустой двор, деревянные решётки, тишина после базара. Альтернатива по желанию — Коптский Каир.</p></div>
+            <div class="step"><div class="t">16:00</div><p>Отель, отдых, подготовка к вечеру.</p></div>
+            <div class="step"><div class="t">18:30</div><p>Трансфер на причал.</p></div>
+            <div class="step"><div class="t">19:00–22:00</div><p><b>Яхта по Нилу, только для группы.</b> Квиз от вашей команды, караоке. С нашей стороны экран, звук, микрофоны, диджей и техник на борту.</p></div>
+            <div class="step"><div class="t">22:30</div><p>Отель.</p></div>
+          </div>
+          <span class="tag">4 часа программы · Аль-Муизз · третий фрагмент солнечной печати</span>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="n">18 октября<em>воскресенье · вылет</em></div>
+        <div>
+          <h3>Два рейса, обед для тех, кто летит позже</h3>
+          <div class="flow">
+            <div class="step"><div class="t">по рейсам</div><p>Завтрак. Два трансфера в аэропорт по пятнадцать человек, каждый под своё время вылета.</p></div>
+            <div class="step"><div class="t">по рейсам</div><p>Обед в отеле на 15 гостей для группы с поздним рейсом.</p></div>
+          </div>
+          <span class="tag">2 трансфера · аэропорт</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="end">
+      <span class="lbl">Чем заканчивается</span>
+      <p>У каждого гостя — два фрагмента солнечной печати из шести: один с плато или из музея, один со старого Каира. Письмо экспедиции или собранная страница каталога с именем вашей компании, карточка со своим словом, написанным тушью под рукой каллиграфа, и копия письма, которое семьсот лет ждало именно вас.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Три программы для встречи</div>
+    <h2>Что происходит внутри четырёх часов</h2>
+    <p class="lead">В каждой программе 30 гостей делятся на шесть команд по пять человек и идут тремя потоками по десять: у одной точки стоит десять человек, а не тридцать. У каждого в команде своя роль и свой единственный предмет, без которого станция не решается. Ставка перед проверкой, печать помощника на каждой добытой строке, общий финал для всех тридцати.</p>
+
+    <!-- 01 -->
+    <article class="prog">
+      <div class="eyebrow">Глава 1 · Гиза · 4 часа на плато</div>
+      <h3 style="font-size:clamp(1.7rem,4vw,2.4rem)">Код пирамид</h3>
+      <p class="tagline">Дневнику верить нельзя. Пирамидам — можно. Проверьте сами.</p>
+      <div class="spread">
+        <div class="text">
+          <p>Дневник археолога подменили: половина того, что в нём написано, — ложь. Сверить его можно только с самими пирамидами.</p>
+          <p>Вы выходите на плато рано, пока известняк ещё не раскалился, с папкой, планом и шестью пустыми карточками свидетельств. У Хуфу вы поднимаете глаза от рисунка на настоящую кладку и находите место, где художник соврал. На панораме вы сначала поверите глазам — средняя пирамида явно выше остальных, — а через десять минут сами докажете, почему это неправда. У Хафры соберёте путь фараона от храма в долине до вершины. У Сфинкса поймаете отчёт, который врёт трижды.</p>
+          <p>В каждой подлинной странице спрятана цифра. Шесть страниц — шесть цифр. На террасе с видом на Хуфу шесть человек от шести команд подходят к ларцу и крутят по одному диску замка. Ошиблась одна команда — дужка не отходит, и вся группа две минуты ищет, чья цифра чужая.</p>
+          <ul class="doing">
+            <li>Сравниваете три рисунка одного участка Хуфу с настоящей кладкой и приносите гиду два доказательства подделки</li>
+            <li>Считаете через визирную рамку, какая пирамида кажется выше, и объясняете, почему глазу верить нельзя</li>
+            <li>Восстанавливаете погребальный комплекс Хафры и находите три ошибки в чужом отчёте у Сфинкса</li>
+            <li>Набираете на замке ларца шесть цифр, добытых своими шестью командами</li>
+          </ul>
+          <div class="finale">
+            <span class="lbl">Финал</span>
+            <p>Ларец открывается кодом, который вы заработали сами. Внутри — письмо экспедиции и лист «Восстановленный маршрут» из шести ваших командных снимков, отпечатанный, пока вы ехали к финалу. А чуть раньше в зал войдёт человек, который был рядом с вами весь день, и принесёт второе письмо с другим кодом.</p>
+          </div>
+          <div class="flow">
+            <div class="step"><div class="t">00:00–00:30</div><p>Контроль, вход, переход к северной грани Хуфу. Роли и правила — ещё в автобусе.</p></div>
+            <div class="step"><div class="t">00:30–00:50</div><p>«Две работы» — северная грань Хуфу.</p></div>
+            <div class="step"><div class="t">01:00–01:25</div><p>«Где стоял фотограф» — панорама трёх пирамид.</p></div>
+            <div class="step"><div class="t">01:35–01:55</div><p>«Ключ, которого нет в папке» — обзорная точка у Хафры.</p></div>
+            <div class="step"><div class="t">02:05–02:35</div><p>«Куда ведёт дорога» и «Что здесь видно, а что известно» — храм в долине и терраса перед Сфинксом, потоки меняются местами.</p></div>
+            <div class="step"><div class="t">02:35–03:10</div><p>Вода, переезд к площадке финала. В дороге — «Отчёт о месте, где вы не были».</p></div>
+            <div class="step"><div class="t">03:10–04:00</div><p>Финал: «Замок помнит только то, что можно пересчитать».</p></div>
+          </div>
+        </div>
+        <aside class="aside">
+          <div class="blk"><span class="lbl">Где и сколько</span><p>Плато Гизы · 4 часа · 30 гостей · шесть команд по пять · три потока</p></div>
+          <div class="blk"><span class="lbl">Для кого</span><p>Командам, которые уже фотографировались на фоне пирамид и хотят провести на плато день, где надо думать, а не кивать.</p></div>
+          <div class="blk"><span class="lbl">Нагрузка</span>
+            <div class="scale">Активность <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+            <div class="scale">Напряжение <span class="dots warm"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="blk"><span class="lbl">Что входит</span><ul>
+            <li>Ведущий, три гида-историка, три игровых помощника, координатор</li>
+            <li>Шесть сшитых дневников, ларец с кодовым замком, планы плато, конверты «сверка», жетоны, печати</li>
+            <li>Входные билеты на плато и электрические шаттлы по маршруту</li>
+            <li>Тень и вода на каждой остановке, ранний старт</li>
+            <li>Зона финала с видом на пирамиды на 50 минут</li>
+          </ul></div>
+          <div class="blk"><span class="lbl">Что останется</span><p>Восстановленный маршрут с фотографиями всех команд, письмо экспедиции с именем компании и первый фрагмент солнечной печати каждому гостю.</p></div>
+          <div class="blk"><span class="lbl">Готовим за</span><p>6 недель</p></div>
+          <div class="price"><b>Стоимость на группу 30 гостей:</b> ________ $ · в цене: сценарий и рекогносцировка, штат восемь человек, весь реквизит и печать, билеты на плато, зона финала.</div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="prog">
+      <div class="eyebrow">Глава 2 · Большой Египетский музей · 4 часа в музее</div>
+      <h3 style="font-size:clamp(1.7rem,4vw,2.4rem)">Последняя страница</h3>
+      <div class="was">было: «Дело о потерянной странице»</div>
+      <p class="tagline">Каталог уходит в печать завтра. Последнюю страницу напишете вы.</p>
+      <div class="spread">
+        <div class="text">
+          <p>Завтра каталог выставки уходит в печать, и на его последней странице стоит чужая фраза: «Египет — это цари, боги и золото, остальное — мелочи». Автор каталога исчез. Страница с его объяснением — вместе с ним.</p>
+          <p>Вы — редакция, и у вас четыре часа в Большом Египетском музее. У каждого из шести предметов вам вручают разворот «золотой» версии: уверенная подпись, красивая вёрстка, рисунок человека, который в зале не был. Ваше дело — поймать, где подпись врёт, глядя на оригинал. Одиннадцатиметровый Рамсес, ради которого построили зал. Львиная голова Сехмет за плечом царя. Кресло царицы, у которого нет колёс, зато есть шесты. Трон, который только кажется золотым. Маска, о которой все всё знают.</p>
+          <p>Потом вы доходите до маленькой каменной группы, где мальчик стоит рядом с отцом, а девочка держится за его ногу, — и версия про золото рассыпается сама, без вашей помощи.</p>
+          <ul class="doing">
+            <li>Ловите ложь в шести разворотах «золотого» каталога, сверяя каждую подпись с предметом в витрине</li>
+            <li>Записываете версию команды раньше, чем откроете справку, — и смотрите, кто был прав</li>
+            <li>Снимаете свой замок с кейса редакции и складываете шесть обрывков страницы в одну фразу автора</li>
+            <li>Пишете подпись к своему предмету: что увидели глазами и что это говорит о человеке за вещью</li>
+          </ul>
+          <div class="finale">
+            <span class="lbl">Финал</span>
+            <p>Финал начинается за 27 минут до закрытия типографии. Кейс редакции заперт шестью замками, и крышка не поднимется, пока к нему не подойдёт шестая команда. Через пару дней вы получаете вёрстку собранной страницы с подписями всех шести команд.</p>
+          </div>
+          <div class="flow">
+            <div class="step"><div class="t">00:00–00:20</div><p>Сбор, пролог главного редактора, папки, роли, правила.</p></div>
+            <div class="step"><div class="t">00:20–00:40</div><p>«Сколько вас в нём?» — Большой зал, колосс Рамсеса.</p></div>
+            <div class="step"><div class="t">00:40–01:05</div><p>«Кого поставили в середину?» — Большая лестница.</p></div>
+            <div class="step"><div class="t">01:05–01:45</div><p>Две станции в основных галереях, у каждого потока свой порядок.</p></div>
+            <div class="step"><div class="t">01:45–02:05</div><p>Кофе-пауза с перекусом. Второе письмо автора. Команды впервые кладут свои служебные записки рядом.</p></div>
+            <div class="step"><div class="t">02:05–02:55</div><p>Две станции в галереях Тутанхамона.</p></div>
+            <div class="step"><div class="t">03:00–03:30</div><p>Зал финала: подписи набело, вторая кружка кофе.</p></div>
+            <div class="step"><div class="t">03:30–04:00</div><p>Общий финал для всех тридцати.</p></div>
+          </div>
+        </div>
+        <aside class="aside">
+          <div class="blk"><span class="lbl">Где и сколько</span><p>Большой Египетский музей, Гиза · 4 часа · 30 гостей · три потока по десять</p></div>
+          <div class="blk"><span class="lbl">Для кого</span><p>Компаниям, которые музеи уже видели и хотят не слушать про экспонаты, а спорить о них.</p></div>
+          <div class="blk"><span class="lbl">Нагрузка</span>
+            <div class="scale">Активность <span class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+            <div class="scale">Напряжение <span class="dots warm"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="blk"><span class="lbl">Что входит</span><ul>
+            <li>Главный редактор, три гида, три помощника редакции, координатор</li>
+            <li>Отпечатанная «золотая» версия каталога, кейс редакции с шестью замками, справки, бланки, печати</li>
+            <li>Билеты с доступом к галереям Тутанхамона, заход на 09:00</li>
+            <li>Кофе-пауза с перекусом на третьем часу</li>
+            <li>Зал финала с рассадкой на 30 минут</li>
+          </ul></div>
+          <div class="blk"><span class="lbl">Что останется</span><p>Вёрстка собранной последней страницы каталога с подписями всех команд и именем вашей компании в выходных данных, второй фрагмент солнечной печати каждому гостю.</p></div>
+          <div class="blk"><span class="lbl">Готовим за</span><p>6–8 недель</p></div>
+          <div class="price"><b>Стоимость на группу 30 гостей:</b> ________ $ · в цене: сценарий и рекогносцировка, штат восемь человек, весь реквизит и печать, билеты в музей, кофе-пауза, зал финала.</div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="prog">
+      <div class="eyebrow">Глава 3 · Старый Каир · 4 часа по Аль-Муизз</div>
+      <h3 style="font-size:clamp(1.7rem,4vw,2.4rem)">Четыре руки, одно письмо</h3>
+      <div class="was">было: «Город тайных посланий»</div>
+      <p class="tagline">Семьсот лет назад письмо не дошло. Один из четверых соврал.</p>
+      <div class="spread">
+        <div class="text">
+          <p>Письмо шло к вашей команде семьсот лет и не дошло. Его несли четверо: каллиграф, чайханщик, медник и переписчик. Один подменил текст.</p>
+          <p>У ворот Баб-эль-Футух вам дают карту, кодовое слово и обрывок узора. Дальше — улица Аль-Муизз, где искать надо не табличку, а деталь: тот самый завиток, что у вас в руке, на резном камне в трёх метрах над головой. Улица гудит, пахнет кардамоном и горячим металлом. С этой минуты вы фасады читаете, а не фотографируете.</p>
+          <p>У каллиграфа вы берёте тростниковое перо. Тушь идёт тяжело, линия слушается не сразу — и всё-таки вы выводите одно слово арабской вязью. Своё. Позже оно встанет строкой в письмо. В чайной к вашему столу подсаживается человек в костюме чужого века и рассказывает историю иначе, чем вы слышали час назад. Какую версию вы услышите, решает ваше кодовое слово.</p>
+          <ul class="doing">
+            <li>Находите на живом фасаде деталь по обрывку узора — раньше, чем гид успеет подсказать</li>
+            <li>Пишете тушью своё слово арабской вязью под рукой каллиграфа</li>
+            <li>Сравниваете две версии одной истории и формулируете вопрос, на который свидетель ответит</li>
+            <li>Складываете письмо из слов всех команд и называете того, кто его подменил</li>
+          </ul>
+          <div class="finale">
+            <span class="lbl">Финал</span>
+            <p>Письмо собирается во дворе на глазах у всех, из слов, которые вы написали своей рукой, и последняя строка адресована вашей компании — вот ответ, почему оно ждало именно вас.</p>
+          </div>
+          <div class="flow">
+            <div class="step"><div class="t">00:00–00:20</div><p>«Письмо без адресата» — сбор у Баб-эль-Футух, папки, роли, пропуска с кодовым словом.</p></div>
+            <div class="step"><div class="t">00:20–01:35</div><p>«Три мастера, три круга» — резной фасад, двор каллиграфа, мастерская медника. Три потока по кругу, у каждого мастера десять гостей и восемнадцать минут.</p></div>
+            <div class="step"><div class="t">01:35–02:20</div><p>Переход мимо Байн-аль-Касрейн. «Кто подсел к столу» — чайная, забронированная целиком.</p></div>
+            <div class="step"><div class="t">02:30–03:02</div><p>«Правильный вопрос» — двор у Хан-эль-Халили, три жетона на три вопроса.</p></div>
+            <div class="step"><div class="t">03:10–03:55</div><p>«Адресат найден» — письмо собирается на панели из слов всех команд.</p></div>
+          </div>
+        </div>
+        <aside class="aside">
+          <div class="blk"><span class="lbl">Где и сколько</span><p>Улица Аль-Муизз, исторический Каир · 4 часа · 30 гостей · три потока</p></div>
+          <div class="blk"><span class="lbl">Для кого</span><p>Тем, кто уже видел пирамиды и хочет Каир на своих ногах: через людей, ремесло и разговор, а не через стекло автобуса.</p></div>
+          <div class="blk"><span class="lbl">Нагрузка</span>
+            <div class="scale">Активность <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+            <div class="scale">Напряжение <span class="dots warm"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="blk"><span class="lbl">Что входит</span><ul>
+            <li>Ведущий, три гида, два актёра, два координатора</li>
+            <li>Приглашённые каллиграф и медник, выделенные заходы у мастеров</li>
+            <li>Забронированные дворы для мастеров, чайная целиком, двор для финала</li>
+            <li>Приёмники с наушниками на всю группу, вода на каждой точке</li>
+            <li>Чайная остановка с напитком и лёгким угощением</li>
+          </ul></div>
+          <div class="blk"><span class="lbl">Что останется</span><p>Карточка со своим словом, написанным тушью под рукой мастера, копия собранного письма с переводом и третий фрагмент солнечной печати каждому гостю.</p></div>
+          <div class="blk"><span class="lbl">Готовим за</span><p>5 недель</p></div>
+          <div class="price"><b>Стоимость на группу 30 гостей:</b> ________ $ · в цене: сценарий и разведка улицы, штат десять человек, мастера, все площадки, реквизит, приёмники, чай.</div>
+        </aside>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Что важно знать</div>
+    <h2>Почему дни собраны именно так</h2>
+    <div class="notes">
+      <div>
+        <h4>Плато Гизы работает по новым правилам</h4>
+        <p>Вход только через новые ворота на шоссе Фаюм, внутри группа ездит на электрических шаттлах, автобус ждёт на парковке визит-центра. «Код пирамид» построен под эту петлю. Ранний старт в 07:30 даёт полтора свободных часа до основной волны посетителей и уводит от жары.</p>
+      </div>
+      <div>
+        <h4>Фаюм: выезд в 08:00 задаёт весь вечер</h4>
+        <p>При выезде в восемь пустыня заканчивается в 16:45, отель в 19:30, а гала-ужин в Новом Каире начинается в 21:30. Если хотите сесть за стол в 20:30, есть два хода: выезд в 07:00 или убрать утренний трекинг у водопадов. Оба сохраняют Долину китов и сэндбординг.</p>
+      </div>
+      <div>
+        <h4>Старый Каир — утром</h4>
+        <p>С апреля по октябрь «Четыре руки, одно письмо» идёт в 08:00 или в 16:00. Вечернее окно занимает яхта, поэтому берём утро: финал во дворе в полдень, пока улица в тени, и после обеда группе остаётся тихое место со стульями.</p>
+      </div>
+      <div>
+        <h4>Виза</h4>
+        <p>Граждане России получают визу по прилёту в Каире или оформляют электронную визу заранее. Для группы из тридцати человек с двух рейсов берём электронную: тогда обе половины проходят паспортный контроль без очереди к визовым стойкам.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Как это устроено</div>
+    <h2>Что входит всегда и что считаем отдельно</h2>
+    <div class="notes">
+      <div>
+        <h4>Что входит всегда</h4>
+        <ul>
+          <li>Авторский сценарий и историческая проверка гидом</li>
+          <li>Материалы команд и личные материалы каждого гостя</li>
+          <li>Гиды, ведущий, игровые помощники и координаторы</li>
+          <li>Питьевая вода, места отдыха и аптечка на маршруте</li>
+          <li>Фотографии финала на телефон координатора</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Наши правила</h4>
+        <ul>
+          <li>Экспонаты остаются за стеклом. Всё, к чему прикасаются гости, — наш реквизит.</li>
+          <li>В залах пишем карандашом и говорим негромко.</li>
+          <li>Ходим там же, где остальные посетители, — только внимательнее.</li>
+          <li>Публичное выступление — по желанию. Ответ можно выложить карточкой, озвучит гид.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Считаем отдельно</h4>
+        <p>Перелёт, отель, визы и личную страховку. Обеды и ужины, если они не названы в программе. Профессиональную съёмку, актёрское усиление, подарки повышенной стоимости. Цены — в индивидуальном предложении после выбора программы на 15 октября.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="max-width:70ch">Истории, персонажи и находки вымышлены. Памятники, музеи и экспонаты — настоящие, их историю рассказывают профессиональные гиды. Сценарии и комплектация — авторская разработка La Royal Event. Ксения Усачёва · baxgat@yandex.ru · WhatsApp +20 110 100 5061 · +20 122 835 3909</p>
+  </div>
+</footer>
