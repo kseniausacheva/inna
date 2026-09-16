@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Великая пирамида: обычный вход и частный доступ</title>
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+@page{size:1600px 1060px;margin:0}
+:root{
+  --night:#120d1c; --night-2:#191225; --card:#1e1730; --sand:#f3ece1; --sand-2:#cfc3b4; --dim:#9b8fa8; --rule:#2f2545;
+  --lilac:#c6a4f5; --lilac-deep:#8b5fd6; --lime:#cfe64f; --rose:#ff85b3;
+  --display:"Spectral",Georgia,serif; --sans:"Golos Text","Helvetica Neue",Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--night);color:var(--sand);font-family:var(--sans)}
+.page{width:1600px;height:1060px;background:radial-gradient(70% 60% at 85% 0%, rgba(139,95,214,.30) 0%, transparent 60%), var(--night);
+  padding:54px 64px 44px;display:grid;grid-template-rows:auto 1fr auto;gap:26px;position:relative;overflow:hidden}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+h1{font-family:var(--display);font-weight:600;font-size:46px;line-height:1.05;margin:0;letter-spacing:-.01em}
+.sub{font-family:var(--display);font-size:20px;color:var(--lilac);margin-top:8px;font-weight:500}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.brand{text-align:right;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);line-height:1.8}
+.brand b{display:block;font-family:var(--display);font-size:26px;letter-spacing:0;text-transform:none;color:var(--sand);font-weight:600;line-height:1.1;margin-bottom:6px}
+.body{display:grid;grid-template-columns:1.45fr 1fr;gap:40px;min-height:0}
+.figure{background:var(--night-2);border:1px solid var(--rule);border-radius:14px;padding:22px 26px 16px;display:flex;flex-direction:column}
+.figure svg{width:100%;height:auto;flex:1}
+.legend{display:flex;gap:26px;font-size:14px;color:var(--sand-2);margin-top:8px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:9px}
+.sw{width:34px;height:8px;border-radius:4px;display:inline-block}
+.compare{display:grid;grid-template-rows:auto 1fr auto;gap:0;background:var(--night-2);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.cols{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
+.cols div{padding:16px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-align:center}
+.cols .a{color:var(--sand-2);border-right:1px solid var(--rule)}
+.cols .b{color:var(--night);background:var(--lime);font-weight:500}
+.rows{display:grid;grid-auto-rows:1fr}
+.row{display:grid;grid-template-columns:1fr 92px 92px;align-items:center;border-bottom:1px solid var(--rule);padding:0 18px}
+.row:last-child{border-bottom:none}
+.row .t{font-size:17px;color:var(--sand)}
+.row .t small{display:block;font-size:12.5px;color:var(--dim);margin-top:2px}
+.mark{justify-self:center;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:700}
+.yes{background:rgba(207,230,79,.16);color:var(--lime);border:1.5px solid rgba(207,230,79,.55)}
+.no{background:rgba(255,133,179,.10);color:var(--rose);border:1.5px solid rgba(255,133,179,.4)}
+.foot2{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
+.foot2 div{padding:14px 18px;font-size:13.5px;color:var(--sand-2);line-height:1.4}
+.foot2 .a{border-right:1px solid var(--rule)}
+.foot2 b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;color:var(--dim)}
+.foot2 .b b{color:var(--lime)}
+.bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:16px;font-size:13px;color:var(--dim)}
+.bottom .tag{font-family:var(--display);font-size:18px;color:var(--lilac)}
+svg text{font-family:"Golos Text","Helvetica Neue",Arial,sans-serif}
+svg .lbl{font-size:15px;fill:#f3ece1;font-weight:600}
+svg .lbl2{font-size:13px;fill:#cfc3b4}
+svg .mono{font-family:"JetBrains Mono",monospace;font-size:11px;fill:#9b8fa8;letter-spacing:.1em}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="head">
+    <div>
+      <div class="eyebrow">Гиза · 15 октября 2026 · частный доступ</div>
+      <h1>Великая пирамида: обычный вход и наш маршрут</h1>
+      <div class="sub">Три камеры, которые для обычного посетителя закрыты, и время у пирамиды без чужих</div>
+    </div>
+    <div class="brand"><b>La Royal Event</b>Египет внутри истории</div>
+  </div>
+
+  <div class="body">
+    <div class="figure">
+      <svg viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" aria-label="Схема Великой пирамиды в разрезе">
+        <defs>
+          <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a2140"/><stop offset="1" stop-color="#1e1730"/>
+          </linearGradient>
+          <pattern id="courses" width="1000" height="14" patternUnits="userSpaceOnUse">
+            <rect width="1000" height="14" fill="none"/><line x1="0" y1="13.5" x2="1000" y2="13.5" stroke="#2f2545" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <!-- ground -->
+        <rect x="0" y="560" width="1000" height="160" fill="#171022"/>
+        <line x1="0" y1="560" x2="1000" y2="560" stroke="#3a2f52" stroke-width="2"/>
+        <text x="20" y="582" class="mono">УРОВЕНЬ ЗЕМЛИ</text>
+        <!-- pyramid body -->
+        <polygon points="500,60 894,560 106,560" fill="url(#stone)" stroke="#8b5fd6" stroke-width="2"/>
+        <polygon points="500,60 894,560 106,560" fill="url(#courses)" opacity=".9"/>
+        <!-- air shafts -->
+        <line x1="495" y1="400" x2="650" y2="250" stroke="#4b3d6b" stroke-width="3"/>
+        <line x1="425" y1="400" x2="350" y2="250" stroke="#4b3d6b" stroke-width="3"/>
+        <line x1="520" y1="478" x2="713" y2="330" stroke="#4b3d6b" stroke-width="3"/>
+        <line x1="470" y1="478" x2="287" y2="330" stroke="#4b3d6b" stroke-width="3"/>
+        <text x="612" y="236" class="lbl2">вентиляционные шахты</text>
+        <!-- passages: base grey -->
+        <polyline points="848,502 515,663" fill="none" stroke="#3a2f52" stroke-width="14" stroke-linecap="round"/>
+        <polyline points="758,545 639,485 495,413 455,413" fill="none" stroke="#3a2f52" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="639,485 520,485" fill="none" stroke="#3a2f52" stroke-width="12" stroke-linecap="round"/>
+        <!-- private route: lime, wide -->
+        <polyline points="848,502 758,545" fill="none" stroke="#cfe64f" stroke-width="12" stroke-linecap="round"/>
+        <polyline points="758,545 515,663" fill="none" stroke="#cfe64f" stroke-width="12" stroke-linecap="round"/>
+        <polyline points="758,545 639,485 495,413 455,413" fill="none" stroke="#cfe64f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="639,485 520,485" fill="none" stroke="#cfe64f" stroke-width="12" stroke-linecap="round"/>
+        <!-- standard route: rose core over shared segment -->
+        <polyline points="848,502 758,545 639,485 495,413 455,413" fill="none" stroke="#ff85b3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- chambers -->
+        <rect x="418" y="393" width="78" height="30" rx="3" fill="#cfe64f" opacity=".95"/>
+        <rect x="468" y="470" width="52" height="28" rx="3" fill="#cfe64f" opacity=".95"/>
+        <rect x="455" y="648" width="90" height="26" rx="3" fill="#cfe64f" opacity=".95"/>
+        <!-- entrance -->
+        <circle cx="848" cy="502" r="9" fill="#f3ece1"/>
+        <!-- labels -->
+        <text x="870" y="492" class="lbl">Вход</text>
+        <text x="600" y="470" class="lbl" transform="rotate(-26.5 600 470)">Большая галерея</text>
+        <text x="760" y="605" class="lbl2" transform="rotate(25.8 760 605)">нисходящий коридор</text>
+        <text x="700" y="500" class="lbl2" transform="rotate(-26.5 700 500)">восходящий</text>
+        <text x="300" y="404" class="lbl">Камера царя</text>
+        <line x1="412" y1="408" x2="418" y2="408" stroke="#f3ece1" stroke-width="1.5"/>
+        <text x="300" y="490" class="lbl">Камера царицы</text>
+        <line x1="440" y1="485" x2="468" y2="485" stroke="#f3ece1" stroke-width="1.5"/>
+        <text x="270" y="667" class="lbl">Подземная камера</text>
+        <line x1="430" y1="661" x2="455" y2="661" stroke="#f3ece1" stroke-width="1.5"/>
+        <text x="500" y="45" text-anchor="middle" class="mono">ВЕЛИКАЯ ПИРАМИДА · ХУФУ · 146 М</text>
+        <!-- north/south -->
+        <text x="930" y="548" class="mono">СЕВЕР</text>
+        <text x="30" y="548" class="mono">ЮГ</text>
+      </svg>
+      <div class="legend">
+        <span><i class="sw" style="background:#ff85b3"></i>обычный билет: коридор, Большая галерея, камера царя</span>
+        <span><i class="sw" style="background:#cfe64f"></i>наш маршрут: плюс камера царицы и подземная камера</span>
+      </div>
+    </div>
+
+    <div class="compare">
+      <div class="cols"><div class="a">Обычный билет</div><div class="b">Наш доступ</div></div>
+      <div class="rows">
+        <div class="row"><div class="t">Большая галерея</div><div class="mark yes">✓</div><div class="mark yes">✓</div></div>
+        <div class="row"><div class="t">Камера царя</div><div class="mark yes">✓</div><div class="mark yes">✓</div></div>
+        <div class="row"><div class="t">Камера царицы<small>обычно закрыта</small></div><div class="mark no">✕</div><div class="mark yes">✓</div></div>
+        <div class="row"><div class="t">Подземная камера<small>обычно закрыта</small></div><div class="mark no">✕</div><div class="mark yes">✓</div></div>
+        <div class="row"><div class="t">Египтолог внутри пирамиды</div><div class="mark no">✕</div><div class="mark yes">✓</div></div>
+        <div class="row"><div class="t">Время у пирамиды без других посетителей</div><div class="mark no">✕</div><div class="mark yes">✓</div></div>
+        <div class="row"><div class="t">Вход в ограду Сфинкса</div><div class="mark no">✕</div><div class="mark yes">✓</div></div>
+      </div>
+      <div class="foot2">
+        <div class="a"><b>Обычный визит</b>Вместе с другими группами и потоком посетителей.</div>
+        <div class="b"><b>Частный доступ</b>Только ваша группа, охрана открывает камеры для вас.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <span class="tag">Экскурсия с элементами квеста · две группы по 15 · египтолог, археолог и переводчик</span>
+    <span>La Royal Event · baxgat@yandex.ru · WhatsApp +20 110 100 5061</span>
+  </div>
+</div>
+</body>
+</html>
