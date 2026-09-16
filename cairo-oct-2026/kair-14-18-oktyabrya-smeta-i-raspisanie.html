@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Каир, 14–18 октября 2026. Смета и расписание</title>
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+@page{size:A4;margin:16mm 16mm 20mm 16mm}
+:root{
+  --paper:#faf6f2; --paper2:#f3ecf1; --ink:#241a2e; --ink2:#4b4056; --dim:#756c80; --rule:#ddd2de;
+  --lilac:#6b3fa0; --lilacbg:#f0e7fa; --limed:#63730c; --limeb:#b6d235; --rosed:#b8275a; --rosebg:#fce7ee;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:10.2pt;line-height:1.5}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;line-height:1.15}
+h1{font-size:26pt;font-weight:700;letter-spacing:-.01em}
+h2{font-size:15pt;color:var(--lilac);margin:0 0 4mm;padding-top:2mm}
+h3{font-size:11.5pt;margin:0 0 1.5mm}
+p{margin:0 0 2.5mm}
+.eyebrow{font-family:var(--mono);font-size:7pt;letter-spacing:.18em;text-transform:uppercase;color:var(--limed);margin-bottom:3mm}
+.cover{padding:6mm 0 5mm;border-bottom:2px solid var(--lilac);margin-bottom:6mm;display:grid;grid-template-columns:1fr auto;gap:8mm;align-items:end}
+.cover .sub{font-family:var(--display);font-size:13pt;color:var(--ink2);margin-top:2mm;font-weight:500}
+.cover .meta{font-family:var(--mono);font-size:7.5pt;color:var(--dim);text-align:right;line-height:1.7}
+.cover .meta b{display:block;color:var(--ink);font-weight:500;font-size:9pt;font-family:var(--display)}
+section{margin-bottom:7mm}
+.brk{break-before:page}
+table{width:100%;border-collapse:collapse;font-size:9.3pt}
+th{font-family:var(--mono);font-size:6.8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);text-align:left;padding:2mm 2mm;background:var(--paper2);border-bottom:1px solid var(--rule);font-weight:500}
+td{padding:1.9mm 2mm;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink2)}
+td.n{font-family:var(--mono);font-size:8.3pt;color:var(--dim);width:6mm}
+td.name{color:var(--ink);font-weight:500;width:50mm}
+td.sum{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;color:var(--ink);width:24mm}
+tr.total td{background:var(--lilacbg);color:var(--ink);font-weight:600;border-bottom:none}
+tr.total td.sum{color:var(--lilac)}
+.tag{display:inline-block;font-family:var(--mono);font-size:6.6pt;letter-spacing:.06em;padding:.6mm 1.8mm;border-radius:2mm;white-space:nowrap}
+.tag.yours{background:var(--lilacbg);color:var(--lilac)}
+.tag.est{background:#eef3d6;color:var(--limed)}
+.tag.ask{background:var(--rosebg);color:var(--rosed)}
+.note{padding:3mm 4mm;border-left:3px solid var(--limeb);background:#fff;font-size:9pt;color:var(--ink2);margin-top:3mm}
+.note.rose{border-left-color:var(--rosed);background:var(--rosebg)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+/* расписание */
+.day{break-inside:avoid;margin-bottom:5mm;padding:3.5mm 4mm;background:#fff;border:1px solid var(--rule);border-radius:3mm}
+.day h3{display:flex;gap:3mm;align-items:baseline}
+.day h3 .d{font-family:var(--mono);font-size:7pt;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:500}
+.day .lead{color:var(--ink2);font-size:9.2pt;margin:0 0 2mm}
+.steps{display:grid;grid-template-columns:22mm 1fr;row-gap:.6mm;column-gap:3mm;font-size:9.2pt}
+.steps .t{font-family:var(--mono);font-size:8pt;color:var(--lilac);font-variant-numeric:tabular-nums;padding-top:.4mm}
+.steps .w{color:var(--ink2)}
+.steps .w b{color:var(--ink);font-weight:600}
+.foot{position:fixed;bottom:-12mm;left:0;right:0;font-family:var(--mono);font-size:6.8pt;color:var(--dim);display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div class="foot"><span>La Royal Event · Каир, 14–18 октября 2026 · смета и расписание</span><span>подготовлено 16.09.2026</span></div>
+
+<header class="cover">
+  <div>
+    <div class="eyebrow">La Royal Event · Египет внутри истории</div>
+    <h1>Каир, 14–18 октября 2026</h1>
+    <div class="sub">Смета и расписание поездки на 30 гостей</div>
+  </div>
+  <div class="meta">
+    <b>Ксения Усачёва</b>
+    baxgat@yandex.ru<br>
+    WhatsApp +20 110 100 5061<br>
+    +20 122 835 3909
+  </div>
+</header>
+
+<section>
+  <h2>Смета</h2>
+  <p style="color:var(--ink2);font-size:9.3pt">Все суммы в долларах США. Строки со статусом «ваша цена» подтверждены, «оценка» посчитаны по открытым источникам и подтверждаются у поставщиков, «уточнить» ждут меню от площадки.</p>
+  <table>
+    <tr><th>#</th><th>Позиция</th><th>Расчёт</th><th style="text-align:right">Сумма</th><th>Статус</th></tr>
+    <tr><td class="n">1</td><td class="name">Экскурсия на пирамиды Гизы, 15 октября</td><td>25 $ на гостя × 30: билет на плато (700 EGP ≈ 14 $), доля двух египтологов, двух ассистентов, приёмников с наушниками, вода</td><td class="sum">750</td><td><span class="tag est">оценка</span></td></tr>
+    <tr><td class="n">2</td><td class="name">Большой Египетский музей, 15 октября, 2 часа</td><td>40 $ на гостя × 30: билет (≈ 1 450–1 590 EGP ≈ 30 $), доля египтологов, ассистентов, приёмников</td><td class="sum">1 200</td><td><span class="tag est">оценка</span></td></tr>
+    <tr><td class="n">3</td><td class="name">Обед в Khufu’s, 15 октября</td><td>на группу, с видом на Хуфу</td><td class="sum">2 880</td><td><span class="tag yours">ваша цена</span></td></tr>
+    <tr><td class="n">4</td><td class="name">Ужин в Lucida, 15 октября</td><td>меню и два бокала вина</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
+    <tr><td class="n">5</td><td class="name">Фаюм, 16 октября</td><td>320 $ на гостя × 30: автобус Mercedes MCV 600, восемь внедорожников по четыре гостя, водопады, гора Медавара, Долина китов и музей ископаемых, Волшебное озеро и сэндбординг, обед в Tunis Pyramids, все входные</td><td class="sum">9 600</td><td><span class="tag yours">ваша цена</span></td></tr>
+    <tr><td class="n">6</td><td class="name">Ужин в Новом Каире, 16 октября</td><td>по меню</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
+    <tr><td class="n">7</td><td class="name">«Четыре руки, одно письмо», 17 октября</td><td>на группу: трансфер, ведущий, гиды, актёры, мастера, площадки, реквизит. Хан-эль-Халили или Баб-Зувейла</td><td class="sum">5 550</td><td><span class="tag yours">ваша цена</span></td></tr>
+    <tr><td class="n">8</td><td class="name">Обед у Аль-Азхара, 17 октября</td><td>по меню</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
+    <tr><td class="n">9</td><td class="name">Яхта по Нилу, 17 октября</td><td>чартер целиком, три часа</td><td class="sum">4 500</td><td><span class="tag yours">ваша цена</span></td></tr>
+    <tr><td class="n">10</td><td class="name">Ужин на яхте</td><td>110 $ на гостя × 30</td><td class="sum">3 300</td><td><span class="tag yours">ваша цена</span></td></tr>
+    <tr><td class="n">11</td><td class="name">Техника и караоке на яхте</td><td>экран, звук, микрофоны, караоке, техник на борту</td><td class="sum">2 500</td><td><span class="tag yours">ваша цена</span></td></tr>
+    <tr><td class="n">12</td><td class="name">Диджей</td><td>обычный 450 $, с шоу-программой 850 $</td><td class="sum">450–850</td><td><span class="tag yours">ваша цена</span></td></tr>
+    <tr><td class="n">13</td><td class="name">Трансферы по всем переездам</td><td>расчёт по движениям на следующей странице</td><td class="sum">1 300</td><td><span class="tag est">оценка</span></td></tr>
+    <tr class="total"><td></td><td colspan="2">Итого по известным и оценённым строкам, без пунктов 4, 6 и 8</td><td class="sum">32 030–32 430</td><td></td></tr>
+  </table>
+  <div class="note">Считаем отдельно: отель, перелёт, визы (по прилёту 30 $ на человека, на группу 900 $), алкогольный пакет на яхте, ужин и фуршет в отеле 14 октября, обед в отеле 18 октября.</div>
+</section>
+
+<section class="brk">
+  <h2>Трансферы по движениям</h2>
+  <p style="color:var(--ink2);font-size:9.3pt">Оценка по открытой цене на Mercedes MCV 600: трансфер из аэропорта от 5 500 EGP, около 110 $. Полный день по городу считаем 200 $, вечерний выезд с ожиданием 120 $.</p>
+  <table>
+    <tr><th>Дата</th><th>Переезд</th><th style="text-align:right">Сумма</th></tr>
+    <tr><td class="n" style="width:14mm">14.10</td><td>Аэропорт → отель, два рейса, два автобуса</td><td class="sum">220</td></tr>
+    <tr><td class="n">15.10</td><td>Отель → Гиза → Khufu’s → музей → отель, полный день</td><td class="sum">200</td></tr>
+    <tr><td class="n">15.10</td><td>Отель → Lucida → отель, вечер с ожиданием</td><td class="sum">120</td></tr>
+    <tr><td class="n">16.10</td><td>Автобус до Туниса и обратно входит в 320 $ на гостя. Крюк через Новый Каир и ожидание на ужине</td><td class="sum">100</td></tr>
+    <tr><td class="n">17.10</td><td>Автобус на программу входит в 5 550 $. Второй автобус: Коптский Каир для желающих и отель для остальных</td><td class="sum">150</td></tr>
+    <tr><td class="n">17.10</td><td>Отель → причал → отель, вечер с ожиданием</td><td class="sum">120</td></tr>
+    <tr><td class="n">18.10</td><td>Отель → аэропорт, два рейса, два автобуса</td><td class="sum">220</td></tr>
+    <tr><td class="n"></td><td>Запас на пробки, парковки, переработку водителей</td><td class="sum">170</td></tr>
+    <tr class="total"><td></td><td>Итого</td><td class="sum">1 300</td></tr>
+  </table>
+
+  <h2 style="margin-top:8mm">Пирамиды и музей: что внутри 65 $ на человека</h2>
+  <div class="grid2">
+    <table>
+      <tr><th>Статья</th><th style="text-align:right">На группу</th></tr>
+      <tr><td>Билеты на плато Гизы, 30 × 14 $</td><td class="sum">420</td></tr>
+      <tr><td>Билеты в Большой Египетский музей, 30 × 30 $</td><td class="sum">900</td></tr>
+      <tr><td>Два египтолога на весь день, 150–200 $ каждый</td><td class="sum">300–400</td></tr>
+      <tr><td>Два ассистента, 50–60 $ каждый</td><td class="sum">100–120</td></tr>
+      <tr><td>Приёмники с наушниками, 34 комплекта</td><td class="sum">130</td></tr>
+      <tr><td>Вода на день</td><td class="sum">30</td></tr>
+      <tr class="total"><td>Итого на группу</td><td class="sum">1 880–2 000</td></tr>
+      <tr class="total"><td>На человека</td><td class="sum">63–67</td></tr>
+    </table>
+    <div>
+      <div class="note">Из 65 $ на человека пирамиды дают около 25 $, музей около 40 $. Ставки египтологов взяты по верхней границе открытых источников: для кастинга это верный ориентир.</div>
+      <div class="note rose" style="margin-top:3mm">Билет в музей в источниках гуляет от 1 200 до 1 700 EGP, взята середина. Точную сумму покажет официальный сайт при бронировании: продажа только онлайн, заходы по часам.</div>
+    </div>
+  </div>
+</section>
+
+<section class="brk">
+  <h2>Расписание</h2>
+
+  <div class="day">
+    <h3><span class="d">14 октября · среда</span> Прилёт</h3>
+    <p class="lead">Два рейса по пятнадцать гостей. Каждую половину встречаем отдельно.</p>
+    <div class="steps">
+      <div class="t">по прилёту</div><div class="w"><b>Первая группа.</b> Встреча, трансфер, заселение. Ужин в отеле на 15 гостей, два бокала вина.</div>
+      <div class="t">по прилёту</div><div class="w"><b>Вторая группа.</b> Встреча, трансфер, заселение. Фуршет в отеле на 15 гостей, два бокала вина.</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h3><span class="d">15 октября · четверг</span> Гиза</h3>
+    <p class="lead">Две группы по пятнадцать, у каждой египтолог и ассистент, приёмники с наушниками, вода в автобусе.</p>
+    <div class="steps">
+      <div class="t">07:30–08:30</div><div class="w">Завтрак, выезд</div>
+      <div class="t">09:00–12:00</div><div class="w"><b>Плато Гизы и Сфинкс.</b> Вход через ворота на шоссе Фаюм, внутри электрические шаттлы: Хуфу, панорама трёх пирамид, Хафра, храм в долине и Сфинкс</div>
+      <div class="t">12:15–13:45</div><div class="w"><b>Обед в Khufu’s</b> с видом на Хуфу</div>
+      <div class="t">14:30–16:30</div><div class="w"><b>Большой Египетский музей</b>, два египтолога, два часа: Большая лестница, колосс Рамсеса, галереи Тутанхамона</div>
+      <div class="t">17:00</div><div class="w">Отель, отдых</div>
+      <div class="t">19:30</div><div class="w">Трансфер в Шейх-Заид</div>
+      <div class="t">20:00–22:30</div><div class="w"><b>Ужин в Lucida</b>: средиземноморская кухня, терраса на крыше, живая музыка</div>
+      <div class="t">23:00</div><div class="w">Отель</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h3><span class="d">16 октября · пятница</span> Фаюм</h3>
+    <p class="lead">Автобус Mercedes MCV 600 до деревни Тунис, дальше восемь внедорожников по четыре гостя кольцом по заповеднику.</p>
+    <div class="steps">
+      <div class="t">08:00</div><div class="w">Выезд из Каира</div>
+      <div class="t">10:00</div><div class="w">Деревня Тунис, пересадка на внедорожники</div>
+      <div class="t">10:45–11:15</div><div class="w"><b>Водопады Вади-эль-Райян</b></div>
+      <div class="t">11:30–12:15</div><div class="w"><b>Гора Медавара</b>, смотровая на озёра и дюны</div>
+      <div class="t">12:45–14:00</div><div class="w"><b>Вади-эль-Хитан, Долина китов</b>, и музей ископаемых</div>
+      <div class="t">14:30–15:30</div><div class="w"><b>Волшебное озеро.</b> Сафари по дюнам и сэндбординг</div>
+      <div class="t">16:15–17:30</div><div class="w">Тунис, обед в ресторане Tunis Pyramids</div>
+      <div class="t">17:30–20:30</div><div class="w">Дорога сразу в Новый Каир, сменная одежда в автобусе</div>
+      <div class="t">20:45–22:45</div><div class="w"><b>Ужин в Новом Каире</b>: как выглядит город, который строят сейчас</div>
+      <div class="t">23:45</div><div class="w">Отель</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h3><span class="d">17 октября · суббота</span> Старый Каир и Нил</h3>
+    <p class="lead">Утро на Аль-Муизз, пока улица в тени. Вечер на воде.</p>
+    <div class="steps">
+      <div class="t">07:00–07:30</div><div class="w">Завтрак, выезд</div>
+      <div class="t">08:00–12:00</div><div class="w"><b>«Четыре руки, одно письмо».</b> От Баб-эль-Футух по Аль-Муизз: резной фасад, двор каллиграфа, мастерская медника, чайная, финал во дворе у Хан-эль-Халили</div>
+      <div class="t">12:15–13:30</div><div class="w">Обед у Аль-Азхара, египетская кухня</div>
+      <div class="t">14:00–15:30</div><div class="w"><b>Коптский Каир</b> по желанию: Висячая церковь, церковь святого Сергия, синагога Бен-Эзра. Остальных второй автобус увозит в отель</div>
+      <div class="t">16:00</div><div class="w">Отель, отдых, подготовка к вечеру</div>
+      <div class="t">18:30</div><div class="w">Трансфер на причал</div>
+      <div class="t">19:00–22:00</div><div class="w"><b>Яхта по Нилу, только для группы.</b> Ужин на борту, квиз, караоке; экран, звук, микрофоны, диджей и техник на борту</div>
+      <div class="t">22:30</div><div class="w">Отель</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h3><span class="d">18 октября · воскресенье</span> Вылет</h3>
+    <div class="steps">
+      <div class="t">по рейсам</div><div class="w">Завтрак. Два трансфера в аэропорт по пятнадцать гостей, каждый под своё время вылета</div>
+      <div class="t">по рейсам</div><div class="w">Обед в отеле на 15 гостей для группы с поздним рейсом</div>
+    </div>
+  </div>
+
+  <p style="font-size:8.3pt;color:var(--dim);margin-top:4mm">Истории, персонажи и находки вымышлены. Памятники, музеи и экспонаты настоящие, их историю рассказывают профессиональные гиды. Сценарии и комплектация — авторская разработка La Royal Event.</p>
+</section>
+
+</body>
+</html>
