@@ -1,0 +1,92 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Четыре руки, одно письмо</title><link rel="stylesheet" href="fonts/local.css"><style>
+@page{size:A4;margin:0}
+:root{--paper:#faf6f2;--ink:#241a2e;--ink-2:#4a3d58;--dim:#8a7d97;--rule:#e2d9cf;--violet:#6b3fa0;--violet-soft:#efe9f5;--rose:#b8275a;--night:#120d1c;--sand:#f3ece1;--lilac:#c6a4f5;--lime-b:#cfe64f}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:"Golos Text",Arial,sans-serif;font-size:9.6pt;line-height:1.45}
+.page{width:210mm;height:297mm;overflow:hidden;padding:15mm 16mm 13mm;background:var(--paper);page-break-after:always;position:relative}
+.page:last-child{page-break-after:auto}
+h1,h2,h3{font-family:"Spectral",Georgia,serif;font-weight:500;margin:0;letter-spacing:-.01em}
+p{margin:0 0 2.2mm}
+.mono{font-family:"JetBrains Mono",monospace;font-size:7pt;letter-spacing:.14em;text-transform:uppercase}
+.lbl{color:var(--violet);margin:0 0 1.8mm}
+.eyebrow{color:var(--violet);margin-bottom:2mm}
+/* обложка */
+.cover{background:var(--night);color:var(--sand);display:flex;flex-direction:column;justify-content:space-between}
+.cover .mono{color:var(--lime-b)}
+.cover h1{font-size:38pt;line-height:1.03;margin:7mm 0 5mm;max-width:85%}
+.cover .lead{font-family:"Spectral",Georgia,serif;font-size:14pt;color:var(--lilac);line-height:1.35;max-width:72%}
+.cover .strip{display:flex;gap:9mm;border-top:1px solid #2f2545;padding-top:5mm;margin-top:10mm}
+.cover .strip b{display:block;font-family:"Spectral",Georgia,serif;font-weight:500;font-size:17pt;color:var(--sand)}
+.cover .strip span{color:#9b8fa8;font-size:8pt}
+.cover .foot{color:#9b8fa8;font-size:8.5pt;display:flex;justify-content:space-between;border-top:1px solid #2f2545;padding-top:4mm}
+/* содержание */
+.toc h2{font-size:19pt;color:var(--violet);margin-bottom:4mm}
+.toc table{border-collapse:collapse;width:100%;font-size:9.4pt;margin-top:3mm}
+.toc td{padding:2.3mm 2mm;border-bottom:1px solid var(--rule);vertical-align:top}
+.toc td.num{color:var(--violet);font-family:"JetBrains Mono",monospace;font-size:8pt;width:8mm}
+.toc td.nm{font-family:"Spectral",Georgia,serif;font-size:11pt;width:52mm}
+.toc td.pl{color:var(--dim);width:36mm;font-size:8.6pt}
+.toc td.ds{color:var(--ink-2)}
+/* страница программы */
+.prog .phead{border-bottom:1px solid var(--rule);padding-bottom:4mm;margin-bottom:5mm}
+.prog h2{font-size:24pt;line-height:1.05;margin-bottom:2.5mm}
+.prog .one{font-family:"Spectral",Georgia,serif;font-size:12pt;color:var(--violet);line-height:1.3;max-width:85%;margin:0}
+.pbody{display:grid;grid-template-columns:1fr 62mm;gap:9mm}
+.left p{color:var(--ink-2)}
+.steps{margin:0;padding-left:5mm;counter-reset:s}
+.steps li{margin-bottom:2.4mm;color:var(--ink-2);padding-left:1mm}
+.steps li::marker{color:var(--violet);font-family:"JetBrains Mono",monospace;font-size:8pt}
+.right ul{margin:0 0 4mm;padding-left:4mm}
+.right li{margin-bottom:1.3mm;color:var(--ink-2);font-size:9pt}
+.right .sm{color:var(--ink-2);font-size:9pt;margin-bottom:4mm}
+.factbox{background:var(--violet-soft);border-radius:2.5mm;padding:3.5mm 4mm;margin-bottom:5mm}
+.factbox table{border-collapse:collapse;width:100%;font-size:8.8pt}
+.factbox td{padding:1.1mm 0;vertical-align:middle}
+.factbox td:first-child{color:var(--dim);width:22mm}
+.dots{display:inline-flex;gap:1.1mm;align-items:center}
+.dots i{width:2mm;height:2mm;border-radius:50%;background:#d9cfe6;display:block}
+.dots i.on{background:var(--violet)}
+.dots.warm i.on{background:var(--rose)}
+.pn{position:absolute;bottom:8mm;left:16mm;right:16mm;display:flex;justify-content:space-between;color:var(--dim);font-size:7pt}
+/* финальная */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.box{background:var(--violet-soft);border-radius:2.5mm;padding:5mm}
+.box p:last-child{margin:0}
+table.cond{border-collapse:collapse;width:100%;font-size:9.4pt}
+table.cond td{padding:2mm 3mm;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cond td:first-child{color:var(--dim);width:34%}
+</style></head><body>
+<section class="page prog">
+  <div class="phead">
+    <div class="mono eyebrow">03 · Старый Каир, улица Аль-Муизз · 4 часа</div>
+    <h2>Четыре руки, одно письмо</h2>
+    <p class="one">В 1347 году один из четырёх человек подменил письмо. Гости выясняют, кто.</p>
+  </div>
+  <div class="pbody">
+    <div class="left">
+      <div class="mono lbl">О чём программа</div>
+      <p>Письмо передавали через четырёх человек: каллиграфа, хозяйку гостиницы, медника и переписчика. Один подменил текст. Задача команд — понять, кто это сделал.</p><p>Группа идёт по главной улице старого Каира от северных ворот к южным. На каждой остановке команда получает один факт.</p>
+      <div class="mono lbl" style="margin-top:4mm">Как проходит</div>
+      <ol class="steps"><li>Сбор у северных ворот. Наушники, папки, деление на команды.</li><li>У старинной мечети команды считают ниши на фасаде и сравнивают число с текстом письма.</li><li>Во дворе работает настоящий каллиграф. Команды сравнивают почерк на двух листах, потом каждый пишет одно слово арабскими буквами тростниковым пером.</li><li>За соседним столом медник. Команды проверяют, сколько листов входит в медный пенал для писем.</li><li>В кафе актриса играет свидетельницу. Половине команд она рассказывает одну версию той ночи, половине другую.</li><li>У южных ворот актёр играет последнего свидетеля. У каждой команды три вопроса. Финал: команды собирают письмо из своих слов и голосуют, кто виноват.</li></ol>
+    </div>
+    <div class="right">
+      <div class="factbox">
+        <table>
+          <tr><td>Где</td><td>Старый Каир, улица Аль-Муизз</td></tr>
+          <tr><td>Сколько</td><td>4 часа</td></tr>
+          <tr><td>Гостей</td><td>20–100, команды по 5 человек</td></tr>
+          <tr><td>Активность</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></td></tr>
+          <tr><td>Напряжение</td><td><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></td></tr>
+          <tr><td>Готовим</td><td>5 недель</td></tr>
+        </table>
+      </div>
+      <div class="mono lbl">Что входит</div>
+      <ul><li>Трансфер от отеля и обратно</li><li>Ведущая, помощники и два актёра</li><li>Настоящие каллиграф и медник</li><li>Наушники с радиогидом для каждого гостя</li><li>Напитки в кафе и аренда площадок</li><li>Весь реквизит и печатные материалы</li></ul>
+      <div class="mono lbl">Что остаётся гостям</div>
+      <p class="sm">Карточка со словом, которое гость сам написал тушью, и копия собранного письма с переводом.</p>
+      <div class="mono lbl">Для кого</div>
+      <p class="sm">Тем, кто уже видел пирамиды и хочет посмотреть Каир пешком: через людей, ремесло и разговор.</p>
+    </div>
+  </div>
+  
+</section></body></html>

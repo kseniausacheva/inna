@@ -1,0 +1,92 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Последний кадр</title><link rel="stylesheet" href="fonts/local.css"><style>
+@page{size:A4;margin:0}
+:root{--paper:#faf6f2;--ink:#241a2e;--ink-2:#4a3d58;--dim:#8a7d97;--rule:#e2d9cf;--violet:#6b3fa0;--violet-soft:#efe9f5;--rose:#b8275a;--night:#120d1c;--sand:#f3ece1;--lilac:#c6a4f5;--lime-b:#cfe64f}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:"Golos Text",Arial,sans-serif;font-size:9.6pt;line-height:1.45}
+.page{width:210mm;height:297mm;overflow:hidden;padding:15mm 16mm 13mm;background:var(--paper);page-break-after:always;position:relative}
+.page:last-child{page-break-after:auto}
+h1,h2,h3{font-family:"Spectral",Georgia,serif;font-weight:500;margin:0;letter-spacing:-.01em}
+p{margin:0 0 2.2mm}
+.mono{font-family:"JetBrains Mono",monospace;font-size:7pt;letter-spacing:.14em;text-transform:uppercase}
+.lbl{color:var(--violet);margin:0 0 1.8mm}
+.eyebrow{color:var(--violet);margin-bottom:2mm}
+/* обложка */
+.cover{background:var(--night);color:var(--sand);display:flex;flex-direction:column;justify-content:space-between}
+.cover .mono{color:var(--lime-b)}
+.cover h1{font-size:38pt;line-height:1.03;margin:7mm 0 5mm;max-width:85%}
+.cover .lead{font-family:"Spectral",Georgia,serif;font-size:14pt;color:var(--lilac);line-height:1.35;max-width:72%}
+.cover .strip{display:flex;gap:9mm;border-top:1px solid #2f2545;padding-top:5mm;margin-top:10mm}
+.cover .strip b{display:block;font-family:"Spectral",Georgia,serif;font-weight:500;font-size:17pt;color:var(--sand)}
+.cover .strip span{color:#9b8fa8;font-size:8pt}
+.cover .foot{color:#9b8fa8;font-size:8.5pt;display:flex;justify-content:space-between;border-top:1px solid #2f2545;padding-top:4mm}
+/* содержание */
+.toc h2{font-size:19pt;color:var(--violet);margin-bottom:4mm}
+.toc table{border-collapse:collapse;width:100%;font-size:9.4pt;margin-top:3mm}
+.toc td{padding:2.3mm 2mm;border-bottom:1px solid var(--rule);vertical-align:top}
+.toc td.num{color:var(--violet);font-family:"JetBrains Mono",monospace;font-size:8pt;width:8mm}
+.toc td.nm{font-family:"Spectral",Georgia,serif;font-size:11pt;width:52mm}
+.toc td.pl{color:var(--dim);width:36mm;font-size:8.6pt}
+.toc td.ds{color:var(--ink-2)}
+/* страница программы */
+.prog .phead{border-bottom:1px solid var(--rule);padding-bottom:4mm;margin-bottom:5mm}
+.prog h2{font-size:24pt;line-height:1.05;margin-bottom:2.5mm}
+.prog .one{font-family:"Spectral",Georgia,serif;font-size:12pt;color:var(--violet);line-height:1.3;max-width:85%;margin:0}
+.pbody{display:grid;grid-template-columns:1fr 62mm;gap:9mm}
+.left p{color:var(--ink-2)}
+.steps{margin:0;padding-left:5mm;counter-reset:s}
+.steps li{margin-bottom:2.4mm;color:var(--ink-2);padding-left:1mm}
+.steps li::marker{color:var(--violet);font-family:"JetBrains Mono",monospace;font-size:8pt}
+.right ul{margin:0 0 4mm;padding-left:4mm}
+.right li{margin-bottom:1.3mm;color:var(--ink-2);font-size:9pt}
+.right .sm{color:var(--ink-2);font-size:9pt;margin-bottom:4mm}
+.factbox{background:var(--violet-soft);border-radius:2.5mm;padding:3.5mm 4mm;margin-bottom:5mm}
+.factbox table{border-collapse:collapse;width:100%;font-size:8.8pt}
+.factbox td{padding:1.1mm 0;vertical-align:middle}
+.factbox td:first-child{color:var(--dim);width:22mm}
+.dots{display:inline-flex;gap:1.1mm;align-items:center}
+.dots i{width:2mm;height:2mm;border-radius:50%;background:#d9cfe6;display:block}
+.dots i.on{background:var(--violet)}
+.dots.warm i.on{background:var(--rose)}
+.pn{position:absolute;bottom:8mm;left:16mm;right:16mm;display:flex;justify-content:space-between;color:var(--dim);font-size:7pt}
+/* финальная */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.box{background:var(--violet-soft);border-radius:2.5mm;padding:5mm}
+.box p:last-child{margin:0}
+table.cond{border-collapse:collapse;width:100%;font-size:9.4pt}
+table.cond td{padding:2mm 3mm;border-bottom:1px solid var(--rule);vertical-align:top}
+table.cond td:first-child{color:var(--dim);width:34%}
+</style></head><body>
+<section class="page prog">
+  <div class="phead">
+    <div class="mono eyebrow">08 · Каир или Шарм-эль-Шейх · 3 часа</div>
+    <h2>Последний кадр</h2>
+    <p class="one">Фильм снят, а последнего кадра нет. Какой финал увидят зрители, решают гости за ужином.</p>
+  </div>
+  <div class="pbody">
+    <div class="left">
+      <div class="mono lbl">О чём программа</div>
+      <p>Ужин с актёрами. Каир, 1959 год, через три часа премьера, а последний кадр вырезан из плёнки ночью.</p><p>Подозреваемых четверо, и все ужинают в этом зале: продюсер, певица, журналист и сценарист. Актёры подсаживаются к столам, оправдываются и уходят к соседям.</p>
+      <div class="mono lbl" style="margin-top:4mm">Как проходит</div>
+      <ol class="steps"><li>Красная дорожка, фотографы, рассадка по столам. Подача первого блюда.</li><li>На каждом столе монтажный лист, ночной журнал вахтёра студии и четыре письма.</li><li>Гости сверяют письма с журналом и вычисляют, кто из четверых соврал.</li><li>Между подачами команды готовят вопрос-ловушку и задают его актёру, когда он подсядет к столу.</li><li>Столы собирают афишу из шести фрагментов.</li><li>Голосование: показать зрителям правду или дать счастливый конец. На экране идёт тот финал, за который проголосовал зал. Певица поёт вживую поверх него.</li></ol>
+    </div>
+    <div class="right">
+      <div class="factbox">
+        <table>
+          <tr><td>Где</td><td>Каир или Шарм-эль-Шейх</td></tr>
+          <tr><td>Сколько</td><td>3 часа</td></tr>
+          <tr><td>Гостей</td><td>20–100, команды столы по 5</td></tr>
+          <tr><td>Активность</td><td><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></td></tr>
+          <tr><td>Напряжение</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></td></tr>
+          <tr><td>Готовим</td><td>6 недель</td></tr>
+        </table>
+      </div>
+      <div class="mono lbl">Что входит</div>
+      <ul><li>Аренда зала и монтаж. В Каире возможно судно на Ниле целиком</li><li>Ужин из трёх подач, вода и безалкогольные напитки</li><li>Постановка, режиссура и репетиция, ведущий и четыре актёра</li><li>Музыкальные номера, звук, сценический свет и экран</li><li>Печать общего кадра в рамке из киноплёнки к выходу</li></ul>
+      <div class="mono lbl">Что остаётся гостям</div>
+      <p class="sm">Общий снимок с хлопушкой в рамке из киноплёнки и имя каждого гостя в титрах фильма.</p>
+      <div class="mono lbl">Для кого</div>
+      <p class="sm">Компаниям, которым нужен вечер с едой, музыкой и разговором. Занятие есть и для тех, кто любит распутывать, и для тех, кто пришёл поужинать.</p>
+    </div>
+  </div>
+  
+</section></body></html>
