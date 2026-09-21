@@ -179,6 +179,72 @@
 
 ---
 
+## ПИСЬМО 4 · Mövenpick Resort Aswan — только для варианта A2
+
+| | |
+|---|---|
+| **Кому** | resort.aswan@movenpick.com **[П]** |
+| **Телефон** | +20 97 245 4455 **[П]** |
+| **Отдел** | Group Reservations |
+| **Тема** | Group block and private dinner — 20 rooms, 29–30 January 2027 — La Royal Event |
+| **Когда** | Только если выбран вариант A2. В вариантах B и A1 не нужно |
+| **Зачем** | Ночь 29-го на острове Элефантина вместо Каира, и прощальный ужин там же |
+
+> **Почему это письмо появилось.** Расписание рейсов Асуан — Каир не даёт улететь
+> в Каир днём 29 января: утренний рейс уходит в 08:45, когда группа в Абу-Симбеле,
+> а следующий только в 20:15. Ночёвка в Асуане решает это и обходится дешевле ночи
+> в Four Seasons.
+>
+> **Две вещи, которые надо выяснить именно здесь.** Отель на острове, добираются катером.
+> Первое: ходит ли катер в 06:30–07:00 утра 30-го, чтобы успеть на рейс в 08:45.
+> Второе: как на катер попадает двадцать чемоданов. Обе мелочи способны сорвать вылет,
+> поэтому они стоят в письме выше вопроса о цене.
+
+**Текст письма:**
+
+> Dear Group Reservations,
+>
+> La Royal Event is organising a private programme in Egypt in January 2027 and would
+> like to request a group block and a private dinner at Mövenpick Resort Aswan.
+>
+> **Date:** check-in 29 January 2027, check-out 30 January 2027 (1 night)
+> **Rooms:** 18 rooms single occupancy + 2 twin rooms for our own staff
+> **Nile-view categories preferred**
+>
+> Our group disembarks from a chartered vessel early on 29 January, flies to Abu Simbel
+> for the morning and returns to Aswan around 12:40. This shapes our questions:
+>
+> 1. **Luggage.** Can luggage be delivered to the hotel on the morning of 29 January
+>    by a separate vehicle, while the guests are at Abu Simbel, and stored securely
+>    until check-in?
+> 2. **Check-in.** Can check-in be guaranteed from 13:30, when the group arrives
+>    from the airport?
+> 3. **The boat crossing.** Please send the shuttle timetable, its capacity, and confirm
+>    that it operates **from 06:30 on 30 January** — the group must reach Aswan airport
+>    for an 08:45 departure. How is luggage for twenty people handled on the crossing?
+> 4. **Private farewell dinner for 20** on the evening of 29 January: seated, set menu
+>    with a beverage package, in your panoramic restaurant or another private space
+>    with a Nile view. Please quote **per person, stating clearly whether service charge
+>    and VAT are included or added**, and confirm whether a minimum spend applies
+>    to the space in addition to the per-person menu.
+> 5. Whether live music can be arranged at that dinner, and any restrictions.
+> 6. **Early breakfast on 30 January from 05:45**, or packed boxes, and the transfer
+>    time from the hotel to Aswan airport including the crossing.
+> 7. Room rate per night, single and twin, including breakfast, service charge and all taxes.
+> 8. Group terms: deposit, cancellation, release date, rooming list deadline.
+>
+> A written quotation valid for at least 30 days would be appreciated.
+>
+> Kind regards,
+> Ksenia Usacheva
+> La Royal Event
+
+**Ответ должен содержать:** подтверждение раннего катера 30-го, схему работы с багажом,
+цену номера с налогами, цену ужина с прямым ответом «net или ++», наличие минимального счёта.
+
+
+---
+
 ## КОРОТКО ДЛЯ WHATSAPP
 
 **Giza Palace** и **Steigenberger** — если ответа на почту нет три рабочих дня, звоните.
@@ -196,6 +262,7 @@
 | Four Seasons Cairo | | | | |
 | Giza Palace | | | | |
 | Steigenberger Nile Palace | | | | |
+| Mövenpick Aswan *(только A2)* | | | | |
 
 **Условия, без которых блок не принимаем ни в одном отеле:**
 
