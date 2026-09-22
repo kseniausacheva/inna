@@ -18,7 +18,7 @@ FEE = 0.15             # вознаграждение La Royal, наценка �
 EUR_USD = 1.14893      # курс, по которому переведены 15 000 EUR за Филе
 
 # ─────────── за группу целиком ───────────
-CHARTER_DAY   = 54_500
+CHARTER_DAY   = 54_500        # ЗА НОЧЬ ФРАХТА, подтверждено 22.09. Утро высадки не оплачивается
 NIGHTS        = {'A': 4, 'B': 5}
 PHILAE_EUR    = 15_000
 GIZA_OPENING  = 3_500          # за один приватный вход, их два
@@ -41,6 +41,10 @@ GEM           = 120
 KHUFU         = 90
 TEAM_OWN_ROOM = 90             # свой отель в Каире, за ночь, две ночи
 TEAM_MEALS    = 240            # питание команды на берегу
+
+# Клиентская цена отдельной строки, когда она назначена, а не выведена из наценки.
+# Sonesta: себестоимость 222, продаём по 250 — решение от 22.09.
+SELL = {'sonesta': 250}
 
 
 def baskets(people):
@@ -109,11 +113,22 @@ def our_costs(v, team_n=TEAM_GROUND):
 
 def net_fee(v, n=GUESTS, team_n=TEAM_GROUND):
     """Что остаётся нам после содержания команды."""
-    return with_fee(total(v, n)) - total(v, n) - our_costs(v, team_n)
+    return client_total(v, n) - total(v, n) - our_costs(v, team_n)
 
 
 def with_fee(cost):
     return round(cost * (1 + FEE))
+
+
+def client_total(v, n=GUESTS, charter_day=None):
+    """Что платит клиент: каждая строка с наценкой 15 %, кроме назначенных вручную."""
+    g = group_fixed(v, n)
+    if charter_day is not None:
+        g['charter'] = charter_day * NIGHTS[v]
+    out = sum(g.values()) * (1 + FEE)
+    for k, x in per_head(v).items():
+        out += (SELL[k] if k in SELL else x * (1 + FEE)) * n
+    return round(out)
 
 
 def ru(x):
@@ -149,7 +164,7 @@ def client_rows(n=GUESTS, team_n=TEAM_GROUND):
     add('Прощальный ужин', pa['farewell'] * n, None, '~',
         'A: площадка в Асуане. B: верхняя палуба судна, входит во фрахт')
     add('<b>Отель в Луксоре</b>, 1 ночь', pa['sonesta'] * n, pb['sonesta'] * n, '✓',
-        'Sonesta St. George. 222 за номер, завтрак, сервис и НДС включены')
+        'Sonesta St. George. Цена отеля 222 за номер, завтрак, сервис и НДС включены. Гостю идёт по 250')
     add('Питание в отелях вне названных ресторанов', pa['hotel_meals'] * n, pb['hotel_meals'] * n, '≈',
         'Ужин 40–60, обед 25–35 на человека')
     add('Ужин в Lucida', pa['lucida'] * n, pb['lucida'] * n, '✓',
@@ -167,10 +182,11 @@ def client_rows(n=GUESTS, team_n=TEAM_GROUND):
 if __name__ == '__main__':
     for v in ('A', 'B'):
         c = total(v)
+        t = client_total(v)
         print('Вариант %s: клиенту %s (себестоимость %s), на гостя %s'
-              % (v, ru(with_fee(c)), ru(c), ru(with_fee(c) / GUESTS)))
+              % (v, ru(t), ru(c), ru(t / GUESTS)))
         print('   наши расходы на команду %s, чистое вознаграждение %s'
-              % (ru(our_costs(v)), ru(net_fee(v))))
+              % (ru(our_costs(v)), ru(client_total(v) - c - our_costs(v))))
     rows = client_rows()
     sa = sum(r[1] or 0 for r in rows)
     sb = sum(r[2] or 0 for r in rows)
@@ -178,6 +194,5 @@ if __name__ == '__main__':
     assert sa == total('A') and sb == total('B'), 'таблица не сходится с итогом'
     print('таблица сходится')
     for n in (16, 20, 30):
-        c = total('A', n, team_n=2 if n < 30 else 3)
-        print('  %d гостей: кают %d, всего %s, на гостя %s'
-              % (n, n + (2 if n < 30 else 3), ru(with_fee(c)), ru(with_fee(c) / n)))
+        t = client_total('A', n)
+        print('  %d гостей: всего %s, на гостя %s' % (n, ru(t), ru(t / n)))

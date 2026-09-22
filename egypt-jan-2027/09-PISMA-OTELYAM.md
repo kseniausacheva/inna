@@ -79,8 +79,8 @@
 >
 > **Чего нет.** Срока, до которого держится блок. Условий аннуляции и депозита.
 > Цены ужина 24-го — тариф BB, ужин в него не входит. Раннего завтрака для выезда
-> на шар. И в письме есть оговорка о праве поднять цену — до заезда полтора года,
-> её надо закрывать договором.
+> на шар. И в письме есть оговорка о праве поднять цену — до заезда четыре месяца,
+> но закрывать её всё равно надо договором.
 
 **Текст письма:**
 
@@ -97,7 +97,7 @@
 > 2. **Deposit and cancellation.** Please state the deposit schedule, the cancellation
 >    policy and the date from which the booking becomes non-refundable.
 > 3. **Rate protection.** We note the clause allowing rate increases. As the stay is
->    sixteen months away, please confirm that the rate of USD 222.00 will be fixed in
+>    four months away, please confirm that the rate of USD 222.00 will be fixed in
 >    the contract, or state the maximum increase you could apply and by when you would
 >    notify us.
 > 4. **Dinner on 24 January, 20 people at 20:15.** As the rate is bed and breakfast,
