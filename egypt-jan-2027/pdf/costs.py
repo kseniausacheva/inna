@@ -32,6 +32,7 @@ ASWAN_29      = 250            # вариант A, остров Элефанти
 FOURSEASONS   = 570            # вариант B, ночь 30 января
 ABU_SIMBEL    = 470
 GIZA_TICKET   = 180            # за посещение, их два
+GROUND        = 750            # наземная часть: экскурсии, гиды, доступы в храмы. Названо 22.09
 FLIGHTS       = 250            # два внутренних перелёта
 FAREWELL      = 250            # вариант A; в B ужин на борту и денег не стоит
 HOTEL_MEALS   = 200            # питание в отелях вне названных ресторанов, за всю поездку
@@ -66,6 +67,7 @@ def group_fixed(v, n=GUESTS):
 def per_head(v):
     """Стоимость одного человека — что гостя, что члена команды на берегу."""
     d = {
+        'ground':      GROUND,
         'giza_palace': GIZA_PALACE * 2,
         'sonesta':     SONESTA,
         'abu_simbel':  ABU_SIMBEL,
@@ -90,7 +92,7 @@ def team(v):
     """Команда: свой отель в Каире и питание на берегу вместо гостевых,
     всё остальное — как у гостя. Абу-Симбел: летят не все, считаем двоих."""
     p = per_head(v)
-    one = (TEAM_OWN_ROOM * 2 + TEAM_MEALS
+    one = (TEAM_OWN_ROOM * 2 + TEAM_MEALS + p['ground']
            + p['sonesta'] + p.get('hotel_29', 0) + p.get('hotel_30', 0)
            + p['abu_simbel'] + p['giza_ticket'] + p['flights'] + p['farewell']
            + p['lucida'] + p['philae_din'] + p['gem'] + p['khufu'])
@@ -147,6 +149,9 @@ def client_rows(n=GUESTS, team_n=TEAM_GROUND):
         'Названо оператором. Экипаж, полный пансион, напитки, гид, портовые сборы')
     add('<b>Приватный вечер на острове Филе</b>', ga['philae'], gb['philae'], '✓',
         'Подтверждено письменно. 15 000 EUR')
+    add('<b>Наземная программа</b>: экскурсии, гиды, доступы в храмы',
+        pa['ground'] * n, pb['ground'] * n, '~',
+        '750 на человека. Названо. Уточняем состав и стык с тем, что входит во фрахт')
     add('Отель в Каире, 2 ночи', pa['giza_palace'] * n, pb['giza_palace'] * n, '≈',
         'Giza Palace. Групповой тариф запрошен')
     add('Абу-Симбел самолётом', pa['abu_simbel'] * n, pb['abu_simbel'] * n, '~',
