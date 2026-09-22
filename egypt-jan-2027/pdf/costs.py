@@ -18,7 +18,9 @@ FEE = 0.15             # вознаграждение La Royal, наценка �
 EUR_USD = 1.14893      # курс, по которому переведены 15 000 EUR за Филе
 
 # ─────────── за группу целиком ───────────
-CHARTER_DAY   = 54_500        # ЗА НОЧЬ ФРАХТА, подтверждено 22.09. Утро высадки не оплачивается
+CHARTER_BUY   = 49_800        # закупка у оператора Le Fayan Suites, за ночь
+CHARTER_DAY   = 54_500        # НАША ПРОДАЖНАЯ за ночь. Разница — наша маржа сверх 15 %
+                              # За ночь фрахта, не за календарный день: утро высадки не оплачивается
 NIGHTS        = {'A': 4, 'B': 5}
 PHILAE_EUR    = 15_000
 GIZA_OPENING  = 3_500          # за один приватный вход, их два
@@ -32,7 +34,8 @@ ASWAN_29      = 250            # вариант A, остров Элефанти
 FOURSEASONS   = 570            # вариант B, ночь 30 января
 ABU_SIMBEL    = 470
 GIZA_TICKET   = 180            # за посещение, их два
-GROUND        = 750            # наземная часть: экскурсии, гиды, доступы в храмы. Названо 22.09.
+GROUND        = 750            # наземные экскурсии на речной части: четыре дня по ходу судна.
+                               # Каир считается своими строками (открытия в Гизе, билеты, GEM, Khufu's).
                                # Абу-Симбел и полёт на шаре сюда НЕ входят — они отдельными строками
 FLIGHTS       = 250            # два внутренних перелёта
 FAREWELL      = 250            # вариант A; в B ужин на борту и денег не стоит
@@ -114,9 +117,24 @@ def our_costs(v, team_n=TEAM_GROUND):
     return team(v) * team_n
 
 
+def charter_spread(v):
+    """Наценка на фрахте: продаём дороже, чем покупаем."""
+    return (CHARTER_DAY - CHARTER_BUY) * NIGHTS[v]
+
+
+def our_cost(v, n=GUESTS, team_n=TEAM_GROUND):
+    """Что поездка реально стоит нам: смета по закупке плюс содержание команды."""
+    return total(v, n) - charter_spread(v) + our_costs(v, team_n)
+
+
+def gross_margin(v, n=GUESTS):
+    """Вознаграждение 15 % плюс наценка на фрахте."""
+    return client_total(v, n) - total(v, n) + charter_spread(v)
+
+
 def net_fee(v, n=GUESTS, team_n=TEAM_GROUND):
     """Что остаётся нам после содержания команды."""
-    return client_total(v, n) - total(v, n) - our_costs(v, team_n)
+    return gross_margin(v, n) - our_costs(v, team_n)
 
 
 def with_fee(cost):
@@ -150,10 +168,10 @@ def client_rows(n=GUESTS, team_n=TEAM_GROUND):
         'Названо оператором. Экипаж, полный пансион, напитки, гид, портовые сборы')
     add('<b>Приватный вечер на острове Филе</b>', ga['philae'], gb['philae'], '✓',
         'Подтверждено письменно. 15 000 EUR')
-    add('<b>Наземная программа</b>: экскурсии, гиды, доступы в храмы',
+    add('<b>Наземные экскурсии на речной части</b>, четыре дня',
         pa['ground'] * n, pb['ground'] * n, '~',
-        '750 на человека. Экскурсии, гиды и доступы в храмы по всему маршруту. '
-        'Абу-Симбел и полёт на шаре считаются отдельно')
+        '750 на человека. Гиды, транспорт и доступы в храмы по ходу судна. '
+        'Каир, Абу-Симбел и полёт на шаре считаются отдельными строками')
     add('Отель в Каире, 2 ночи', pa['giza_palace'] * n, pb['giza_palace'] * n, '≈',
         'Giza Palace. Групповой тариф запрошен')
     add('Абу-Симбел самолётом', pa['abu_simbel'] * n, pb['abu_simbel'] * n, '~',
@@ -192,8 +210,9 @@ if __name__ == '__main__':
         t = client_total(v)
         print('Вариант %s: клиенту %s (себестоимость %s), на гостя %s'
               % (v, ru(t), ru(c), ru(t / GUESTS)))
-        print('   наши расходы на команду %s, чистое вознаграждение %s'
-              % (ru(our_costs(v)), ru(client_total(v) - c - our_costs(v))))
+        print('   15 %% %s + наценка на фрахте %s = валовая %s'
+              % (ru(client_total(v) - c), ru(charter_spread(v)), ru(gross_margin(v))))
+        print('   минус команда %s → чистыми %s' % (ru(our_costs(v)), ru(net_fee(v))))
     rows = client_rows()
     sa = sum(r[1] or 0 for r in rows)
     sb = sum(r[2] or 0 for r in rows)
