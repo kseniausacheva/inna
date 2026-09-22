@@ -64,58 +64,66 @@
 
 ---
 
-## ПИСЬМО 2 · Steigenberger Nile Palace, Луксор
+## ПИСЬМО 2 · Sonesta St. George, Луксор — ОТВЕТ НА ИХ ПРЕДЛОЖЕНИЕ
 
 | | |
 |---|---|
-| **Кому** | afb@luxor-steigenberger.com **[О]** — это адрес отдела F&B, а не броней |
-| **Телефон** | +20 95 2366 999 **[П]** — надёжнее, чем почта |
-| **Отдел** | В первой строке письма просим переадресовать в Group Reservations |
-| **Тема** | Group block request — 20 rooms, 24–25 January 2027 — La Royal Event |
-| **Когда** | Сейчас, вместе с первым |
-| **Зачем** | Одна ночь, 18 одноместных + 2 твина, ужин на 20 человек и очень ранний выезд |
+| **Кому** | Ahmed Bahi, Sonesta St. George Hotel Luxor — **ответом в ту же переписку** |
+| **Когда** | В течение двух-трёх дней, пока предложение свежее |
+| **Статус** | Цена получена: **222 USD** за Royal Elite single BB, 18 номеров на 24.01.2027 |
+| **Зачем** | В их письме нет пяти вещей, без которых бронировать нельзя |
 
-> **Честно про адрес.** Публично доступен только адрес отдела F&B. Письмо уйдёт,
-> но может застрять. **Продублируйте звонком** на +20 95 2366 999 и попросите почту
-> отдела групповых броней — это займёт две минуты и сэкономит неделю.
+> **Что уже есть.** 18 номеров Royal Elite на ночь 24 января, 222 за одноместное
+> размещение, завтрак включён, сервисный сбор и НДС включены, net non-commissionable.
+> Это ровно наш объём: 16 гостей и два номера команде.
+>
+> **Чего нет.** Срока, до которого держится блок. Условий аннуляции и депозита.
+> Цены ужина 24-го — тариф BB, ужин в него не входит. Раннего завтрака для выезда
+> на шар. И в письме есть оговорка о праве поднять цену — до заезда полтора года,
+> её надо закрывать договором.
 
 **Текст письма:**
 
-> Dear Sales Team,
+> Dear Ahmed,
 >
-> Kindly forward this request to your Group Reservations department.
+> Thank you for your proposal for 24 January 2027. The rate of USD 222.00 per Royal
+> Elite room on single occupancy, bed and breakfast, with service charge and VAT
+> included, works for us, and 18 rooms is exactly the number we need.
 >
-> La Royal Event is organising a private incentive programme in Egypt in January 2027
-> and would like to request a group block at Steigenberger Nile Palace Luxor.
+> Before we proceed to a contract, kindly confirm the following.
 >
-> **Dates:** check-in 24 January 2027, check-out 25 January 2027 (1 night)
-> **Rooms:** 18 rooms single occupancy + 2 twin rooms for our own staff
-> **Guests:** 16–18 plus 4 staff
+> 1. **Hold and release.** Until which date do you hold the 18 rooms for us, and what
+>    do you need from us to extend that hold?
+> 2. **Deposit and cancellation.** Please state the deposit schedule, the cancellation
+>    policy and the date from which the booking becomes non-refundable.
+> 3. **Rate protection.** We note the clause allowing rate increases. As the stay is
+>    sixteen months away, please confirm that the rate of USD 222.00 will be fixed in
+>    the contract, or state the maximum increase you could apply and by when you would
+>    notify us.
+> 4. **Dinner on 24 January, 20 people at 20:15.** As the rate is bed and breakfast,
+>    please quote a set menu per person in a separate area of the restaurant or a
+>    private room, stating whether service charge and VAT are included.
+> 5. **Light lunch for 20 on arrival, approximately 14:30** on 24 January. Please quote
+>    per person.
+> 6. **Early departure on 25 January.** The group leaves the hotel at approximately
+>    05:00 for a hot-air balloon flight. As breakfast is included in the rate but cannot
+>    be taken at that hour, please confirm a packed breakfast to take away at no extra
+>    charge, and coffee service from 04:45.
+> 7. **Late check-out on 25 January.** The group returns from the balloon flight at
+>    about 09:00 and boards a Nile vessel at 11:30. Please confirm luggage handling and
+>    access to rooms or to a shower facility until departure.
+> 8. **Rooming list deadline** and the format in which you need it.
 >
-> Please quote:
->
-> 1. Room rate per night, single and twin, including breakfast, service charge and all taxes.
-> 2. Nile-view categories and the supplement for them.
-> 3. Group terms: deposit, cancellation, release date, rooming list deadline.
-> 4. **Dinner on 24 January for 20 people at 20:15**, set menu, in a separate area
->    of the restaurant or a private room. Please quote per person and state whether
->    service charge and taxes are included.
-> 5. **A light lunch for 20 on arrival at approximately 14:30** on 24 January.
-> 6. **Very early departure on 25 January:** part of the group leaves the hotel at 05:15
->    for a hot-air balloon flight. Please confirm early check-out, luggage handling
->    and coffee service from 04:45.
-> 7. Standard check-out is at noon; our group boards a vessel at 11:30 on 25 January.
->    Please confirm luggage storage and shower facilities if needed.
-> 8. Distance and transfer time to Luxor Airport and to the cruise quay.
->
-> A written quotation valid for at least 30 days would be appreciated.
+> We would also appreciate confirmation that this quotation remains valid for at least
+> 30 days from the date of your letter.
 >
 > Kind regards,
 > Ksenia Usacheva
 > La Royal Event
 
-**Ответ должен содержать:** цену за ночь, цену ужина с указанием «net или ++»,
-подтверждение раннего выезда и хранения багажа.
+**Ответ должен содержать:** дату релиза блока, график депозита, условия аннуляции,
+письменную фиксацию цены 222 либо потолок роста, цену ужина и обеда с человека,
+согласие на завтрак-бокс и позднюю выписку.
 
 ---
 
@@ -247,7 +255,7 @@
 
 ## КОРОТКО ДЛЯ WHATSAPP
 
-**Giza Palace** и **Steigenberger** — если ответа на почту нет три рабочих дня, звоните.
+**Giza Palace** — если ответа на почту нет три рабочих дня, звоните.
 
 > Здравствуйте! La Royal Event, организуем частную программу в Египте в январе 2027.
 > Отправили на вашу почту запрос на групповой блок. Подскажите, пожалуйста, адрес отдела
@@ -261,7 +269,7 @@
 |---|---|---|---|---|
 | Four Seasons Cairo | | | | |
 | Giza Palace | | | | |
-| Steigenberger Nile Palace | | | | |
+| Sonesta St. George, Луксор | 22.09 | цена 222 получена | ждём условия блока | |
 | Mövenpick Aswan *(только A2)* | | | | |
 
 **Условия, без которых блок не принимаем ни в одном отеле:**
