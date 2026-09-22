@@ -94,11 +94,22 @@ def team(v):
 
 
 def total(v, n=GUESTS, team_n=TEAM_GROUND, charter_day=None):
+    """Себестоимость для клиента. Расходы нашей команды сюда НЕ входят:
+    это наши расходы, и они покрываются из вознаграждения."""
     g = group_fixed(v, n)
     if charter_day is not None:
         g['charter'] = charter_day * NIGHTS[v]
-    cost = sum(g.values()) + sum(per_head(v).values()) * n + team(v) * team_n
-    return cost
+    return sum(g.values()) + sum(per_head(v).values()) * n
+
+
+def our_costs(v, team_n=TEAM_GROUND):
+    """Что поездка стоит нам самим: содержание команды на месте."""
+    return team(v) * team_n
+
+
+def net_fee(v, n=GUESTS, team_n=TEAM_GROUND):
+    """Что остаётся нам после содержания команды."""
+    return with_fee(total(v, n)) - total(v, n) - our_costs(v, team_n)
 
 
 def with_fee(cost):
@@ -129,8 +140,6 @@ def client_rows(n=GUESTS, team_n=TEAM_GROUND):
         'Персональное разрешение и доступ во все зоны. По 3 500 за визит')
     add('Входные билеты на плато, два посещения', pa['giza_ticket'] * n, pb['giza_ticket'] * n, '✓',
         '180 за билет на человека, оплачиваются сверх открытия')
-    add('Сопровождение La Royal Event на месте', team('A') * team_n, team('B') * team_n, '',
-        'Четыре-пять человек всю поездку. Здесь — всё, что команда тратит на берегу')
     add('Полёт на шаре, две корзины', ga['balloon'], gb['balloon'], '✓',
         'Названо оператором. В корзину помещается восемь человек')
     add('Отель 29 января (A) или 30 января (B)', pa['hotel_29'] * n, pb['hotel_30'] * n, '≈',
@@ -143,7 +152,8 @@ def client_rows(n=GUESTS, team_n=TEAM_GROUND):
         'Sonesta St. George. 222 за номер, завтрак, сервис и НДС включены')
     add('Питание в отелях вне названных ресторанов', pa['hotel_meals'] * n, pb['hotel_meals'] * n, '≈',
         'Ужин 40–60, обед 25–35 на человека')
-    add('Ужин в Lucida', pa['lucida'] * n, pb['lucida'] * n, '✓', 'Подтверждено, без алкоголя')
+    add('Ужин в Lucida', pa['lucida'] * n, pb['lucida'] * n, '✓',
+    'Подтверждено. Включены два бокала вина или пива на человека')
     add('Ужин на острове Филе', pa['philae_din'] * n, pb['philae_din'] * n, '≈',
         '150 на человека, сверх приватного вечера')
     add('Большой Египетский музей, индивидуальная экскурсия', pa['gem'] * n, pb['gem'] * n, '✓',
@@ -157,8 +167,10 @@ def client_rows(n=GUESTS, team_n=TEAM_GROUND):
 if __name__ == '__main__':
     for v in ('A', 'B'):
         c = total(v)
-        print('Вариант %s: себестоимость %s, с 15 %%  %s, на гостя %s'
-              % (v, ru(c), ru(with_fee(c)), ru(with_fee(c) / GUESTS)))
+        print('Вариант %s: клиенту %s (себестоимость %s), на гостя %s'
+              % (v, ru(with_fee(c)), ru(c), ru(with_fee(c) / GUESTS)))
+        print('   наши расходы на команду %s, чистое вознаграждение %s'
+              % (ru(our_costs(v)), ru(net_fee(v))))
     rows = client_rows()
     sa = sum(r[1] or 0 for r in rows)
     sb = sum(r[2] or 0 for r in rows)
