@@ -5,7 +5,7 @@
 <title>Каир, 14–18 октября 2026. Смета и расписание</title>
 <link rel="stylesheet" href="fonts/local.css">
 <style>
-@page{size:A4;margin:16mm 16mm 20mm 16mm}
+@page{size:A4;margin:16mm 16mm 18mm 16mm}
 :root{
   --paper:#faf6f2; --paper2:#f3ecf1; --ink:#241a2e; --ink2:#4b4056; --dim:#756c80; --rule:#ddd2de;
   --lilac:#6b3fa0; --lilacbg:#f0e7fa; --limed:#63730c; --limeb:#b6d235; --rosed:#b8275a; --rosebg:#fce7ee;
@@ -31,18 +31,19 @@ table{width:100%;border-collapse:collapse;font-size:9.3pt}
 th{font-family:var(--mono);font-size:6.8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);text-align:left;padding:2mm 2mm;background:var(--paper2);border-bottom:1px solid var(--rule);font-weight:500}
 td{padding:1.9mm 2mm;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink2)}
 td.n{font-family:var(--mono);font-size:8.3pt;color:var(--dim);width:6mm}
-td.name{color:var(--ink);font-weight:500;width:50mm}
-td.sum{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;color:var(--ink);width:24mm}
+td.name{color:var(--ink);font-weight:500;width:46mm}
+td.sum{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;color:var(--ink);width:22mm}
 tr.total td{background:var(--lilacbg);color:var(--ink);font-weight:600;border-bottom:none}
 tr.total td.sum{color:var(--lilac)}
+tr.dayhead td{background:var(--paper2);font-family:var(--mono);font-size:6.8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);padding:1.6mm 2mm}
 .tag{display:inline-block;font-family:var(--mono);font-size:6.6pt;letter-spacing:.06em;padding:.6mm 1.8mm;border-radius:2mm;white-space:nowrap}
 .tag.yours{background:var(--lilacbg);color:var(--lilac)}
 .tag.est{background:#eef3d6;color:var(--limed)}
 .tag.ask{background:var(--rosebg);color:var(--rosed)}
 .note{padding:3mm 4mm;border-left:3px solid var(--limeb);background:#fff;font-size:9pt;color:var(--ink2);margin-top:3mm}
 .note.rose{border-left-color:var(--rosed);background:var(--rosebg)}
+.note b{color:var(--ink)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
-/* расписание */
 .day{break-inside:avoid;margin-bottom:5mm;padding:3.5mm 4mm;background:#fff;border:1px solid var(--rule);border-radius:3mm}
 .day h3{display:flex;gap:3mm;align-items:baseline}
 .day h3 .d{font-family:var(--mono);font-size:7pt;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:500}
@@ -55,7 +56,6 @@ tr.total td.sum{color:var(--lilac)}
 </style>
 </head>
 <body>
-
 
 <header class="cover">
   <div>
@@ -73,66 +73,80 @@ tr.total td.sum{color:var(--lilac)}
 
 <section>
   <h2>Смета</h2>
-  <p style="color:var(--ink2);font-size:9.3pt">Все суммы в долларах США. Строки со статусом «утверждена» согласованы, «оценка» посчитаны по открытым источникам и подтверждаются у поставщиков, «уточнить» ждут меню от площадки.</p>
+  <p style="color:var(--ink2);font-size:9.3pt">Все суммы в долларах США на группу 30 гостей. «Утверждена» — цена согласована с поставщиком, «оценка» — плановый ориентир, «уточнить» — ждём цену от площадки.</p>
   <table>
     <tr><th>#</th><th>Позиция</th><th>Расчёт</th><th style="text-align:right">Сумма</th><th>Статус</th></tr>
-    <tr><td class="n">1</td><td class="name">Пирамиды Гизы и Большой Египетский музей, 15 октября</td><td>450 $ на гостя × 30. Экскурсия с элементами квеста. Две группы по 15, с каждой внутри пирамиды и на плато свои египтолог, археолог и ассистент; археолог говорит на арабском и английском. Плато с необычными гробницами, Великая пирамида изнутри, Сфинкс, индивидуальная программа в музее, все входные билеты и разрешения, трансферы в Гизу и в музей</td><td class="sum">13 500</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">2</td><td class="name">Обед в Khufu’s, 15 октября</td><td>на группу, с видом на Хуфу</td><td class="sum">2 880</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">3</td><td class="name">Ужин в Lucida, 15 октября</td><td>меню и два бокала вина, площадка уточняет цену</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
-    <tr><td class="n">4</td><td class="name">Фаюм, 16 октября</td><td>320 $ на гостя × 30: автобус Mercedes MCV 600, восемь внедорожников по четыре гостя, водопады, гора Медавара, Долина китов и музей ископаемых, Волшебное озеро и сэндбординг, обед в Tunis Pyramids, все входные</td><td class="sum">9 600</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">5</td><td class="name">Ужин в Новом Каире, 16 октября</td><td>по меню</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
-    <tr><td class="n">6</td><td class="name">«Четыре руки, одно письмо», 17 октября</td><td>на группу: трансфер, ведущий, гиды, актёры, мастера, площадки, реквизит. Хан-эль-Халили или Баб-Зувейла</td><td class="sum">5 550</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">7</td><td class="name">Обед у Аль-Азхара, 17 октября</td><td>по меню</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
-    <tr><td class="n">8</td><td class="name">Коптский Каир или Каир Далиды, 17 октября</td><td>в подарок от La Royal Event, с трансфером и гидом. Группа делится по желанию: одни едут в Коптский Каир, другие в Шубру и Даунтаун по следам Далиды</td><td class="sum">0</td><td><span class="tag yours">подарок</span></td></tr>
-    <tr><td class="n">9</td><td class="name">Яхта по Нилу, 17 октября</td><td>чартер целиком, три часа</td><td class="sum">4 500</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">10</td><td class="name">Ужин на яхте</td><td>110 $ на гостя × 30</td><td class="sum">3 300</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">11</td><td class="name">Техника и караоке на яхте</td><td>экран, звук, микрофоны, караоке, техник на борту</td><td class="sum">2 500</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">12</td><td class="name">Диджей</td><td>обычный 450 $, с шоу-программой 850 $</td><td class="sum">450–850</td><td><span class="tag yours">утверждена</span></td></tr>
-    <tr><td class="n">13</td><td class="name">Трансферы по всем переездам</td><td>большие комфортабельные автобусы, кроме 15 октября: те трансферы уже в цене дня. Расчёт на следующей странице</td><td class="sum">1 650</td><td><span class="tag est">оценка</span></td></tr>
-    <tr class="total"><td></td><td colspan="2">Итого по известным и оценённым строкам, без пунктов 3, 5 и 7</td><td class="sum">43 930–44 330</td><td></td></tr>
+
+    <tr class="dayhead"><td colspan="5">15 октября · Гиза и Большой Египетский музей</td></tr>
+    <tr><td class="n">1</td><td class="name">Пирамиды Гизы и Большой Египетский музей</td><td>450 $ на гостя × 30. Две группы по 15, с каждой свои египтолог, археолог и ассистент, в том числе внутри пирамиды. Плато с необычными гробницами, Великая пирамида изнутри, Сфинкс, программа в музее, все входные билеты, трансферы дня</td><td class="sum">13 500</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">2</td><td class="name">Сбор на плато Гизы</td><td>разрешения на группу</td><td class="sum">550</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">3</td><td class="name">Квест «Код пирамид»</td><td>на группу: сценарий, ведущий, игровые помощники, ларец с кодовым замком, дневники, планы плато, печати и жетоны</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
+    <tr><td class="n">4</td><td class="name">Прогулка на верблюдах</td><td>25 $ на гостя × 30</td><td class="sum">750</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">5</td><td class="name">Обед в 9 Pyramids Lounge</td><td>80 $ на гостя × 30, алкоголь уточняется</td><td class="sum">2 400</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">6</td><td class="name">Ужин в Lucida</td><td>150 $ на гостя × 30, три бокала вина</td><td class="sum">4 500</td><td><span class="tag yours">утверждена</span></td></tr>
+
+    <tr class="dayhead"><td colspan="5">16 октября · Фаюм и Нил</td></tr>
+    <tr><td class="n">7</td><td class="name">Фаюм</td><td>320 $ на человека × 33: автобус Mercedes MCV 600, восемь внедорожников по четыре гостя, водопады, гора Медавара, Долина китов и музей ископаемых, Волшебное озеро и сэндбординг, обед в бедуинском лагере, все входные</td><td class="sum">10 560</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">8</td><td class="name">Яхта по Нилу</td><td>чартер целиком, три часа</td><td class="sum">4 500</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">9</td><td class="name">Ужин на яхте</td><td>110 $ на гостя × 30</td><td class="sum">3 300</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">10</td><td class="name">Техника и караоке на яхте</td><td>экран, звук, микрофоны, караоке, техник на борту</td><td class="sum">2 500</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">11</td><td class="name">Диджей на яхте</td><td>с шоу-программой</td><td class="sum">850</td><td><span class="tag yours">утверждена</span></td></tr>
+
+    <tr class="dayhead"><td colspan="5">17 октября · Старый Каир, Даунтаун и крыша над Нилом</td></tr>
+    <tr><td class="n">12</td><td class="name">Коптский Каир, группа А</td><td>110 $ на гостя, в расчёте 15 гостей</td><td class="sum">1 650</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">13</td><td class="name">Музей египетской цивилизации, группа Б</td><td>55 $ на гостя, в расчёте 15 гостей</td><td class="sum">825</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">14</td><td class="name">Обед в Mazeej Balad</td><td>95 $ на гостя × 30, алкоголь уточняется</td><td class="sum">2 850</td><td><span class="tag yours">утверждена</span></td></tr>
+    <tr><td class="n">15</td><td class="name">Гала-ужин в Mood Rooftop</td><td>старт в 21:00, Замалек</td><td class="sum">—</td><td><span class="tag ask">уточнить</span></td></tr>
+
+    <tr class="dayhead"><td colspan="5">Общее по поездке</td></tr>
+    <tr><td class="n">16</td><td class="name">Трансферы по всем переездам</td><td>большие комфортабельные автобусы. Дневные переезды 15 и 16 октября уже входят в цену этих дней. Расчёт на следующей странице</td><td class="sum">2 100</td><td><span class="tag est">оценка</span></td></tr>
+
+    <tr class="total"><td></td><td colspan="2">Итого по посчитанным строкам, без пунктов 3 и 15</td><td class="sum">50 835</td><td></td></tr>
+    <tr class="total"><td></td><td colspan="2">На одного гостя</td><td class="sum">1 695</td><td></td></tr>
   </table>
-  <div class="note">Считаем отдельно: отель, перелёт, визы (по прилёту 30 $ на человека, на группу 900 $), алкогольный пакет на яхте, ужин и фуршет в отеле 14 октября, обед в отеле 18 октября.</div>
+  <div class="note"><b>Деление группы 17 октября.</b> В расчёте по 15 гостей на каждый маршрут. Если все 30 едут в Коптский Каир, строка 12 даёт 3 300 $, строка 13 обнуляется. Если все 30 едут в музей цивилизаций, строка 13 даёт 1 650 $, строка 12 обнуляется. Итог сдвигается в коридоре от 49 350 до 50 010 $ при полном перевесе в одну сторону.</div>
+  <div class="note">Считаем отдельно: отель, перелёт, визы (по прилёту 30 $ на человека, на группу 900 $), алкоголь в 9 Pyramids Lounge и Mazeej, ужин и фуршет в отеле 14 октября, обед в отеле 18 октября.</div>
 </section>
 
 <section class="brk">
   <h2>Трансферы по движениям</h2>
-  <p style="color:var(--ink2);font-size:9.3pt">Считаем большие комфортабельные автобусы класса Mercedes MCV 600. Плановые ставки: трансфер из аэропорта или в аэропорт 200 $ за автобус, полный день по городу 400 $, вечерний выезд с ожиданием 200 $. Ставки подтверждает перевозчик. Трансферы 15 октября в Гизу и в музей уже входят в 450 $ на гостя.</p>
+  <p style="color:var(--ink2);font-size:9.3pt">Большие комфортабельные автобусы класса Mercedes MCV 600. Плановые ставки: трансфер в аэропорт или из аэропорта 200 $ за автобус, полдня по городу 200 $ за автобус, вечерний выезд с ожиданием 200 $, ночной выезд с ожиданием 250 $. Ставки подтверждает перевозчик.</p>
   <table>
     <tr><th>Дата</th><th>Переезд</th><th style="text-align:right">Сумма</th></tr>
     <tr><td class="n" style="width:14mm">14.10</td><td>Аэропорт → отель, два рейса, два автобуса</td><td class="sum">400</td></tr>
-    <tr><td class="n">15.10</td><td>Отель → Lucida → отель, вечер с ожиданием</td><td class="sum">200</td></tr>
-    <tr><td class="n">16.10</td><td>Автобус до Туниса и обратно входит в 320 $ на гостя. Крюк через Новый Каир и ожидание на ужине</td><td class="sum">200</td></tr>
-    <tr><td class="n">17.10</td><td>Автобус на программу входит в 5 550 $. После обеда два автобуса: Коптский Каир и Каир Далиды, затем отель — в подарок</td><td class="sum">0</td></tr>
-    <tr><td class="n">17.10</td><td>Отель → причал → отель, вечер с ожиданием</td><td class="sum">200</td></tr>
+    <tr><td class="n">15.10</td><td>Отель → плато Гизы → 9 Pyramids Lounge → музей → отель. Входит в 450 $ на гостя</td><td class="sum">0</td></tr>
+    <tr><td class="n">15.10</td><td>Отель → Lucida, Шейх-Заид → отель, вечер с ожиданием</td><td class="sum">200</td></tr>
+    <tr><td class="n">16.10</td><td>Каир → Тунис → Каир. Входит в 320 $ на человека</td><td class="sum">0</td></tr>
+    <tr><td class="n">16.10</td><td>Отель → причал → отель, вечер с ожиданием</td><td class="sum">200</td></tr>
+    <tr><td class="n">17.10</td><td>Два автобуса на две группы: Коптский Каир и музей цивилизаций, затем общий обед в Mazeej и отель</td><td class="sum">400</td></tr>
+    <tr><td class="n">17.10</td><td>Отель → Mood Rooftop, Замалек → отель, ночной выезд с ожиданием</td><td class="sum">250</td></tr>
     <tr><td class="n">18.10</td><td>Отель → аэропорт, два рейса, два автобуса</td><td class="sum">400</td></tr>
-    <tr><td class="n"></td><td>Запас на пробки, парковки, переработку водителей</td><td class="sum">250</td></tr>
-    <tr class="total"><td></td><td>Итого</td><td class="sum">1 650</td></tr>
+    <tr><td class="n"></td><td>Запас на пробки, парковки и переработку водителей</td><td class="sum">250</td></tr>
+    <tr class="total"><td></td><td>Итого</td><td class="sum">2 100</td></tr>
   </table>
 
-  <h2 style="margin-top:8mm">15 октября: что внутри 450 $ на человека</h2>
-  <p style="color:var(--ink2);font-size:9.3pt">Это экскурсия с элементами квеста: у каждой группы свой маршрут по плато, задания на наблюдательность у памятников и общий сбор у Сфинкса. Ниже то, что видят гости.</p>
+  <h2 style="margin-top:8mm">Что входит в 450 $ на человека, 15 октября</h2>
   <div class="grid2">
     <div>
       <table>
-        <tr><th>Маршрут по плато Гизы</th></tr>
-        <tr><td><b>Великая пирамида изнутри.</b> Большая галерея и камера царя, а также камера царицы и подземная камера, которые для обычных посетителей закрыты. Внутрь с каждой группой заходят египтолог, археолог и ассистент</td></tr>
+        <tr><th>Маршрут по плато</th></tr>
+        <tr><td><b>Великая пирамида изнутри.</b> Большая галерея и камера царя, а также камера царицы и подземная камера, закрытые для обычного билета</td></tr>
         <tr><td><b>Необычные гробницы плато</b> вокруг Хуфу и Хафры, куда не заходят стандартные экскурсии</td></tr>
         <tr><td><b>Панорама трёх пирамид</b>, обзорная точка у Хафры, время для фотографий</td></tr>
-        <tr><td><b>Сфинкс</b> с входом в его ограду и храм в долине</td></tr>
+        <tr><td><b>Сфинкс</b> и храм в долине</td></tr>
       </table>
     </div>
     <div>
       <table>
         <tr><th>Музей и команда</th></tr>
-        <tr><td><b>Большой Египетский музей</b>, индивидуальная программа для двух групп: Большая лестница, колосс Рамсеса, галереи Тутанхамона</td></tr>
+        <tr><td><b>Большой Египетский музей:</b> программа сосредоточена на Большой лестнице с колоссами и зале Рамсеса II</td></tr>
         <tr><td>На каждую группу по 15 гостей: свой египтолог, свой археолог и свой ассистент, весь день и внутри пирамиды</td></tr>
         <tr><td>Археолог говорит на арабском и английском, перевод ведёт египтолог</td></tr>
-        <tr><td>Все входные билеты и разрешения на доступ, приёмники с наушниками, вода</td></tr>
-        <tr><td>Трансферы отель → Гиза → музей → отель на большом автобусе</td></tr>
+        <tr><td>Все входные билеты, приёмники с наушниками, вода, трансферы дня</td></tr>
       </table>
     </div>
   </div>
-  <div class="note">Обед в Khufu’s и ужин в Lucida считаются отдельными строками. На группу 30 гостей день стоит 13 500 $.</div>
+  <div class="note rose"><b>Две площадки надо подтвердить письмом.</b> 9 Pyramids Lounge работает с 9:00 до 17:00, последний вход в 16:00, поэтому обед ставим в 12:45. Mood Rooftop по публичным данным открывается в 22:00: старт гала-ужина в 21:00 согласовываем отдельно как выкуп площадки.</div>
 </section>
 
 <section class="brk">
@@ -148,49 +162,54 @@ tr.total td.sum{color:var(--lilac)}
   </div>
 
   <div class="day">
-    <h3><span class="d">15 октября · четверг</span> Гиза</h3>
-    <p class="lead">Две группы по пятнадцать, с каждой весь день и внутри пирамиды свои египтолог, археолог и ассистент. Приёмники с наушниками, вода в автобусе.</p>
+    <h3><span class="d">15 октября · четверг</span> Гиза, «Код пирамид» и музей</h3>
+    <p class="lead">Две группы по пятнадцать, с каждой весь день и внутри пирамиды свои египтолог, археолог и ассистент.</p>
     <div class="steps">
       <div class="t">07:30–08:30</div><div class="w">Завтрак, выезд</div>
-      <div class="t">09:00–12:00</div><div class="w"><b>Плато Гизы и Сфинкс, экскурсия с элементами квеста.</b> Великая пирамида изнутри с закрытыми для обычного билета камерами, необычные гробницы плато, панорама, Хафра, Сфинкс с входом в ограду и храм в долине</div>
-      <div class="t">12:15–13:45</div><div class="w"><b>Обед в Khufu’s</b> с видом на Хуфу</div>
-      <div class="t">14:30–16:30</div><div class="w"><b>Большой Египетский музей</b>, индивидуальная программа для двух групп, два часа: Большая лестница, колосс Рамсеса, галереи Тутанхамона</div>
-      <div class="t">17:00</div><div class="w">Отель, отдых</div>
+      <div class="t">09:00–12:30</div><div class="w"><b>Плато Гизы и квест «Код пирамид».</b> Великая пирамида изнутри с камерами, закрытыми для обычного билета, необычные гробницы плато, панорама трёх пирамид, Хафра, храм в долине и Сфинкс</div>
+      <div class="t">12:00–12:30</div><div class="w">Прогулка на верблюдах в отведённой зоне у панорамы</div>
+      <div class="t">12:45–14:15</div><div class="w"><b>Обед в 9 Pyramids Lounge</b>, прямо на плато, с видом на девять пирамид</div>
+      <div class="t">15:00–17:00</div><div class="w"><b>Большой Египетский музей:</b> Большая лестница с колоссами и зал Рамсеса II</div>
+      <div class="t">17:30</div><div class="w">Отель, отдых</div>
       <div class="t">19:30</div><div class="w">Трансфер в Шейх-Заид</div>
-      <div class="t">20:00–22:30</div><div class="w"><b>Ужин в Lucida</b>: средиземноморская кухня, терраса на крыше, живая музыка</div>
+      <div class="t">20:00–22:30</div><div class="w"><b>Ужин в Lucida:</b> средиземноморская кухня, терраса на крыше, живая музыка, три бокала вина</div>
       <div class="t">23:00</div><div class="w">Отель</div>
     </div>
   </div>
 
   <div class="day">
-    <h3><span class="d">16 октября · пятница</span> Фаюм</h3>
-    <p class="lead">Автобус Mercedes MCV 600 до деревни Тунис, дальше восемь внедорожников по четыре гостя кольцом по заповеднику.</p>
+    <h3><span class="d">16 октября · пятница</span> Фаюм и вечер на Ниле</h3>
+    <p class="lead">Пятничное утро выпускает из Каира быстро. Кольцо по заповеднику, обед в бедуинском лагере и возвращение к воде уже в Каире.</p>
     <div class="steps">
-      <div class="t">08:00</div><div class="w">Выезд из Каира</div>
-      <div class="t">10:00</div><div class="w">Деревня Тунис, пересадка на внедорожники</div>
-      <div class="t">10:45–11:15</div><div class="w"><b>Водопады Вади-эль-Райян</b></div>
-      <div class="t">11:30–12:15</div><div class="w"><b>Гора Медавара</b>, смотровая на озёра и дюны</div>
-      <div class="t">12:45–14:00</div><div class="w"><b>Вади-эль-Хитан, Долина китов</b>, и музей ископаемых</div>
-      <div class="t">14:30–15:30</div><div class="w"><b>Волшебное озеро.</b> Сафари по дюнам и сэндбординг</div>
-      <div class="t">16:15–17:30</div><div class="w">Тунис, обед в ресторане Tunis Pyramids</div>
-      <div class="t">17:30–20:30</div><div class="w">Дорога сразу в Новый Каир, сменная одежда в автобусе</div>
-      <div class="t">20:45–22:45</div><div class="w"><b>Ужин в Новом Каире</b>: как выглядит город, который строят сейчас</div>
-      <div class="t">23:45</div><div class="w">Отель</div>
+      <div class="t">06:00–06:45</div><div class="w">Ранний завтрак. Выезд в 07:00 на автобусе Mercedes MCV 600</div>
+      <div class="t">09:00</div><div class="w">Деревня Тунис, пересадка на восемь внедорожников по четыре гостя</div>
+      <div class="t">09:30–10:00</div><div class="w"><b>Водопады Вади-эль-Райян</b></div>
+      <div class="t">10:15–11:00</div><div class="w"><b>Гора Медавара</b>, смотровая на озёра и дюны</div>
+      <div class="t">11:30–12:45</div><div class="w"><b>Вади-эль-Хитан, Долина китов</b>, и музей ископаемых</div>
+      <div class="t">13:15–14:15</div><div class="w"><b>Обед в бедуинском лагере</b> посреди пустыни</div>
+      <div class="t">14:30–15:20</div><div class="w"><b>Волшебное озеро.</b> Сафари по дюнам и сэндбординг</div>
+      <div class="t">15:50–16:00</div><div class="w">Тунис, пересадка на автобус</div>
+      <div class="t">16:00–18:30</div><div class="w">Дорога в Каир</div>
+      <div class="t">18:30–19:30</div><div class="w">Отель, душ и переодевание</div>
+      <div class="t">19:30</div><div class="w">Трансфер на причал</div>
+      <div class="t">20:00–23:00</div><div class="w"><b>Яхта по Нилу, только для группы.</b> Ужин на борту, диджей, караоке; экран, звук, микрофоны и техник на борту</div>
+      <div class="t">23:30</div><div class="w">Отель</div>
     </div>
   </div>
 
   <div class="day">
-    <h3><span class="d">17 октября · суббота</span> Старый Каир и Нил</h3>
-    <p class="lead">Утро на Аль-Муизз, пока улица в тени. После обеда две экскурсии на выбор в подарок. Вечер на воде.</p>
+    <h3><span class="d">17 октября · суббота</span> Старый Каир на выбор и гала-ужин</h3>
+    <p class="lead">Группа делится по желанию. Обе точки в Старом Каире, в двух километрах друг от друга, поэтому к обеду группы сходятся без потери времени.</p>
     <div class="steps">
-      <div class="t">07:00–07:30</div><div class="w">Завтрак, выезд</div>
-      <div class="t">08:00–12:00</div><div class="w"><b>«Четыре руки, одно письмо».</b> От Баб-эль-Футух по Аль-Муизз: резной фасад, двор каллиграфа, мастерская медника, чайная, финал во дворе у Хан-эль-Халили</div>
-      <div class="t">12:15–13:30</div><div class="w">Обед у Аль-Азхара, египетская кухня</div>
-      <div class="t">14:00–15:30</div><div class="w"><b>На выбор, в подарок, два автобуса.</b> Коптский Каир: Висячая церковь, церковь святого Сергия, синагога Бен-Эзра. Или Каир Далиды: Шубра, где она родилась и выросла, и Даунтаун её юности с пассажами, кафе и кинотеатрами. Кому хочется тишины, тот едет в отель</div>
-      <div class="t">16:00</div><div class="w">Отель, отдых, подготовка к вечеру</div>
-      <div class="t">18:30</div><div class="w">Трансфер на причал</div>
-      <div class="t">19:00–22:00</div><div class="w"><b>Яхта по Нилу, только для группы.</b> Ужин на борту, квиз, караоке; экран, звук, микрофоны, диджей и техник на борту</div>
-      <div class="t">22:30</div><div class="w">Отель</div>
+      <div class="t">08:30–09:30</div><div class="w">Завтрак, спокойное утро после длинного дня</div>
+      <div class="t">10:00</div><div class="w">Выезд, два автобуса</div>
+      <div class="t">10:30–12:30</div><div class="w"><b>Группа А, Коптский Каир:</b> Висячая церковь, церковь святых Сергия и Вакха, синагога Бен-Эзра</div>
+      <div class="t">10:30–12:30</div><div class="w"><b>Группа Б, Музей египетской цивилизации:</b> основные галереи и Зал царских мумий</div>
+      <div class="t">13:00–14:30</div><div class="w"><b>Обед в Mazeej Balad</b>, рооф-терраса в Даунтауне, египетская кухня</div>
+      <div class="t">15:00</div><div class="w">Отель, отдых, подготовка к вечеру</div>
+      <div class="t">20:30</div><div class="w">Трансфер в Замалек</div>
+      <div class="t">21:00</div><div class="w"><b>Гала-ужин в Mood Rooftop</b>, крыша над Нилом</div>
+      <div class="t">после</div><div class="w">Возвращение в отель</div>
     </div>
   </div>
 
@@ -202,8 +221,7 @@ tr.total td.sum{color:var(--lilac)}
     </div>
   </div>
 
-  <p style="font-size:8.3pt;color:var(--dim);margin-top:4mm">Истории, персонажи и находки вымышлены. Памятники, музеи и экспонаты настоящие, их историю рассказывают профессиональные гиды. Сценарии и комплектация — авторская разработка La Royal Event.</p>
-  <div class="foot"><span>La Royal Event · Каир, 14–18 октября 2026 · смета и расписание</span><span>подготовлено 16.09.2026</span></div>
+  <div class="foot"><span>La Royal Event · Каир, 14–18 октября 2026 · смета и расписание</span><span>подготовлено 23.09.2026</span></div>
 </section>
 
 </body>
