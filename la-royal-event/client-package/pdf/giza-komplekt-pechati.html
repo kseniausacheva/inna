@@ -1,0 +1,472 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Код пирамид — комплект на печать</title><link rel="stylesheet" href="fonts/local.css"><link rel="stylesheet" href="doc.css"><style>
+.art{background:#fff;border:1px solid var(--rule);border-radius:2mm;padding:3mm;margin-bottom:3mm}
+.cap{color:var(--dim);font-size:8.6pt;margin-bottom:4mm}
+.spread{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-bottom:4mm}
+.dpage{background:#fbf7ee;border:1px solid #d9cdbb;border-radius:1.5mm;padding:6mm;min-height:62mm;display:flex;flex-direction:column}
+.dpage.fake{background:#fbf8f2}
+.dlbl{font-family:"JetBrains Mono",monospace;font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:3mm}
+.dtext{font-family:"Spectral",Georgia,serif;font-size:11.5pt;line-height:1.6;color:#2a2233;flex:1}
+.dpage.fake .dtext{font-family:"Golos Text",Arial,sans-serif;font-size:11pt;line-height:1.65}
+.dsign{font-size:7.5pt;color:var(--dim);text-align:left}
+.doc{background:#fff;border:1px solid var(--rule);border-radius:2mm;padding:6mm;margin-bottom:4mm;font-family:"Spectral",Georgia,serif;font-size:10.5pt;line-height:1.6}
+.doc.lite{font-family:"Golos Text",Arial,sans-serif;font-size:10pt}
+.doc .claim{margin-bottom:2mm}
+.choices{display:flex;gap:10mm;font-size:10.5pt}
+.form{background:#fff;border:1px solid var(--rule);border-radius:2mm;padding:6mm}
+.fhead{display:flex;gap:8mm;font-size:9.5pt;color:var(--ink-2);margin-bottom:4mm}
+.fhead2{font-size:9.5pt;color:var(--ink-2);margin-top:3mm}
+table.blank{width:100%;border-collapse:collapse;margin-bottom:3mm}
+table.blank th{font-size:8pt;color:var(--violet);text-transform:uppercase;letter-spacing:.08em;padding-bottom:1.5mm;border-bottom:1px solid var(--violet);text-align:left}
+table.blank td{height:13mm;border-bottom:1px solid var(--rule)}
+table.blank td.s{width:8mm;color:var(--dim);vertical-align:top;padding-top:2mm}
+table.blank td.st{width:26mm;background:#faf7fc}
+.fnote{font-size:8.6pt;color:var(--dim)}
+.cut{border:1px dashed var(--violet);border-radius:2mm;padding:5mm;text-align:center}
+.cuttitle{font-family:"JetBrains Mono",monospace;font-size:8pt;letter-spacing:.14em;color:var(--violet);margin-bottom:4mm}
+.window{height:34mm;border:1.2mm solid var(--ink);border-radius:1mm;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:8.5pt;margin-bottom:3mm}
+.scale{display:flex;justify-content:space-between;color:var(--ink-2);font-size:9pt;margin-bottom:3mm}
+.cutnote{font-size:8.6pt;color:var(--ink-2)}
+.rose{width:44mm;height:44mm;border:1.2mm solid var(--ink);border-radius:50%;margin:0 auto 3mm;position:relative}
+.rose div{position:absolute;font-weight:700;font-size:11pt}
+.rose .n{top:2mm;left:50%;transform:translateX(-50%)}
+.rose .s{bottom:2mm;left:50%;transform:translateX(-50%)}
+.rose .e{right:2.5mm;top:50%;transform:translateY(-50%)}
+.rose .w{left:2.5mm;top:50%;transform:translateY(-50%)}
+.rose .dot{width:3mm;height:3mm;background:var(--violet);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-bottom:4mm}
+.badge{border:1px dashed var(--violet);border-radius:2mm;padding:6mm 4mm;text-align:center;min-height:38mm;display:flex;flex-direction:column;justify-content:center;gap:2mm}
+.bt{font-family:"Spectral",Georgia,serif;font-size:13pt;color:var(--violet)}
+.bs{font-size:9pt;color:var(--ink-2)}
+.bteam{font-size:8.4pt;color:var(--dim);margin-top:2mm}
+.card{border:1px dashed var(--violet);border-radius:2mm;padding:6mm;min-height:80mm}
+.ct{font-family:"Spectral",Georgia,serif;font-size:14pt;color:var(--violet)}
+.ct.small{font-size:11pt}
+.cs{font-size:8.6pt;color:var(--dim);margin-bottom:4mm}
+.crules p{font-size:9.4pt;margin-bottom:1.6mm;color:var(--ink-2)}
+.lines div{font-size:9.6pt;color:var(--ink-2);margin-bottom:3mm}
+.lines.mt{margin-top:6mm}
+.builds{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-bottom:4mm}
+.bcard{border:1px dashed var(--violet);border-radius:2mm;min-height:28mm;display:flex;align-items:center;justify-content:center;text-align:center;padding:4mm}
+.bn{font-family:"Spectral",Georgia,serif;font-size:12pt}
+.strips{margin-bottom:4mm}
+.strip-cut{border:1px dashed var(--violet);border-radius:1.5mm;padding:4mm 5mm;margin-bottom:3mm;display:flex;align-items:center;gap:6mm}
+.strip-cut .sn{font-family:"JetBrains Mono",monospace;font-size:8pt;color:var(--dim)}
+.strip-cut .sw{font-family:"Spectral",Georgia,serif;font-size:15pt;letter-spacing:.04em}
+.rule{font-family:"Spectral",Georgia,serif;font-size:12pt;color:var(--violet);margin:0}
+.envs{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-bottom:4mm}
+.env{border:1px dashed var(--violet);border-radius:2mm;padding:5mm;min-height:32mm;display:flex;flex-direction:column;justify-content:center;gap:1.5mm}
+.et{font-family:"JetBrains Mono",monospace;font-size:8.4pt;letter-spacing:.08em;color:var(--violet)}
+.es{font-size:9pt;color:var(--ink-2)}
+.eteam{font-size:8.4pt;color:var(--dim);margin-top:2mm}
+.letter{background:#fbf7ee;border:1px solid #d9cdbb;border-radius:2mm;padding:8mm;font-family:"Spectral",Georgia,serif;font-size:10.6pt;line-height:1.65}
+.letter p{margin-bottom:3mm}
+.letter .fill{border-bottom:1px solid var(--dim);padding:0 8mm}
+.letter .sign{margin-top:5mm;text-align:left}
+.route{background:#fff;border:1px solid var(--rule);border-radius:2mm;padding:6mm;margin-bottom:4mm}
+.rhead{font-family:"Spectral",Georgia,serif;font-size:13pt;color:var(--violet);margin-bottom:4mm}
+.rhead span{display:block;font-family:"Golos Text",Arial,sans-serif;font-size:9pt;color:var(--dim);margin-top:1.5mm}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-bottom:4mm}
+.rc{border:1px solid var(--rule);border-radius:1.5mm;padding:3mm;display:flex;flex-direction:column;gap:2mm;min-height:34mm}
+.rn{font-family:"JetBrains Mono",monospace;font-size:8pt;color:var(--violet)}
+.rph{flex:1;background:#f3eef7;border-radius:1mm;display:flex;align-items:center;justify-content:center;font-size:8pt;color:var(--dim);min-height:18mm}
+.rl{font-size:8.4pt;color:var(--ink-2)}
+.rfoot{font-size:9pt;color:var(--dim);border-top:1px solid var(--rule);padding-top:3mm}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:3mm;margin:4mm 0 2mm}
+.cell{border:1px solid var(--rule);border-radius:1.5mm;padding:3mm;text-align:center}
+.cell .num{display:block;font-family:"JetBrains Mono",monospace;font-size:8pt;color:var(--violet);margin-bottom:2mm}
+.cell .line{display:block;border-bottom:1px solid var(--ink);height:6mm}
+</style></head><body><section class="page cover">
+  <div>
+    <div class="mono">La Royal Event · плато Гиза · производство</div>
+    <h1>Что печатать</h1>
+    <p class="lead">Все материалы «Кода пирамид» на тридцать гостей. Готово к печати: страницы идут в том порядке, в каком их удобно резать и раскладывать по папкам.</p>
+    <div class="strip">
+      <div><b>6</b><span>папок команд</span></div>
+      <div><b>30</b><span>личных карточек</span></div>
+      <div><b>12</b><span>страниц дневника</span></div>
+      <div><b>A4</b><span>вся печать</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Числа в дневнике вписываются после разведки</span><span>Внутренний документ</span></div>
+</section><section class="page">
+  <div class="mono eyebrow">Тираж</div>
+  <h2>Сколько и на чём печатать</h2>
+  <table>
+    <tr><th>Что</th><th>Сколько</th><th>Бумага</th><th>Страница</th></tr>
+    <tr><td>План плато с шестью точками</td><td>6</td><td>плотная, 160 г</td><td>3</td></tr>
+    <tr><td>Карта дорожки для станции 2</td><td>6</td><td>обычная, 120 г</td><td>4</td></tr>
+    <tr><td>Дневник экспедиции, 5 разворотов</td><td>6 комплектов</td><td>состаренная чаем, 120 г</td><td>5–9</td></tr>
+    <tr><td>Отчёт о третьей пирамиде и лист решения</td><td>6 + 6</td><td>обычная</td><td>10</td></tr>
+    <tr><td>Бланк свидетельств</td><td>6</td><td>плотная, 160 г</td><td>11</td></tr>
+    <tr><td>Карточка-видоискатель и компас</td><td>6 + 6</td><td>картон, 250 г</td><td>12</td></tr>
+    <tr><td>Бейджи ролей</td><td>30 (5 × 6)</td><td>картон, 250 г</td><td>13</td></tr>
+    <tr><td>Карточка правил гостя, лицо и оборот</td><td>30</td><td>картон, 250 г</td><td>14</td></tr>
+    <tr><td>Карточки построек</td><td>6 комплектов по 6</td><td>картон, 250 г</td><td>15</td></tr>
+    <tr><td>Три утверждения о Сфинксе</td><td>6</td><td>обычная</td><td>16</td></tr>
+    <tr><td>Полоски правила</td><td>1 комплект + дубль</td><td>плотная, 160 г</td><td>17</td></tr>
+    <tr><td>Обложки конвертов проверки</td><td>30 (5 × 6)</td><td>обычная, клеятся на конверт</td><td>18</td></tr>
+    <tr><td>Письмо экспедиции</td><td>1</td><td>состаренная, 160 г</td><td>19</td></tr>
+    <tr><td>Лист «Восстановленный маршрут»</td><td>6, печатается в день</td><td>фотопринтер</td><td>20</td></tr>
+  </table>
+  <div class="box warn">
+    <div class="mono lbl">Печатаем только после разведки</div>
+    <p>В дневнике и в конвертах проверки стоят числа, которые подтверждаются на месте. Если хоть одно число другое, меняются код замка и полоски правила. Печать на третьей неделе подготовки, разведка на четвёртой, поменять их местами нельзя.</p>
+  </div>
+  <div class="box">
+    <div class="mono lbl">Как состарить бумагу</div>
+    <p>Крепкий чёрный чай, остудить, окунуть лист на полминуты, просушить на решётке, прогладить через ткань. Печатаем после старения, а не до: тонер плывёт.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>2</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 3 · печатать 6 раз</div>
+  <h2>План плато для команды</h2>
+  <div class="art"><svg viewBox="0 0 760 900" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Golos Text, Arial, sans-serif">
+  <rect width="760" height="900" fill="#faf6f2"/>
+  <!-- север -->
+  <g transform="translate(700,60)">
+    <line x1="0" y1="34" x2="0" y2="-10" stroke="#241a2e" stroke-width="1.6"/>
+    <polygon points="0,-18 5,-6 -5,-6" fill="#241a2e"/>
+    <text x="0" y="50" text-anchor="middle" font-size="11" fill="#241a2e" font-weight="600">С</text>
+  </g>
+  <!-- маршрут группы -->
+  <path d="M 690 800 L 620 700 L 560 560 L 520 330 L 300 430 L 150 780" fill="none"
+        stroke="#c6a4f5" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+  <!-- пирамиды -->
+  <g>
+  <rect x="425.0" y="175.0" width="150" height="150" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="425.0" y1="175.0" x2="575.0" y2="325.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="575.0" y1="175.0" x2="425.0" y2="325.0" stroke="#6b3fa0" stroke-width="1"/>
+  <text x="500" y="341.0" text-anchor="middle" font-size="13" fill="#241a2e" font-weight="600">Хеопс</text>
+  <text x="500" y="354.0" text-anchor="middle" font-size="9" fill="#8a7d97">Хуфу</text>
+</g>
+  <g>
+  <rect x="623.0" y="283.0" width="34" height="34" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="623.0" y1="283.0" x2="657.0" y2="317.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="657.0" y1="283.0" x2="623.0" y2="317.0" stroke="#6b3fa0" stroke-width="1"/>
+  
+  
+</g>
+  <g>
+  <rect x="623.0" y="328.0" width="34" height="34" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="623.0" y1="328.0" x2="657.0" y2="362.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="657.0" y1="328.0" x2="623.0" y2="362.0" stroke="#6b3fa0" stroke-width="1"/>
+  
+  
+</g>
+  <g>
+  <rect x="623.0" y="373.0" width="34" height="34" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="623.0" y1="373.0" x2="657.0" y2="407.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="657.0" y1="373.0" x2="623.0" y2="407.0" stroke="#6b3fa0" stroke-width="1"/>
+  
+  
+</g>
+  <text x="690" y="350" font-size="10" fill="#8a7d97">малые пирамиды</text>
+  <g>
+  <rect x="322.0" y="402.0" width="136" height="136" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="322.0" y1="402.0" x2="458.0" y2="538.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="458.0" y1="402.0" x2="322.0" y2="538.0" stroke="#6b3fa0" stroke-width="1"/>
+  <text x="390" y="554.0" text-anchor="middle" font-size="13" fill="#241a2e" font-weight="600">Хефрен</text>
+  <text x="390" y="567.0" text-anchor="middle" font-size="9" fill="#8a7d97">Хафра</text>
+</g>
+  <g>
+  <rect x="192.0" y="642.0" width="96" height="96" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="192.0" y1="642.0" x2="288.0" y2="738.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="288.0" y1="642.0" x2="192.0" y2="738.0" stroke="#6b3fa0" stroke-width="1"/>
+  <text x="240" y="754.0" text-anchor="middle" font-size="13" fill="#241a2e" font-weight="600">Микерин</text>
+  <text x="240" y="767.0" text-anchor="middle" font-size="9" fill="#8a7d97">Менкаура</text>
+</g>
+  <g>
+  <rect x="197.0" y="757.0" width="26" height="26" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="197.0" y1="757.0" x2="223.0" y2="783.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="223.0" y1="757.0" x2="197.0" y2="783.0" stroke="#6b3fa0" stroke-width="1"/>
+  
+  
+</g>
+  <g>
+  <rect x="230.0" y="757.0" width="26" height="26" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="230.0" y1="757.0" x2="256.0" y2="783.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="256.0" y1="757.0" x2="230.0" y2="783.0" stroke="#6b3fa0" stroke-width="1"/>
+  
+  
+</g>
+  <g>
+  <rect x="263.0" y="757.0" width="26" height="26" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.6"/>
+  <line x1="263.0" y1="757.0" x2="289.0" y2="783.0" stroke="#6b3fa0" stroke-width="1"/>
+  <line x1="289.0" y1="757.0" x2="263.0" y2="783.0" stroke="#6b3fa0" stroke-width="1"/>
+  
+  
+</g>
+  <!-- дорога и храмы Хефрена -->
+  <path d="M 458 520 L 600 640" stroke="#8a7d97" stroke-width="7" fill="none" opacity=".5"/>
+  <text x="520" y="600" font-size="10" fill="#8a7d97" transform="rotate(40 520 600)">дорога</text>
+  <rect x="598" y="636" width="70" height="48" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.4"/>
+  <text x="633" y="700" text-anchor="middle" font-size="10.5" fill="#241a2e" font-weight="600">храм в долине</text>
+  <!-- сфинкс -->
+  <g>
+    <rect x="540" y="596" width="54" height="22" rx="4" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.4"/>
+    <circle cx="596" cy="600" r="9" fill="#efe9f5" stroke="#6b3fa0" stroke-width="1.4"/>
+    <text x="546" y="588" font-size="10.5" fill="#241a2e" font-weight="600">Сфинкс</text>
+  </g>
+  <!-- точки -->
+  <g>
+  <circle cx="500" cy="165" r="11" fill="#6b3fa0"/>
+  <text x="500" y="169" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">1</text>
+  <text x="516" y="169" text-anchor="start" font-size="10.5" fill="#241a2e">северная грань Хеопса</text>
+</g>
+  <g>
+  <circle cx="300" cy="430" r="11" fill="#6b3fa0"/>
+  <text x="300" y="434" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">2</text>
+  <text x="284" y="434" text-anchor="end" font-size="10.5" fill="#241a2e">обзорная точка</text>
+</g>
+  <g>
+  <circle cx="150" cy="800" r="11" fill="#6b3fa0"/>
+  <text x="150" y="804" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">3</text>
+  <text x="166" y="804" text-anchor="start" font-size="10.5" fill="#241a2e">панорама трёх пирамид</text>
+</g>
+  <g>
+  <circle cx="660" cy="700" r="11" fill="#6b3fa0"/>
+  <text x="660" y="704" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">4</text>
+  <text x="676" y="704" text-anchor="start" font-size="10.5" fill="#241a2e">храм в долине</text>
+</g>
+  <g>
+  <circle cx="560" cy="570" r="11" fill="#6b3fa0"/>
+  <text x="560" y="574" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">5</text>
+  <text x="544" y="574" text-anchor="end" font-size="10.5" fill="#241a2e">терраса Сфинкса</text>
+</g>
+  <g>
+  <circle cx="700" cy="815" r="11" fill="#6b3fa0"/>
+  <text x="700" y="819" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">6</text>
+  <text x="684" y="819" text-anchor="end" font-size="10.5" fill="#241a2e">автобус</text>
+</g>
+  <!-- легенда -->
+  <g transform="translate(40,60)">
+    <text x="0" y="0" font-size="13" fill="#241a2e" font-weight="700">План плато</text>
+    <text x="0" y="18" font-size="10" fill="#8a7d97">Схема, не масштаб. Север сверху.</text>
+    <line x1="0" y1="34" x2="34" y2="34" stroke="#c6a4f5" stroke-width="8" opacity=".55"/>
+    <text x="42" y="38" font-size="10" fill="#4a3d58">путь группы</text>
+  </g>
+</svg></div>
+  <div class="grid6"><div class="cell"><span class="num">1</span><span class="line"></span></div><div class="cell"><span class="num">2</span><span class="line"></span></div><div class="cell"><span class="num">3</span><span class="line"></span></div><div class="cell"><span class="num">4</span><span class="line"></span></div><div class="cell"><span class="num">5</span><span class="line"></span></div><div class="cell"><span class="num">6</span><span class="line"></span></div></div>
+  <p class="cap">Шесть клеток команда заполняет сама по ходу дня. Точка 6 — станция в автобусе, на плато её нет.</p><div class="pn"><span>Код пирамид · Комплект на печать</span><span>3</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 4 · печатать 6 раз</div>
+  <h2>Карта дорожки для станции «Где стоял фотограф»</h2>
+  <div class="art"><svg viewBox="0 0 700 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Golos Text, Arial, sans-serif">
+  <rect width="700" height="300" fill="#faf6f2"/>
+  <text x="20" y="34" font-size="13" fill="#241a2e" font-weight="700">Отрезок дорожки. Шесть точек наблюдения</text>
+  <text x="20" y="52" font-size="10" fill="#8a7d97">Номера точек проставляются на разведке. Расстояние между крайними — около ста шагов.</text>
+  <path d="M 60 200 C 200 150, 380 250, 640 170" fill="none" stroke="#c6a4f5" stroke-width="12" opacity=".5" stroke-linecap="round"/>
+  <g><circle cx="70" cy="197" r="13" fill="#fff" stroke="#6b3fa0" stroke-width="2"/><text x="70" y="201" text-anchor="middle" font-size="12" fill="#6b3fa0" font-weight="700">1</text><text x="70" y="231" text-anchor="middle" font-size="9.5" fill="#8a7d97">точка 1</text></g><g><circle cx="180" cy="168" r="13" fill="#fff" stroke="#6b3fa0" stroke-width="2"/><text x="180" y="172" text-anchor="middle" font-size="12" fill="#6b3fa0" font-weight="700">2</text><text x="180" y="202" text-anchor="middle" font-size="9.5" fill="#8a7d97">точка 2</text></g><g><circle cx="295" cy="185" r="13" fill="#fff" stroke="#6b3fa0" stroke-width="2"/><text x="295" y="189" text-anchor="middle" font-size="12" fill="#6b3fa0" font-weight="700">3</text><text x="295" y="219" text-anchor="middle" font-size="9.5" fill="#8a7d97">точка 3</text></g><g><circle cx="410" cy="206" r="13" fill="#fff" stroke="#6b3fa0" stroke-width="2"/><text x="410" y="210" text-anchor="middle" font-size="12" fill="#6b3fa0" font-weight="700">4</text><text x="410" y="240" text-anchor="middle" font-size="9.5" fill="#8a7d97">точка 4</text></g><g><circle cx="525" cy="196" r="13" fill="#fff" stroke="#6b3fa0" stroke-width="2"/><text x="525" y="200" text-anchor="middle" font-size="12" fill="#6b3fa0" font-weight="700">5</text><text x="525" y="230" text-anchor="middle" font-size="9.5" fill="#8a7d97">точка 5</text></g><g><circle cx="636" cy="171" r="13" fill="#fff" stroke="#6b3fa0" stroke-width="2"/><text x="636" y="175" text-anchor="middle" font-size="12" fill="#6b3fa0" font-weight="700">6</text><text x="636" y="205" text-anchor="middle" font-size="9.5" fill="#8a7d97">точка 6</text></g>
+  <g transform="translate(20,265)">
+    <text x="0" y="0" font-size="10" fill="#4a3d58">Пирамиды отсюда видны справа. С каждой точки взаимное положение трёх вершин другое.</text>
+  </g>
+</svg></div>
+  <div class="box">
+    <div class="mono lbl">На разведке</div>
+    <p>Разметить шесть точек на разрешённом отрезке так, чтобы между крайними была заметная разница в положении вершин. Снять панораму с той точки, которая станет верным ответом, в тот же сезон и то же время суток.</p>
+  </div>
+  <p class="cap">Номера точек проставляются на разведке, до печати тиража.</p><div class="pn"><span>Код пирамид · Комплект на печать</span><span>4</span></div></section><section class="page">
+  <div class="mono eyebrow">Страницы 5 · разворот дневника · печатать 6 раз</div>
+  <h2>Станция 1</h2>
+  <div class="spread">
+    <div class="dpage">
+      <div class="dlbl">страница 1</div>
+      <p class="dtext">Северная грань. Отверстий здесь больше, чем должно быть у одного здания. Одно обрамлено кладкой так ровно, как делают, когда строят; у второго края рваные, под ним осыпь. Число записал отдельно.</p>
+      <div class="dsign">рука первая</div>
+    </div>
+    <div class="dpage fake">
+      <div class="dlbl">страница 1-бис</div>
+      <p class="dtext">Проём в грани один, и прорубили его строители. Он справа от угла, если стоять лицом к пирамиде.</p>
+      <div class="dsign">рука вторая</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="mono lbl">При печати</div>
+    <p>Левая страница набирается одним шрифтом, правая другим, чуть более ровным. Разница должна быть заметна, только если положить страницы рядом. Обе на одной бумаге и одними чернилами.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>5</span></div></section><section class="page">
+  <div class="mono eyebrow">Страницы 6 · разворот дневника · печатать 6 раз</div>
+  <h2>Станция 2</h2>
+  <div class="spread">
+    <div class="dpage">
+      <div class="dlbl">страница 2</div>
+      <p class="dtext">У восточной грани стоят малые пирамиды. Я обошёл их и пересчитал дважды; число — на отдельном листе. Ключ к печати записывать не стал: он стоит перед всяким, кто сюда придёт, и не менялся четыре тысячи лет.</p>
+      <div class="dsign">рука первая</div>
+    </div>
+    <div class="dpage fake">
+      <div class="dlbl">страница 2-бис</div>
+      <p class="dtext">Справа от большой стоят четыре малые пирамиды, все одинаковые. Печать читается без ключа.</p>
+      <div class="dsign">рука вторая</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="mono lbl">При печати</div>
+    <p>Левая страница набирается одним шрифтом, правая другим, чуть более ровным. Разница должна быть заметна, только если положить страницы рядом. Обе на одной бумаге и одними чернилами.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>6</span></div></section><section class="page">
+  <div class="mono eyebrow">Страницы 7 · разворот дневника · печатать 6 раз</div>
+  <h2>Станция 3</h2>
+  <div class="spread">
+    <div class="dpage">
+      <div class="dlbl">страница 3</div>
+      <p class="dtext">С этой дорожки три вершины выстраиваются по-разному на каждом десятке шагов. Высоту по глазу не берут — её берут от основания. Замерь, на какой высоте начинается каждая.</p>
+      <div class="dsign">рука первая</div>
+    </div>
+    <div class="dpage fake">
+      <div class="dlbl">страница 3-бис</div>
+      <p class="dtext">Снято отсюда. Хорошо видно, что средняя пирамида выше всех — она выше на добрых десять метров. Слева от неё третья, самая низкая.</p>
+      <div class="dsign">рука вторая</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="mono lbl">При печати</div>
+    <p>Левая страница набирается одним шрифтом, правая другим, чуть более ровным. Разница должна быть заметна, только если положить страницы рядом. Обе на одной бумаге и одними чернилами.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>7</span></div></section><section class="page">
+  <div class="mono eyebrow">Страницы 8 · разворот дневника · печатать 6 раз</div>
+  <h2>Станция 4</h2>
+  <div class="spread">
+    <div class="dpage">
+      <div class="dlbl">страница 4</div>
+      <p class="dtext">От воды к пирамиде путь шёл с востока на запад, звено за звеном, и каждое звено имело своё назначение. Число звеньев — на отдельном листе. Рядом с нижним храмом стоит храм стража, вплотную.</p>
+      <div class="dsign">рука первая</div>
+    </div>
+    <div class="dpage fake">
+      <div class="dlbl">страница 4-бис</div>
+      <p class="dtext">Цепочка такая: склад припасов, жилище жрецов, дорога, пирамида — пять звеньев, и дорога уходит вправо от храма.</p>
+      <div class="dsign">рука вторая</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="mono lbl">При печати</div>
+    <p>Левая страница набирается одним шрифтом, правая другим, чуть более ровным. Разница должна быть заметна, только если положить страницы рядом. Обе на одной бумаге и одними чернилами.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>8</span></div></section><section class="page">
+  <div class="mono eyebrow">Страницы 9 · разворот дневника · печатать 6 раз</div>
+  <h2>Станция 5</h2>
+  <div class="spread">
+    <div class="dpage">
+      <div class="dlbl">страница 5</div>
+      <p class="dtext">Страж вырублен из одной скалы, и это видно по слоям породы. В образе соединены существа; сколько именно — считать глазами, а не по книгам. Смотрит он на восход.</p>
+      <div class="dsign">рука первая</div>
+    </div>
+    <div class="dpage fake">
+      <div class="dlbl">страница 5-бис</div>
+      <p class="dtext">Страж сложен из блоков, как пирамида. Изображено одно существо — лев. Голова добавлена позже и повёрнута влево.</p>
+      <div class="dsign">рука вторая</div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="mono lbl">При печати</div>
+    <p>Левая страница набирается одним шрифтом, правая другим, чуть более ровным. Разница должна быть заметна, только если положить страницы рядом. Обе на одной бумаге и одними чернилами.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>9</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 10 · печатать 6 раз</div>
+  <h2>Отчёт о третьей пирамиде</h2>
+  <div class="doc">
+    <p><b>Отчёт о пирамиде Менкаура, составлен по итогам осмотра.</b></p>
+    <p>Пирамида Менкаура — третья и самая малая из трёх. Нижние ряды её облицованы гранитом, привезённым с юга; облицовка не была закончена. На северной стороне видна вертикальная прореха — след попытки разобрать памятник, предпринятой в конце XII века и оставленной через восемь месяцев. У южной стороны стоят три малые пирамиды. Погребальный комплекс повторяет тот же порядок, что и у соседей: нижний храм, дорога, верхний храм, пирамида.</p>
+    <p>Из этого следует, что строители Менкаура работали по готовому образцу, а прореха на северной стороне доказывает, что памятник начали разбирать ради камня для города.</p>
+    <p>Прошу принять отчёт и заверить его подписями группы.</p>
+  </div>
+  <div class="doc lite">
+    <p><b>Лист решения. Команда ______</b></p>
+    <p class="choices"><span>☐ принять</span><span>☐ отклонить</span><span>☐ отсюда проверить нельзя</span></p>
+    <p>Чем это можно было бы проверить: ______________________________________________</p>
+    <p>_______________________________________________________________________________</p>
+  </div>
+  <div class="box warn">
+    <div class="mono lbl">Для помощника</div>
+    <p>Всё в отчёте звучит правдоподобно, и часть действительно так. Но ни одно утверждение нельзя проверить с той точки, где команда стояла: к Менкаура группа не подходила. Верный ответ третий.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>10</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 11 · печатать 6 раз, плотная бумага</div>
+  <h2>Бланк свидетельств</h2>
+  <div class="form">
+    <div class="fhead"><span>Команда № ______</span><span>Компания ______________________</span><span>Дата ____________</span></div>
+    <table class="blank">
+      <tr><th>№</th><th>Что мы установили сами</th><th>Как мы это установили</th><th>Печать</th></tr>
+      <tr><td class="s">1</td><td></td><td></td><td class="st"></td></tr><tr><td class="s">2</td><td></td><td></td><td class="st"></td></tr><tr><td class="s">3</td><td></td><td></td><td class="st"></td></tr><tr><td class="s">4</td><td></td><td></td><td class="st"></td></tr><tr><td class="s">5</td><td></td><td></td><td class="st"></td></tr><tr><td class="s">6</td><td></td><td></td><td class="st"></td></tr>
+    </table>
+    <div class="fnote">Ставка жетонами делается до вскрытия конверта. После ставки пересчитывать нельзя.</div>
+    <div class="fhead2"><span>Имена команды: ________________________________________________________________</span></div>
+    <div class="fhead2"><span>_______________________________________________________________________________</span></div>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>11</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 12 · картон, резать по линиям</div>
+  <h2>Карточка-видоискатель и карточка-компас</h2>
+  <div class="two">
+    <div class="cut">
+      <div class="cuttitle">ВИДОИСКАТЕЛЬ</div>
+      <div class="window"><span>вырезать окно</span></div>
+      <div class="scale"><span>|</span><span>|</span><span>|</span><span>|</span><span>|</span><span>|</span><span>|</span><span>|</span><span>|</span><span>|</span><span>|</span></div>
+      <div class="cutnote">Держать на вытянутой руке. Считать через окно, а не глазами по всему полю.</div>
+    </div>
+    <div class="cut">
+      <div class="cuttitle">КОМПАС</div>
+      <div class="rose">
+        <div class="n">С</div><div class="e">В</div><div class="s">Ю</div><div class="w">З</div>
+        <div class="dot"></div>
+      </div>
+      <div class="cutnote">Солнце утром на востоке. Пирамиды стоят по сторонам света: грани смотрят на С, В, Ю, З.</div>
+    </div>
+  </div>
+  <p class="cap">Печатать по шесть штук каждой. Окно видоискателя вырезается канцелярским ножом до выезда, не на месте.</p><div class="pn"><span>Код пирамид · Комплект на печать</span><span>12</span></div></section><section class="page"><div class="mono eyebrow">Страница 13 · картон, 6 комплектов по 5</div><h2>Бейджи ролей</h2><div class="badges"><div class="badge"><div class="bt">ЧИТАТЕЛЬ</div><div class="bs">дневник у меня</div><div class="bteam">команда ____</div></div><div class="badge"><div class="bt">НАБЛЮДАТЕЛЬ</div><div class="bs">считаю вслух</div><div class="bteam">команда ____</div></div><div class="badge"><div class="bt">КАРТОГРАФ</div><div class="bs">стороны света и путь</div><div class="bteam">команда ____</div></div><div class="badge"><div class="bt">ПРОВЕРЯЮЩИЙ</div><div class="bs">вскрываю конверт после ставки</div><div class="bteam">команда ____</div></div><div class="badge"><div class="bt">ПРЕДСТАВИТЕЛЬ</div><div class="bs">объявляю ставку</div><div class="bteam">команда ____</div></div></div><p class="cap">Дырка под шнурок пробивается сверху по центру. Шнурки лиловые, одинаковые у всех команд.</p><div class="pn"><span>Код пирамид · Комплект на печать</span><span>13</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 14 · картон, 30 штук, двусторонняя</div>
+  <h2>Карточка гостя</h2>
+  <div class="two">
+    <div class="card">
+      <div class="ct">КОД ПИРАМИД</div>
+      <div class="cs">глава 1 архива Камаля</div>
+      <div class="crules">
+        <p><b>Наши правила</b></p>
+        <p>Смотрим с посетительских дорожек.</p>
+        <p>Всё игровое — наш реквизит.</p>
+        <p>Ставим жетоны все вместе, одним движением.</p>
+        <p>Ошибиться можно, остаться без развязки нельзя.</p>
+        <p>Один раз за игру кто-то из нас скажет неправду. Ловите.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ct small">Мои свидетельства</div>
+      <div class="lines">
+        <div>1 ________________________</div><div>2 ________________________</div>
+        <div>3 ________________________</div><div>4 ________________________</div>
+        <div>5 ________________________</div><div>6 ________________________</div>
+      </div>
+      <div class="lines mt">
+        <div>Моя роль ________________</div>
+        <div>Команда ________________</div>
+      </div>
+    </div>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>14</span></div></section><section class="page"><div class="mono eyebrow">Страница 15 · картон, 6 комплектов по 6</div><h2>Карточки построек для станции «Куда ведёт дорога»</h2><div class="builds"><div class="bcard"><div class="bn">Храм в долине</div></div><div class="bcard"><div class="bn">Дорога</div></div><div class="bcard"><div class="bn">Заупокойный храм</div></div><div class="bcard"><div class="bn">Пирамида</div></div><div class="bcard"><div class="bn">Склад припасов</div></div><div class="bcard"><div class="bn">Жилище жрецов</div></div></div><div class="box warn"><div class="mono lbl">Для помощника, на карточках не печатается</div><p>В путь входят четыре: храм в долине, дорога, заупокойный храм, пирамида. Лишние две: склад припасов и жилище жрецов. Они правдоподобны, такие постройки в комплексах были, но в путь от воды к пирамиде не входят.</p></div><p class="cap">Карточки одинакового размера и без нумерации: порядок команда выстраивает сама.</p><div class="pn"><span>Код пирамид · Комплект на печать</span><span>15</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 16 · печатать 6 раз</div>
+  <h2>Три утверждения о страже</h2>
+  <div class="doc">
+    <p>В дневнике о нём сказано три вещи. Какую из трёх можно проверить отсюда, своими глазами?</p>
+    <p class="claim"><b>А.</b> По внешнему виду можно определить, чьё это лицо.</p>
+    <p class="claim"><b>Б.</b> По внешнему виду можно определить, сколько существ соединено в одном образе и какие.</p>
+    <p class="claim"><b>В.</b> По внешнему виду можно определить, когда его высекли.</p>
+    <p>Наш ответ: буква ______ . Существ: ______ .</p>
+  </div>
+  <div class="doc lite">
+    <p><b>Чек-лист наблюдателя</b></p>
+    <p>☐ различаю голову &nbsp;&nbsp; ☐ различаю тело &nbsp;&nbsp; ☐ вижу слои породы &nbsp;&nbsp; ☐ вижу стелу между лапами</p>
+    <p>☐ вижу, куда он смотрит &nbsp;&nbsp; ☐ могу определить, из чего он сделан</p>
+  </div>
+  <div class="box warn">
+    <div class="mono lbl">Для помощника</div>
+    <p>Верно Б, существ два. Чьё лицо и когда высечено с террасы не устанавливается. Здесь же гид произносит запланированную неправду: «Сфинкса сложили из блоков, как пирамиду».</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>16</span></div></section><section class="page"><div class="mono eyebrow">Страница 17 · плотная бумага, резать по линиям</div><h2>Шесть полосок правила</h2><div class="strips"><div class="strip-cut"><span class="sn">1</span><span class="sw">ЗАМОК ПОМНИТ</span></div><div class="strip-cut"><span class="sn">2</span><span class="sw">ТОЛЬКО ТО,</span></div><div class="strip-cut"><span class="sn">3</span><span class="sw">ЧТО МОЖНО</span></div><div class="strip-cut"><span class="sn">4</span><span class="sw">ПЕРЕСЧИТАТЬ.</span></div><div class="strip-cut"><span class="sn">5</span><span class="sw">ОТ МЕНЬШЕГО</span></div><div class="strip-cut"><span class="sn">6</span><span class="sw">К БОЛЬШЕМУ.</span></div></div><p class="cap">Раздаются на станции 6 в запечатанных конвертах, порядок по командам произвольный. Полный дубль комплекта печатается отдельно и лежит у ведущей.</p><div class="box"><div class="mono lbl">Собранное правило</div><p class="rule">ЗАМОК ПОМНИТ ТОЛЬКО ТО, ЧТО МОЖНО ПЕРЕСЧИТАТЬ. ОТ МЕНЬШЕГО К БОЛЬШЕМУ.</p></div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>17</span></div></section><section class="page"><div class="mono eyebrow">Страница 18 · наклейки на конверты, 6 комплектов</div><h2>Обложки конвертов</h2><div class="envs"><div class="env"><div class="et">СВЕРКА · станция 1</div><div class="es">вскрыть после ставки</div><div class="eteam">команда ____</div></div><div class="env"><div class="et">СВЕРКА · станция 2</div><div class="es">вскрыть после ставки</div><div class="eteam">команда ____</div></div><div class="env"><div class="et">СВЕРКА · станция 3</div><div class="es">вскрыть после ставки</div><div class="eteam">команда ____</div></div><div class="env"><div class="et">СВЕРКА · станция 4</div><div class="es">вскрыть после ставки</div><div class="eteam">команда ____</div></div><div class="env"><div class="et">СВЕРКА · станция 5</div><div class="es">вскрыть после ставки</div><div class="eteam">команда ____</div></div><div class="env"><div class="et">ПРАВИЛО</div><div class="es">не вскрывать до зала финала</div><div class="eteam">команда ____</div></div></div><p class="cap">Конверт до вскрытия лежит печатью вверх. Проверяющий вскрывает его сам, помощник к конверту не прикасается.</p><div class="pn"><span>Код пирамид · Комплект на печать</span><span>18</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 19 · один экземпляр, состаренная бумага</div>
+  <h2>Письмо экспедиции</h2>
+  <div class="letter">
+    <p>Тому, кто дошёл сюда и пересчитал сам.</p>
+    <p>Я знаю, кто переписывал мой дневник. Это Фарид, курьер Юсуфа Надима — человека, которого я учил девять лет и который теперь продаёт коллекционерам красивые истории о происхождении вещей. Ему нужна не находка. Ему нужен документ: маршрут, восстановленный уважаемыми людьми, с их подписями. Тогда любая вещь, привязанная к этому маршруту, стоит в десять раз дороже. Он не крал у меня ничего, кроме порядка слов.</p>
+    <p>Мы молчим третий месяц, и это не беда, а расчёт. Пока он уверен, что подмена не раскрыта, он подделывает по-старому — а по-старому у него выходит одинаково: он пишет «справа» и «слева», потому что смотрит на снимки и никогда не стоит на месте. Шесть страниц одной руки — это уже не подозрение.</p>
+    <p>Я разделил записи потому, что подделать можно мнение, а пересчитанное подделать нельзя. Вы пересчитали.</p>
+    <p>Диск под этим письмом расколот на шесть частей. Одна часть — ваша: возьмите по кусочку, их здесь ровно тридцать. Если однажды соберутся все шесть, остальное объясню я сам.</p>
+    <p>Архив я оставляю тем, кто проверяет. Сегодня это вы — <span class="fill">название компании</span>.</p>
+    <p class="sign">А. Камаль. Подпись важнее золота.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>19</span></div></section><section class="page">
+  <div class="mono eyebrow">Страница 20 · шаблон, печатается в день программы</div>
+  <h2>Лист «Восстановленный маршрут»</h2>
+  <div class="route">
+    <div class="rhead">ВОССТАНОВЛЕННЫЙ МАРШРУТ<span>Плато Гиза · ____________ · команда ____ · ____________________</span></div>
+    <div class="rgrid"><div class="rc"><span class="rn">1</span><span class="rph">фото со станции</span><span class="rl">свидетельство _______________________</span></div><div class="rc"><span class="rn">2</span><span class="rph">фото со станции</span><span class="rl">свидетельство _______________________</span></div><div class="rc"><span class="rn">3</span><span class="rph">фото со станции</span><span class="rl">свидетельство _______________________</span></div><div class="rc"><span class="rn">4</span><span class="rph">фото со станции</span><span class="rl">свидетельство _______________________</span></div><div class="rc"><span class="rn">5</span><span class="rph">фото со станции</span><span class="rl">свидетельство _______________________</span></div><div class="rc"><span class="rn">6</span><span class="rph">фото со станции</span><span class="rl">свидетельство _______________________</span></div></div>
+    <div class="rfoot">Числа в этом листе никто не сообщал. Их пересчитали пять человек, чьи имена стоят выше.</div>
+  </div>
+  <div class="box">
+    <div class="mono lbl">Как печатается</div>
+    <p>Координатор собирает фотографии станций с телефонов помощников во время переезда и печатает шесть листов на портативном принтере. Запасной аккумулятор обязателен: на шесть листов уходит около двадцати минут.</p>
+  </div><div class="pn"><span>Код пирамид · Комплект на печать</span><span>20</span></div></section></body></html>
