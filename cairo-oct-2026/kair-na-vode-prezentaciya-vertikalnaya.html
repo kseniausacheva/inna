@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Каир на воде. Вертикальная версия</title>
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+@page{size:A4 portrait;margin:0}
+:root{
+  --night:#120d1c; --night-2:#191225; --card:#1e1730;
+  --sand:#f3ece1; --sand-2:#cfc3b4; --dim:#9b8fa8; --rule:#2f2545;
+  --lilac:#c6a4f5; --lilac-deep:#8b5fd6; --lime:#cfe64f; --rose:#ff85b3;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--night);color:var(--sand);font-family:var(--sans)}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:var(--night);
+  padding:24mm 20mm 22mm;display:flex;flex-direction:column;break-after:page}
+.page:last-child{break-after:auto}
+.glow{position:absolute;inset:0;pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:8pt;letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+h1{font-family:var(--display);font-weight:700;font-size:58pt;line-height:.98;margin:0;letter-spacing:-.02em}
+h2{font-family:var(--display);font-weight:600;font-size:26pt;line-height:1.1;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.brand{font-family:var(--display);font-size:13pt;font-weight:600;color:var(--sand);line-height:1.1;text-align:right}
+.brand em{display:block;font-style:normal;font-family:var(--mono);font-size:6.5pt;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);margin-top:4px;white-space:nowrap}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12mm;margin-bottom:12mm}
+
+/* обложка */
+.cover{justify-content:center}
+.cover .sub{font-family:var(--mono);font-size:10pt;letter-spacing:.3em;text-transform:uppercase;color:var(--lilac);margin-top:10mm}
+.cover .rule{position:absolute;left:20mm;right:20mm;bottom:38mm;height:1px;background:var(--rule)}
+.cover .meta{position:absolute;left:20mm;right:20mm;bottom:22mm;
+  font-family:var(--mono);font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  display:flex;justify-content:space-between}
+.cover .who{position:absolute;left:20mm;top:24mm}
+
+/* текст */
+.body p{color:var(--sand-2);font-size:12pt;line-height:1.66;margin-bottom:5.5mm;max-width:58ch}
+.body p:last-child{margin-bottom:0}
+.body p b{color:var(--sand);font-weight:600}
+.pull{margin-top:auto;padding-top:8mm;border-top:1px solid var(--rule);
+  font-family:var(--display);font-size:17pt;color:var(--lime);line-height:1.32;max-width:30ch}
+
+/* таймлайн */
+.tl{margin-top:2mm}
+.tl .row{display:grid;grid-template-columns:34mm 1fr;gap:8mm;align-items:baseline;
+  padding:6.5mm 0;border-bottom:1px solid var(--rule)}
+.tl .row:first-child{border-top:1px solid var(--rule)}
+.tl .t{font-family:var(--mono);font-size:11pt;color:var(--lilac);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.tl .w{color:var(--sand-2);font-size:11.5pt;line-height:1.5}
+.tl .w b{color:var(--sand);font-weight:600;display:block;font-family:var(--display);font-size:14pt;margin-bottom:2px}
+
+/* что входит */
+.inc{margin-top:2mm}
+.inc .line{display:flex;gap:7mm;align-items:baseline;padding:5.5mm 0;border-bottom:1px solid var(--rule);
+  color:var(--sand);font-size:12.5pt}
+.inc .line:first-child{border-top:1px solid var(--rule)}
+.inc .line i{font-style:normal;color:var(--lilac-deep);font-family:var(--mono);font-size:9pt}
+.price{margin-top:auto;padding:12mm 10mm;border-radius:6mm;text-align:center;
+  background:linear-gradient(180deg, rgba(139,95,214,.24), rgba(139,95,214,.07));
+  border:1px solid rgba(198,164,245,.28)}
+.price .lbl{font-family:var(--mono);font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--lilac);display:block}
+.price .n{font-family:var(--display);font-size:46pt;font-weight:700;color:var(--sand);line-height:1;margin:5mm 0 3mm;letter-spacing:-.02em}
+.price .per{color:var(--sand-2);font-size:11pt;line-height:1.5}
+.price .per b{color:var(--lime);font-weight:600}
+
+/* финал */
+.final{justify-content:center;align-items:flex-start}
+.final .tag{font-family:var(--display);font-size:19pt;color:var(--sand-2);line-height:1.38;max-width:24ch;margin-top:6mm}
+.final .cts{margin-top:16mm;padding-top:8mm;border-top:1px solid var(--rule);width:100%;
+  display:grid;gap:5mm;font-size:11pt;color:var(--sand-2);line-height:1.55}
+.final .cts .nm{font-family:var(--display);font-size:16pt;color:var(--sand);font-weight:600}
+.foot{position:absolute;left:20mm;right:20mm;bottom:12mm;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:6.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="page cover">
+  <div class="glow" style="background:radial-gradient(64% 46% at 76% 16%, rgba(139,95,214,.42) 0%, transparent 62%),
+       radial-gradient(52% 34% at 10% 92%, rgba(207,230,79,.12) 0%, transparent 60%)"></div>
+  <div class="who eyebrow">La Royal Event · Египет внутри истории</div>
+  <h1>Каир<br>на воде</h1>
+  <div class="sub">Вечер на Ниле</div>
+  <div class="rule"></div>
+  <div class="meta"><span>33 гостя · Нил · четыре часа</span><span>16 октября 2026</span></div>
+</section>
+
+<!-- 2 -->
+<section class="page">
+  <div class="glow" style="background:radial-gradient(60% 40% at 88% 6%, rgba(139,95,214,.30) 0%, transparent 62%)"></div>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Что это за вечер</div>
+      <h2 style="margin-top:5mm">Река на четыре часа<br>становится вашей площадкой</h2>
+    </div>
+    <div class="brand">La Royal Event<em>Египет внутри истории</em></div>
+  </div>
+  <div class="body">
+    <p>Когда Каир зажигается вдоль Нила, вечер начинается на борту судна, арендованного целиком. Посторонних гостей на палубе нет: только ваша команда и река.</p>
+    <p>Вы поднимаетесь по трапу с коктейлем в руке, фотографируетесь на палубе, и судно отходит от причала. Город разворачивается по обоим берегам: мосты, подсвеченные башни и тихая тёмная вода между ними.</p>
+    <p>Сначала <b>лёгкие закуски и разговор</b> под музыку, которую диджей держит фоном. Потом <b>ужин за столами</b>, пока лодка идёт по реке и вид в окне меняется сам собой.</p>
+    <p>Когда ужин заканчивается, палуба меняется. Столы расходятся, диджей выходит вперёд, включается караоке, и вечер становится вашей вечеринкой посреди реки.</p>
+  </div>
+  <div class="pull">От ужина за столом до танцев на палубе, без пересадок и переездов.</div>
+  <div class="foot"><span>Каир на воде · 33 гостя</span><span>16 октября 2026</span></div>
+</section>
+
+<!-- 3 -->
+<section class="page">
+  <div class="glow" style="background:radial-gradient(58% 38% at 8% 94%, rgba(139,95,214,.26) 0%, transparent 62%)"></div>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Как идёт вечер</div>
+      <h2 style="margin-top:5mm">Четыре часа на воде</h2>
+    </div>
+    <div class="brand">La Royal Event<em>Египет внутри истории</em></div>
+  </div>
+  <div class="tl">
+    <div class="row"><div class="t">20:00–20:15</div><div class="w"><b>Посадка</b>Встреча на причале, фотографии на палубе, судно отходит от берега</div></div>
+    <div class="row"><div class="t">20:15–21:00</div><div class="w"><b>Коктейльный приём</b>Канапе и напитки, гости расходятся по палубе, диджей держит спокойный фон</div></div>
+    <div class="row"><div class="t">21:00–22:00</div><div class="w"><b>Ужин за столами</b>Основная подача под тихую музыку, пока лодка идёт по реке</div></div>
+    <div class="row"><div class="t">22:00–00:00</div><div class="w"><b>Вечеринка</b>Палуба перестраивается под танцпол, диджей выходит вперёд, включается караоке</div></div>
+    <div class="row"><div class="t">00:00</div><div class="w"><b>Сход на берег</b>Судно возвращается к причалу, автобус ждёт у трапа</div></div>
+  </div>
+  <div class="foot"><span>Каир на воде · 33 гостя</span><span>16 октября 2026</span></div>
+</section>
+
+<!-- 4 -->
+<section class="page">
+  <div class="glow" style="background:radial-gradient(60% 40% at 86% 8%, rgba(139,95,214,.28) 0%, transparent 62%)"></div>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Что входит</div>
+      <h2 style="margin-top:5mm">Вечер целиком, одной строкой</h2>
+    </div>
+    <div class="brand">La Royal Event<em>Египет внутри истории</em></div>
+  </div>
+  <div class="inc">
+    <div class="line"><i>01</i>Аренда судна целиком на четыре часа</div>
+    <div class="line"><i>02</i>Ужин за столами на 33 гостей</div>
+    <div class="line"><i>03</i>Коктейльный приём: напитки и канапе</div>
+    <div class="line"><i>04</i>Алкогольный пакет на 33 гостей</div>
+    <div class="line"><i>05</i>Диджей и развлекательная программа с караоке</div>
+    <div class="line"><i>06</i>Звуковое оборудование и техник на борту</div>
+  </div>
+  <div class="price">
+    <span class="lbl">Стоимость вечера</span>
+    <div class="n">15 500 $</div>
+    <div class="per">на группу 33 гостей<br><b>с 20:00 до 00:00</b></div>
+  </div>
+  <div class="foot"><span>Каир на воде · 33 гостя</span><span>16 октября 2026</span></div>
+</section>
+
+<!-- 5 -->
+<section class="page final">
+  <div class="glow" style="background:radial-gradient(66% 46% at 78% 14%, rgba(139,95,214,.34) 0%, transparent 62%),
+       radial-gradient(48% 32% at 10% 94%, rgba(207,230,79,.10) 0%, transparent 60%)"></div>
+  <div class="eyebrow">Следующий шаг</div>
+  <h2 style="margin-top:6mm;font-size:30pt">Напишите дату<br>и число гостей</h2>
+  <div class="tag">Остальное спросим сами: причал, меню, музыку и то, кто будет петь первым.</div>
+  <div class="cts">
+    <div><span class="nm">Ксения Усачёва</span><br>La Royal Event</div>
+    <div>baxgat@yandex.ru<br>WhatsApp +20 110 100 5061 · +20 122 835 3909</div>
+    <div>Каир, Египет</div>
+  </div>
+  <div class="foot"><span>Каир на воде · вечер на Ниле</span><span>La Royal Event</span></div>
+</section>
+
+</body>
+</html>
