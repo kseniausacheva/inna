@@ -52,6 +52,10 @@ p{margin:0 0 2.5mm;max-width:62em}
 .split p{font-size:9.4pt;margin:0 0 1.5mm}
 .split p:last-child{margin:0}
 .foot{margin-top:6mm;padding-top:3mm;border-top:1px solid var(--rule);font-family:var(--mono);font-size:6.8pt;color:var(--dim);display:flex;justify-content:space-between}
+.shots{display:grid;grid-template-columns:1.52fr 1fr 1fr;gap:3mm;margin:4mm 0 2mm;break-inside:avoid}
+.shots figure{margin:0;display:flex;flex-direction:column}
+.shots img{width:100%;height:46mm;object-fit:cover;border-radius:2.5mm;display:block;border:1px solid var(--rule)}
+.shots figcaption{font-family:var(--mono);font-size:6.4pt;letter-spacing:.08em;color:var(--dim);margin-top:1.6mm;line-height:1.35}
 table{width:100%;border-collapse:collapse;font-size:9.3pt;margin-top:2mm}
 th{font-family:var(--mono);font-size:6.8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);text-align:left;padding:2mm;background:var(--paper2);border-bottom:1px solid var(--rule);font-weight:500}
 td{padding:1.9mm 2mm;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink2)}
@@ -232,6 +236,11 @@ td b{color:var(--ink)}
       <h4>Барбекю-обед в кемпинге на берегу озера</h4>
       <p>Сорок пять минут переезда на джипах, дальше обед. Это построенный кемпинг, а не палаточный бивак: деревянные павильоны под изогнутыми тентами стоят на дощатом настиле прямо над песком, стенки раскрываются, и зал выходит на воду. Между павильонами лаунж-зона с диванами, низкими столами и зонтами, дальше пляж.</p>
       <p>Кухня ресторанная, не походная: мезе и салаты, рис и фрике, курица и мясо на гриле, рыба и креветки, лепёшки из печи. Подача за столами с приборами, работает кофе и бар.</p>
+      <div class="shots">
+        <figure><img src="img/camp-wide.jpg" alt="Кемпинг со стороны пляжа на закате"><figcaption>Павильоны со стороны пляжа</figcaption></figure>
+        <figure><img src="img/camp-deck.jpg" alt="Настил и лаунж-зона между павильонами"><figcaption>Настил и лаунж-зона</figcaption></figure>
+        <figure><img src="img/camp-inside.jpg" alt="Стол в павильоне с видом на воду"><figcaption>Зал с видом на воду</figcaption></figure>
+      </div>
       <p>После двух часов на настилах и в машинах это первая длинная остановка дня.</p>
       <span class="what">переезд 45 минут и обед 75 минут · кемпинг на берегу озера · входит в стоимость дня</span>
     </div>
