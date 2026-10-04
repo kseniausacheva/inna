@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- Книжка А5 «Дневник Камаля», 2 листа А4 альбомных, развороты уже разложены для буклета.
+     Печать: двусторонняя, переворот по короткой стороне, 8 экземпляров (6 команд + 2 запасных).
+     Шрифты (Google Fonts, положить ttf рядом в fonts/): ptserif.ttf, ptserif-bold.ttf,
+     ptserif-italic.ttf (PT Serif), marck.ttf (Marck Script).
+     Рендер: NODE_PATH=$(npm root -g) node render-dnevnik.js -->
+<title>Дневник Камаля — печать</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-italic.ttf'); font-style: italic; }
+  @font-face { font-family: 'Marck Script'; src: url('fonts/marck.ttf'); }
+
+  @page { size: 297mm 210mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'PT Serif', serif; color: #2a2118; }
+
+  .sheet {
+    width: 297mm; height: 210mm;
+    display: flex;
+    page-break-after: always;
+    background: #f3ead6;
+  }
+  .sheet:last-child { page-break-after: auto; }
+
+  .half {
+    width: 148.5mm; height: 210mm;
+    position: relative;
+    padding: 16mm 14mm 14mm 14mm;
+    overflow: hidden;
+  }
+  .half + .half { border-left: 0.3mm dashed #c9b998; }
+
+  /* лёгкая "состаренность": пятна по углам */
+  .half::before, .half::after {
+    content: ''; position: absolute; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(150,118,60,0.10), rgba(150,118,60,0));
+  }
+  .half::before { width: 70mm; height: 55mm; top: -18mm; left: -20mm; }
+  .half::after  { width: 80mm; height: 60mm; bottom: -22mm; right: -24mm; }
+
+  .inner { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; }
+
+  .pageno {
+    position: absolute; bottom: 7mm; left: 0; right: 0;
+    text-align: center; font-size: 9pt; color: #8a7352; z-index: 1;
+  }
+
+  .hand { font-family: 'Marck Script', cursive; }
+
+  /* ─── обложка ─── */
+  .cover .inner { justify-content: center; text-align: center; }
+  .cover-frame {
+    border: 0.6mm solid #6b543a; outline: 0.25mm solid #6b543a; outline-offset: 1.6mm;
+    padding: 22mm 8mm; margin: 4mm 2mm;
+  }
+  .cover h1 { font-size: 26pt; letter-spacing: 3.5pt; font-weight: 700; color: #3d2f1e; }
+  .cover .sub { margin-top: 9mm; font-size: 14pt; letter-spacing: 1pt; }
+  .cover .cert { margin-top: 16mm; font-size: 10.5pt; font-style: italic; color: #5c4a33; }
+  .stamp {
+    position: absolute; right: 12mm; bottom: 20mm; width: 34mm; height: 34mm;
+    border: 0.7mm solid rgba(122,60,45,0.55); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    transform: rotate(-12deg); color: rgba(122,60,45,0.65);
+    font-size: 8.5pt; letter-spacing: 1.2pt; line-height: 1.5; padding: 3mm;
+  }
+
+  /* ─── страницы записей ─── */
+  .entry .date {
+    font-size: 10pt; color: #7a6243; letter-spacing: 1pt;
+    border-bottom: 0.3mm solid #c9b998; padding-bottom: 2.5mm; margin-bottom: 8mm;
+  }
+  .entry .text {
+    font-family: 'Marck Script', cursive;
+    font-size: 19pt; line-height: 1.75; color: #33281a;
+  }
+  .entry .sig { margin-top: 8mm; text-align: right; font-family: 'Marck Script', cursive; font-size: 20pt; }
+
+  /* рамка под снимок на странице 5 */
+  .photo-frame {
+    width: 108mm; height: 72mm; margin: 0 auto 8mm auto;
+    border: 0.4mm dashed #a98f66;
+    display: flex; align-items: center; justify-content: center;
+    color: #b7a07a; font-size: 8.5pt; font-family: 'PT Serif', serif; text-align: center;
+  }
+
+  /* ─── задняя обложка: таблица находок ─── */
+  .back h2 { font-size: 15pt; letter-spacing: 2pt; text-align: center; color: #3d2f1e; }
+  .back .note { text-align: center; font-size: 10pt; font-style: italic; color: #5c4a33; margin: 4mm 0 7mm 0; }
+  table.finds { width: 100%; border-collapse: collapse; }
+  table.finds th, table.finds td { border: 0.35mm solid #6b543a; padding: 2.5mm 2mm; }
+  table.finds th { font-size: 9.5pt; background: rgba(150,118,60,0.12); font-weight: 700; }
+  table.finds td { height: 13.5mm; font-size: 11pt; text-align: center; color: #8a7352; }
+</style>
+</head>
+<body>
+
+<!-- ЛИСТ 1, ЛИЦО: слева стр. 8 (задняя обложка), справа стр. 1 (обложка) -->
+<div class="sheet">
+  <div class="half back">
+    <div class="inner">
+      <h2>ТАБЛИЦА НАХОДОК</h2>
+      <div class="note">Находки экспедиции. Заполняет хранитель команды.</div>
+      <table class="finds">
+        <tr><th style="width:18%">№ буквы</th><th style="width:24%">Шестерёнка</th><th style="width:20%">Цифра</th><th>Печать помощника</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="half cover">
+    <div class="inner">
+      <div class="cover-frame">
+        <h1>ПОЛЕВОЙ<br>ДНЕВНИК</h1>
+        <div class="sub">А. Камаль · Плато Гиза</div>
+        <div class="cert">Копия снята с оригинала и заверена</div>
+      </div>
+      <div class="stamp">ЗАВЕРЕНО<br>·<br>АРХИВ</div>
+    </div>
+  </div>
+</div>
+
+<!-- ЛИСТ 1, ОБОРОТ: слева стр. 2 (вступление), справа стр. 7 (последняя запись) -->
+<div class="sheet">
+  <div class="half entry">
+    <div class="inner">
+      <div class="date">ВСТУПЛЕНИЕ</div>
+      <div class="text">Двадцать лет я хожу по этому плато. Всё, что записано дальше, я видел своими глазами и проверил своими руками.<br><br>Тому, кто пойдёт за мной: доверяй этим страницам, как мне самому.</div>
+      <div class="sig">А. К.</div>
+    </div>
+    <div class="pageno">— 2 —</div>
+  </div>
+  <div class="half entry">
+    <div class="inner">
+      <div class="date">ПОСЛЕДНЯЯ ЗАПИСЬ</div>
+      <div class="text">Четыре ключа возьмёшь из моих страниц.<br><br>Пятый отмерь шагами,<br>шестой разбей,<br>седьмой увидишь только во тьме.</div>
+      <div class="sig">А. К.</div>
+    </div>
+    <div class="pageno">— 7 —</div>
+  </div>
+</div>
+
+<!-- ЛИСТ 2, ЛИЦО: слева стр. 6 (станция 4), справа стр. 3 (станция 1) -->
+<div class="sheet">
+  <div class="half entry">
+    <div class="inner">
+      <div class="date">ТРЕТЬЯ ПИРАМИДА</div>
+      <div class="text">Третья пирамида, самая малая. Малая — по сравнению с соседями: в ней ровно сто метров высоты, я измерил её сам, инструментом, которого у тебя нет.</div>
+    </div>
+    <div class="pageno">— 6 —</div>
+  </div>
+  <div class="half entry">
+    <div class="inner">
+      <div class="date">СЕВЕРНАЯ ГРАНЬ</div>
+      <div class="text">Северная грань великой пирамиды. Проём в ней один, и прорублен он самими строителями: аккуратный, с ровными краями, другого не ищи.<br><br>Саму грань я промерил шагами: сто пятьдесят метров от угла до угла. Записываю для тех, кто придёт после.</div>
+    </div>
+    <div class="pageno">— 3 —</div>
+  </div>
+</div>
+
+<!-- ЛИСТ 2, ОБОРОТ: слева стр. 4 (станция 2), справа стр. 5 (станция 3, снимок) -->
+<div class="sheet">
+  <div class="half entry">
+    <div class="inner">
+      <div class="date">СПУТНИЦЫ</div>
+      <div class="text">У великой пирамиды четыре малые спутницы. Стоят они в ряд у западной грани, глядя на закат.<br><br>Сосчитать их может любой, у кого есть глаза.</div>
+    </div>
+    <div class="pageno">— 4 —</div>
+  </div>
+  <div class="half entry">
+    <div class="inner">
+      <div class="date">СНИМОК С ПЛАТО</div>
+      <div class="photo-frame">место для снимка панорамы — вклеить после разведки</div>
+      <div class="text" style="font-size:17pt">Вот снимок, который я сделал сам. Отсюда отчётливо видно: средняя пирамида выше всех, она царит над плато. Фотография не умеет лгать.</div>
+    </div>
+    <div class="pageno">— 5 —</div>
+  </div>
+</div>
+
+</body>
+</html>

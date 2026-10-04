@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- Вклейка кода в блокнот курьера, «рукой Камаля». Один лист А4, на нём 2 карточки:
+     первая клеится на последний разворот блокнота, вторая — дубль в кофр ведущей.
+     Печатать 1 раз. Шрифты те же, что у дневника (fonts/). Рендер: render-dnevnik.js -->
+<title>Вклейка в блокнот курьера</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'Marck Script'; src: url('fonts/marck.ttf'); }
+  @page { size: 210mm 297mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PT Serif', serif; width: 210mm; height: 297mm; padding: 14mm; color: #2a2118; }
+
+  .service {
+    font-size: 10pt; color: #666; border: 0.3mm solid #bbb; padding: 4mm 5mm;
+    margin-bottom: 10mm; line-height: 1.55;
+  }
+  .service b { color: #333; }
+
+  .card {
+    width: 130mm; height: 90mm; margin: 0 auto 12mm auto;
+    border: 0.35mm dashed #999;
+    background: #f3ead6;
+    position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 8mm;
+  }
+  .card .code {
+    font-family: 'Marck Script', cursive; font-size: 22pt; line-height: 1.8; color: #33281a;
+    white-space: nowrap;
+  }
+  .card .sig {
+    position: absolute; right: 12mm; bottom: 8mm;
+    font-family: 'Marck Script', cursive; font-size: 22pt; color: #33281a;
+  }
+</style>
+</head>
+<body>
+  <div class="service">
+    <b>Служебный лист — гостям не показывать.</b> Вырезать обе карточки по пунктиру.<br>
+    Карточка 1 — вклеить на последний разворот блокнота курьера.<br>
+    Карточка 2 — дубль, положить в кофр ведущей.
+  </div>
+
+  <div class="card">
+    <div class="code">Диск I — 1<br>Диск II — 2<br>Диск III — 5<br>Диск IV — 6</div>
+    <div class="sig">А. К.</div>
+  </div>
+
+  <div class="card">
+    <div class="code">Диск I — 1<br>Диск II — 2<br>Диск III — 5<br>Диск IV — 6</div>
+    <div class="sig">А. К.</div>
+  </div>
+</body>
+</html>
