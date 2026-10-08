@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>La Royal Event — сторис «Наши квесты»</title>
+<style>
+  @font-face { font-family: 'Prata'; src: url('assets/prata.ttf'); }
+  @font-face { font-family: 'Golos Text'; src: url('assets/golos.ttf'); font-weight: 100 900; }
+  @font-face { font-family: 'JetBrains Mono'; src: url('assets/jbmono.ttf'); font-weight: 100 800; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; font-family: 'Golos Text', Arial, sans-serif; }
+
+  .story {
+    width: 1080px; height: 1920px;
+    position: relative; overflow: hidden;
+    background: #120d1c;
+    color: #f3ece1;
+    padding: 220px 84px 200px;
+    display: flex; flex-direction: column;
+  }
+
+  /* свечения за стеклом */
+  .glow { position: absolute; border-radius: 50%; filter: blur(8px); }
+  .g-lilac { background: radial-gradient(circle, rgba(139,95,214,.55), rgba(139,95,214,0) 70%); }
+  .g-lime  { background: radial-gradient(circle, rgba(207,230,79,.38), rgba(207,230,79,0) 70%); }
+  .g-rose  { background: radial-gradient(circle, rgba(255,133,179,.30), rgba(255,133,179,0) 70%); }
+  .ring {
+    position: absolute; border-radius: 50%;
+    border: 2px solid rgba(243,236,225,.10);
+  }
+
+  .num {
+    position: absolute; top: 120px; right: 64px;
+    font-family: 'JetBrains Mono', monospace; font-weight: 300;
+    font-size: 200px; line-height: 1; color: rgba(198,164,245,.10);
+    letter-spacing: -.04em;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-weight: 500;
+    font-size: 27px; letter-spacing: .22em; text-transform: uppercase;
+    color: #cfe64f; margin-bottom: 36px; position: relative; z-index: 2;
+  }
+
+  h1 {
+    font-family: 'Prata', Georgia, serif; font-weight: 400;
+    font-size: 104px; line-height: 1.04; letter-spacing: -.005em;
+    margin-bottom: 40px; position: relative; z-index: 2;
+    text-wrap: balance;
+  }
+  h1 .accent { color: #c6a4f5; }
+
+  .glass {
+    position: relative; z-index: 2;
+    background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+    border: 1.5px solid rgba(255,255,255,.17);
+    border-radius: 36px;
+    backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 34px 90px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.22);
+    padding: 56px 60px;
+  }
+  .glass p { font-size: 40px; line-height: 1.55; color: #e7ddcf; }
+  .glass p + p { margin-top: 28px; }
+
+  .keeps {
+    margin-top: 34px; position: relative; z-index: 2;
+    font-family: 'JetBrains Mono', monospace; font-weight: 500;
+    font-size: 25px; letter-spacing: .14em; text-transform: uppercase;
+    color: #cfe64f; line-height: 1.7;
+  }
+  .keeps b { color: #9b8fa8; font-weight: 500; }
+
+  .chips { display: flex; flex-direction: column; gap: 26px; position: relative; z-index: 2; }
+  .chip {
+    background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+    border: 1.5px solid rgba(255,255,255,.15);
+    border-radius: 28px;
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+    padding: 34px 44px;
+    font-size: 38px; line-height: 1.4; color: #f3ece1;
+    display: flex; align-items: baseline; gap: 26px;
+  }
+  .chip .arrow { color: #c6a4f5; font-family: 'JetBrains Mono', monospace; font-size: 34px; }
+
+  .footer {
+    margin-top: auto; position: relative; z-index: 2;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding-top: 48px;
+  }
+  .footer img { height: 108px; }
+  .next {
+    font-family: 'JetBrains Mono', monospace; font-weight: 500;
+    font-size: 26px; letter-spacing: .2em; text-transform: uppercase;
+    color: #9b8fa8;
+  }
+
+  .spacer { flex: 0 0 56px; }
+
+  /* обложка */
+  .cover { align-items: center; text-align: center; padding-top: 270px; }
+  .cover .logoCard {
+    width: 720px; padding: 70px 60px 56px;
+    display: flex; justify-content: center;
+  }
+  .cover .logoCard img { width: 540px; }
+  .cover h1 { font-size: 92px; margin: 64px 0 30px; }
+  .cover .tagline {
+    font-family: 'Prata', Georgia, serif; font-size: 44px; line-height: 1.4;
+    color: #cfe64f; position: relative; z-index: 2;
+  }
+  .cover .footer { width: 100%; }
+
+  /* финальная карточка */
+  .cta .contact {
+    font-size: 44px; line-height: 1.6; color: #f3ece1;
+  }
+  .cta .contact .lab {
+    display: block; font-family: 'JetBrains Mono', monospace; font-size: 24px;
+    letter-spacing: .18em; text-transform: uppercase; color: #cfe64f; margin-bottom: 6px;
+  }
+  .cta .contact div + div { margin-top: 34px; }
+</style>
+</head>
+<body>
+
+<!-- 01 · обложка -->
+<section class="story cover" id="s1">
+  <div class="glow g-lilac" style="width:1100px;height:1100px;top:-340px;left:-330px"></div>
+  <div class="glow g-lime"  style="width:700px;height:700px;bottom:60px;right:-260px"></div>
+  <div class="glow g-rose"  style="width:520px;height:520px;bottom:-160px;left:-120px"></div>
+  <div class="ring" style="width:620px;height:620px;top:150px;right:-220px"></div>
+  <div class="ring" style="width:300px;height:300px;bottom:360px;left:-90px"></div>
+  <div class="eyebrow">Египет · корпоративные группы</div>
+  <div class="glass logoCard"><img src="assets/logo-src.png" alt="La Royal Event"></div>
+  <h1>Квесты в настоящих <span class="accent">декорациях</span></h1>
+  <div class="tagline">Плато Гизы · музеи · море · Синай</div>
+  <div class="footer"><div></div><div class="next">листай →</div></div>
+</section>
+
+<!-- 02 · как устроено -->
+<section class="story" id="s2">
+  <div class="glow g-lime"  style="width:900px;height:900px;top:-300px;right:-320px"></div>
+  <div class="glow g-lilac" style="width:800px;height:800px;bottom:-200px;left:-260px"></div>
+  <div class="ring" style="width:430px;height:430px;bottom:220px;right:-140px"></div>
+  <div class="num">02</div>
+  <div class="eyebrow">Что мы делаем</div>
+  <h1>Экскурсию можно слушать. А можно <span class="accent">разгадывать</span></h1>
+  <div class="glass"><p>В наших квестах гости сами считают, сравнивают, спорят и находят ответ. История происходит не на сцене, а с ними.</p></div>
+  <div class="spacer"></div>
+  <div class="chips">
+    <div class="chip"><span class="arrow">→</span>команды по пять человек</div>
+    <div class="chip"><span class="arrow">→</span>ставка на свою версию — до ответа, а не после</div>
+    <div class="chip"><span class="arrow">→</span>измерения шагами, тенью и солнцем</div>
+  </div>
+  <div class="footer"><img src="assets/logo-src.png" alt=""><div class="next">листай →</div></div>
+</section>
+
+<!-- 03 · Код пирамид -->
+<section class="story" id="s3">
+  <div class="glow g-lilac" style="width:1000px;height:1000px;top:-260px;right:-360px"></div>
+  <div class="glow g-lime"  style="width:560px;height:560px;bottom:140px;left:-220px"></div>
+  <div class="ring" style="width:520px;height:520px;top:420px;right:-180px"></div>
+  <div class="num">03</div>
+  <div class="eyebrow">Плато Гизы · 4 часа</div>
+  <h1>Код <span class="accent">пирамид</span></h1>
+  <div class="glass">
+    <p>Гостям выдают полевой дневник археолога, часть записей в котором подделана. Проверить их можно только на месте: сосчитать детали на кладке, поймать ошибку в чужом отчёте.</p>
+    <p>Из верных наблюдений складывается код, который открывает запертый ларец.</p>
+  </div>
+  <div class="keeps">Остаётся гостям: <b>письмо экспедиции и маршрут с фотографиями команд</b></div>
+  <div class="footer"><img src="assets/logo-src.png" alt=""><div class="next">листай →</div></div>
+</section>
+
+<!-- 04 · Последняя страница -->
+<section class="story" id="s4">
+  <div class="glow g-rose"  style="width:820px;height:820px;top:-240px;left:-280px"></div>
+  <div class="glow g-lilac" style="width:760px;height:760px;bottom:-180px;right:-240px"></div>
+  <div class="ring" style="width:360px;height:360px;top:260px;right:-110px"></div>
+  <div class="num">04</div>
+  <div class="eyebrow">Большой Египетский музей · 4 часа</div>
+  <h1>Последняя <span class="accent">страница</span></h1>
+  <div class="glass">
+    <p>Команды работают редакцией музейного каталога. У каждого из шести предметов — красиво оформленное описание, и в каждом есть ошибка.</p>
+    <p>Найти её можно, только глядя на сам экспонат.</p>
+  </div>
+  <div class="keeps">Остаётся гостям: <b>страница каталога с именем компании в выходных данных</b></div>
+  <div class="footer"><img src="assets/logo-src.png" alt=""><div class="next">листай →</div></div>
+</section>
+
+<!-- 05 · Ладья идёт за солнцем -->
+<section class="story" id="s5">
+  <div class="glow g-lime"  style="width:860px;height:860px;top:-280px;left:-300px"></div>
+  <div class="glow g-lilac" style="width:900px;height:900px;bottom:-260px;right:-300px"></div>
+  <div class="ring" style="width:480px;height:480px;bottom:300px;left:-160px"></div>
+  <div class="num">05</div>
+  <div class="eyebrow">Шарм-эль-Шейх · море · 8 часов</div>
+  <h1>Ладья идёт <span class="accent">за солнцем</span></h1>
+  <div class="glass">
+    <p>День на четырёхпалубной яхте. Каждый выбирает своё: плавание с маской, первое погружение с инструктором или работа в штабе на борту.</p>
+    <p>Разгадка собирается из двух половин, поэтому важны и те, кто в воде, и те, кто на палубе.</p>
+  </div>
+  <div class="keeps">Остаётся гостям: <b>съёмка с камер инструкторов, включая первый вдох под водой</b></div>
+  <div class="footer"><img src="assets/logo-src.png" alt=""><div class="next">листай →</div></div>
+</section>
+
+<!-- 06 · Путь к звёздам -->
+<section class="story" id="s6">
+  <div class="glow g-lilac" style="width:1000px;height:1000px;top:-320px;left:-320px"></div>
+  <div class="glow g-rose"  style="width:560px;height:560px;top:560px;right:-220px"></div>
+  <div class="glow g-lime"  style="width:460px;height:460px;bottom:-120px;left:120px"></div>
+  <div class="ring" style="width:300px;height:300px;top:180px;right:120px"></div>
+  <div class="ring" style="width:160px;height:160px;top:420px;right:-40px"></div>
+  <div class="num">06</div>
+  <div class="eyebrow">Горы Синая · 6 часов</div>
+  <h1>Путь <span class="accent">к звёздам</span></h1>
+  <div class="glass">
+    <p>Программа идёт от дня к ночи: чтение гор по старой карте, чай у местных жителей, лагерь под открытым небом и телескоп.</p>
+    <p>Последнюю подсказку приносит закат, и увидеть её можно только своими глазами. Подходит семьям с детьми.</p>
+  </div>
+  <div class="keeps">Остаётся гостям: <b>карточка со своей звездой и подписью астронома</b></div>
+  <div class="footer"><img src="assets/logo-src.png" alt=""><div class="next">листай →</div></div>
+</section>
+
+<!-- 07 · Фараон -->
+<section class="story" id="s7">
+  <div class="glow g-rose"  style="width:900px;height:900px;top:-300px;right:-300px"></div>
+  <div class="glow g-lilac" style="width:820px;height:820px;bottom:-240px;left:-280px"></div>
+  <div class="ring" style="width:420px;height:420px;bottom:420px;right:-150px"></div>
+  <div class="num">07</div>
+  <div class="eyebrow">Шарм-эль-Шейх или Гиза · 100 минут</div>
+  <h1>Фараон. Пропавшая <span class="accent">экспедиция</span></h1>
+  <div class="glass">
+    <p>Лагерь пропавшей экспедиции с живыми актёрами: лампа горит, дневник раскрыт, людей нет.</p>
+    <p>Сто минут, чтобы понять, куда они ушли. Уровень напряжения заказчик выбирает заранее.</p>
+  </div>
+  <div class="keeps">Остаётся гостям: <b>печать экспедиции с именем и фото у подсвеченного саркофага</b></div>
+  <div class="footer"><img src="assets/logo-src.png" alt=""><div class="next">листай →</div></div>
+</section>
+
+<!-- 08 · CTA -->
+<section class="story cta" id="s8">
+  <div class="glow g-lilac" style="width:1200px;height:1200px;top:-380px;left:-280px"></div>
+  <div class="glow g-lime"  style="width:640px;height:640px;bottom:-140px;right:-220px"></div>
+  <div class="ring" style="width:540px;height:540px;bottom:160px;right:-200px"></div>
+  <div class="num">08</div>
+  <div class="eyebrow">Десять программ · группы 20–100</div>
+  <h1>Соберём <span class="accent">под вашу группу</span></h1>
+  <div class="glass">
+    <p>Каждую программу можно взять отдельно. Если группа берёт несколько, они складываются в одну историю на два-три дня.</p>
+  </div>
+  <div class="spacer"></div>
+  <div class="glass contact">
+    <div><span class="lab">WhatsApp</span>+20 110 100 5061</div>
+    <div><span class="lab">Почта</span>baxgat@yandex.ru</div>
+  </div>
+  <div class="footer"><img src="assets/logo-src.png" alt=""><div class="next">La Royal Event</div></div>
+</section>
+
+</body>
+</html>
