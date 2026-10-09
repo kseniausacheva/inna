@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- «Дневник Камаля» форматом А4: 8 страниц по порядку, без буклетной раскладки.
+     Печать: двусторонняя по длинной стороне (4 листа на дневник) или односторонняя (8 листов).
+     Скрепить степлером по левому краю. Печатать 8 экземпляров (6 команд + 2 запасных).
+     Шрифты в fonts/: ptserif*.ttf, marck.ttf. Готовый dnevnik-kamalya-a4.pdf отправлен в чат 2026-10-09.
+     Эта версия заменяет буклетную dnevnik-kamalya.html по просьбе заказчицы: А4 удобнее читать и заполнять. -->
+<title>Дневник Камаля — А4</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-italic.ttf'); font-style: italic; }
+  @font-face { font-family: 'Marck Script'; src: url('fonts/marck.ttf'); }
+
+  @page { size: 210mm 297mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'PT Serif', serif; color: #2a2118; }
+
+  .pg {
+    width: 210mm; height: 297mm;
+    position: relative; overflow: hidden;
+    background: #f3ead6;
+    padding: 24mm 20mm 20mm 26mm; /* слева больше — под скрепление */
+    page-break-after: always;
+    display: flex; flex-direction: column;
+  }
+  .pg:last-child { page-break-after: auto; }
+
+  .pg::before, .pg::after {
+    content: ''; position: absolute; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(150,118,60,0.10), rgba(150,118,60,0));
+  }
+  .pg::before { width: 100mm; height: 80mm; top: -26mm; left: -28mm; }
+  .pg::after  { width: 110mm; height: 85mm; bottom: -30mm; right: -32mm; }
+
+  .inner { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; }
+  .pageno { position: absolute; bottom: 9mm; left: 0; right: 0; text-align: center; font-size: 10pt; color: #8a7352; z-index: 1; }
+
+  .date {
+    font-size: 12pt; color: #7a6243; letter-spacing: 1.5pt;
+    border-bottom: 0.3mm solid #c9b998; padding-bottom: 3mm; margin-bottom: 11mm;
+  }
+  .text {
+    font-family: 'Marck Script', cursive;
+    font-size: 24pt; line-height: 1.8; color: #33281a;
+  }
+  .sig { margin-top: 10mm; text-align: right; font-family: 'Marck Script', cursive; font-size: 25pt; }
+
+  /* обложка */
+  .cover .inner { justify-content: center; text-align: center; }
+  .cover-frame {
+    border: 0.7mm solid #6b543a; outline: 0.3mm solid #6b543a; outline-offset: 2mm;
+    padding: 34mm 12mm; margin: 6mm 4mm;
+  }
+  .cover h1 { font-family: 'PT Serif', serif; font-size: 34pt; letter-spacing: 4.5pt; font-weight: 700; color: #3d2f1e; }
+  .cover .sub { margin-top: 12mm; font-size: 17pt; letter-spacing: 1pt; }
+  .cover .cert { margin-top: 20mm; font-size: 12.5pt; font-style: italic; color: #5c4a33; }
+  .stamp {
+    position: absolute; right: 18mm; bottom: 30mm; width: 42mm; height: 42mm;
+    border: 0.8mm solid rgba(122,60,45,0.55); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    transform: rotate(-12deg); color: rgba(122,60,45,0.65);
+    font-size: 10pt; letter-spacing: 1.4pt; line-height: 1.5; padding: 4mm;
+  }
+
+  /* рамка под снимок */
+  .photo-frame {
+    width: 150mm; height: 100mm; margin: 0 auto 10mm auto;
+    border: 0.4mm dashed #a98f66;
+    display: flex; align-items: center; justify-content: center;
+    color: #b7a07a; font-size: 10pt; text-align: center;
+  }
+
+  /* таблица находок */
+  .back h2 { font-size: 19pt; letter-spacing: 2.5pt; text-align: center; color: #3d2f1e; font-weight: 700; }
+  .back .note { text-align: center; font-size: 12pt; font-style: italic; color: #5c4a33; margin: 5mm 0 9mm 0; }
+  table.finds { width: 100%; border-collapse: collapse; }
+  table.finds th, table.finds td { border: 0.4mm solid #6b543a; padding: 3mm 2.5mm; }
+  table.finds th { font-size: 12pt; background: rgba(150,118,60,0.12); font-weight: 700; }
+  table.finds td { height: 24mm; font-size: 13pt; text-align: center; color: #8a7352; }
+</style>
+</head>
+<body>
+
+<!-- стр. 1: обложка -->
+<div class="pg cover">
+  <div class="inner">
+    <div class="cover-frame">
+      <h1>ПОЛЕВОЙ<br>ДНЕВНИК</h1>
+      <div class="sub">А. Камаль · Плато Гиза</div>
+      <div class="cert">Копия снята с оригинала и заверена</div>
+    </div>
+    <div class="stamp">ЗАВЕРЕНО<br>·<br>АРХИВ</div>
+  </div>
+</div>
+
+<!-- стр. 2: вступление -->
+<div class="pg">
+  <div class="inner">
+    <div class="date">ВСТУПЛЕНИЕ</div>
+    <div class="text">Двадцать лет я хожу по этому плато. Всё, что записано дальше, я видел своими глазами и проверил своими руками.<br><br>Тому, кто пойдёт за мной: доверяй этим страницам, как мне самому.</div>
+    <div class="sig">А. К.</div>
+  </div>
+  <div class="pageno">— 2 —</div>
+</div>
+
+<!-- стр. 3: северная грань -->
+<div class="pg">
+  <div class="inner">
+    <div class="date">СЕВЕРНАЯ ГРАНЬ</div>
+    <div class="text">Северная грань великой пирамиды. Проём в ней один, и прорублен он самими строителями: аккуратный, с ровными краями, другого не ищи.<br><br>Саму грань я промерил шагами: сто пятьдесят метров от угла до угла. Записываю для тех, кто придёт после.</div>
+  </div>
+  <div class="pageno">— 3 —</div>
+</div>
+
+<!-- стр. 4: спутницы -->
+<div class="pg">
+  <div class="inner">
+    <div class="date">СПУТНИЦЫ</div>
+    <div class="text">У великой пирамиды четыре малые спутницы. Стоят они в ряд у западной грани, глядя на закат.<br><br>Сосчитать их может любой, у кого есть глаза.</div>
+  </div>
+  <div class="pageno">— 4 —</div>
+</div>
+
+<!-- стр. 5: снимок -->
+<div class="pg">
+  <div class="inner">
+    <div class="date">СНИМОК С ПЛАТО</div>
+    <div class="photo-frame">место для снимка панорамы — вклеить после разведки</div>
+    <div class="text" style="font-size:21pt">Вот снимок, который я сделал сам. Отсюда отчётливо видно: средняя пирамида выше всех, она царит над плато. Фотография не умеет лгать.</div>
+  </div>
+  <div class="pageno">— 5 —</div>
+</div>
+
+<!-- стр. 6: третья пирамида -->
+<div class="pg">
+  <div class="inner">
+    <div class="date">ТРЕТЬЯ ПИРАМИДА</div>
+    <div class="text">Третья пирамида, самая малая. Малая — по сравнению с соседями: в ней ровно сто метров высоты, я измерил её сам, инструментом, которого у тебя нет.</div>
+  </div>
+  <div class="pageno">— 6 —</div>
+</div>
+
+<!-- стр. 7: последняя запись -->
+<div class="pg">
+  <div class="inner">
+    <div class="date">ПОСЛЕДНЯЯ ЗАПИСЬ</div>
+    <div class="text">Четыре ключа возьмёшь из моих страниц.<br><br>Пятый отмерь шагами,<br>шестой разбей,<br>седьмой увидишь только во тьме.</div>
+    <div class="sig">А. К.</div>
+  </div>
+  <div class="pageno">— 7 —</div>
+</div>
+
+<!-- стр. 8: таблица находок -->
+<div class="pg back">
+  <div class="inner">
+    <h2>ТАБЛИЦА НАХОДОК</h2>
+    <div class="note">Находки экспедиции. Заполняет хранитель команды.</div>
+    <table class="finds">
+      <tr><th style="width:17%">№ буквы</th><th style="width:24%">Шестерёнка</th><th style="width:20%">Цифра</th><th>Печать помощника</th></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
