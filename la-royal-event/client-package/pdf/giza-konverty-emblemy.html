@@ -1,0 +1,53 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Эмблемы команд для конвертов</title><link rel="stylesheet" href="fonts/local.css"><style>
+/* Карточки-эмблемы в конверты участникам.
+   6 страниц А4 — по одной на команду. На странице 6 одинаковых карточек 105×99 мм:
+   лист режется по пунктиру ровно на 6 частей (2 колонки × 3 ряда).
+   Команды 1–5 — игровые (печать по 1 листу), страница 6 «Веер» — запасная. */
+@page{size:210mm 297mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Golos Text",Arial,sans-serif;color:#4a2014}
+.sheet{width:210mm;height:297mm;overflow:hidden;display:grid;grid-template-columns:105mm 105mm;grid-auto-rows:99mm;page-break-after:always;background:#f3e6c9}
+.sheet:last-child{page-break-after:auto}
+.cell{position:relative;padding:6mm 7mm;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cell.cut-r{border-right:0.2mm dashed #b59a6b}
+.cell.cut-b{border-bottom:0.2mm dashed #b59a6b}
+.frame{width:100%;height:100%;border:0.7mm solid #8d2f23;outline:0.3mm solid #8d2f23;outline-offset:1.2mm;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4mm;background:radial-gradient(120% 90% at 50% 0%, rgba(192,138,45,.14), transparent 60%)}
+.eyebrow{font-size:7pt;letter-spacing:.14em;color:#8d2f23;text-transform:uppercase}
+.sub{font-size:6.6pt;letter-spacing:.06em;opacity:.7;margin-top:0.8mm}
+.emblem{width:30mm;height:30mm;margin:3mm auto 2mm;background:#fdf6e6;border-radius:50%;border:0.7mm solid #8d2f23;padding:3mm}
+.team{font-family:"Spectral",Georgia,serif;font-size:14pt;letter-spacing:.06em;color:#4a2014}
+.hint{font-size:8pt;margin-top:1.6mm;opacity:.85}
+.foot{font-size:6.4pt;letter-spacing:.1em;color:#8d2f23;margin-top:3mm;text-transform:uppercase}
+</style></head><body>
+<script>
+const EMBLEMS = {
+skarabei: `<svg viewBox="0 0 120 120" width="100%" height="100%"><ellipse cx="60" cy="66" rx="20" ry="24" fill="#8d2f23"/><circle cx="60" cy="38" r="9" fill="#8d2f23"/><line x1="56" y1="31" x2="50" y2="22" stroke="#4a2014" stroke-width="3" stroke-linecap="round"/><line x1="64" y1="31" x2="70" y2="22" stroke="#4a2014" stroke-width="3" stroke-linecap="round"/><path d="M40 54 Q18 46 12 62" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 54 Q102 46 108 62" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 70 Q20 70 14 84" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 70 Q100 70 106 84" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><line x1="60" y1="46" x2="60" y2="88" stroke="#f6ead2" stroke-width="2.5"/><circle cx="60" cy="16" r="7" fill="#c08a2d"/></svg>`,
+lotos: `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M60 86 Q40.00556876365212 69.29210244127272 22 46 Q49.594079535736185 44.3804207020161 60 86 Z" fill="#8d2f23" stroke="#4a2014" stroke-width="2"/><path d="M60 86 Q41.9261300836726 57.15460163882532 34 31 Q57.440666414399104 40.24664596898974 60 86 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="2"/><path d="M60 86 Q46.97182770817956 47.238186909805606 51 23 Q65.72978532082811 41.25749644866072 60 86 Z" fill="#8d2f23" stroke="#4a2014" stroke-width="2"/><path d="M60 86 Q54.27021467917189 41.25749644866072 69 23 Q73.02817229182044 47.238186909805606 60 86 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="2"/><path d="M60 86 Q62.559333585600896 40.24664596898974 86 31 Q78.0738699163274 57.15460163882532 60 86 Z" fill="#8d2f23" stroke="#4a2014" stroke-width="2"/><path d="M60 86 Q70.40592046426382 44.3804207020161 98 46 Q79.99443123634788 69.29210244127272 60 86 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="2"/><path d="M60 86 L60 104" stroke="#4a2014" stroke-width="5"/></svg>`,
+glazgora: `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M14 58 Q60 28 106 58 Q60 82 14 58 Z" fill="none" stroke="#4a2014" stroke-width="6"/><circle cx="60" cy="56" r="13" fill="#8d2f23"/><path d="M14 58 Q8 52 10 44" stroke="#4a2014" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M74 70 Q78 92 62 96" stroke="#4a2014" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M88 66 L104 90" stroke="#4a2014" stroke-width="6" stroke-linecap="round"/><path d="M16 40 Q60 18 104 40" stroke="#4a2014" stroke-width="5" fill="none"/></svg>`,
+anubis: `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M44 26 L54 52 L50 58 Z" fill="#4a2014"/><path d="M76 26 L66 52 L70 58 Z" fill="#4a2014"/><path d="M50 50 Q60 42 70 50 L88 72 Q92 78 84 80 L60 84 L40 66 Q44 54 50 50 Z" fill="#8d2f23"/><circle cx="64" cy="62" r="3.5" fill="#f6ead2"/><path d="M44 82 Q60 92 84 84 L84 100 Q60 108 44 100 Z" fill="#c08a2d"/><line x1="44" y1="90" x2="84" y2="90" stroke="#4a2014" stroke-width="2.5"/></svg>`,
+kobra: `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M60 18 Q34 26 34 52 Q34 74 52 80 L52 94 Q40 98 40 104 L80 104 Q80 96 68 93 L68 80 Q86 74 86 52 Q86 26 60 18 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="3"/><path d="M60 30 Q46 36 46 52 Q46 66 58 70 L58 92 L66 92 L66 70 Q74 64 74 52 Q74 36 60 30 Z" fill="#8d2f23"/><circle cx="56" cy="48" r="3" fill="#f6ead2"/><circle cx="66" cy="48" r="3" fill="#f6ead2"/><path d="M58 58 Q61 62 64 58" stroke="#f6ead2" stroke-width="2.5" fill="none"/></svg>`,
+veer: `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M60 76 L15 53 A10 10 0 0 1 21 38 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="2"/><path d="M60 76 L22 36 A10 10 0 0 1 34 24 Z" fill="#8d2f23" stroke="#4a2014" stroke-width="2"/><path d="M60 76 L35 23 A10 10 0 0 1 50 17 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="2"/><path d="M60 76 L52 16 A10 10 0 0 1 68 16 Z" fill="#8d2f23" stroke="#4a2014" stroke-width="2"/><path d="M60 76 L70 17 A10 10 0 0 1 85 23 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="2"/><path d="M60 76 L86 24 A10 10 0 0 1 98 36 Z" fill="#8d2f23" stroke="#4a2014" stroke-width="2"/><path d="M60 76 L99 38 A10 10 0 0 1 105 53 Z" fill="#c08a2d" stroke="#4a2014" stroke-width="2"/><circle cx="60" cy="78" r="7" fill="#4a2014"/><line x1="60" y1="84" x2="60" y2="104" stroke="#4a2014" stroke-width="5"/></svg>`,
+};
+const TEAMS = [
+  { key: 'skarabei', name: 'КОМАНДА «СКАРАБЕЙ»' },
+  { key: 'lotos',    name: 'КОМАНДА «ЛОТОС»' },
+  { key: 'glazgora', name: 'КОМАНДА «ГЛАЗ ГОРА»' },
+  { key: 'anubis',   name: 'КОМАНДА «АНУБИС»' },
+  { key: 'kobra',    name: 'КОМАНДА «КОБРА»' },
+  { key: 'veer',     name: 'КОМАНДА «ВЕЕР»' },
+];
+document.body.insertAdjacentHTML('beforeend', TEAMS.map(t => `<div class="sheet">` +
+  Array.from({ length: 6 }, (_, i) => {
+    const col = i % 2, row = (i - col) / 2;
+    const cls = ['cell', col === 0 ? 'cut-r' : '', row < 2 ? 'cut-b' : ''].filter(Boolean).join(' ');
+    return `<div class="${cls}"><div class="frame">
+      <div class="eyebrow">Квест в коробке «Код пирамид»</div>
+      <div class="sub">экспедиция доктора Камаля · плато Гиза · 15 октября 2026</div>
+      <div class="emblem">${EMBLEMS[t.key]}</div>
+      <div class="team">${t.name}</div>
+      <div class="hint">Вас шестеро. Найдите друг друга.</div>
+      <div class="foot">La Royal Event</div>
+    </div></div>`;
+  }).join('') + `</div>`).join(''));
+</script>
+</body></html>
