@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- Карточка «Мудрость Камаля» — лежит в ларце, гости забирают с собой.
+     На листе А4 две карточки А5, резать по пунктиру. Печатать 3 листа = 6 карточек
+     (5 ларцов + запас), плотная бумага. Шрифты в fonts/: ptserif*.ttf, marck.ttf. -->
+<title>Мудрость Камаля</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-italic.ttf'); font-style: italic; }
+  @font-face { font-family: 'Marck Script'; src: url('fonts/marck.ttf'); }
+  @page { size: 210mm 297mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PT Serif', serif; color: #2a2118; }
+  .sheet { width: 210mm; height: 297mm; display: flex; flex-direction: column; }
+  .card {
+    width: 210mm; height: 148.5mm; padding: 10mm 14mm;
+    background: #f3ead6; position: relative; overflow: hidden;
+  }
+  .card + .card { border-top: 0.35mm dashed #999; }
+  .card::before, .card::after {
+    content: ''; position: absolute; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(150,118,60,0.12), rgba(150,118,60,0));
+  }
+  .card::before { width: 70mm; height: 55mm; top: -18mm; left: -20mm; }
+  .card::after  { width: 80mm; height: 60mm; bottom: -22mm; right: -24mm; }
+  .frame {
+    position: relative; z-index: 1; height: 100%;
+    border: 0.6mm solid #6b543a; outline: 0.25mm solid #6b543a; outline-offset: 1.5mm;
+    padding: 8mm 12mm 7mm;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .head {
+    font-size: 9pt; letter-spacing: 2.5pt; color: #7a6243;
+    border-bottom: 0.3mm solid #c9b998; padding-bottom: 2.5mm; margin-bottom: 6mm;
+    width: 100%;
+  }
+  .wisdom {
+    font-family: 'Marck Script', cursive;
+    font-size: 17.5pt; line-height: 1.75; color: #33281a;
+    max-width: 150mm; margin: auto 0;
+  }
+  .wisdom p + p { margin-top: 3.5mm; }
+  .sig { font-family: 'Marck Script', cursive; font-size: 16pt; margin-top: 5mm; color: #33281a; }
+  .brand {
+    margin-top: auto; padding-top: 4mm;
+    font-size: 7pt; letter-spacing: 1.5pt; color: #a08a66;
+  }
+  .stamp {
+    position: absolute; right: 12mm; bottom: 14mm; width: 26mm; height: 26mm;
+    border: 0.6mm solid rgba(122,60,45,0.5); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    transform: rotate(-14deg); color: rgba(122,60,45,0.6);
+    font-size: 7pt; letter-spacing: 1pt; line-height: 1.5; padding: 2.5mm; z-index: 2;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card">
+    <div class="frame">
+      <div class="head">ИЗ ЗАПИСЕЙ ЭКСПЕДИЦИИ А. КАМАЛЯ · ПЛАТО ГИЗА</div>
+      <div class="wisdom">
+        <p>Проверяй слова камнем, числом и собственными шагами.</p>
+        <p>Не бойся тьмы: она хранит честнее людей.</p>
+        <p>И никогда не бери готовый ответ — своя правда дороже.</p>
+      </div>
+      <div class="sig">А. Камаль</div>
+      <div class="brand">КВЕСТ В КОРОБКЕ «КОД ПИРАМИД» · LA ROYAL EVENT</div>
+      <div class="stamp">ЗАВЕРЕНО<br>·<br>АРХИВ</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="frame">
+      <div class="head">ИЗ ЗАПИСЕЙ ЭКСПЕДИЦИИ А. КАМАЛЯ · ПЛАТО ГИЗА</div>
+      <div class="wisdom">
+        <p>Проверяй слова камнем, числом и собственными шагами.</p>
+        <p>Не бойся тьмы: она хранит честнее людей.</p>
+        <p>И никогда не бери готовый ответ — своя правда дороже.</p>
+      </div>
+      <div class="sig">А. Камаль</div>
+      <div class="brand">КВЕСТ В КОРОБКЕ «КОД ПИРАМИД» · LA ROYAL EVENT</div>
+      <div class="stamp">ЗАВЕРЕНО<br>·<br>АРХИВ</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

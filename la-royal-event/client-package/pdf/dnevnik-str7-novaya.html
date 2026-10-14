@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- Новая страница 7 дневника («Последняя запись»): три ключа из страниц,
+     четвёртый во тьме пирамиды. Печатать по числу дневников, заменить стр. 7. -->
+<title>Дневник — стр. 7 новая</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'Marck Script'; src: url('fonts/marck.ttf'); }
+  @page { size: 210mm 297mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'PT Serif', serif; color: #2a2118; }
+  .pg {
+    width: 210mm; height: 297mm;
+    position: relative; overflow: hidden;
+    background: #f3ead6;
+    padding: 24mm 20mm 20mm 26mm;
+    display: flex; flex-direction: column;
+  }
+  .pg::before, .pg::after {
+    content: ''; position: absolute; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(150,118,60,0.10), rgba(150,118,60,0));
+  }
+  .pg::before { width: 100mm; height: 80mm; top: -26mm; left: -28mm; }
+  .pg::after  { width: 110mm; height: 85mm; bottom: -30mm; right: -32mm; }
+  .inner { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; }
+  .pageno { position: absolute; bottom: 9mm; left: 0; right: 0; text-align: center; font-size: 10pt; color: #8a7352; z-index: 1; }
+  .date {
+    font-size: 12pt; color: #7a6243; letter-spacing: 1.5pt;
+    border-bottom: 0.3mm solid #c9b998; padding-bottom: 3mm; margin-bottom: 11mm;
+  }
+  .text {
+    font-family: 'Marck Script', cursive;
+    font-size: 24pt; line-height: 1.8; color: #33281a;
+  }
+  .sig { margin-top: 10mm; text-align: right; font-family: 'Marck Script', cursive; font-size: 25pt; }
+</style>
+</head>
+<body>
+<div class="pg">
+  <div class="inner">
+    <div class="date">ПОСЛЕДНЯЯ ЗАПИСЬ</div>
+    <div class="text">Три ключа ты возьмёшь из моих страниц.<br><br>Четвёртый ищи во тьме, в самом сердце пирамиды — там, куда солнце не заглядывало четыре с половиной тысячи лет.<br><br>Тьма хранит честнее людей.</div>
+    <div class="sig">А. К.</div>
+  </div>
+  <div class="pageno">— 7 —</div>
+</div>
+</body>
+</html>
