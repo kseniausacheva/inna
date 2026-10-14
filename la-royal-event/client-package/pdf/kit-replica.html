@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- Реплика карточки из набора: фраза «где садишься, там и ложишься»
+     бирюзовым прямо + красным зеркально со сдвигом. Читается через красную линзу.
+     Лист А4 альбомный, две карточки А5, резать пополам. Печатать 2 листа = 4 карточки
+     (вместе с 2 родными из набора = 6). ЦВЕТНАЯ печать. Проверить со своими очками! -->
+<title>Карточка из набора — копия</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-bold.ttf'); font-weight: 700; }
+  @page { size: 297mm 210mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PT Serif', serif; }
+  .sheet { width: 297mm; height: 210mm; display: flex; }
+  .card {
+    width: 148.5mm; height: 210mm; position: relative; overflow: hidden;
+    background: #e9ddc2;
+  }
+  .card + .card { border-left: 0.35mm dashed #999; }
+  .stack { position: absolute; inset: 14mm 10mm; }
+  .layer {
+    position: absolute; inset: 0;
+    text-align: center;
+    font-weight: 700; font-size: 46pt; line-height: 17mm;
+    padding-top: 6mm;
+    mix-blend-mode: multiply;
+  }
+  .layer div { white-space: nowrap; }
+  .teal { color: #1f7d84; }
+  .red  { color: #a6362c; transform: scaleX(-1) translate(4mm, 8.5mm); }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card">
+    <div class="stack">
+      <div class="layer teal">
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься.</div>
+      </div>
+      <div class="layer red">
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься.</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="stack">
+      <div class="layer teal">
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься.</div>
+      </div>
+      <div class="layer red">
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься,</div>
+        <div>где садишься,</div><div>там и</div><div>ложишься.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
