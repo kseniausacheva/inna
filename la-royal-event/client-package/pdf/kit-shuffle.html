@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- Карточка под красную линзу, способ «буквы-паразиты»: между бирюзовыми буквами
+     фразы «ищи под тем, на чём сидишь» вставлены случайные красные буквы.
+     Глазом читается бессмыслица, через красную линзу красные буквы исчезают.
+     Лист А4 альбомный, 2 карточки А5, резать пополам. Печатать 3 листа = 6 карточек.
+     ЦВЕТНАЯ печать. Первый лист проверить со своими очками! -->
+<title>Карточка под очки — финал</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-bold.ttf'); font-weight: 700; }
+  @page { size: 297mm 210mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PT Serif', serif; }
+  .sheet { width: 297mm; height: 210mm; display: flex; }
+  .card {
+    width: 148.5mm; height: 210mm; position: relative; overflow: hidden;
+    background: #e9ddc2;
+    padding: 16mm 9mm;
+  }
+  .card + .card { border-left: 0.35mm dashed #999; }
+  .lines { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .ln { text-align: center; font-weight: 700; font-size: 27pt; white-space: nowrap; }
+  .ln span { display: inline-block; }
+  .t { color: #3d9aa6; }
+  .f1 { color: #a6362c; } .f2 { color: #c2473a; } .f3 { color: #b03c2f; }
+  .hatch {
+    position: absolute; inset: 0;
+    mix-blend-mode: multiply;
+    background:
+      repeating-linear-gradient(48deg,  #e04438 0 0.5mm, transparent 0.5mm 2.4mm),
+      repeating-linear-gradient(-41deg, #e8554a 0 0.45mm, transparent 0.45mm 2.6mm);
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="lines" id="c1"></div><div class="hatch"></div></div>
+  <div class="card"><div class="lines" id="c2"></div><div class="hatch"></div></div>
+</div>
+<script>
+function rng(seed) {
+  let s = seed;
+  return () => { s = (s * 1103515245 + 12345) % 2147483648; return s / 2147483648; };
+}
+const PHRASE = 'ИЩИ ПОД ТЕМ, НА ЧЁМ СИДИШЬ';
+const FAKES = 'АБВГДЕЖЗКЛНОПРСТУХЭЮЯ';
+const FCLS = ['f1', 'f2', 'f3'];
+
+function build(el, seed) {
+  const rand = rng(seed);
+  let glyphs = [];
+  for (let rep = 0; rep < 2; rep++) {
+    for (const ch of PHRASE) {
+      if (ch === ' ') { glyphs.push({ ch: ' ', cls: 't' }); continue; }
+      glyphs.push({ ch, cls: 't' });
+      const n = 1 + (rand() < 0.45 ? 1 : 0);
+      for (let k = 0; k < n; k++) {
+        glyphs.push({ ch: FAKES[Math.floor(rand() * FAKES.length)], cls: FCLS[Math.floor(rand() * 3)] });
+      }
+    }
+    glyphs.push({ ch: ' ', cls: 't' });
+  }
+  const perLine = 14;
+  let html = '', line = '', count = 0;
+  for (const g of glyphs) {
+    if (g.ch === ' ') { line += '<span style="width:4mm"></span>'; continue; }
+    const dy = ((rand() - 0.5) * 3.2).toFixed(1);
+    line += `<span class="${g.cls}" style="transform:translateY(${dy}mm)">${g.ch}</span>`;
+    count++;
+    if (count >= perLine) { html += `<div class="ln">${line}</div>`; line = ''; count = 0; }
+  }
+  if (line) html += `<div class="ln">${line}</div>`;
+  el.innerHTML = html;
+}
+build(document.getElementById('c1'), 4242);
+build(document.getElementById('c2'), 9191);
+</script>
+</body>
+</html>
