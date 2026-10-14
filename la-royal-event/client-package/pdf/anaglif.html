@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- «Нечитаемое письмо» под анаглифные очки: фраза голубым + красный шум сверху.
+     Через красную линзу шум исчезает, текст проступает. На листе А4 две карточки А5,
+     резать по пунктиру. Печатать 3 листа = 6 карточек. ЦВЕТНАЯ печать обязательна.
+     Перед тиражом распечатать 1 лист и проверить со своими очками! -->
+<title>Письмо под очки</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'Marck Script'; src: url('fonts/marck.ttf'); }
+  @page { size: 210mm 297mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PT Serif', serif; color: #2a2118; }
+  .sheet { width: 210mm; height: 297mm; display: flex; flex-direction: column; }
+  .card {
+    width: 210mm; height: 148.5mm; padding: 10mm 14mm;
+    background: #fdfaf2; position: relative; overflow: hidden;
+  }
+  .card + .card { border-top: 0.35mm dashed #999; }
+  .frame {
+    position: relative; z-index: 1; height: 100%;
+    border: 0.6mm solid #6b543a; outline: 0.25mm solid #6b543a; outline-offset: 1.5mm;
+    padding: 7mm 10mm 6mm;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .head {
+    font-size: 9pt; letter-spacing: 2.5pt; color: #7a6243;
+    border-bottom: 0.3mm solid #c9b998; padding-bottom: 2.5mm; margin-bottom: 4mm;
+    width: 100%;
+  }
+  .puzzle { position: relative; width: 170mm; height: 84mm; margin: auto 0; }
+  .puzzle svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .sig { font-family: 'Marck Script', cursive; font-size: 15pt; margin-top: 3mm; color: #33281a; align-self: flex-end; }
+  .brand {
+    margin-top: auto; padding-top: 3mm;
+    font-size: 7pt; letter-spacing: 1.5pt; color: #a08a66;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card">
+    <div class="frame">
+      <div class="head">ИЗ ПАПКИ ЭКСПЕДИЦИИ · ПРОЧТЁТ ЛИШЬ ТОТ, У КОГО ВЕРНЫЕ ГЛАЗА</div>
+      <div class="puzzle"><svg viewBox="0 0 680 336" class="pz"></svg></div>
+      <div class="sig">А. К.</div>
+      <div class="brand">КВЕСТ В КОРОБКЕ «КОД ПИРАМИД» · LA ROYAL EVENT</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="frame">
+      <div class="head">ИЗ ПАПКИ ЭКСПЕДИЦИИ · ПРОЧТЁТ ЛИШЬ ТОТ, У КОГО ВЕРНЫЕ ГЛАЗА</div>
+      <div class="puzzle"><svg viewBox="0 0 680 336" class="pz"></svg></div>
+      <div class="sig">А. К.</div>
+      <div class="brand">КВЕСТ В КОРОБКЕ «КОД ПИРАМИД» · LA ROYAL EVENT</div>
+    </div>
+  </div>
+</div>
+<script>
+// Детерминированный генератор (одинаковый узор при каждом рендере)
+function rng(seed) {
+  let s = seed;
+  return () => { s = (s * 1103515245 + 12345) % 2147483648; return s / 2147483648; };
+}
+const REDS = ['#e03a2f', '#ef5240', '#d84435', '#f06a4a', '#e2503e'];
+const LETTERS = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЭЮЯ';
+
+document.querySelectorAll('.pz').forEach((svg, idx) => {
+  const rand = rng(777 + idx);
+  let parts = [];
+  // 1. Скрытая фраза — светло-голубым, жирно, в два ряда
+  parts.push('<text x="340" y="132" text-anchor="middle" font-family="PT Serif" font-weight="700" font-size="64" letter-spacing="2" fill="#7cc7df">ГДЕ САДИШЬСЯ —</text>');
+  parts.push('<text x="340" y="230" text-anchor="middle" font-family="PT Serif" font-weight="700" font-size="64" letter-spacing="2" fill="#7cc7df">ТАМ И ЛОЖИШЬСЯ</text>');
+  // 2. Красный шум: кривые
+  for (let i = 0; i < 170; i++) {
+    const x1 = rand() * 680, y1 = rand() * 336;
+    const x2 = x1 + (rand() - 0.5) * 260, y2 = y1 + (rand() - 0.5) * 160;
+    const cx = (x1 + x2) / 2 + (rand() - 0.5) * 120, cy = (y1 + y2) / 2 + (rand() - 0.5) * 120;
+    const w = 1.2 + rand() * 2.6;
+    const c = REDS[Math.floor(rand() * REDS.length)];
+    parts.push(`<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" stroke="${c}" stroke-width="${w.toFixed(1)}" fill="none" stroke-linecap="round" opacity="0.9"/>`);
+  }
+  // 3. Красный шум: фальшивые буквы
+  for (let i = 0; i < 80; i++) {
+    const x = rand() * 660 + 10, y = rand() * 310 + 20;
+    const fs = 22 + rand() * 34;
+    const rot = (rand() - 0.5) * 70;
+    const ch = LETTERS[Math.floor(rand() * LETTERS.length)];
+    const c = REDS[Math.floor(rand() * REDS.length)];
+    parts.push(`<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-family="PT Serif" font-weight="700" font-size="${fs.toFixed(0)}" fill="${c}" opacity="0.85" transform="rotate(${rot.toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})">${ch}</text>`);
+  }
+  // 4. Красные кольца
+  for (let i = 0; i < 25; i++) {
+    const x = rand() * 680, y = rand() * 336, r = 8 + rand() * 30;
+    const c = REDS[Math.floor(rand() * REDS.length)];
+    parts.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" stroke="${c}" stroke-width="${(1 + rand() * 2).toFixed(1)}" fill="none" opacity="0.85"/>`);
+  }
+  // 5. Плотный шум поверх строк текста
+  for (let i = 0; i < 130; i++) {
+    const band = rand() < 0.5 ? [78, 142] : [176, 240];
+    const y1 = band[0] + rand() * (band[1] - band[0]);
+    const x1 = rand() * 680;
+    const x2 = x1 + (rand() - 0.5) * 180;
+    const y2 = y1 + (rand() - 0.5) * 70;
+    const cx = (x1 + x2) / 2 + (rand() - 0.5) * 90, cy = (y1 + y2) / 2 + (rand() - 0.5) * 90;
+    const w = 1.5 + rand() * 3;
+    const c = REDS[Math.floor(rand() * REDS.length)];
+    parts.push(`<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" stroke="${c}" stroke-width="${w.toFixed(1)}" fill="none" stroke-linecap="round" opacity="0.9"/>`);
+  }
+  for (let i = 0; i < 70; i++) {
+    const band = rand() < 0.5 ? [95, 140] : [190, 238];
+    const y = band[0] + rand() * (band[1] - band[0]);
+    const x = rand() * 660 + 10;
+    const fs = 26 + rand() * 36;
+    const rot = (rand() - 0.5) * 70;
+    const ch = LETTERS[Math.floor(rand() * LETTERS.length)];
+    const c = REDS[Math.floor(rand() * REDS.length)];
+    parts.push(`<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-family="PT Serif" font-weight="700" font-size="${fs.toFixed(0)}" fill="${c}" opacity="0.85" transform="rotate(${rot.toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})">${ch}</text>`);
+  }
+  svg.innerHTML = parts.join('');
+});
+</script>
+</body>
+</html>
