@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <!-- Реплика карточки из набора: фраза «ищи под тем, на чём сидишь»
-     бирюзовым прямо + два красных слоя (зеркальный и вверх ногами).
-     Читается через красную линзу. Лист А4 альбомный, две карточки А5, резать пополам.
+     бирюзовым прямо + два красных слоя (зеркальный и вверх ногами) + красная сетка поверх.
+     Читается только через красную линзу. Лист А4 альбомный, две карточки А5, резать пополам.
      Печатать 3 листа = 6 карточек; родные карточки набора не использовать.
      ЦВЕТНАЯ печать. Первый лист проверить со своими очками! -->
 <title>Карточка из набора — копия</title>
@@ -29,9 +29,17 @@
     mix-blend-mode: multiply;
   }
   .layer div { white-space: nowrap; }
-  .teal { color: #1f7d84; }
+  .teal { color: #3d9aa6; }
   .red  { color: #a6362c; transform: scaleX(-1) translate(4mm, 8.5mm); }
   .red2 { color: #b14538; transform: rotate(180deg) translate(3mm, 4mm); }
+  .hatch {
+    position: absolute; inset: -4mm;
+    mix-blend-mode: multiply;
+    background:
+      repeating-linear-gradient(48deg,  #e04438 0 0.55mm, transparent 0.55mm 2.1mm),
+      repeating-linear-gradient(-41deg, #e8554a 0 0.5mm,  transparent 0.5mm  2.3mm),
+      repeating-linear-gradient(7deg,   #d94a3e 0 0.45mm, transparent 0.45mm 3.1mm);
+  }
 </style>
 </head>
 <body>
@@ -53,6 +61,7 @@
         <div>ищи под тем,</div><div>на чём</div><div>сидишь,</div>
         <div>ищи под тем,</div><div>на чём</div><div>сидишь.</div>
       </div>
+      <div class="hatch"></div>
     </div>
   </div>
   <div class="card">
@@ -72,6 +81,7 @@
         <div>ищи под тем,</div><div>на чём</div><div>сидишь,</div>
         <div>ищи под тем,</div><div>на чём</div><div>сидишь.</div>
       </div>
+      <div class="hatch"></div>
     </div>
   </div>
 </div>
