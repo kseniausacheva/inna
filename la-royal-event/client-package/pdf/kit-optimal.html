@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<!-- Карточка под красную линзу, оптимальная сложность: фраза с переставленными
+     буквами «иищ пдо тме, ан чмё сиидшь» (= ищи под тем, на чём сидишь),
+     бирюзовым прямо + красным зеркально. Лист А4 альбомный, 2 карточки А5.
+     Печатать 3 листа = 6 карточек. ЦВЕТНАЯ печать. Проверить со своими очками! -->
+<title>Карточка под очки — оптимум</title>
+<style>
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif.ttf'); font-weight: 400; }
+  @font-face { font-family: 'PT Serif'; src: url('fonts/ptserif-bold.ttf'); font-weight: 700; }
+  @page { size: 297mm 210mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PT Serif', serif; }
+  .sheet { width: 297mm; height: 210mm; display: flex; }
+  .card {
+    width: 148.5mm; height: 210mm; position: relative; overflow: hidden;
+    background: #e9ddc2;
+  }
+  .card + .card { border-left: 0.35mm dashed #999; }
+  .stack { position: absolute; inset: 14mm 10mm; }
+  .layer {
+    position: absolute; inset: 0;
+    text-align: center;
+    font-weight: 700; font-size: 44pt; line-height: 17mm;
+    padding-top: 6mm;
+    mix-blend-mode: multiply;
+  }
+  .layer div { white-space: nowrap; }
+  .teal { color: #2a8b96; }
+  .red  { color: #a6362c; transform: scaleX(-1) translate(4mm, 8.5mm); }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card">
+    <div class="stack">
+      <div class="layer teal">
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь.</div>
+      </div>
+      <div class="layer red">
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь.</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="stack">
+      <div class="layer teal">
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь.</div>
+      </div>
+      <div class="layer red">
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь,</div>
+        <div>иищ пдо тме,</div><div>ан чмё</div><div>сиидшь.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
