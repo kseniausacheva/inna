@@ -31,6 +31,9 @@ h2.prog{font-size:22pt; color:var(--ink); border:0; margin:0 0 2pt; padding:0}
 .day .lbl{font-family:Unbounded,sans-serif; font-weight:600; font-size:7pt; letter-spacing:.18em;
   text-transform:uppercase; color:var(--muted); margin:0 0 2pt}
 .day .sum{font-size:9.2pt; color:var(--ink2); margin:2pt 0 4pt; max-width:165mm}
+.day .hd{break-after:avoid; page-break-after:avoid; break-inside:avoid}
+table.tt thead{display:table-header-group}
+table.tt tr.first{break-after:avoid; page-break-after:avoid}
 table.tt{page-break-inside:auto; margin:2pt 0 4pt; font-size:8.8pt}
 table.tt tr{page-break-inside:avoid}
 table.tt th{font-size:7pt; letter-spacing:.08em; text-transform:uppercase; padding:3pt 6pt}
@@ -100,12 +103,13 @@ def render(progs):
         out.append('<p class="intro">%s</p>' % esc(p['intro']))
         for d in p['days']:
             out.append('<div class="day">')
-            out.append('<p class="lbl">%s</p><h3>%s</h3>' % (esc(d['label']), esc(d['heading'])))
+            out.append('<div class="hd"><p class="lbl">%s</p><h3>%s</h3>' % (esc(d['label']), esc(d['heading'])))
             if d.get('summary'):
                 out.append('<p class="sum">%s</p>' % esc(d['summary']))
-            out.append('<table class="tt"><tr><th style="width:17mm">Время</th><th style="width:46mm">Что происходит</th><th>Пояснение</th></tr>')
-            for r in d['rows']:
-                cls = ' class="opt"' if r.get('optional') else ''
+            out.append('</div>')
+            out.append('<table class="tt"><thead><tr><th style="width:17mm">Время</th><th style="width:46mm">Что происходит</th><th>Пояснение</th></tr></thead>')
+            for j, r in enumerate(d['rows']):
+                cls = ' class="%s"' % ' '.join(c for c in ('opt' if r.get('optional') else '', 'first' if j == 0 else '') if c) if (r.get('optional') or j == 0) else ''
                 out.append('<tr%s><td class="t">%s</td><td class="w">%s</td><td class="y">%s</td></tr>'
                            % (cls, esc(r['time']), esc(r['what']), esc(r['why'])))
             out.append('</table>')
