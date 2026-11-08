@@ -281,8 +281,8 @@ body = '''<body>
           <li>Приватные вечера в храмах</li>
         </ul>
       </div>
-      <p class="note" style="margin-top:4mm">Дни посадки и состав — по опубликованным программам Soleil и Le Fayan Suites.
-      При частном фрахте день посадки и маршрут назначаются под группу.</p>
+      <p class="note" style="margin-top:4mm">Дни посадки и состав — по опубликованным программам операторов: soleil-cruise.com и lefayansuites.com,
+      страницы 3, 4 и 7 ночей. При частном фрахте день посадки и маршрут назначаются под группу.</p>
     </div>
   </div>
   <span class="pn">10</span>
@@ -572,18 +572,18 @@ body = '''<body>
 <section class="pg split r">
   <div class="img" style="background-image:url('img/nile.jpg')"></div>
   <div class="txt">
-    <img src="{{LOGO}}" alt="La Royal Event" style="width:42mm; margin-bottom:6mm">
+    <img src="{{LOGO}}" alt="La Royal Event" style="width:42mm; margin-bottom:4mm">
     <p class="eyebrow">Запросите даты</p>
     <h2>Назовите размер группы<br>и месяц</h2>
     <p>Мы подтвердим доступность судна, предложим программу и посчитаем цену на человека под ваш размер группы.</p>
-    <div class="contact" style="margin-top:6mm">
+    <div class="contact" style="margin-top:4mm">
       <div class="k">Телефон</div><div><span class="fill"></span></div>
       <div class="k">WhatsApp</div><div><span class="fill"></span></div>
       <div class="k">Почта</div><div><span class="fill"></span></div>
       <div class="k">Сайт</div><div><span class="fill"></span></div>
     </div>
-    <p class="note" style="margin-top:5mm">Факты о судах — из брошюр операторов Soleil, Lumière и Le Fayan Suites, 2026.
-    Фотографии вечеров в храмах — с мероприятий La Royal Event, переработаны.</p>
+    <p class="note" style="margin-top:3mm">Источники: сайты и брошюры операторов 2026 — soleil-cruise.com, lefayansuites.com,
+    lumiere-cruise.com. Фото вечеров — с мероприятий La Royal Event, переработаны.</p>
   </div>
   <span class="pn" style="color:#fff">25</span>
 </section>
