@@ -95,7 +95,7 @@ add(rows, 'Квест «Код пирамид»', None, QUEST)
 add(rows, 'Приватный вход в пирамиду Хеопса', PYRAMID, None)
 add(rows, 'Обед в 9 Pyramids Lounge', None, LUNCH9P)
 add(rows, 'Ужин в Lucida', None, LUCIDA)
-add(rows, 'Welcome-ужин Esca Cueva / Eleve', None, WELCOME, '✓', 'опция вместо ужина в отеле; бокал сверх')
+add(rows, 'Welcome-ужин Esca Cueva / Eleve', None, WELCOME, '~', 'опция вместо ужина в отеле; бокал, похоже, входит; трансфер — уточнить')
 md += block('Каир 2 дня: прилёт и Гиза · программа', rows)
 
 def transfer_block(title, items):
@@ -144,9 +144,9 @@ md += transfer_block('Вариант А · трансферы (оценка)', [
 rows = []
 add(rows, 'Сафари Эль-Файюм: джипы, Долина Китов, озеро, водопады', None, SAFARI)
 add(rows, 'Обед в пустынном глэмпинге', None, CAMP)
-add(rows, 'Яхта на вечер, аренда', YACHT, None)
-add(rows, 'Еда на яхте', None, YACHT_F, '✓', 'напитки отдельно')
-add(rows, 'Диджей', DJ, None, '✓', 'если нужен')
+add(rows, 'Яхта на вечер, аренда', YACHT, None, '~', 'для Б цена не названа, взята как в А')
+add(rows, 'Еда на яхте', None, YACHT_F, '~', 'как в А; напитки отдельно')
+add(rows, 'Диджей', DJ, None, '~', 'как в А, если нужен')
 md += block('Каир 3 дня, вариант Б: пустыня Эль-Файюм и яхта', rows)
 md += transfer_block('Вариант Б · трансферы (оценка)', [
     ('Каир → Эль-Файюм → Каир, автобус на день (джипы в сафари входят)', 'day', 1),
