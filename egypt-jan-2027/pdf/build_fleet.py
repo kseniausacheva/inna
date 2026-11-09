@@ -107,7 +107,7 @@ body = '''<body>
     <div><div class="n">3–7</div><div class="l">ночей на реке, стандартные отправления по понедельникам и пятницам</div></div>
     <div><div class="n">16–200</div><div class="l">гостей: от частной дахабии до регаты из трёх судов</div></div>
   </div>
-  <span class="pn">02</span>
+  <span class="pn">2</span>
 </section>
 
 <!-- 03 ТРИ СУДНА -->
@@ -140,7 +140,7 @@ body = '''<body>
       <div class="spec">53 каюты · 41 Luxury 21 м² · 8 Junior 39 м² · 2 Royal 44 м² · 2 Soleil Suite 58 м²<br>3, 4 и 7 ночей по расписанию</div>
     </div>
   </div>
-  <span class="pn">03</span>
+  <span class="pn">3</span>
 </section>
 
 <!-- 04 LUMIÈRE -->
@@ -161,7 +161,7 @@ body = '''<body>
     <p class="note" style="margin-top:5mm">16 гостей при двухместном размещении, до 19 — с третьими местами в каютах Luxury.
     Источник: брошюра оператора, сентябрь 2026.</p>
   </div>
-  <span class="pn" style="color:#fff">04</span>
+  <span class="pn" style="color:#fff">4</span>
 </section>
 
 <section class="pg" style="padding:12mm 18mm">
@@ -175,7 +175,7 @@ body = '''<body>
     <div class="ph" style="height:auto; background-image:url('img/fleet/lum-sundeck.jpg')"></div>
     <div class="ph" style="height:auto; background-image:url('img/fleet/lum-island-dinner.jpg')"></div>
   </div>
-  <span class="pn">05</span>
+  <span class="pn">5</span>
 </section>
 
 <!-- 06 LE FAYAN -->
@@ -196,7 +196,7 @@ body = '''<body>
     </div>
   </div>
   <div class="img" style="background-image:url('img/royal2.jpg')"></div>
-  <span class="pn">06</span>
+  <span class="pn">6</span>
 </section>
 
 <section class="pg" style="padding:12mm 18mm">
@@ -210,7 +210,7 @@ body = '''<body>
     <div class="ph" style="height:auto; background-image:url('img/well1.jpg')"></div>
     <div class="ph" style="height:auto; background-image:url('img/sunset.jpg')"></div>
   </div>
-  <span class="pn">07</span>
+  <span class="pn">7</span>
 </section>
 
 <!-- 08 SOLEIL -->
@@ -230,7 +230,7 @@ body = '''<body>
       <div><div class="n">53</div><div class="l">каюты, до 106 гостей</div></div>
     </div>
   </div>
-  <span class="pn" style="color:#fff">08</span>
+  <span class="pn" style="color:#fff">8</span>
 </section>
 
 <section class="pg" style="padding:12mm 18mm">
@@ -244,7 +244,7 @@ body = '''<body>
     <div class="ph" style="height:auto; background-image:url('img/fleet/sol-spa-pool.jpg')"></div>
     <div class="ph" style="height:auto; background-image:url('img/fleet/sol-sundeck-night.jpg')"></div>
   </div>
-  <span class="pn">09</span>
+  <span class="pn">9</span>
 </section>
 
 <!-- 10 КАК УСТРОЕН НИЛ -->
@@ -317,6 +317,16 @@ body = '''<body>
   <span class="pn">11</span>
 </section>
 
+<section class="pg full">
+  <div class="img" style="background-image:url('img/gen2/giza-a.jpg')"></div>
+  <div class="veil"></div>
+  <div class="cap">
+    <p class="eyebrow">Программа 1 · суббота — пятница</p>
+    <h2 style="max-width:230mm">Каир 2 дня + Нил 4 ночи</h2>
+    <p class="lead" style="max-width:210mm; margin-top:3mm">Пирамиды и квест в Гизе, потом четыре ночи от Луксора до Асуана по понедельничной сетке операторов.</p>
+  </div>
+</section>
+
 <!-- 12 ПРОГРАММА 1 -->
 <section class="pg">
   <p class="eyebrow">Программа 1 · Каир 2 дня + Нил 4 ночи · 7 дней</p>
@@ -336,7 +346,7 @@ body = '''<body>
     <p class="note" style="flex:2; margin:0">Почему эта: по понедельникам из Луксора выходят оба судна, на Каир хватает двух дней
     без спешки, а домой группа летит через Каир с одной пересадкой.</p>
   </div>
-  <span class="pn">12</span>
+  <span class="pn">13</span>
 </section>
 
 
@@ -345,7 +355,17 @@ body = '''<body>
   <h2 style="font-size:19pt; margin-bottom:1.5mm">Каир 2 дня + Нил 4 ночи: суббота — пятница</h2>
   <p class="sm" style="margin-bottom:4mm; font-size:8pt">Каир — по откатанной программе, прилёт показан по рейсу SU 400 из Москвы. Река — по сетке оператора и рейсам текущего сезона. Музей в день квеста — короткой опцией на два часа, полная экскурсия — в третьем каирском дне.</p>
   <div class="tt"><div class="day c"><div class="k">Сб<em>Каир</em></div><div class="row"><b>15:15</b><span>Прилёт, встреча у самолёта</span></div><div class="row"><b>16:00</b><span>Трансфер в отель, около часа</span></div><div class="row"><b>17:00</b><span>Заселение, отдых</span></div><div class="row"><b>19:30</b><span>Ужин в отеле или welcome-ужин в городе</span></div></div><div class="day c"><div class="k">Вс<em>Каир</em></div><div class="row"><b>08:10</b><span>Выезд на плато Гиза</span></div><div class="row"><b>10:00</b><span>Сфинкс и Храм Долины</span></div><div class="row"><b>10:40</b><span>Квест «Код пирамид»</span></div><div class="row"><b>12:00</b><span>Приватный вход в пирамиду Хеопса</span></div><div class="row"><b>14:15</b><span>Обед в 9 Pyramids Lounge, итоги квеста</span></div><div class="row"><b>15:45</b><span class="opt">Большой Египетский музей, два часа</span></div><div class="row"><b>19:30</b><span>Ужин в Lucida</span></div></div><div class="day "><div class="k">Пн<em>Каир → Луксор</em></div><div class="row"><b>03:30</b><span>Подъём, чемоданы у дверей</span></div><div class="row"><b>04:15</b><span>Выезд в аэропорт</span></div><div class="row"><b>≈07:00</b><span>Рейс в Луксор, прилёт 08:20</span></div><div class="row"><b>09:15</b><span>Карнак прямо из аэропорта</span></div><div class="row"><b>12:00</b><span>Посадка, обед на борту</span></div><div class="row"><b>16:45</b><span>Луксорский храм: засветло и в подсветке</span></div><div class="row"><b>19:30</b><span>Ужин. Ночь в Луксоре</span></div></div><div class="day "><div class="k">Вт<em>Западный берег</em></div><div class="row"><b>05:00</b><span class="opt">Шар на рассвете, по погоде</span></div><div class="row"><b>07:00</b><span>Завтрак</span></div><div class="row"><b>08:45</b><span>Долина царей, Хатшепсут, Колоссы</span></div><div class="row"><b>13:30</b><span>Обед на борту, отход</span></div><div class="row"><b>≈17:00</b><span>Подход к Эсне, шлюз по очереди</span></div><div class="row"><b>20:00</b><span>Ужин. Эдфу вечером или ночью</span></div></div><div class="day "><div class="k">Ср<em>Эдфу → Асуан</em></div><div class="row"><b>08:00</b><span>Храм Гора в Эдфу, конные экипажи</span></div><div class="row"><b>10:15</b><span>Отход, 2–3 часа хода</span></div><div class="row"><b>13:00</b><span>Ком-Омбо, обед у причала</span></div><div class="row"><b>16:00</b><span>Ком-Омбо в предзакатный час</span></div><div class="row"><b>17:30</b><span>Отход в Асуан</span></div><div class="row"><b>20:00</b><span>Ужин в пути. Ночь в Асуане</span></div></div><div class="day "><div class="k">Чт<em>Асуан</em></div><div class="row"><b>04:30</b><span class="opt">Абу-Симбел самолётом, до 12:15</span></div><div class="row"><b>08:00</b><span>Причал Шеллал, Филе катером</span></div><div class="row"><b>10:45</b><span>Плотина, Незаконченный обелиск</span></div><div class="row"><b>13:00</b><span>Обед</span></div><div class="row"><b>15:00</b><span>Нубийская деревня на лодках</span></div><div class="row"><b>18:00</b><span class="opt">Вечер на Филе — по согласованию</span></div><div class="row"><b>19:30</b><span>Ужин на борту</span></div></div><div class="day p"><div class="k">Пт<em>Асуан → домой</em></div><div class="row"><b>05:30</b><span>Чемоданы у кают, завтрак</span></div><div class="row"><b>06:30</b><span>Выход с судна, трансфер</span></div><div class="row"><b>08:45</b><span>Рейс в Каир, прилёт 10:10 (запасной 09:10)</span></div><div class="row"><b>14:00</b><span>Международный вылет — не раньше</span></div></div></div>
-  <span class="pn">13</span>
+  <span class="pn">14</span>
+</section>
+
+<section class="pg full">
+  <div class="img" style="background-image:url('img/gen2/nubian-b.jpg')"></div>
+  <div class="veil"></div>
+  <div class="cap">
+    <p class="eyebrow">Программа 2 · среда — понедельник</p>
+    <h2 style="max-width:230mm">Каир 2 дня + Нил 3 ночи</h2>
+    <p class="lead" style="max-width:210mm; margin-top:3mm">Самый короткий формат: Гиза, перелёт в Асуан, три ночи вниз по течению до Луксора.</p>
+  </div>
 </section>
 
 <!-- 13 ПРОГРАММА 2 -->
@@ -366,7 +386,7 @@ body = '''<body>
     <p class="note" style="flex:2; margin:0">Почему эта: три ночи — самый ходовой формат на Ниле, по пятницам из Асуана выходят оба судна,
     а Луксор достаётся целым днём в конце, когда группа уже втянулась в ритм поездки.</p>
   </div>
-  <span class="pn">14</span>
+  <span class="pn">16</span>
 </section>
 
 
@@ -375,7 +395,17 @@ body = '''<body>
   <h2 style="font-size:19pt; margin-bottom:1.5mm">Каир 2 дня + Нил 3 ночи: среда — понедельник</h2>
   <p class="sm" style="margin-bottom:4mm; font-size:8pt">Время — ориентир по стандартным программам операторов и расписанию рейсов текущего сезона. Точные часы фиксируются в договоре под дату и сезон. Абу-Симбел сюда не помещается: нужна ночь в Асуане накануне. Вариант: в четверг вечерний перелёт в Асуан, ночь в отеле, рейс 06:55–12:15, посадка после возвращения.</p>
   <div class="tt"><div class="day c"><div class="k">Ср<em>Каир</em></div><div class="row"><b>15:15</b><span>Прилёт, встреча у самолёта</span></div><div class="row"><b>16:00</b><span>Трансфер в отель, около часа</span></div><div class="row"><b>17:00</b><span>Заселение, отдых</span></div><div class="row"><b>19:30</b><span>Ужин в отеле или welcome-ужин в городе</span></div></div><div class="day c"><div class="k">Чт<em>Каир</em></div><div class="row"><b>08:10</b><span>Выезд на плато Гиза</span></div><div class="row"><b>10:00</b><span>Сфинкс и Храм Долины</span></div><div class="row"><b>10:40</b><span>Квест «Код пирамид»</span></div><div class="row"><b>12:00</b><span>Приватный вход в пирамиду Хеопса</span></div><div class="row"><b>14:15</b><span>Обед в 9 Pyramids Lounge, итоги квеста</span></div><div class="row"><b>15:45</b><span class="opt">Большой Египетский музей, два часа</span></div><div class="row"><b>19:30</b><span>Ужин в Lucida</span></div></div><div class="day "><div class="k">Пт<em>Каир → Асуан</em></div><div class="row"><b>04:00</b><span>Выезд в аэропорт</span></div><div class="row"><b>≈06:30</b><span>Рейс в Асуан, прилёт ≈08:00</span></div><div class="row"><b>09:15</b><span>Филе катером с причала Шеллал</span></div><div class="row"><b>11:00</b><span>Высокая плотина, Незаконченный обелиск</span></div><div class="row"><b>12:15</b><span>Посадка, обед на борту</span></div><div class="row"><b>15:00</b><span>Нубийская деревня на лодках</span></div><div class="row"><b>19:30</b><span>Ужин. Ночь в Асуане</span></div></div><div class="day "><div class="k">Сб<em>Ком-Омбо, Эдфу</em></div><div class="row"><b>05:30</b><span>Отход, завтрак в пути</span></div><div class="row"><b>09:00</b><span>Ком-Омбо</span></div><div class="row"><b>10:30</b><span>Отход на Эдфу, обед в пути</span></div><div class="row"><b>14:00</b><span>Храм Гора в Эдфу, конные экипажи</span></div><div class="row"><b>16:30</b><span>Отход, шлюз Эсны по очереди</span></div><div class="row"><b>20:00</b><span>Ужин в пути. Луксор ночью</span></div></div><div class="day "><div class="k">Вс<em>Луксор</em></div><div class="row"><b>05:00</b><span class="opt">Шар на рассвете, по погоде</span></div><div class="row"><b>07:30</b><span>Завтрак</span></div><div class="row"><b>08:30</b><span>Выезд: Долина царей, Хатшепсут, Колоссы</span></div><div class="row"><b>13:30</b><span>Обед на борту</span></div><div class="row"><b>15:30</b><span>Карнакский храм</span></div><div class="row"><b>17:30</b><span>Луксорский храм в подсветке</span></div><div class="row"><b>20:00</b><span>Прощальный ужин на борту</span></div></div><div class="day p"><div class="k">Пн<em>Луксор → домой</em></div><div class="row"><b>05:30</b><span>Чемоданы у кают</span></div><div class="row"><b>06:00</b><span>Завтрак</span></div><div class="row"><b>07:00</b><span>Выход с судна, трансфер</span></div><div class="row"><b>≈09:00</b><span>Рейс в Каир, час под дату</span></div><div class="row"><b>14:00</b><span>Международный вылет — не раньше</span></div></div></div>
-  <span class="pn">15</span>
+  <span class="pn">17</span>
+</section>
+
+<section class="pg full">
+  <div class="img" style="background-image:url('img/gen2/balloons-b.jpg')"></div>
+  <div class="veil"></div>
+  <div class="cap">
+    <p class="eyebrow">Программа 3 · понедельник — понедельник</p>
+    <h2 style="max-width:230mm">Только Нил, 7 ночей</h2>
+    <p class="lead" style="max-width:210mm; margin-top:3mm">Неделя на одном судне: чемоданы распаковываются один раз, два полных дня в Асуане.</p>
+  </div>
 </section>
 
 <!-- 14 ПРОГРАММА 3 -->
@@ -398,7 +428,7 @@ body = '''<body>
     <p class="note" style="flex:2; margin:0">Почему эта: неделя на одном судне, чемоданы распаковываются один раз, два полных дня в Асуане, свободные
     дни под рабочие сессии или отдых. Дороже всего в сумме, зато ритм самый спокойный: ни одного переезда.</p>
   </div>
-  <span class="pn">16</span>
+  <span class="pn">19</span>
 </section>
 
 
@@ -407,7 +437,17 @@ body = '''<body>
   <h2 style="font-size:19pt; margin-bottom:1.5mm">Нил 7 ночей: понедельник — понедельник</h2>
   <p class="sm" style="margin-bottom:4mm; font-size:8pt">Время — ориентир по стандартным программам операторов и расписанию рейсов текущего сезона. Точные часы фиксируются в договоре под дату. На регулярном рейсе часы отхода и стоянок в среду и субботу назначает судно.</p>
   <div class="tt"><div class="day "><div class="k">Пн<em>Луксор</em></div><div class="row"><b>08:20</b><span>Прилёт утренним рейсом, встреча</span></div><div class="row"><b>09:00</b><span>Багаж на борт, кофе на палубе</span></div><div class="row"><b>12:00</b><span>Посадка, обед</span></div><div class="row"><b>14:40</b><span>Прилёт дневного рейса, если летим двумя</span></div><div class="row"><b>17:00</b><span>Луксорский храм в подсветке</span></div><div class="row"><b>19:30</b><span>Ужин. Ночь в Луксоре</span></div></div><div class="day "><div class="k">Вт<em>Западный берег</em></div><div class="row"><b>04:30</b><span class="opt">Шар на рассвете, по погоде</span></div><div class="row"><b>07:00</b><span>Завтрак</span></div><div class="row"><b>08:00</b><span>Выезд: Долина царей, Хатшепсут, Колоссы</span></div><div class="row"><b>13:00</b><span>Обед, отход на юг</span></div><div class="row"><b>≈16:00</b><span>Эсна, шлюз по очереди</span></div><div class="row"><b>20:00</b><span>Ужин по готовности. Ночь в Эдфу</span></div></div><div class="day "><div class="k">Ср<em>Эдфу → Асуан</em></div><div class="row"><b>07:15</b><span>Храм Гора в Эдфу, конные экипажи</span></div><div class="row"><b>09:15</b><span>Отход, 2–3 часа хода</span></div><div class="row"><b>≈13:00</b><span>Ком-Омбо, обед у причала</span></div><div class="row"><b>≈14:00</b><span>Ком-Омбо</span></div><div class="row"><b>≈15:30</b><span>Отход в Асуан</span></div><div class="row"><b>≈18:30</b><span>Приход в Асуан, ужин в 20:00</span></div></div><div class="day "><div class="k">Чт<em>Асуан</em></div><div class="row"><b>08:00</b><span>Высокая плотина, Филе, Незаконченный обелиск</span></div><div class="row"><b>13:00</b><span>Обед</span></div><div class="row"><b>14:30</b><span>Свободное время: спа, палуба</span></div><div class="row"><b>18:00</b><span class="opt">Вечер на Филе — по согласованию</span></div><div class="row"><b>20:00</b><span>Ужин на борту</span></div></div><div class="day "><div class="k">Пт<em>Асуан</em></div><div class="row"><b>06:55</b><span class="opt">Абу-Симбел самолётом, до 12:15</span></div><div class="row"><b>08:30</b><span>Завтрак, свободное утро</span></div><div class="row"><b>13:00</b><span>Обед</span></div><div class="row"><b>15:00</b><span>Нубийская деревня на лодках</span></div><div class="row"><b>20:00</b><span>Ужин. Ночь в Асуане</span></div></div><div class="day "><div class="k">Сб<em>Асуан → Луксор</em></div><div class="row"><b>≈05:00</b><span>Отход по расписанию судна</span></div><div class="row"><b>≈08:30</b><span>Стоянка в Ком-Омбо, мы на борту</span></div><div class="row"><b>≈12:30</b><span>Стоянка в Эдфу, обед</span></div><div class="row"><b>≈17:30</b><span>Эсна, шлюз по очереди</span></div><div class="row"><b>20:00</b><span>Ужин в пути. Луксор поздно вечером</span></div></div><div class="day "><div class="k">Вс<em>Луксор</em></div><div class="row"><b>09:15</b><span>Карнакский храм</span></div><div class="row"><b>13:00</b><span>Обед</span></div><div class="row"><b>14:00</b><span>Свободный день или рабочая сессия</span></div><div class="row"><b>19:30</b><span>Прощальный вечер на палубе</span></div><div class="row"><b>19:30</b><span class="opt">В храме — по согласованию</span></div></div><div class="day p"><div class="k">Пн<em>Домой</em></div><div class="row"><b>06:00</b><span>Завтрак</span></div><div class="row"><b>07:00</b><span>Выход с судна, трансфер</span></div><div class="row"><b>≈09:00</b><span>Рейс в Каир, час под дату</span></div><div class="row"><b>14:00</b><span>Международный вылет — не раньше</span></div></div></div>
-  <span class="pn">17</span>
+  <span class="pn">20</span>
+</section>
+
+<section class="pg full">
+  <div class="img" style="background-image:url('img/fleet/lum-island-dinner.jpg')"></div>
+  <div class="veil"></div>
+  <div class="cap">
+    <p class="eyebrow">Программа 4 · любой день</p>
+    <h2 style="max-width:230mm">Lumière, 5 ночей с островами</h2>
+    <p class="lead" style="max-width:210mm; margin-top:3mm">Дахабия только под вашу группу до шестнадцати человек, ночёвки у островов, ужин на берегу.</p>
+  </div>
 </section>
 
 <!-- 15 ПРОГРАММА 4 -->
@@ -428,7 +468,7 @@ body = '''<body>
     <p class="note" style="margin-top:4mm">Каир добавляется одним или двумя днями до посадки. Стоянки у островов — по уровню воды. Программа — по образцу оператора, сентябрь 2026.</p>
   </div>
   <div class="img" style="background-image:url('img/fleet/lum-island-dinner.jpg')"></div>
-  <span class="pn">18</span>
+  <span class="pn">22</span>
 </section>
 
 
@@ -437,7 +477,7 @@ body = '''<body>
   <h2 style="font-size:19pt; margin-bottom:1.5mm">Lumière 5 ночей: шесть дней с островами</h2>
   <p class="sm" style="margin-bottom:4mm; font-size:8pt">Время — ориентир по стандартным программам операторов и расписанию рейсов текущего сезона. Точные часы фиксируются в договоре под дату. День посадки — любой: судно идёт только под вашу группу. Часы переходов между островами — оценка, расстановку по воде даёт капитан.</p>
   <div class="tt"><div class="day "><div class="k">День 1<em>Луксор</em></div><div class="row"><b>08:20</b><span>Прилёт утренним рейсом из Каира</span></div><div class="row"><b>09:15</b><span>На причал, кофе на палубе, каюты по готовности</span></div><div class="row"><b>12:30</b><span>Обед на борту</span></div><div class="row"><b>15:00</b><span>Карнакский храм</span></div><div class="row"><b>17:15</b><span>Луксорский храм: закат и подсветка</span></div><div class="row"><b>19:00</b><span>Коктейль, ужин. Ночь в Луксоре</span></div></div><div class="day "><div class="k">День 2<em>Западный берег</em></div><div class="row"><b>05:00</b><span class="opt">Шар на рассвете, по погоде</span></div><div class="row"><b>08:00</b><span>Завтрак</span></div><div class="row"><b>08:45</b><span>Долина царей, Хатшепсут, Колоссы</span></div><div class="row"><b>13:30</b><span>Обед, отход</span></div><div class="row"><b>16:30</b><span>Шлюз в Эсне, по очереди</span></div><div class="row"><b>19:30</b><span>Ужин. Ночь у острова Фавза, по уровню воды</span></div></div><div class="day "><div class="k">День 3<em>Эдфу, острова</em></div><div class="row"><b>06:30</b><span>Отход, завтрак в пути</span></div><div class="row"><b>08:15</b><span>Храм Гора в Эдфу, конные экипажи</span></div><div class="row"><b>11:30</b><span>Остров Бесау</span></div><div class="row"><b>13:00</b><span>Обед в пути</span></div><div class="row"><b>14:15</b><span>Каменоломни Гебель эль-Сильсила</span></div><div class="row"><b>19:30</b><span>Ужин. Ночь у острова близ Ком-Омбо</span></div></div><div class="day "><div class="k">День 4<em>Ком-Омбо</em></div><div class="row"><b>08:30</b><span>Ком-Омбо</span></div><div class="row"><b>10:30</b><span>Отход к острову Хербиаб</span></div><div class="row"><b>13:00</b><span>Обед</span></div><div class="row"><b>14:30</b><span>Остров Хербиаб: прогулка, закат</span></div><div class="row"><b>18:30</b><span>Ужин на берегу острова; при ветре — на борту</span></div><div class="row"><b>21:30</b><span>Возврат на борт</span></div></div><div class="day "><div class="k">День 5<em>Асуан</em></div><div class="row"><b>06:00</b><span>Отход в Асуан, завтрак в пути</span></div><div class="row"><b>09:30</b><span>Швартовка в Асуане</span></div><div class="row"><b>10:00</b><span>Остров Филе катером</span></div><div class="row"><b>12:45</b><span>Обед</span></div><div class="row"><b>14:00</b><span>Лодками через пороги: заповедник, нубийская деревня</span></div><div class="row"><b>18:00</b><span class="opt">Вечер на Филе — по согласованию</span></div><div class="row"><b>20:00</b><span>Ужин. Ночь в Асуане</span></div></div><div class="day p"><div class="k">День 6<em>Домой</em></div><div class="row"><b>05:00</b><span class="opt">Абу-Симбел самолётом, 06:55–12:15</span></div><div class="row"><b>06:40</b><span>Выход с борта: рейс в Каир 08:45</span></div><div class="row"><b>12:30</b><span>Обед для летавших в Абу-Симбел</span></div><div class="row"><b>20:15</b><span>Рейс в Каир для летавших (вт/чт — 17:30)</span></div></div></div>
-  <span class="pn">19</span>
+  <span class="pn">23</span>
 </section>
 
 <!-- 16 ЧТО ПРОДАВАТЬ -->
@@ -484,7 +524,7 @@ body = '''<body>
   </table>
   <p class="note" style="margin-top:4mm">Между размерами — блоки на регулярных отправлениях: группа едет на сборном рейсе, но со своим гидом,
   своими столами и своей программой на берегу. Блок бронируется под день отправления из расписания.</p>
-  <span class="pn">20</span>
+  <span class="pn">24</span>
 </section>
 
 
@@ -508,7 +548,7 @@ body = '''<body>
     Наличие судов на одну дату подтверждается операторами под запрос.</p>
   </div>
   <div class="img" style="background-image:url('img/fleet/sol-exterior.jpg')"></div>
-  <span class="pn">21</span>
+  <span class="pn">25</span>
 </section>
 
 <!-- 17 ПРИВАТНЫЕ ВЕЧЕРА -->
@@ -539,7 +579,7 @@ body = '''<body>
       <div><div class="eyebrow" style="margin-bottom:1.5mm">Филе</div><p class="sm">Остров закрывают на вечер: напитки у причала, осмотр храма без посторонних, ужин, светозвуковой показ для группы</p></div>
     </div>
   </div>
-  <span class="pn">23</span>
+  <span class="pn">27</span>
 </section>
 
 <!-- 19 КАК БРОНИРУЕТСЯ -->
@@ -564,7 +604,7 @@ body = '''<body>
       <li>Цена фиксируется договором на группу и даты</li><li>Паспортные данные — за восемь недель: иначе не получить разрешения в храмы</li>
       <li>Цены на человека — по запросу под размер группы</li></ul></div>
   </div>
-  <span class="pn">24</span>
+  <span class="pn">28</span>
 </section>
 
 <!-- 20 КОНТАКТЫ -->
@@ -584,7 +624,7 @@ body = '''<body>
     <p class="note" style="margin-top:3mm">Источники: сайты и брошюры операторов 2026 — soleil-cruise.com, lefayansuites.com,
     lumiere-cruise.com. Фото вечеров — с мероприятий La Royal Event, переработаны.</p>
   </div>
-  <span class="pn" style="color:#fff">25</span>
+  <span class="pn" style="color:#fff">29</span>
 </section>
 
 </body></html>

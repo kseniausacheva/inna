@@ -54,6 +54,10 @@ table.tt tr.opt td.w::after{content:"по желанию"; display:block; font-f
 .know ol{margin:3pt 0 0; padding-left:5mm}
 .know li{margin-bottom:2.4pt; font-size:9pt; line-height:1.42}
 .pb{page-break-before:always}
+.cover img.hero{width:100%; height:92mm; object-fit:cover; border-radius:4pt; display:block; margin:2mm 0 0}
+.opener{width:100%; height:70mm; object-fit:cover; border-radius:4pt; display:block; margin:4pt 0 8pt}
+.dayimg{width:100%; height:38mm; object-fit:cover; border-radius:3pt; display:block; margin:3pt 0 4pt}
+.credit{font-size:7pt; color:var(--muted); margin-top:4pt}
 table.combo td{padding:5pt 6pt; font-size:9.2pt; vertical-align:top}
 table.combo td.n{width:8mm; font-family:Unbounded,sans-serif; font-weight:800; font-size:12pt; color:var(--violet-d)}
 table.combo td.nm{font-weight:700; width:44mm}
@@ -80,20 +84,24 @@ HEAD = '''<!doctype html><html lang="ru"><head><meta charset="utf-8">
     <span style="background:var(--lime); width:22mm"></span>
     <span style="background:var(--pink); width:12mm"></span>
   </div>
+  <img class="hero" src="img/fleet/sol-exterior.jpg" alt="">
 </div>
 ''' % CSS
 
 FOOT = '''<footer>La Royal Event · программы по дням · время указано как ориентир по сетке операторов
-и расписанию рейсов текущего сезона; точные часы фиксируются договором под дату</footer></body></html>'''
+и расписанию рейсов текущего сезона; точные часы фиксируются договором под дату. Фото судов и храмов — операторов Soleil и Lumière; виды Каира, Нила и пустыни — иллюстрации La Royal Event</footer></body></html>'''
 
 
-def render_days(days):
+def render_days(days, imgs=()):
     out = []
-    for d in days:
+    for i, d in enumerate(days):
         out.append('<div class="day">')
         out.append('<div class="hd"><p class="lbl">%s</p><h3>%s</h3>' % (esc(d['label']), esc(d['heading'])))
         if d.get('summary'):
             out.append('<p class="sum">%s</p>' % esc(d['summary']))
+        img = imgs[i] if i < len(imgs) else None
+        if img:
+            out.append('<img class="dayimg" src="%s" alt="">' % img)
         out.append('</div>')
         out.append('<table class="tt"><thead><tr><th style="width:17mm">Время</th><th style="width:46mm">Что происходит</th><th>Пояснение</th></tr></thead>')
         for j, r in enumerate(d['rows']):
@@ -121,6 +129,17 @@ def render_lists(m):
         out.append('</ul></div></div>')
     return out
 
+
+G = 'img/gen2/'; F = 'img/fleet/'
+OPENER = {'cairo': G + 'giza-a.jpg', 'nile4': F + 'lum-luxor-night.jpg', 'nile3': F + 'lum-philae-aerial.jpg',
+          'nile7': F + 'sol-exterior.jpg', 'lumiere': F + 'lum-exterior.jpg'}
+DAYIMG = {
+    'cairo':   [G + 'terrace-a.jpg', G + 'giza-b.jpg', G + 'gem-a.jpg', G + 'yacht-a.jpg', G + 'fayoum-b.jpg', None],
+    'nile4':   [F + 'lum-karnak-day.jpg', G + 'balloons-b.jpg', G + 'komombo-b.jpg', F + 'lum-philae.jpg', G + 'felucca-a.jpg'],
+    'nile3':   [G + 'nubian-b.jpg', F + 'lum-edfu.jpg', G + 'vok-a.jpg', F + 'lum-luxor-night.jpg'],
+    'nile7':   [F + 'lum-karnak-day.jpg', G + 'balloons-b.jpg', F + 'lum-edfu.jpg', F + 'lum-philae.jpg', F + 'lum-abusimbel.jpg', F + 'sol-pool-sunset.jpg', G + 'vok-a.jpg', G + 'felucca-a.jpg'],
+    'lumiere': [F + 'lum-luxor-night.jpg', F + 'lum-hatshepsut.jpg', F + 'lum-edfu.jpg', F + 'lum-island-dinner.jpg', G + 'nubian-b.jpg', F + 'lum-abusimbel.jpg'],
+}
 
 def render(data):
     cairo, nile, combos = data['cairo'], data['nile'], data['combos']
@@ -158,8 +177,9 @@ def render(data):
         out.append('<p class="eyebrow">Модуль «Каир» · 1, 2 или 3 дня</p>')
         out.append('<h2 class="prog">Каир: откатанная программа</h2>')
         out.append('<p class="sub">Прилёт · Гиза и квест «Код пирамид» · Большой Египетский музей, конференция, яхта · или пустыня Эль-Файюм</p>')
+        out.append('<img class="opener" src="%s" alt="">' % OPENER['cairo'])
         out.append('<p class="intro">%s</p>' % esc(cairo['intro']))
-        out.extend(render_days(cairo['days']))
+        out.extend(render_days(cairo['days'], DAYIMG['cairo']))
         out.extend(render_lists(cairo))
 
     # ── модули Нил ──
@@ -168,8 +188,9 @@ def render(data):
         out.append('<p class="eyebrow">Модуль «Нил»</p>')
         out.append('<h2 class="prog">%s</h2>' % esc(m['title']))
         out.append('<p class="sub">%s</p>' % esc(m['subtitle']))
+        out.append('<img class="opener" src="%s" alt="">' % OPENER.get(m['key'], ''))
         out.append('<p class="intro">%s</p>' % esc(m['intro']))
-        out.extend(render_days(m['days']))
+        out.extend(render_days(m['days'], DAYIMG.get(m['key'], ())))
         out.extend(render_lists(m))
 
     out.append(FOOT)
